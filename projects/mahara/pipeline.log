@@ -1,0 +1,5 @@
+[2026-10-01 19:11:09] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\mahara
+[2026-10-01 19:11:10] Audio cleanup: screen.mp4
+[2026-10-01 19:11:15] Transcribing (openai_whisper) voiceover_clean.wav (127.0s, upload 0.51MB)
+[2026-10-01 19:16:35] Transcribing (openai_whisper) edited.wav (101.3s, upload 0.51MB)
+[2026-10-01 19:17:54] Transcribing (openai_whisper) edited.wav (101.3s, upload 0.40MB)

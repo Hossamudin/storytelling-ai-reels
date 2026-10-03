@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s9-template">
+  <style>
+
+    #s9-lab { top: 210px; } #s9-h { top: 250px; }
+    .s9-src { position: absolute; top: 420px; width: 400px; height: 120px; border-radius: 24px; border: 3px dashed rgba(179,206,101,.6); display: flex; align-items: center; justify-content: center; gap: 16px;
+      font-family: var(--font-en); font-weight: 900; font-size: 28px; letter-spacing: .14em; color: var(--lime); direction: ltr; }
+    #s9-s1 { left: 580px; } #s9-s2 { left: 100px; }
+    #s9-k { top: 610px; }
+    .s9-h { position: absolute; left: 110px; width: 860px; height: 190px; border-radius: 34px; border: 4px solid var(--lime); background: linear-gradient(270deg, rgba(179,206,101,.14), rgba(179,206,101,.02));
+      display: flex; align-items: center; justify-content: space-between; padding: 0 50px; direction: ltr; }
+    .s9-h b { font-family: var(--font-en); font-weight: 900; font-size: 74px; color: var(--fg); }
+    .s9-h i { font-style: normal; font-family: var(--font-en); font-weight: 900; font-size: 26px; letter-spacing: .2em; color: var(--lime); }
+    #s9-h1 { top: 790px; } #s9-h2 { top: 1010px; } #s9-h3 { top: 1230px; }
+    #s9-more { left: 0; right: 0; top: 1480px; text-align: center; }
+
+  </style>
+  <div data-hf-id="hf-vqr0" id="s9" data-composition-id="s9" data-width="1080" data-height="1920" data-duration="7.2">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-qdgt" id="s9-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-ogp2" id="s9-bgp" class="dots"></div>
+    <div data-hf-id="hf-do3l" id="s9-cam" class="cam">
+
+      <div data-hf-id="hf-ela4" id="s9-lab" class="row"><span data-hf-id="hf-vp9y" class="t-label">HOW TO CHOOSE</span></div>
+      <div data-hf-id="hf-qhaj" id="s9-h" class="row t-h3"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-17ri" class="in" id="s9-ht">مصدرين يساعدوك تختار</span></span></div>
+      <div data-hf-id="hf-upk0" class="s9-src" id="s9-s1"><span data-hf-id="hf-brbw">SOURCE</span><span data-hf-id="hf-otb0" style="color:var(--yellow)">01</span></div>
+      <div data-hf-id="hf-5l1n" class="s9-src" id="s9-s2"><span data-hf-id="hf-wkk4">SOURCE</span><span data-hf-id="hf-nmdx" style="color:var(--yellow)">02</span></div>
+      <div data-hf-id="hf-3wal" id="s9-k" class="row t-h3 muted"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-i25d" class="in" id="s9-k1">أنهي <span data-hf-id="hf-0pxf" class="lat" style="color:var(--lime)">Agent Harness</span> تستخدم؟</span></span></div>
+      <div data-hf-id="hf-y63r" class="s9-h" id="s9-h1"><b data-hf-id="hf-sgkk">Claude Code</b><i data-hf-id="hf-761v">HARNESS 01</i></div>
+      <div data-hf-id="hf-nam4" class="s9-h" id="s9-h2"><b data-hf-id="hf-cdvk">OpenCode</b><i data-hf-id="hf-6rqu">HARNESS 02</i></div>
+      <div data-hf-id="hf-o29x" class="s9-h" id="s9-h3"><b data-hf-id="hf-1a7m">Pi</b><i data-hf-id="hf-6dft">HARNESS 03</i></div>
+      <div data-hf-id="hf-1qek" id="s9-more" class="abs"><span data-hf-id="hf-npny" class="pill">أو غيرهم…</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(42.3);
+      const { tl } = fx;
+      fx.drift("#s9-bgp", 42.3, 7.2, 70, -40);
+      fx.drift("#s9-blob", 42.3, 7.2, -120, 60);
+      fx.pushIn("#s9-cam", 42.3, 7.2, 1.035);
+
+      fx.rise("#s9-lab", 42.35, { y: 16 });
+      fx.maskUp("#s9-ht", 42.5);
+      fx.pop("#s9-s1", 42.95, { from: 0.4 });
+      fx.pop("#s9-s2", 43.15, { from: 0.4 });
+      fx.maskUp("#s9-k1", 45.1);
+      [["#s9-h1", 47.1], ["#s9-h2", 47.75], ["#s9-h3", 48.3]].forEach(([s, t]) => {
+        tl.fromTo(s, { opacity: 0, x: 700, filter: "blur(16px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, t);
+      });
+      fx.pop("#s9-more", 48.9, { from: 0.4 });
+
+      tl.to("#s9-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 49.15);
+      window.__timelines["s9"] = tl.real;
+    })();
+  </script>
+</template></body></html>

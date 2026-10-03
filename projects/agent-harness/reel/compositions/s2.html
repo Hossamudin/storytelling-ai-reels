@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s2-template">
+  <style>
+
+    #s2-q { left: 0; right: 0; top: 260px; text-align: center; font-size: 1300px; line-height: 1; }
+    #s2-lab { top: 520px; } #s2-k { top: 580px; }
+    #s2-a { top: 800px; font-size: 170px; } #s2-b { top: 990px; font-size: 185px; }
+    #s2-u { left: 150px; width: 780px; top: 1250px; height: 22px; border-radius: 11px; background: var(--yellow); transform-origin: 100% 50%; }
+
+  </style>
+  <div data-hf-id="hf-08cx" id="s2" data-composition-id="s2" data-width="1080" data-height="1920" data-duration="3.85">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-88fd" id="s2-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#1a7564; opacity:.55"></div>
+    <div data-hf-id="hf-aoeh" id="s2-bgp" class="dots"></div>
+    <div data-hf-id="hf-uzmy" id="s2-cam" class="cam">
+
+      <div data-hf-id="hf-flcz" id="s2-q" class="ah-q">؟</div>
+      <div data-hf-id="hf-jycn" id="s2-lab" class="row"><span data-hf-id="hf-jyav" class="t-label">THE MISSING PIECE</span></div>
+      <div data-hf-id="hf-sr3v" id="s2-k" class="row t-h3"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-xtps" class="in" id="s2-k1">بس كتير مننا ما يعرفش</span></span></div>
+      <div data-hf-id="hf-qfej" id="s2-a" class="row ah-en" style="line-height:1.05">AGENT</div>
+      <div data-hf-id="hf-thx6" id="s2-b" class="row ah-en ah-l" style="line-height:1.05; text-shadow:0 0 60px rgba(179,206,101,.55)">HARNESS</div>
+      <div data-hf-id="hf-8ut3" id="s2-u" class="abs"></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(5.2);
+      const { tl } = fx;
+      fx.drift("#s2-bgp", 5.2, 3.85, 70, -40);
+      fx.drift("#s2-blob", 5.2, 3.85, -120, 60);
+      fx.pushIn("#s2-cam", 5.2, 3.85, 1.035);
+
+      fx.drift("#s2-q", 5.2, 3.85, -60, 30);
+      tl.fromTo("#s2-q", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }, 5.2);
+      fx.rise("#s2-lab", 5.3, { y: 16 });
+      fx.maskUp("#s2-k1", 5.35);
+      tl.fromTo("#s2-a", { opacity: 0, scale: 2.6, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, 7.78);
+      tl.fromTo("#s2-b", { opacity: 0, scale: 2.6, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, 8.2);
+      fx.shake("#s2-cam", 8.3, 16, 7);
+      fx.band("#s2-u", 8.45, 0.3);
+      fx.zoomThrough("#s2-cam", 8.75, 1.5);
+
+      tl.to("#s2-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 9.2);
+      window.__timelines["s2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

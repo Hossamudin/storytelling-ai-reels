@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s3-template">
+  <style>
+
+    .op-n { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; }
+    .op-lk { position: absolute; left: 50%; top: 50%; width: 80px; height: 80px; margin: -40px 0 0 -40px; color: rgba(179,206,101,.55); }
+    .op-done { position: absolute; right: 18px; top: 18px; width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+
+    #s3-t1 { left: 560px; top: 560px; width: 420px; height: 560px; }
+    #s3-t2 { left: 100px; top: 560px; width: 420px; height: 560px; }
+    .s3-ar { position: absolute; left: 0; right: 0; top: 400px; text-align: center; font-family: var(--font-ar); font-weight: 800; font-size: 40px; }
+    #s3-gt { left: 150px; top: 1150px; }
+
+  </style>
+  <div data-hf-id="hf-x0hi" id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="7.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ozbw" id="s3-blob" class="blob" style="left:160px; top:460px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-rsys" id="s3-bgp" class="dots"></div>
+    <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+
+      <div data-hf-id="hf-kb1o" class="row t-h3" style="top:250px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-ppip" class="in" id="s3-h1">في بارت ١ قلنا</span></span></div>
+      <div data-hf-id="hf-p6a8" id="s3-t1" class="op-card" style="opacity:.9">
+        <div data-hf-id="hf-2s5e" class="op-n op-en" style="top:60px; font-size:34px; letter-spacing:.3em; color:var(--lime)">TIP 01</div>
+        <div data-hf-id="hf-qo76" class="op-n" style="top:140px"><svg data-hf-id="hf-7ed0" style="width:170px; height:170px; color:var(--lime);"><use data-hf-id="hf-y5oa" href="#i-expand" /></svg></div>
+        <div data-hf-id="hf-ya44" class="s3-ar">ما تحجّمهوش</div><div data-hf-id="hf-1mcy" class="op-done"><svg data-hf-id="hf-lzsx" style="width:36px; height:36px; color:currentColor;"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div></div>
+      <div data-hf-id="hf-us7v" id="s3-t2" class="op-card" style="border-color:var(--yellow)">
+        <div data-hf-id="hf-pwom" class="op-n op-en" style="top:60px; font-size:34px; letter-spacing:.3em; color:var(--yellow)">TIP 02</div>
+        <div data-hf-id="hf-lwru" class="op-n op-en op-y" style="top:130px; font-size:220px; line-height:1">?</div>
+        <div data-hf-id="hf-zmro" class="s3-ar">النهارده</div></div>
+      <div data-hf-id="hf-3awj" id="s3-gt" class="op-chip y" style="left:150px; top:1150px"><span data-hf-id="hf-9fjc" class="ic">!</span><span data-hf-id="hf-h6ea">يمكن أهم من الأولى</span></div>
+      <div data-hf-id="hf-395c" class="row t-h2" style="top:1380px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-kn9b" class="in" id="s3-k1">واحدة من أهم التيبس</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(6.8);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 6.8, 7.8, 60, -40);
+      fx.drift("#s3-blob", 6.8, 7.8, -110, 60);
+      fx.pushIn("#s3-cam", 6.8, 7.8, 1.035);
+
+      fx.maskUp("#s3-h1", 7.0);
+      tl.fromTo("#s3-t1", { opacity: 0, x: 300, rotation: 8 }, { opacity: 1, x: 0, rotation: 0, duration: 0.55, ease: "power3.out" }, 9.8);
+      fx.maskUp("#s3-k1", 10.4);
+      tl.fromTo("#s3-t2", { opacity: 0, x: -300, rotation: -8 }, { opacity: 1, x: 0, rotation: 0, duration: 0.55, ease: "power3.out" }, 12.45);
+      tl.to("#s3-t1", { scale: 0.86, opacity: 0.6, duration: 0.6, ease: "power2.inOut" }, 13.3);
+      tl.to("#s3-t2", { scale: 1.08, duration: 0.6, ease: "back.out(1.6)" }, 13.3);
+      fx.pop("#s3-gt", 13.4, { from: 0.4 });
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 14.16);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

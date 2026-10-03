@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s15-template">
+  <style>
+
+    #s15-pk { left: 240px; top: 560px; width: 600px; height: 600px; }
+    #s15-st { left: 300px; top: 1170px; color: var(--lime); border-color: var(--lime); font-family: var(--font-en); font-size: 90px; background: rgba(4,22,20,.9); }
+
+  </style>
+  <div data-hf-id="hf-dje1" id="s15" data-composition-id="s15" data-width="1080" data-height="1920" data-duration="2.75">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-yqy0" id="s15-blob" class="blob" style="left:160px; top:480px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-xk8z" id="s15-bgp" class="dots"></div>
+    <div data-hf-id="hf-p4zy" id="s15-cam" class="cam">
+
+      <div data-hf-id="hf-eudu" class="row t-h2" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-0nxw" class="in" id="s15-h1">بعد كده</span></span></div>
+      <div data-hf-id="hf-r6qo" class="row t-h3 muted" style="top:400px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-54k0" class="in" id="s15-h2">عملت التيب دي</span></span></div>
+      <img data-hf-id="hf-stbp" id="s15-pk" class="abs" src="assets/images/package_cut.png">
+      <div data-hf-id="hf-ybyw" id="s15-st" class="stamp">SKILL ✓</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(72.15);
+      const { tl } = fx;
+      fx.drift("#s15-bgp", 72.15, 2.75, 60, -40);
+      fx.drift("#s15-blob", 72.15, 2.75, -110, 60);
+      fx.pushIn("#s15-cam", 72.15, 2.75, 1.035);
+
+      fx.maskUp("#s15-h1", 72.3); fx.maskUp("#s15-h2", 73.2);
+      tl.fromTo("#s15-pk", { opacity: 0, scale: 0.4, rotation: 12 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(1.7)" }, 72.4);
+      fx.stamp("#s15-st", 73.6, "#s15-cam");
+
+      tl.to("#s15-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 74.46);
+      window.__timelines["s15"] = tl.real;
+    })();
+  </script>
+</template></body></html>

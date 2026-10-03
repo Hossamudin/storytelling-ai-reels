@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s13-template">
+  <style>
+
+    #s13-big { top: 370px; font-family: var(--font-ar); font-weight: 900; font-size: 210px; line-height: 1.25; color: var(--fg); }
+    .s13-ray { position: absolute; left: 538px; top: 1110px; width: 6px; height: 260px; background: linear-gradient(var(--lime), transparent); transform-origin: 50% 0; }
+
+  </style>
+  <div data-hf-id="hf-0ije" id="s13" data-composition-id="s13" data-width="1080" data-height="1920" data-duration="5.4">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-jfvj" id="s13-blob" class="blob" style="left:160px; top:720px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-3of9" id="s13-bgp" class="dots"></div>
+    <div data-hf-id="hf-auhs" id="s13-cam" class="cam">
+
+      <div data-hf-id="hf-0gg8" class="row t-h3 muted" style="top:220px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-qfgr" class="in" id="s13-h1">بس قلتله</span></span></div>
+      <div data-hf-id="hf-iqom" id="s13-big" class="row" data-layout-allow-overlap=""><span data-hf-id="hf-n6kq" id="s13-b1" data-layout-allow-overlap="" style="display:inline-block">انطلق</span></div>
+      <div data-hf-id="hf-wj1g" class="row t-h2 op-l" data-layout-allow-overlap="" style="top:660px"><span data-hf-id="hf-86r5" class="mask" data-layout-allow-overlap=""><span data-hf-id="hf-xxe0" class="in" data-layout-allow-overlap="" id="s13-k1">وكون مبدع</span></span></div>
+      <i data-hf-id="hf-kgpi" class="s13-ray" id="s13-r0" style="transform:rotate(0deg)"></i><i data-hf-id="hf-5psg" class="s13-ray" id="s13-r1" style="transform:rotate(45deg)"></i><i data-hf-id="hf-lzo9" class="s13-ray" id="s13-r2" style="transform:rotate(90deg)"></i><i data-hf-id="hf-glnm" class="s13-ray" id="s13-r3" style="transform:rotate(135deg)"></i><i data-hf-id="hf-14e3" class="s13-ray" id="s13-r4" style="transform:rotate(180deg)"></i><i data-hf-id="hf-yvik" class="s13-ray" id="s13-r5" style="transform:rotate(225deg)"></i><i data-hf-id="hf-de37" class="s13-ray" id="s13-r6" style="transform:rotate(270deg)"></i><i data-hf-id="hf-e1ye" class="s13-ray" id="s13-r7" style="transform:rotate(315deg)"></i>
+      <div data-hf-id="hf-a1lm" id="s13-sp" class="cl-spark" style="left:400px; top:1000px; width:280px; height:280px;"><div data-hf-id="hf-a0c3" class="cl-bloom" id="s13-sp-bl"></div><svg data-hf-id="hf-p6ff" id="s13-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-lkm7" id="s13-c1" class="op-chip" style="left:600px; top:1320px"><span data-hf-id="hf-btdi" class="ic">+</span><span data-hf-id="hf-c1tw">مؤثرات أكتر</span></div>
+      <div data-hf-id="hf-9l6y" id="s13-c2" class="op-chip y" style="left:90px; top:1360px"><span data-hf-id="hf-7nx6" class="ic">+</span><span data-hf-id="hf-lp91">خطة</span></div>
+      <div data-hf-id="hf-oj17" id="s13-c3" class="op-chip o" style="left:380px; top:1560px"><span data-hf-id="hf-8287" class="ic">+</span><span data-hf-id="hf-6tmi">أفكار</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(56.15);
+      const { tl } = fx;
+      fx.drift("#s13-bgp", 56.15, 5.4, 60, -40);
+      fx.drift("#s13-blob", 56.15, 5.4, -110, 60);
+      fx.pushIn("#s13-cam", 56.15, 5.4, 1.035);
+
+      fx.maskUp("#s13-h1", 56.3);
+      fx.pop("#s13-sp", 56.3, { from: 0.4, e: "expo.out", d: 0.6 });
+      tl.fromTo("#s13-sp-svg", { rotation: 0 }, { rotation: 360, duration: 5.2, ease: "none" }, 56.3);
+      tl.fromTo("#s13-b1", { opacity: 0, scale: 2.6, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 57.85);
+      fx.shake("#s13-cam", 57.95, 16, 7);
+      tl.to("#s13-sp", { scale: 1.35, duration: 0.4, ease: "expo.out" }, 57.9);
+      tl.fromTo(".s13-ray", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.4, ease: "expo.out" }, 57.9);
+      tl.to(".s13-ray", { opacity: 0, duration: 0.6 }, 58.5);
+      fx.maskUp("#s13-k1", 58.45);
+      fx.pop("#s13-c1", 59.8, { from: 0.2 }); fx.pop("#s13-c2", 60.7, { from: 0.2 }); fx.pop("#s13-c3", 61.25, { from: 0.2 });
+
+      tl.to("#s13-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 61.11);
+      window.__timelines["s13"] = tl.real;
+    })();
+  </script>
+</template></body></html>

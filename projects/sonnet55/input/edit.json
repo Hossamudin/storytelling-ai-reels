@@ -1,0 +1,72 @@
+{
+ "parts": [
+  {
+   "name": "voice",
+   "from": 0,
+   "to": 188.373
+  }
+ ],
+ "cuts": [
+  [
+   0.907,
+   2.516,
+   "noise: no speech in verbatim transcript / Empty non-speech before the take starts / no speech in verbatim transcript"
+  ],
+  [
+   27.815,
+   30.772,
+   "false_start: Abandoned comparison phrase; speaker restarts with the next sentence"
+  ],
+  [
+   30.792,
+   33.927,
+   "noise: no speech in verbatim transcript / Empty non-speech during pause after false start / no speech in verbatim transcript / no speech in verbatim transcript"
+  ],
+  [
+   80.149,
+   84.196,
+   "retake: chunk 23 restarts chunk 22 (similarity 0.70); keep the later take / Earlier abandoned phrasing; repeated and completed more clearly in the next chunk"
+  ]
+ ],
+ "max_pause": 0.38,
+ "keep_pause": 0.24,
+ "silence_db": -38,
+ "fix": [
+  {
+   "from": "Shorten AI",
+   "to": "SureThing AI"
+  },
+  {
+   "from": "Cursor AI",
+   "to": "SureThing AI"
+  },
+  {
+   "from": "Shorting AI",
+   "to": "SureThing AI"
+  },
+  {
+   "from": "PyCode.",
+   "to": "Pi."
+  },
+  {
+   "from": "PyCode",
+   "to": "Pi"
+  },
+  {
+   "from": "هوصلك لحسن.",
+   "to": "حسام الدين حسن."
+  },
+  {
+   "from": "حسن الدين حسن.",
+   "to": "حسام الدين حسن."
+  },
+  {
+   "from": "الريلي",
+   "to": "الريل"
+  },
+  {
+   "from": "لي follow",
+   "to": "follow"
+  }
+ ]
+}

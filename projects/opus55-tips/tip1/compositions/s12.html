@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s12-template">
+  <style>
+
+    .s12-c { position: absolute; left: 110px; width: 860px; height: 110px; border-radius: 26px; background: #0b2f29; border: 3px solid var(--lime);
+      display: flex; align-items: center; gap: 24px; padding: 0 30px; direction: rtl; }
+    .s12-c .ic { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--ink); flex: none; }
+    .s12-c .ar { font-family: var(--font-ar); font-weight: 800; font-size: 40px; white-space: nowrap; }
+    .s12-c .en { margin-right: auto; font-family: var(--font-en); font-weight: 800; font-size: 22px; letter-spacing: .2em; color: var(--fg-muted); direction: ltr; }
+    #s12-c1 { top: 960px; } #s12-c2 { top: 1100px; border-color: var(--yellow); } #s12-c3 { top: 1240px; border-color: #e8977c; }
+    #s12-cur { left: 920px; top: 860px; }
+    #s12-rip { left: 930px; top: 790px; }
+    #s12-k { top: 1420px; }
+
+  </style>
+  <div data-hf-id="hf-i1e2" id="s12" data-composition-id="s12" data-width="1080" data-height="1920" data-duration="7.95">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-yawr" id="s12-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-fgts" id="s12-bgp" class="dots"></div>
+    <div data-hf-id="hf-4ja1" id="s12-cam" class="cam">
+
+      <div data-hf-id="hf-w1mm" id="s12-lab" class="row" style="top:300px"><span data-hf-id="hf-um4d" class="t-label" style="color:var(--lime)">IDEAS · NOT INSTRUCTIONS</span></div>
+      <div data-hf-id="hf-i1sk" class="row t-h2" style="top:350px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-lbbf" class="in" id="s12-h1">+ شوية أفكار</span></span></div>
+      <div data-hf-id="hf-lsct" id="s12-in" class="op-input" style="left:70px; top:600px; width:940px; height:250px"><div data-hf-id="hf-nbaz" class="txt" id="s12-in-t"><span data-hf-id="hf-m905" class="ph"></span></div><div data-hf-id="hf-mlgk" class="foot"><span data-hf-id="hf-955y" class="plus">+</span><span data-hf-id="hf-pwj1" class="mdl" id="s12-in-m">Opus 5.5 <em data-hf-id="hf-7i9k">Medium</em><span data-hf-id="hf-b3lr" class="send" id="s12-in-s"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-kkf4" href="#i-send" /></svg></span></span></div></div>
+      <div data-hf-id="hf-xnd3" id="s12-c1" class="s12-c"><span data-hf-id="hf-kftg" class="ic" style="background:var(--lime)"><svg data-hf-id="hf-32dv" style="width:40px; height:40px; color:currentColor;"><use data-hf-id="hf-ipws" href="#i-film" /></svg></span><span data-hf-id="hf-dgz9" class="ar">أفكار للمشاهد</span><span data-hf-id="hf-eq0h" class="en">SCENES</span></div>
+      <div data-hf-id="hf-ozh8" id="s12-c2" class="s12-c"><span data-hf-id="hf-hd85" class="ic" style="background:var(--yellow)"><svg data-hf-id="hf-c94j" style="width:40px; height:40px; color:currentColor;"><use data-hf-id="hf-ur3f" href="#i-sound" /></svg></span><span data-hf-id="hf-dj2y" class="ar">المؤثرات الصوتية</span><span data-hf-id="hf-k367" class="en">SFX</span></div>
+      <div data-hf-id="hf-pr51" id="s12-c3" class="s12-c"><span data-hf-id="hf-a4br" class="ic" style="background:#e8977c"><svg data-hf-id="hf-buti" style="width:40px; height:40px; color:currentColor;"><use data-hf-id="hf-r16g" href="#i-wand" /></svg></span><span data-hf-id="hf-krr9" class="ar">المؤثرات البصرية</span><span data-hf-id="hf-fmy5" class="en">VISUALS</span></div>
+      <div data-hf-id="hf-zxz9" id="s12-k" class="row t-h3 muted"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-tpf5" class="in" id="s12-k1">مش تعليمات خطوة بخطوة</span></span></div>
+      <div data-hf-id="hf-yyws" id="s12-rip" class="ripple"></div>
+      <svg data-hf-id="hf-em5c" id="s12-cur" class="cursor"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(48.4);
+      const { tl } = fx;
+      fx.drift("#s12-bgp", 48.4, 7.95, 60, -40);
+      fx.drift("#s12-blob", 48.4, 7.95, -110, 60);
+      fx.pushIn("#s12-cam", 48.4, 7.95, 1.02);
+
+      fx.Q("#s12-in-t").textContent = "عايز أعمل فيديو موشن جرافيكس احترافي";
+      fx.rise("#s12-lab", 48.5, { y: 12 }); fx.maskUp("#s12-h1", 48.5);
+      tl.fromTo("#s12-c1", { opacity: 0, x: -200, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 48.7);
+      tl.fromTo("#s12-c2", { opacity: 0, x: -200, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 50.8);
+      tl.fromTo("#s12-c3", { opacity: 0, x: -200, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 53.45);
+      fx.maskUp("#s12-k1", 54.4);
+      tl.fromTo("#s12-cur", { opacity: 0, x: 60, y: 160 }, { opacity: 1, x: 0, y: 0, duration: 0.6, ease: "power3.out" }, 55.2);
+      fx.click("#s12-cur", 55.95, "#s12-in-s", "#s12-rip");
+      tl.to("#s12-in", { boxShadow: "0 0 0 6px rgba(217,119,87,.7), 0 24px 60px rgba(0,0,0,.45)", duration: 0.2 }, 56.0);
+
+      tl.to("#s12-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 55.92);
+      window.__timelines["s12"] = tl.real;
+    })();
+  </script>
+</template></body></html>

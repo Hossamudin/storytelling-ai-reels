@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="b1-template">
+  <style>
+
+    #b1-v { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #b1-sh { position: absolute; left: 0; right: 0; top: 0; height: 620px; background: linear-gradient(180deg, rgba(4,22,20,.92), rgba(4,22,20,0)); }
+    #b1-lab { top: 210px; } #b1-h { top: 250px; }
+    #b1-tg { left: 0; right: 0; top: 1600px; text-align: center; }
+
+  </style>
+  <div data-hf-id="hf-ca8z" id="b1" data-composition-id="b1" data-width="1080" data-height="1920" data-duration="4.6">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-fg1v" id="b1-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-luzt" id="b1-bgp" class="dots"></div>
+    <div data-hf-id="hf-7z6u" id="b1-cam" class="cam">
+
+      <video data-hf-id="hf-3ipp" id="b1-v" src="assets/higgsfield/broll_engine_core.mp4" data-start="0" data-duration="4.6" muted playsinline></video>
+      <div data-hf-id="hf-2hr6" id="b1-sh"></div>
+      <div data-hf-id="hf-2mdj" id="b1-lab" class="row"><span data-hf-id="hf-scrk" class="t-label">THE AI MODEL</span></div>
+      <div data-hf-id="hf-adcg" id="b1-h" class="row t-h1" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-mfsf" class="in" id="b1-h1">الموديل = <span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-2y37" class="band" id="b1-band"></span><span data-hf-id="hf-nbfu" class="txt" id="b1-txt" style="color:var(--yellow)">الآلة</span></span></span></span></div>
+      <div data-hf-id="hf-fzjo" id="b1-tg" class="ah-tag">THE ENGINE · GENERATES CODE</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(8.85);
+      const { tl } = fx;
+      fx.drift("#b1-bgp", 8.85, 4.6, 70, -40);
+      fx.drift("#b1-blob", 8.85, 4.6, -120, 60);
+      fx.pushIn("#b1-cam", 8.85, 4.6, 1.06);
+
+      fx.rise("#b1-lab", 8.95, { y: 16 });
+      fx.maskUp("#b1-h1", 9.0);
+      fx.band("#b1-band", 10.3);
+      tl.to("#b1-txt", { color: "#0d0d0d", duration: 0.15 }, 10.4);
+      fx.rise("#b1-tg", 11.6, { y: 16 });
+
+      tl.to("#b1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 13.13);
+      window.__timelines["b1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,43 @@
+{
+  "name": "mahara",
+  "title": "Mahara AI",
+  "stage": "transcribe",
+  "created": "2026-10-01T19:11:09",
+  "updated": "2026-10-01T19:18:04",
+  "aspect": null,
+  "duration_s": 101.33,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-01T19:11:09",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-01T19:11:14",
+      "note": "cleaned voiceover, 127.0s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-01T19:11:27",
+      "note": "openai_whisper: 39 segments",
+      "from": "audio_clean"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-01T19:16:45",
+      "note": "openai_whisper: 30 segments",
+      "from": "transcribe"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-01T19:18:04",
+      "note": "openai_whisper: 49 segments",
+      "from": "transcribe"
+    }
+  ]
+}

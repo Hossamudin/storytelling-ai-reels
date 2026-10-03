@@ -1,0 +1,20 @@
+[
+ {"id":"b1","start":8.85,"duration":4.6,"beat":"FS b-roll: engine core ignites; model = the machine"},
+ {"id":"c1","start":13.4,"duration":2.95,"beat":"CANVAS under presenter card: prompt -> engine -> code"},
+ {"id":"s4","start":19.5,"duration":3.65,"beat":"FS balance tips to harness"},
+ {"id":"s5","start":25.2,"duration":3.85,"beat":"FS files + edits"},
+ {"id":"s6","start":29.0,"duration":4.65,"beat":"CANVAS + circle presenter: split code into files"},
+ {"id":"s7","start":33.6,"duration":3.75,"beat":"FS order + progress"},
+ {"id":"b2","start":37.3,"duration":2.35,"beat":"FS b-roll: clamps lock around the core"},
+ {"id":"l1","start":47.1,"duration":2.35,"beat":"FS harness lineup"},
+ {"id":"aa1","start":52.3,"duration":3.65,"beat":"FS real Artificial Analysis Coding Agent Index pan"},
+ {"id":"s11","start":55.9,"duration":8.95,"beat":"CANVAS + circle presenter: engine swap test bench"},
+ {"id":"aa2","start":66.6,"duration":6.15,"beat":"FS real time-per-task then cost-per-task cards"},
+ {"id":"ar1","start":78.0,"duration":6.35,"beat":"FS Arena AI HarnessTax article"},
+ {"id":"ar2","start":88.4,"duration":22.05,"beat":"FS real Arena Pareto chart ride (+ circle presenter 101.2-104.6)"},
+ {"id":"s17","start":110.4,"duration":9.95,"beat":"FS same engine two harnesses, real numbers"},
+ {"id":"s19","start":124.4,"duration":6.75,"beat":"FS formula -> half, real $"},
+ {"id":"s21","start":138.0,"duration":7.95,"beat":"FS leaderboard is temporary"},
+ {"id":"src","start":149.0,"duration":4.85,"beat":"FS the two sources (real screenshots)"},
+ {"id":"z1","start":153.8,"duration":10.45,"beat":"CANVAS under presenter card: Zadloop bonus"}
+]

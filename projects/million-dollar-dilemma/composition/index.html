@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>الذكاء الاصطناعي يحل معضلة المليون دولار</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --punch1:#136052; --punch2:#437F3E; --punch3:#B3CE65; --punch4:#FFEC5C;
+    --punch5:#FF5A33; --ink:#0D0D0D; --paper:#FAF7F0;
+  }
+  body { margin:0; background:#0b1210; font-family:'Noto Kufi Arabic','Manrope',sans-serif; }
+  #root { position:relative; width:1080px; height:1920px; overflow:hidden; background:var(--paper); }
+  .clip { position:absolute; inset:0; }
+  .scene-fill { position:absolute; inset:0; }
+  .scene-inner {
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:28px; padding:90px 70px;
+    box-sizing:border-box; text-align:center;
+  }
+  .scene-kicker {
+    font-family:'Manrope',sans-serif; font-weight:800; font-size:26px;
+    letter-spacing:0.35em; text-transform:uppercase; opacity:1;
+  }
+  .scene-headline {
+    font-weight:800; font-size:104px; line-height:1.28; margin:0; direction:rtl;
+  }
+  .scene-narr {
+    font-size:36px; line-height:1.75; direction:rtl; opacity:0.95; max-width:88%;
+  }
+  .scene-media { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .cap {
+    position:absolute; left:0; right:0; bottom:5.5%; display:flex; justify-content:center;
+    padding:0 36px; box-sizing:border-box; pointer-events:none;
+  }
+  .cap-inner {
+    display:inline-flex; flex-wrap:wrap; justify-content:center; align-items:baseline;
+    column-gap:14px; row-gap:12px; direction:rtl; max-width:100%;
+  }
+  .cap-w {
+    display:inline-block; font-weight:800; font-size:58px; line-height:1.35;
+    color:#FFFFFF; background:rgba(13,13,13,0.62); border-radius:16px;
+    padding:6px 20px; white-space:nowrap;
+  }
+  .cap-w.kw {
+    font-family:'Manrope','Noto Kufi Arabic',sans-serif; direction:ltr;
+    background:#FF5A33; color:#FFFFFF;
+  }
+
+  /* ---- craft v3 ---- */
+  .s01-wrap { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; padding:80px 60px; }
+  .s01-kicker { font-size:34px; font-weight:600; color:#E8F3C8; background:rgba(19,96,82,.55); padding:10px 30px; border-radius:999px; border:1px solid #B3CE65; }
+  .s01-big { font-weight:800; font-size:150px; line-height:1.25; color:#FFEC5C; text-align:center; }
+  .s01-big .w { display:inline-block; margin:0 14px; }
+  .s01-bar { width:340px; height:10px; border-radius:6px; background:#FF5A33; transform-origin:center; }
+  .s01-sub { font-size:64px; font-weight:700; color:#FFFFFF; }
+  .s01-hl { font-family:'Manrope','Noto Kufi Arabic',sans-serif; color:#FF7A50; font-weight:800; }
+  .s01-chip { font-size:36px; color:#0D2B23; background:#B3CE65; font-weight:700; padding:12px 34px; border-radius:14px; }
+  .s05-wrap { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:36px; padding:80px 60px; }
+  .s05-money { font-family:'Manrope',sans-serif; font-size:170px; font-weight:800; color:#136052; line-height:1.05; }
+  .s05-bar { width:420px; height:10px; border-radius:6px; background:#FF5A33; }
+  .s05-sub { font-size:46px; font-weight:700; color:#2E6B4F; text-align:center; }
+  .s08-num { color:#D93A2B; font-size:190px; }
+  .s08-chip { font-size:36px; font-weight:700; color:#2E6B4F; background:#FFFFFF; border:2px solid #B3CE65; border-radius:14px; padding:14px 34px; }
+  .kw-latin { font-family:'Manrope',sans-serif; font-weight:800; color:#D93A2B; }
+  .s13-wrap { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; padding:70px 70px; }
+  .s13-kicker { font-size:42px; font-weight:800; color:#2E6B4F; }
+  .s13-card { width:100%; background:#FFFFFF; border:2px solid #B3CE65; border-radius:22px; padding:34px 40px; text-align:center; }
+  .s13-num { font-family:'Manrope',sans-serif; font-size:120px; font-weight:800; color:#136052; line-height:1.1; }
+  .s13-gpt { color:#D93A2B; font-size:104px; }
+  .s13-lbl { font-size:34px; color:#2E6B4F; font-weight:600; margin-top:8px; }
+  .s13-result { margin-top:12px; font-size:44px; font-weight:800; color:#D93A2B; background:#FFF; border:2px solid #FF5A33; border-radius:16px; padding:16px 36px; }
+  .q-wrap { position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:110px 90px; }
+  .q-mark { position:absolute; top:70px; right:70px; font-size:300px; line-height:1; color:#B3CE65; font-family:Georgia,serif; }
+  .q-line1 { font-size:88px; font-weight:700; color:#136052; line-height:1.5; }
+  .q-line2 { font-size:120px; font-weight:800; color:#D93A2B; line-height:1.35; }
+  .q-underline { width:300px; height:9px; border-radius:6px; background:#FF5A33; margin:26px 0 40px; transform-origin:right center; }
+  .q-attr { font-size:44px; font-weight:700; color:#2E6B4F; }
+  .q-role { font-size:30px; font-weight:700; color:#2E6B4F; opacity:.8; margin-top:8px; font-family:'Manrope',sans-serif; letter-spacing:.18em; }
+  .s30-wrap { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:38px; padding:80px 60px; }
+  .s30-q { font-size:60px; font-weight:700; color:#FFFFFF; }
+  .s30-big { font-size:110px; font-weight:800; color:#FFEC5C; text-align:center; line-height:1.3; }
+  .s30-chip { font-size:36px; font-weight:700; color:#0D2B23; background:#B3CE65; border-radius:14px; padding:14px 34px; }
+  .s31-wrap { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; padding:80px 60px; }
+  .s31-kicker { font-size:34px; font-weight:600; color:#E8F3C8; border:1px solid #B3CE65; border-radius:999px; padding:10px 30px; }
+  .s31-big { font-size:104px; font-weight:800; color:#FFFFFF; text-align:center; line-height:1.3; }
+  .s31-when { font-size:64px; font-weight:800; color:#FFEC5C; }
+  .s31-chip { font-size:38px; font-weight:700; color:#136052; background:#B3CE65; border-radius:14px; padding:14px 36px; }
+  .kw-orange { font-family:'Manrope','Noto Kufi Arabic',sans-serif; color:#FF7A50; font-weight:800; }
+  .kw-green { color:#B3CE65; }
+  .s29-wrap { position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:space-between; padding:70px 60px; }
+  .s29-txt { flex:1; display:flex; flex-direction:column; align-items:flex-start; padding-bottom:150px; }
+  .s29-l1 { font-size:92px; font-weight:700; color:#FFFFFF; line-height:1.45; }
+  .s29-l2 { font-size:126px; font-weight:800; color:#FFEC5C; line-height:1.3; }
+  .s29-hl { color:#FF7A50; }
+  .s29-underline { width:280px; height:9px; border-radius:6px; background:#FF5A33; margin:26px 0 36px; transform-origin:right center; }
+  .s29-attr { font-size:40px; font-weight:700; color:#E8F3C8; }
+  .s29-person { height:88%; object-fit:contain; object-position:bottom; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="266.03" data-fps="30">
+  <div id="sc-S01" class="clip" data-start="0.0" data-duration="3.0" data-track-index="1" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#0D2B23"></div>
+    <div class="scene-inner" id="sc-S01-inner">
+      <div class="s01-wrap" id="s01-inner">
+        <div class="s01-kicker" id="s01-kicker">خبر بيقلب الموازين</div>
+        <div class="s01-big" id="s01-big" dir="rtl"><span class="w">معضلة</span><span class="w">بمليون</span><span class="w">دولار</span></div>
+        <div class="s01-bar" id="s01-bar"></div>
+        <div class="s01-sub" id="s01-sub" dir="rtl">حلّها الذكاء الاصطناعي <span class="s01-hl">AI</span></div>
+        <div class="s01-chip" id="s01-chip" dir="rtl">90 سنة محدش عرف يحلها</div>
+      </div>
+    </div>
+  </div>
+  <img id="sc-S02" class="clip" src="assets/images/S02_first.png" data-start="3.0" data-duration="3.0" data-track-index="2" data-layout-allow-overflow alt="" />
+  <div id="sc-S02-grad" class="clip" data-start="3.0" data-duration="3.0" data-track-index="3" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S03" class="clip" src="assets/images/S03_first.png" data-start="6.0" data-duration="3.45" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S03-grad" class="clip" data-start="6.0" data-duration="3.45" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S04" class="clip" src="assets/images/S04_first.png" data-start="9.45" data-duration="4.61" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S04-grad" class="clip" data-start="9.45" data-duration="4.61" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S05" class="clip" data-start="14.06" data-duration="5.29" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#FFFFFF"></div>
+    <div class="scene-inner" id="sc-S05-inner">
+      <div class="s05-wrap" id="s05-inner">
+        <div class="s13-kicker" id="s05-kicker" dir="rtl">جايزة معهد كلاي للرياضيات</div>
+        <div class="s05-money" id="s05-money" dir="ltr">$<span id="s05-num">0</span></div>
+        <div class="s05-bar" id="s05-bar"></div>
+        <div class="s05-sub" id="s05-sub" dir="rtl">لأي حد يحل معادلات <span class="kw-latin">Navier–Stokes</span></div>
+      </div>
+    </div>
+  </div>
+  <img id="sc-S06" class="clip" src="assets/images/S06_first.png" data-start="19.35" data-duration="5.26" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S06-grad" class="clip" data-start="19.35" data-duration="5.26" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S07" class="clip" src="assets/images/S07_first.png" data-start="24.61" data-duration="7.0" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S07-grad" class="clip" data-start="24.61" data-duration="7.0" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S08" class="clip" data-start="31.61" data-duration="7.6" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#FAF7F0"></div>
+    <div class="scene-inner" id="sc-S08-inner">
+      <div class="s05-wrap" id="s08-inner">
+        <div class="s13-kicker" id="s08-kicker" dir="rtl"><span class="kw-latin">OpenAI</span> أعلنت</div>
+        <div class="s05-money s08-num" id="s08-num-wrap" dir="ltr"><span id="s08-num">0</span></div>
+        <div class="s05-sub" id="s08-sub" dir="rtl">موظف ذكاء اصطناعي شغالين بموديل واحد</div>
+        <div class="s08-chip" id="s08-chip" dir="rtl">بنفس الطريقة اللي فريق بشري بيشتغل بيها</div>
+      </div>
+    </div>
+  </div>
+  <img id="sc-S09" class="clip" src="assets/images/S09_first.png" data-start="39.21" data-duration="8.0" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S09-grad" class="clip" data-start="39.21" data-duration="8.0" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S10" class="clip" src="assets/images/S10_first.png" data-start="47.21" data-duration="13.0" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S10-grad" class="clip" data-start="47.21" data-duration="13.0" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S11" class="clip" data-start="60.21" data-duration="4.93" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#FFFFFF"></div>
+    <div class="scene-inner" id="sc-S11-inner">
+      <div class="scene-kicker" style="color:#C2431D">S11 &middot; explain &middot; motion_graphics</div>
+      <h2 class="scene-headline" style="color:#0D0D0D">تشغيل النظام الجماعي</h2>
+      <div class="scene-narr" style="color:#0D0D0D">وهم شغلوا الـ AI ده على</div>
+    </div>
+  </div>
+  <img id="sc-S12" class="clip" src="assets/images/S12_first.png" data-start="65.14" data-duration="8.01" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S12-grad" class="clip" data-start="65.14" data-duration="8.01" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S13" class="clip" data-start="73.15" data-duration="12.3" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#FAF7F0"></div>
+    <div class="scene-inner" id="sc-S13-inner">
+      <div class="s13-wrap" id="s13-inner">
+        <div class="s13-kicker" id="s13-kicker" dir="rtl">اللي حصل بالأرقام</div>
+        <div class="s13-card" id="s13-card1"><div class="s13-num" id="s13-n1">0</div><div class="s13-lbl" dir="rtl">وكيل AI شغالين مع بعض</div></div>
+        <div class="s13-card" id="s13-card2"><div class="s13-num" id="s13-n2">0</div><div class="s13-lbl" dir="rtl">ساعة شغل متواصل</div></div>
+        <div class="s13-card" id="s13-card3"><div class="s13-num s13-gpt" id="s13-n3">GPT-6</div><div class="s13-lbl" dir="rtl">الموديل اللي خلّى ده يحصل</div></div>
+        <div class="s13-result" id="s13-result" dir="rtl">النتيجة: مسألة بمليون دولار اتحلّت</div>
+      </div>
+    </div>
+  </div>
+  <div id="sc-S14" class="clip" data-start="85.45" data-duration="13.52" data-track-index="4" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#136052"></div>
+    <div class="scene-inner" id="sc-S14-inner">
+      <div class="scene-kicker" style="color:#E8F3C8">S14 &middot; explain &middot; motion_graphics</div>
+      <h2 class="scene-headline" style="color:#FFFFFF">3,000,000 رسالة متبادلة!</h2>
+      <div class="scene-narr" style="color:#FFFFFF">الـ 10,000 AI agent دول فضلوا شغالين لمدة 88 ساعة وفضلوا يتبادلوا الرسائل والـ chat بقرابة</div>
+    </div>
+  </div>
+  <div id="sc-S15" class="clip" data-start="98.97" data-duration="10.92" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#FAF7F0"></div>
+    <div class="scene-inner" id="sc-S15-inner">
+      <div class="q-wrap" id="s15-inner">
+        <div class="q-mark" id="s15-mark">❝</div>
+        <div class="q-line1" id="s15-l1" dir="rtl">مش عشان يستبدلك…</div>
+        <div class="q-line2" id="s15-l2" dir="rtl">علشان يساعدك</div>
+        <div class="q-underline" id="s15-ul"></div>
+        <div class="q-attr" id="s15-attr" dir="rtl">— حسام الدين حسن</div>
+        <div class="q-role" id="s15-role">AI Storyteller</div>
+      </div>
+    </div>
+  </div>
+  <img id="sc-S16" class="clip" src="assets/images/S16_first.png" data-start="109.89" data-duration="13.9" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S16-grad" class="clip" data-start="109.89" data-duration="13.9" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S17" class="clip" src="assets/images/S17_first.png" data-start="123.79" data-duration="6.45" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S17-grad" class="clip" data-start="123.79" data-duration="6.45" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S18" class="clip" src="assets/images/S18_first.png" data-start="130.24" data-duration="3.91" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S18-grad" class="clip" data-start="130.24" data-duration="3.91" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S19" class="clip" src="assets/images/S19_first.png" data-start="134.15" data-duration="7.04" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S19-grad" class="clip" data-start="134.15" data-duration="7.04" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S20" class="clip" data-start="141.19" data-duration="8.51" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#0D2B23"></div>
+    <div class="scene-inner" id="sc-S20-inner">
+      <div class="scene-kicker" style="color:#CFE3A0">S20 &middot; explain &middot; motion_graphics</div>
+      <h2 class="scene-headline" style="color:#FFEC5C">أصعب 7 معضلات في التاريخ</h2>
+      <div class="scene-narr" style="color:#FFEC5C">وبُتستخدم بشكل عام في الـ forecasting بتاع الجو وهكذا والمشكلة دي أو المعضلة دي كانت واحدة</div>
+    </div>
+  </div>
+  <img id="sc-S21" class="clip" src="assets/images/S21_first.png" data-start="149.7" data-duration="11.71" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S21-grad" class="clip" data-start="149.7" data-duration="11.71" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S22" class="clip" data-start="161.41" data-duration="4.22" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#136052"></div>
+    <div class="scene-inner" id="sc-S22-inner">
+      <div class="scene-kicker" style="color:#E8F3C8">S22 &middot; explain &middot; motion_graphics</div>
+      <h2 class="scene-headline" style="color:#FFFFFF">مسائل الألفية: مليون دولار</h2>
+      <div class="scene-narr" style="color:#FFFFFF">مشاكل الألفية وكل واحدة منهم عليها جايزة بمليون دولار</div>
+    </div>
+  </div>
+  <img id="sc-S23" class="clip" src="assets/images/S23_first.png" data-start="165.63" data-duration="4.73" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S23-grad" class="clip" data-start="165.63" data-duration="4.73" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S24" class="clip" src="assets/images/S24_first.png" data-start="170.36" data-duration="12.0" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S24-grad" class="clip" data-start="170.36" data-duration="12.0" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S25" class="clip" src="assets/images/S25_first.png" data-start="182.36" data-duration="15.26" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S25-grad" class="clip" data-start="182.36" data-duration="15.26" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S26" class="clip" data-start="197.62" data-duration="5.99" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#136052"></div>
+    <div class="scene-inner" id="sc-S26-inner">
+      <div class="scene-kicker" style="color:#E8F3C8">S26 &middot; explain &middot; motion_graphics</div>
+      <h2 class="scene-headline" style="color:#FFFFFF">أكبر من مجرد كتابة إيميلات!</h2>
+      <div class="scene-narr" style="color:#FFFFFF">الـ AI مش بس بيكتب يا جماعة إيميلات أو ينجزلك شوية تاسكات صغيرة،</div>
+    </div>
+  </div>
+  <img id="sc-S27" class="clip" src="assets/images/S27_first.png" data-start="203.61" data-duration="10.26" data-track-index="4" data-layout-allow-overflow alt="" />
+  <div id="sc-S27-grad" class="clip" data-start="203.61" data-duration="10.26" data-track-index="5" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <img id="sc-S28" class="clip" src="assets/images/S28_first.png" data-start="213.87" data-duration="12.85" data-track-index="3" data-layout-allow-overflow alt="" />
+  <div id="sc-S28-grad" class="clip" data-start="213.87" data-duration="12.85" data-track-index="4" style="background:linear-gradient(180deg, rgba(13,43,35,0) 55%, rgba(13,43,35,0.55) 100%)"></div>
+  <div id="sc-S30" class="clip" data-start="242.59" data-duration="9.42" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#0D2B23"></div>
+    <div class="scene-inner" id="sc-S30-inner">
+      <div class="s30-wrap" id="s30-inner">
+        <div class="s30-q" id="s30-q" dir="rtl">عندك هدف عايز تحققه بـ <span class="kw-orange">AI</span>؟</div>
+        <div class="s30-big" id="s30-big" dir="rtl">اكتبهولي في الكومنتات</div>
+        <div class="s01-bar" id="s30-bar"></div>
+        <div class="s30-chip" id="s30-chip" dir="rtl">أرد على كل الكومنتات واحد واحد</div>
+      </div>
+    </div>
+  </div>
+  <div id="sc-S31" class="clip" data-start="252.01" data-duration="13.42" data-track-index="4" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:#136052"></div>
+    <div class="scene-inner" id="sc-S31-inner">
+      <div class="s31-wrap" id="s31-inner">
+        <div class="s31-kicker" id="s31-kicker" dir="rtl">بودكاست أخبار التقنية</div>
+        <div class="s31-big" id="s31-big" dir="rtl">أخبار الـ <span class="kw-orange">AI</span> الأسبوعية</div>
+        <div class="s31-when" id="s31-when" dir="rtl">كل يوم سبت — <span class="kw-green">7 مساءً</span></div>
+        <div class="s31-chip" id="s31-chip" dir="rtl">فولو عشان ماتفوتش حلقة</div>
+      </div>
+    </div>
+  </div>
+  <div id="cap-000" class="clip cap" data-start="2.5" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w">حل</span><span class="cap-w">مسألة</span></div></div>
+  <div id="cap-001" class="clip cap" data-start="3.5" data-duration="2.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بمليون</span><span class="cap-w">دولار</span><span class="cap-w kw">AI</span></div></div>
+  <div id="cap-002" class="clip cap" data-start="6.4" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">حل</span><span class="cap-w">مسألة</span><span class="cap-w">بمليون</span></div></div>
+  <div id="cap-003" class="clip cap" data-start="7.4" data-duration="4.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دولار</span><span class="cap-w kw">AI</span><span class="cap-w">قدر</span></div></div>
+  <div id="cap-004" class="clip cap" data-start="11.8" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يحل</span><span class="cap-w">مسألة</span><span class="cap-w">كانت</span></div></div>
+  <div id="cap-005" class="clip cap" data-start="12.9" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">صعبة</span><span class="cap-w">علينا</span><span class="cap-w">90</span></div></div>
+  <div id="cap-006" class="clip cap" data-start="14.2" data-duration="3.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">سنة</span><span class="cap-w">ده</span><span class="cap-w">غير</span></div></div>
+  <div id="cap-007" class="clip cap" data-start="18.1" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إن</span><span class="cap-w">هو</span><span class="cap-w">كسب</span></div></div>
+  <div id="cap-008" class="clip cap" data-start="18.9" data-duration="11.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مليون</span><span class="cap-w">دولار</span><span class="cap-w">الـ</span></div></div>
+  <div id="cap-009" class="clip cap" data-start="30.3" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w">ده</span><span class="cap-w">قدر</span></div></div>
+  <div id="cap-010" class="clip cap" data-start="31.2" data-duration="2.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يحل</span><span class="cap-w">مشكلة</span><span class="cap-w">الـ</span></div></div>
+  <div id="cap-011" class="clip cap" data-start="33.2" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w">ده</span><span class="cap-w">قدر</span></div></div>
+  <div id="cap-012" class="clip cap" data-start="33.9" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يحل</span><span class="cap-w">مشكلة</span><span class="cap-w">كانت</span></div></div>
+  <div id="cap-013" class="clip cap" data-start="34.7" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">صعبة</span><span class="cap-w">علينا</span><span class="cap-w">لـ</span></div></div>
+  <div id="cap-014" class="clip cap" data-start="35.5" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">90</span><span class="cap-w">سنة</span><span class="cap-w">ومحطوط</span></div></div>
+  <div id="cap-015" class="clip cap" data-start="36.6" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لها</span><span class="cap-w">جائزة</span><span class="cap-w">بمليون</span></div></div>
+  <div id="cap-016" class="clip cap" data-start="37.5" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دولار</span><span class="cap-w">ده</span><span class="cap-w">اللي</span></div></div>
+  <div id="cap-017" class="clip cap" data-start="38.4" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">OpenAI</span><span class="cap-w">أعلنت</span><span class="cap-w">عليه</span></div></div>
+  <div id="cap-018" class="clip cap" data-start="39.6" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">من</span><span class="cap-w">أقل</span><span class="cap-w">من</span></div></div>
+  <div id="cap-019" class="clip cap" data-start="40.3" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يوم</span><span class="cap-w">إن</span><span class="cap-w">10000</span></div></div>
+  <div id="cap-020" class="clip cap" data-start="41.4" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">موظف</span><span class="cap-w">ذكاء</span><span class="cap-w">اصطناعي</span></div></div>
+  <div id="cap-021" class="clip cap" data-start="42.6" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">اشتغلوا</span><span class="cap-w">عندها</span><span class="cap-w">بنموذج</span></div></div>
+  <div id="cap-022" class="clip cap" data-start="44.0" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w">ما</span><span class="cap-w">تمش</span></div></div>
+  <div id="cap-023" class="clip cap" data-start="46.5" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ده</span><span class="cap-w">اللي</span><span class="cap-w kw">OpenAI</span></div></div>
+  <div id="cap-024" class="clip cap" data-start="47.3" data-duration="0.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أطلـ...</span></div></div>
+  <div id="cap-025" class="clip cap" data-start="47.8" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ده</span><span class="cap-w">اللي</span><span class="cap-w kw">OpenAI</span></div></div>
+  <div id="cap-026" class="clip cap" data-start="48.7" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أعلنت</span><span class="cap-w">عنه</span><span class="cap-w">من</span></div></div>
+  <div id="cap-027" class="clip cap" data-start="49.5" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أقل</span><span class="cap-w">من</span><span class="cap-w">يوم</span></div></div>
+  <div id="cap-028" class="clip cap" data-start="50.3" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وده</span><span class="cap-w">بعد</span><span class="cap-w">إطلاق</span></div></div>
+  <div id="cap-029" class="clip cap" data-start="51.3" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الـ</span><span class="cap-w kw">GPT</span><span class="cap-w">6</span></div></div>
+  <div id="cap-030" class="clip cap" data-start="52.2" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الجديد</span><span class="cap-w">قالوا</span><span class="cap-w">إن</span></div></div>
+  <div id="cap-031" class="clip cap" data-start="53.2" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عندهم</span><span class="cap-w">ذكاء</span><span class="cap-w">اصطناعي</span></div></div>
+  <div id="cap-032" class="clip cap" data-start="54.3" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">تاني</span><span class="cap-w">أذكى</span><span class="cap-w">منه</span></div></div>
+  <div id="cap-033" class="clip cap" data-start="55.3" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ولكن</span><span class="cap-w">ما</span><span class="cap-w">حدش</span></div></div>
+  <div id="cap-034" class="clip cap" data-start="56.2" data-duration="1.6" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عنده</span><span class="cap-w">القدرة</span><span class="cap-w">يستخدمه</span></div></div>
+  <div id="cap-035" class="clip cap" data-start="59.5" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وهم</span><span class="cap-w">شغلوا</span><span class="cap-w">الـ</span></div></div>
+  <div id="cap-036" class="clip cap" data-start="60.4" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w kw">Agent</span><span class="cap-w">ده</span></div></div>
+  <div id="cap-037" class="clip cap" data-start="111.01" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">فلو</span><span class="cap-w">أنت</span><span class="cap-w">انبهرت</span></div></div>
+  <div id="cap-038" class="clip cap" data-start="111.81" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بـ</span><span class="cap-w kw">GPT-6</span><span class="cap-w">اللي</span></div></div>
+  <div id="cap-039" class="clip cap" data-start="112.71" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إحنا</span><span class="cap-w">لسه...</span></div></div>
+  <div id="cap-040" class="clip cap" data-start="114.01" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">فلو</span><span class="cap-w">أنت...</span></div></div>
+  <div id="cap-041" class="clip cap" data-start="115.01" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">فلو</span><span class="cap-w">أنت</span><span class="cap-w">انبهرت</span></div></div>
+  <div id="cap-042" class="clip cap" data-start="115.81" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بالـ</span><span class="cap-w kw">GPT-6</span><span class="cap-w">اللي</span></div></div>
+  <div id="cap-043" class="clip cap" data-start="116.81" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لسه</span><span class="cap-w">طالع</span><span class="cap-w">فالموديل</span></div></div>
+  <div id="cap-044" class="clip cap" data-start="118.01" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ده</span><span class="cap-w">المفروض</span><span class="cap-w">يكون</span></div></div>
+  <div id="cap-045" class="clip cap" data-start="119.01" data-duration="0.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مبهر.</span></div></div>
+  <div id="cap-046" class="clip cap" data-start="119.51" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ولكن</span><span class="cap-w">واضح</span><span class="cap-w">إن</span></div></div>
+  <div id="cap-047" class="clip cap" data-start="120.51" data-duration="1.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">OpenAI</span><span class="cap-w">بتختبر</span><span class="cap-w">نماذج</span></div></div>
+  <div id="cap-048" class="clip cap" data-start="122.01" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">داخلية</span><span class="cap-w">مش</span><span class="cap-w">هنقدر</span></div></div>
+  <div id="cap-049" class="clip cap" data-start="123.11" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">نشوفها</span><span class="cap-w">غير</span><span class="cap-w">بعد</span><span class="cap-w">فترة.</span></div></div>
+  <div id="cap-050" class="clip cap" data-start="124.51" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">المهم</span><span class="cap-w">لو</span><span class="cap-w">رجعنا</span></div></div>
+  <div id="cap-051" class="clip cap" data-start="125.51" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">للمشكلة</span><span class="cap-w">اللي</span><span class="cap-w">الـ</span></div></div>
+  <div id="cap-052" class="clip cap" data-start="126.41" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w kw">agent</span><span class="cap-w">دول</span></div></div>
+  <div id="cap-053" class="clip cap" data-start="127.41" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">قدروا</span><span class="cap-w">يحلوها</span><span class="cap-w">فاسمها</span></div></div>
+  <div id="cap-054" class="clip cap" data-start="128.81" data-duration="2.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">Navier-Stokes</span><span class="cap-w">ودي</span><span class="cap-w">معادلات</span></div></div>
+  <div id="cap-055" class="clip cap" data-start="131.01" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بتوصف</span><span class="cap-w">حركة</span><span class="cap-w">المية</span></div></div>
+  <div id="cap-056" class="clip cap" data-start="132.31" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">والهوا</span><span class="cap-w">مع</span><span class="cap-w">بعض</span></div></div>
+  <div id="cap-057" class="clip cap" data-start="133.31" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وبتستخدم</span><span class="cap-w">في</span><span class="cap-w">التنبؤ</span></div></div>
+  <div id="cap-058" class="clip cap" data-start="134.51" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بالجو</span><span class="cap-w">والـ</span><span class="cap-w kw">climate</span></div></div>
+  <div id="cap-059" class="clip cap" data-start="135.71" data-duration="4.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">change</span><span class="cap-w">وغيره</span><span class="cap-w">وبتسـ...</span></div></div>
+  <div id="cap-060" class="clip cap" data-start="141.01" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وبتستخدم</span><span class="cap-w">بشكل</span><span class="cap-w">عام</span></div></div>
+  <div id="cap-061" class="clip cap" data-start="142.21" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">في</span><span class="cap-w">الـ</span><span class="cap-w kw">forecasting</span></div></div>
+  <div id="cap-062" class="clip cap" data-start="143.21" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بتاع</span><span class="cap-w">الجو</span><span class="cap-w">وهكذا.</span></div></div>
+  <div id="cap-063" class="clip cap" data-start="144.51" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">والمشكلة</span><span class="cap-w">دي</span><span class="cap-w">أو</span></div></div>
+  <div id="cap-064" class="clip cap" data-start="145.41" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">المعضلة</span><span class="cap-w">دي</span><span class="cap-w">كانت</span></div></div>
+  <div id="cap-065" class="clip cap" data-start="146.51" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">واحدة</span><span class="cap-w">من</span><span class="cap-w">7</span></div></div>
+  <div id="cap-066" class="clip cap" data-start="147.41" data-duration="1.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مشاكل</span><span class="cap-w">رياضية</span><span class="cap-w">سميتها</span></div></div>
+  <div id="cap-067" class="clip cap" data-start="149.11" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أو</span><span class="cap-w">سـ...</span></div></div>
+  <div id="cap-068" class="clip cap" data-start="150.02" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">والمعضلة</span><span class="cap-w">دي</span><span class="cap-w">كانت</span></div></div>
+  <div id="cap-069" class="clip cap" data-start="151.32" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">واحدة</span><span class="cap-w">من</span><span class="cap-w">سبع</span></div></div>
+  <div id="cap-070" class="clip cap" data-start="152.12" data-duration="1.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مشاكل</span><span class="cap-w">رياضية</span><span class="cap-w">سميتها</span></div></div>
+  <div id="cap-071" class="clip cap" data-start="154.52" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">والمشكلة</span><span class="cap-w">دي</span><span class="cap-w">تعتبر</span></div></div>
+  <div id="cap-072" class="clip cap" data-start="155.82" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">واحدة</span><span class="cap-w">من</span><span class="cap-w">سبع</span></div></div>
+  <div id="cap-073" class="clip cap" data-start="156.62" data-duration="1.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">معضلات</span><span class="cap-w">رياضية</span><span class="cap-w">سماها</span></div></div>
+  <div id="cap-074" class="clip cap" data-start="158.12" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">معهد</span><span class="cap-w">كلاي</span><span class="cap-w">إنها</span></div></div>
+  <div id="cap-075" class="clip cap" data-start="159.12" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مشاكل</span><span class="cap-w">الألفية</span></div></div>
+  <div id="cap-076" class="clip cap" data-start="161.02" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وكل</span><span class="cap-w">واحدة</span><span class="cap-w">منهم</span></div></div>
+  <div id="cap-077" class="clip cap" data-start="161.92" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عليها</span><span class="cap-w">جائزة</span><span class="cap-w">بمليون</span></div></div>
+  <div id="cap-078" class="clip cap" data-start="163.22" data-duration="5.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دولار</span><span class="cap-w">طبعاً</span><span class="cap-w">في</span></div></div>
+  <div id="cap-079" class="clip cap" data-start="168.22" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ضجة</span><span class="cap-w">إنه</span><span class="cap-w">في</span></div></div>
+  <div id="cap-080" class="clip cap" data-start="169.02" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بعض</span><span class="cap-w">الـ</span><span class="cap-w">طبعاً</span></div></div>
+  <div id="cap-081" class="clip cap" data-start="170.32" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">في</span><span class="cap-w">ضجة</span><span class="cap-w">حصلت</span></div></div>
+  <div id="cap-082" class="clip cap" data-start="171.22" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وطلع</span><span class="cap-w">باحث</span><span class="cap-w">بعد</span></div></div>
+  <div id="cap-083" class="clip cap" data-start="172.12" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">كده</span><span class="cap-w">قال</span><span class="cap-w">إنه</span></div></div>
+  <div id="cap-084" class="clip cap" data-start="172.92" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">هو</span><span class="cap-w">كان</span><span class="cap-w">شغال</span></div></div>
+  <div id="cap-085" class="clip cap" data-start="173.72" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">على</span><span class="cap-w">حل</span><span class="cap-w">المشكلة</span></div></div>
+  <div id="cap-086" class="clip cap" data-start="174.62" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دي</span><span class="cap-w">وإنه</span><span class="cap-w">بيتهم</span></div></div>
+  <div id="cap-087" class="clip cap" data-start="175.62" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">OpenAI</span><span class="cap-w">في</span><span class="cap-w">إن</span></div></div>
+  <div id="cap-088" class="clip cap" data-start="176.82" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">هما</span><span class="cap-w">سرقوا</span><span class="cap-w">الشغل</span></div></div>
+  <div id="cap-089" class="clip cap" data-start="177.92" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بتاعه</span><span class="cap-w">لكن</span><span class="cap-w">دي</span></div></div>
+  <div id="cap-090" class="clip cap" data-start="179.02" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">قصة</span><span class="cap-w">أنا</span><span class="cap-w">ما</span></div></div>
+  <div id="cap-091" class="clip cap" data-start="179.92" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عندييش</span><span class="cap-w">يعني</span><span class="cap-w">أو</span></div></div>
+  <div id="cap-092" class="clip cap" data-start="180.92" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مش</span><span class="cap-w">مهتم</span><span class="cap-w">بيها</span></div></div>
+  <div id="cap-093" class="clip cap" data-start="181.82" data-duration="1.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دلوقتي</span><span class="cap-w">اللي</span><span class="cap-w">يهمني</span></div></div>
+  <div id="cap-094" class="clip cap" data-start="183.52" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دلوقتي</span><span class="cap-w">هو</span><span class="cap-w">إن</span></div></div>
+  <div id="cap-095" class="clip cap" data-start="184.32" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الـ</span><span class="cap-w kw">AI</span><span class="cap-w">وصل</span></div></div>
+  <div id="cap-096" class="clip cap" data-start="185.32" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لمرحلة</span><span class="cap-w">مرعبة</span><span class="cap-w">جداً</span></div></div>
+  <div id="cap-097" class="clip cap" data-start="186.62" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يا</span><span class="cap-w">جماعة</span><span class="cap-w">ذكاء</span></div></div>
+  <div id="cap-098" class="clip cap" data-start="187.52" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">اصطناعي</span><span class="cap-w">قادر</span><span class="cap-w">يشتغل</span></div></div>
+  <div id="cap-099" class="clip cap" data-start="188.92" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لساعات</span><span class="cap-w">طويلة</span><span class="cap-w">جداً</span></div></div>
+  <div id="cap-100" class="clip cap" data-start="190.12" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يوازي</span><span class="cap-w">مجهود</span><span class="cap-w">بشر</span></div></div>
+  <div id="cap-101" class="clip cap" data-start="191.32" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لشهور</span><span class="cap-w">أو</span><span class="cap-w">سنوات</span></div></div>
+  <div id="cap-102" class="clip cap" data-start="192.62" data-duration="1.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ويطلع</span><span class="cap-w">نتائج</span><span class="cap-w">لأمور</span></div></div>
+  <div id="cap-103" class="clip cap" data-start="194.12" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">يمكن</span><span class="cap-w">صعب</span><span class="cap-w">علينا</span></div></div>
+  <div id="cap-104" class="clip cap" data-start="195.22" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إحنا</span><span class="cap-w">نفسنا</span><span class="cap-w">نحلها</span></div></div>
+  <div id="cap-105" class="clip cap" data-start="201.22" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الـ</span><span class="cap-w kw">AI</span><span class="cap-w">مش</span></div></div>
+  <div id="cap-106" class="clip cap" data-start="202.02" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بس</span><span class="cap-w">بيكتب</span><span class="cap-w">يا</span></div></div>
+  <div id="cap-107" class="clip cap" data-start="202.82" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">جماعة</span><span class="cap-w">إيميلات</span><span class="cap-w">أو</span></div></div>
+  <div id="cap-108" class="clip cap" data-start="203.82" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ينجزلك</span><span class="cap-w">شوية</span><span class="cap-w">تاسكات</span></div></div>
+  <div id="cap-109" class="clip cap" data-start="205.12" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">صغيرة</span><span class="cap-w">إنت</span><span class="cap-w">فعلياً</span></div></div>
+  <div id="cap-110" class="clip cap" data-start="206.42" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ممكن</span><span class="cap-w">تبني</span><span class="cap-w">موظف</span></div></div>
+  <div id="cap-111" class="clip cap" data-start="207.52" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">متكامل</span><span class="cap-w">أو</span><span class="cap-w">شريك</span></div></div>
+  <div id="cap-112" class="clip cap" data-start="208.72" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لشغل</span><span class="cap-w">معين</span><span class="cap-w">أو</span></div></div>
+  <div id="cap-113" class="clip cap" data-start="209.72" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">زميل</span><span class="cap-w">ليك</span><span class="cap-w">يساعدك</span></div></div>
+  <div id="cap-114" class="clip cap" data-start="210.82" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">في</span><span class="cap-w">حاجة</span><span class="cap-w">أو</span></div></div>
+  <div id="cap-115" class="clip cap" data-start="211.62" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">مساعد</span><span class="cap-w">شخصي</span><span class="cap-w">ينجز</span></div></div>
+  <div id="cap-116" class="clip cap" data-start="213.02" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عليك</span><span class="cap-w">بعض</span><span class="cap-w">الشغل</span></div></div>
+  <div id="cap-117" class="clip cap" data-start="214.52" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ولكن</span><span class="cap-w">الخبر</span><span class="cap-w">الأخير</span></div></div>
+  <div id="cap-118" class="clip cap" data-start="215.82" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ده</span><span class="cap-w">بيوريلك</span><span class="cap-w">إنه</span></div></div>
+  <div id="cap-119" class="clip cap" data-start="216.82" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الموضوع</span><span class="cap-w">مبيقفش</span><span class="cap-w">عند</span></div></div>
+  <div id="cap-120" class="clip cap" data-start="218.12" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">تاسك</span><span class="cap-w">ممكن</span><span class="cap-w">تاخد</span></div></div>
+  <div id="cap-121" class="clip cap" data-start="219.22" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">تلات</span><span class="cap-w">أربع</span><span class="cap-w">خمس</span></div></div>
+  <div id="cap-122" class="clip cap" data-start="220.12" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دقايق</span><span class="cap-w">أو</span><span class="cap-w">حتى</span></div></div>
+  <div id="cap-123" class="clip cap" data-start="221.12" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">نص</span><span class="cap-w">ساعة</span><span class="cap-w">لا</span></div></div>
+  <div id="cap-124" class="clip cap" data-start="222.02" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الموضوع</span><span class="cap-w">ممكن</span><span class="cap-w">يتقدم</span></div></div>
+  <div id="cap-125" class="clip cap" data-start="223.32" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إلى</span><span class="cap-w">شغل</span><span class="cap-w">بياخد</span></div></div>
+  <div id="cap-126" class="clip cap" data-start="224.32" data-duration="1.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">شهور</span><span class="cap-w">بل</span><span class="cap-w">سنين</span></div></div>
+  <div id="cap-127" class="clip cap" data-start="226.12" data-duration="1.6" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">طويلة</span><span class="cap-w">والهدف</span><span class="cap-w">من</span></div></div>
+  <div id="cap-128" class="clip cap" data-start="227.72" data-duration="0.6" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إن</span><span class="cap-w">أنا</span><span class="cap-w">أقول</span></div></div>
+  <div id="cap-129" class="clip cap" data-start="228.32" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">لك</span><span class="cap-w">على</span><span class="cap-w">الخبر</span></div></div>
+  <div id="cap-130" class="clip cap" data-start="229.02" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ده</span><span class="cap-w">إن</span><span class="cap-w">أعرفك</span></div></div>
+  <div id="cap-131" class="clip cap" data-start="229.72" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بالجديد</span><span class="cap-w">وفي</span><span class="cap-w">نفس</span></div></div>
+  <div id="cap-132" class="clip cap" data-start="230.62" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">الوقت</span><span class="cap-w">أقول</span><span class="cap-w">لك</span></div></div>
+  <div id="cap-133" class="clip cap" data-start="231.42" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إن</span><span class="cap-w">أنت</span><span class="cap-w">لازم</span></div></div>
+  <div id="cap-134" class="clip cap" data-start="232.12" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">دلوقتي</span><span class="cap-w">تستثمر</span><span class="cap-w">في</span></div></div>
+  <div id="cap-135" class="clip cap" data-start="233.42" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">نفسك</span><span class="cap-w">تعرف</span><span class="cap-w">إزاي</span></div></div>
+  <div id="cap-136" class="clip cap" data-start="234.82" data-duration="1.3" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">تستخدم</span><span class="cap-w">ال</span><span class="cap-w kw">AI</span></div></div>
+  <div id="cap-137" class="clip cap" data-start="236.12" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">بشكل</span><span class="cap-w">ذكي</span><span class="cap-w">مش</span></div></div>
+  <div id="cap-138" class="clip cap" data-start="237.32" data-duration="1.5" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عشان</span><span class="cap-w">يستبدلك</span><span class="cap-w">بل</span></div></div>
+  <div id="cap-139" class="clip cap" data-start="238.82" data-duration="1.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">علشان</span><span class="cap-w">يساعدك</span><span class="cap-w">وتقدر</span></div></div>
+  <div id="cap-140" class="clip cap" data-start="240.52" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">إن</span><span class="cap-w">أنت</span><span class="cap-w">تسبق</span></div></div>
+  <div id="cap-141" class="clip cap" data-start="241.42" data-duration="1.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">وتحقق</span><span class="cap-w">أهدافك</span><span class="cap-w">وده</span></div></div>
+  <div id="cap-142" class="clip cap" data-start="243.32" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">اللي</span><span class="cap-w">أنا</span><span class="cap-w">بحاول</span></div></div>
+  <div id="cap-143" class="clip cap" data-start="244.12" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أعمله</span><span class="cap-w">هنا</span><span class="cap-w">أنا</span></div></div>
+  <div id="cap-144" class="clip cap" data-start="245.02" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">حسام</span><span class="cap-w">الدين</span><span class="cap-w">حسن</span></div></div>
+  <div id="cap-145" class="clip cap" data-start="245.82" data-duration="0.6" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">اتأكد</span><span class="cap-w">تعمل</span><span class="cap-w">لي</span></div></div>
+  <div id="cap-146" class="clip cap" data-start="246.42" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">فولو</span><span class="cap-w">ولو</span><span class="cap-w">عندك</span></div></div>
+  <div id="cap-147" class="clip cap" data-start="247.12" data-duration="1.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">تحدي</span><span class="cap-w">معين</span><span class="cap-w">بيواجهك</span></div></div>
+  <div id="cap-148" class="clip cap" data-start="248.52" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أو</span><span class="cap-w">هدف</span><span class="cap-w">عايز</span></div></div>
+  <div id="cap-149" class="clip cap" data-start="249.32" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">تحققه</span><span class="cap-w">بمساعدة</span><span class="cap-w">ال</span></div></div>
+  <div id="cap-150" class="clip cap" data-start="250.52" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w kw">AI</span><span class="cap-w">عرفه</span><span class="cap-w">لي</span></div></div>
+  <div id="cap-151" class="clip cap" data-start="251.22" data-duration="0.6" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">في</span><span class="cap-w">التعليقات</span><span class="cap-w">ولو</span></div></div>
+  <div id="cap-152" class="clip cap" data-start="251.82" data-duration="0.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">عايز</span><span class="cap-w">تعرف</span><span class="cap-w">كل</span></div></div>
+  <div id="cap-153" class="clip cap" data-start="252.62" data-duration="0.7" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">ما</span><span class="cap-w">هو</span><span class="cap-w">جديد</span></div></div>
+  <div id="cap-154" class="clip cap" data-start="253.32" data-duration="0.4" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">اتـ...</span></div></div>
+  <div id="cap-155" class="clip cap" data-start="253.72" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أنا</span><span class="cap-w">كنت</span><span class="cap-w">شكلي</span></div></div>
+  <div id="cap-156" class="clip cap" data-start="254.82" data-duration="1.2" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">هقول</span><span class="cap-w">لهم</span><span class="cap-w">أخبار</span></div></div>
+  <div id="cap-157" class="clip cap" data-start="256.02" data-duration="1.8" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">السبت</span><span class="cap-w">أصلاً</span><span class="cap-w">وبالمناسبة</span></div></div>
+  <div id="cap-158" class="clip cap" data-start="257.82" data-duration="0.9" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أنا</span><span class="cap-w">بجمع</span><span class="cap-w">لك</span></div></div>
+  <div id="cap-159" class="clip cap" data-start="258.72" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">أخبار</span><span class="cap-w">ال</span><span class="cap-w kw">AI</span></div></div>
+  <div id="cap-160" class="clip cap" data-start="259.72" data-duration="1.0" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">كل</span><span class="cap-w">أسبوع</span><span class="cap-w">الساعة</span></div></div>
+  <div id="cap-161" class="clip cap" data-start="260.72" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">7</span><span class="cap-w">يوم</span><span class="cap-w">السبت</span></div></div>
+  <div id="cap-162" class="clip cap" data-start="261.82" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">فأتأكد</span><span class="cap-w">تكون</span><span class="cap-w">عامل</span></div></div>
+  <div id="cap-163" class="clip cap" data-start="262.92" data-duration="1.1" data-track-index="15" data-layout-allow-overflow data-layout-allow-caption-zone style="bottom:5.5%"><div class="cap-inner"><span class="cap-w">فولو</span><span class="cap-w">وتتابع</span><span class="cap-w">البودكاست</span></div></div>
+
+<div id="sc-S29" class="clip" data-start="226.72" data-duration="15.87" data-track-index="3" data-layout-allow-overflow>
+    <div class="scene-fill" style="background:linear-gradient(150deg,#0D2B23 0%,#136052 100%)"></div>
+    <div class="s29-wrap" id="s29-inner">
+      <div class="s29-txt">
+        <div class="s29-l1" id="s29-l1" dir="rtl">مش عشان يستبدلك</div>
+        <div class="s29-l2" id="s29-l2" dir="rtl">علشان <span class="s29-hl">يساعدك</span></div>
+        <div class="s29-underline" id="s29-ul"></div>
+        <div class="s29-attr" id="s29-attr" dir="rtl">— حسام الدين حسن</div>
+      </div>
+      <img class="s29-person" id="s29-person" src="assets/images/S29_first.png" alt="" />
+    </div>
+  </div>
+  <audio id="voiceover" src="assets/voice/voiceover_clean.wav" data-start="0" data-duration="265.43" data-track-index="10" data-volume="1"></audio>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#sc-S02", {scale:1.02}, {scale:1.1, duration:3.0, ease:"none"}, 3.0);
+  tl.fromTo("#sc-S03", {scale:1.02}, {scale:1.1, duration:3.45, ease:"none"}, 6.0);
+  tl.fromTo("#sc-S04", {scale:1.02}, {scale:1.1, duration:4.61, ease:"none"}, 9.45);
+  tl.fromTo("#sc-S06", {scale:1.02}, {scale:1.1, duration:5.26, ease:"none"}, 19.35);
+  tl.fromTo("#sc-S07", {scale:1.02}, {scale:1.1, duration:7.0, ease:"none"}, 24.61);
+  tl.fromTo("#sc-S09", {scale:1.02}, {scale:1.1, duration:8.0, ease:"none"}, 39.21);
+  tl.fromTo("#sc-S10", {scale:1.02}, {scale:1.1, duration:13.0, ease:"none"}, 47.21);
+  tl.fromTo("#sc-S11-inner .scene-headline", {y:60, opacity:0}, {y:0, opacity:1, duration:0.55, ease:"power3.out"}, 60.36);
+  tl.fromTo("#sc-S11-inner .scene-kicker", {opacity:0}, {opacity:1, duration:0.4}, 60.21);
+  tl.fromTo("#sc-S11-inner .scene-narr", {y:30, opacity:0}, {y:0, opacity:0.95, duration:0.5, ease:"power2.out"}, 60.56);
+  tl.fromTo("#sc-S12", {scale:1.02}, {scale:1.1, duration:8.01, ease:"none"}, 65.14);
+  tl.fromTo("#sc-S14-inner .scene-headline", {y:60, opacity:0}, {y:0, opacity:1, duration:0.55, ease:"power3.out"}, 85.60000000000001);
+  tl.fromTo("#sc-S14-inner .scene-kicker", {opacity:0}, {opacity:1, duration:0.4}, 85.45);
+  tl.fromTo("#sc-S14-inner .scene-narr", {y:30, opacity:0}, {y:0, opacity:0.95, duration:0.5, ease:"power2.out"}, 85.8);
+  tl.fromTo("#sc-S16", {scale:1.02}, {scale:1.1, duration:13.9, ease:"none"}, 109.89);
+  tl.fromTo("#sc-S17", {scale:1.02}, {scale:1.1, duration:6.45, ease:"none"}, 123.79);
+  tl.fromTo("#sc-S18", {scale:1.02}, {scale:1.1, duration:3.91, ease:"none"}, 130.24);
+  tl.fromTo("#sc-S19", {scale:1.02}, {scale:1.1, duration:7.04, ease:"none"}, 134.15);
+  tl.fromTo("#sc-S20-inner .scene-headline", {y:60, opacity:0}, {y:0, opacity:1, duration:0.55, ease:"power3.out"}, 141.34);
+  tl.fromTo("#sc-S20-inner .scene-kicker", {opacity:0}, {opacity:1, duration:0.4}, 141.19);
+  tl.fromTo("#sc-S20-inner .scene-narr", {y:30, opacity:0}, {y:0, opacity:0.95, duration:0.5, ease:"power2.out"}, 141.54);
+  tl.fromTo("#sc-S21", {scale:1.02}, {scale:1.1, duration:11.71, ease:"none"}, 149.7);
+  tl.fromTo("#sc-S22-inner .scene-headline", {y:60, opacity:0}, {y:0, opacity:1, duration:0.55, ease:"power3.out"}, 161.56);
+  tl.fromTo("#sc-S22-inner .scene-kicker", {opacity:0}, {opacity:1, duration:0.4}, 161.41);
+  tl.fromTo("#sc-S22-inner .scene-narr", {y:30, opacity:0}, {y:0, opacity:0.95, duration:0.5, ease:"power2.out"}, 161.76);
+  tl.fromTo("#sc-S23", {scale:1.02}, {scale:1.1, duration:4.73, ease:"none"}, 165.63);
+  tl.fromTo("#sc-S24", {scale:1.02}, {scale:1.1, duration:12.0, ease:"none"}, 170.36);
+  tl.fromTo("#sc-S25", {scale:1.02}, {scale:1.1, duration:15.26, ease:"none"}, 182.36);
+  tl.fromTo("#sc-S26-inner .scene-headline", {y:60, opacity:0}, {y:0, opacity:1, duration:0.55, ease:"power3.out"}, 197.77);
+  tl.fromTo("#sc-S26-inner .scene-kicker", {opacity:0}, {opacity:1, duration:0.4}, 197.62);
+  tl.fromTo("#sc-S26-inner .scene-narr", {y:30, opacity:0}, {y:0, opacity:0.95, duration:0.5, ease:"power2.out"}, 197.97);
+  tl.fromTo("#sc-S27", {scale:1.02}, {scale:1.1, duration:10.26, ease:"none"}, 203.61);
+  tl.fromTo("#sc-S28", {scale:1.02}, {scale:1.1, duration:12.85, ease:"none"}, 213.87);
+  tl.fromTo("#cap-000 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 2.5);
+  tl.fromTo("#cap-001 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 3.5);
+  tl.fromTo("#cap-002 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 6.4);
+  tl.fromTo("#cap-003 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 7.4);
+  tl.fromTo("#cap-004 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 11.8);
+  tl.fromTo("#cap-005 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 12.9);
+  tl.fromTo("#cap-006 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 14.2);
+  tl.fromTo("#cap-007 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 18.1);
+  tl.fromTo("#cap-008 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 18.9);
+  tl.fromTo("#cap-009 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 30.3);
+  tl.fromTo("#cap-010 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 31.2);
+  tl.fromTo("#cap-011 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 33.2);
+  tl.fromTo("#cap-012 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 33.9);
+  tl.fromTo("#cap-013 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 34.7);
+  tl.fromTo("#cap-014 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 35.5);
+  tl.fromTo("#cap-015 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 36.6);
+  tl.fromTo("#cap-016 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 37.5);
+  tl.fromTo("#cap-017 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 38.4);
+  tl.fromTo("#cap-018 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 39.6);
+  tl.fromTo("#cap-019 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 40.3);
+  tl.fromTo("#cap-020 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 41.4);
+  tl.fromTo("#cap-021 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 42.6);
+  tl.fromTo("#cap-022 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 44.0);
+  tl.fromTo("#cap-023 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 46.5);
+  tl.fromTo("#cap-024 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 47.3);
+  tl.fromTo("#cap-025 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 47.8);
+  tl.fromTo("#cap-026 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 48.7);
+  tl.fromTo("#cap-027 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 49.5);
+  tl.fromTo("#cap-028 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 50.3);
+  tl.fromTo("#cap-029 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 51.3);
+  tl.fromTo("#cap-030 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 52.2);
+  tl.fromTo("#cap-031 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 53.2);
+  tl.fromTo("#cap-032 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 54.3);
+  tl.fromTo("#cap-033 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 55.3);
+  tl.fromTo("#cap-034 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 56.2);
+  tl.fromTo("#cap-035 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 59.5);
+  tl.fromTo("#cap-036 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 60.4);
+  tl.fromTo("#cap-037 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 111.01);
+  tl.fromTo("#cap-038 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 111.81);
+  tl.fromTo("#cap-039 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 112.71);
+  tl.fromTo("#cap-040 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 114.01);
+  tl.fromTo("#cap-041 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 115.01);
+  tl.fromTo("#cap-042 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 115.81);
+  tl.fromTo("#cap-043 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 116.81);
+  tl.fromTo("#cap-044 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 118.01);
+  tl.fromTo("#cap-045 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 119.01);
+  tl.fromTo("#cap-046 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 119.51);
+  tl.fromTo("#cap-047 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 120.51);
+  tl.fromTo("#cap-048 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 122.01);
+  tl.fromTo("#cap-049 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 123.11);
+  tl.fromTo("#cap-050 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 124.51);
+  tl.fromTo("#cap-051 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 125.51);
+  tl.fromTo("#cap-052 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 126.41);
+  tl.fromTo("#cap-053 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 127.41);
+  tl.fromTo("#cap-054 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 128.81);
+  tl.fromTo("#cap-055 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 131.01);
+  tl.fromTo("#cap-056 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 132.31);
+  tl.fromTo("#cap-057 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 133.31);
+  tl.fromTo("#cap-058 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 134.51);
+  tl.fromTo("#cap-059 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 135.71);
+  tl.fromTo("#cap-060 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 141.01);
+  tl.fromTo("#cap-061 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 142.21);
+  tl.fromTo("#cap-062 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 143.21);
+  tl.fromTo("#cap-063 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 144.51);
+  tl.fromTo("#cap-064 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 145.41);
+  tl.fromTo("#cap-065 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 146.51);
+  tl.fromTo("#cap-066 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 147.41);
+  tl.fromTo("#cap-067 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 149.11);
+  tl.fromTo("#cap-068 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 150.02);
+  tl.fromTo("#cap-069 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 151.32);
+  tl.fromTo("#cap-070 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 152.12);
+  tl.fromTo("#cap-071 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 154.52);
+  tl.fromTo("#cap-072 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 155.82);
+  tl.fromTo("#cap-073 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 156.62);
+  tl.fromTo("#cap-074 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 158.12);
+  tl.fromTo("#cap-075 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 159.12);
+  tl.fromTo("#cap-076 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 161.02);
+  tl.fromTo("#cap-077 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 161.92);
+  tl.fromTo("#cap-078 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 163.22);
+  tl.fromTo("#cap-079 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 168.22);
+  tl.fromTo("#cap-080 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 169.02);
+  tl.fromTo("#cap-081 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 170.32);
+  tl.fromTo("#cap-082 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 171.22);
+  tl.fromTo("#cap-083 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 172.12);
+  tl.fromTo("#cap-084 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 172.92);
+  tl.fromTo("#cap-085 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 173.72);
+  tl.fromTo("#cap-086 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 174.62);
+  tl.fromTo("#cap-087 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 175.62);
+  tl.fromTo("#cap-088 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 176.82);
+  tl.fromTo("#cap-089 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 177.92);
+  tl.fromTo("#cap-090 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 179.02);
+  tl.fromTo("#cap-091 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 179.92);
+  tl.fromTo("#cap-092 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 180.92);
+  tl.fromTo("#cap-093 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 181.82);
+  tl.fromTo("#cap-094 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 183.52);
+  tl.fromTo("#cap-095 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 184.32);
+  tl.fromTo("#cap-096 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 185.32);
+  tl.fromTo("#cap-097 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 186.62);
+  tl.fromTo("#cap-098 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 187.52);
+  tl.fromTo("#cap-099 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 188.92);
+  tl.fromTo("#cap-100 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 190.12);
+  tl.fromTo("#cap-101 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 191.32);
+  tl.fromTo("#cap-102 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 192.62);
+  tl.fromTo("#cap-103 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 194.12);
+  tl.fromTo("#cap-104 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 195.22);
+  tl.fromTo("#cap-105 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 201.22);
+  tl.fromTo("#cap-106 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 202.02);
+  tl.fromTo("#cap-107 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 202.82);
+  tl.fromTo("#cap-108 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 203.82);
+  tl.fromTo("#cap-109 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 205.12);
+  tl.fromTo("#cap-110 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 206.42);
+  tl.fromTo("#cap-111 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 207.52);
+  tl.fromTo("#cap-112 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 208.72);
+  tl.fromTo("#cap-113 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 209.72);
+  tl.fromTo("#cap-114 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 210.82);
+  tl.fromTo("#cap-115 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 211.62);
+  tl.fromTo("#cap-116 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 213.02);
+  tl.fromTo("#cap-117 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 214.52);
+  tl.fromTo("#cap-118 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 215.82);
+  tl.fromTo("#cap-119 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 216.82);
+  tl.fromTo("#cap-120 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 218.12);
+  tl.fromTo("#cap-121 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 219.22);
+  tl.fromTo("#cap-122 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 220.12);
+  tl.fromTo("#cap-123 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 221.12);
+  tl.fromTo("#cap-124 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 222.02);
+  tl.fromTo("#cap-125 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 223.32);
+  tl.fromTo("#cap-126 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 224.32);
+  tl.fromTo("#cap-127 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 226.12);
+  tl.fromTo("#cap-128 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 227.72);
+  tl.fromTo("#cap-129 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 228.32);
+  tl.fromTo("#cap-130 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 229.02);
+  tl.fromTo("#cap-131 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 229.72);
+  tl.fromTo("#cap-132 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 230.62);
+  tl.fromTo("#cap-133 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 231.42);
+  tl.fromTo("#cap-134 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 232.12);
+  tl.fromTo("#cap-135 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 233.42);
+  tl.fromTo("#cap-136 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 234.82);
+  tl.fromTo("#cap-137 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 236.12);
+  tl.fromTo("#cap-138 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 237.32);
+  tl.fromTo("#cap-139 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 238.82);
+  tl.fromTo("#cap-140 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 240.52);
+  tl.fromTo("#cap-141 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 241.42);
+  tl.fromTo("#cap-142 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 243.32);
+  tl.fromTo("#cap-143 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 244.12);
+  tl.fromTo("#cap-144 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 245.02);
+  tl.fromTo("#cap-145 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 245.82);
+  tl.fromTo("#cap-146 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 246.42);
+  tl.fromTo("#cap-147 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 247.12);
+  tl.fromTo("#cap-148 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 248.52);
+  tl.fromTo("#cap-149 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 249.32);
+  tl.fromTo("#cap-150 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 250.52);
+  tl.fromTo("#cap-151 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 251.22);
+  tl.fromTo("#cap-152 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 251.82);
+  tl.fromTo("#cap-153 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 252.62);
+  tl.fromTo("#cap-154 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 253.32);
+  tl.fromTo("#cap-155 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 253.72);
+  tl.fromTo("#cap-156 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 254.82);
+  tl.fromTo("#cap-157 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 256.02);
+  tl.fromTo("#cap-158 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 257.82);
+  tl.fromTo("#cap-159 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 258.72);
+  tl.fromTo("#cap-160 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 259.72);
+  tl.fromTo("#cap-161 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 260.72);
+  tl.fromTo("#cap-162 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 261.82);
+  tl.fromTo("#cap-163 .cap-w", {y:26, opacity:0}, {y:0, opacity:1, duration:0.24, ease:"back.out(1.8)", stagger:0.045}, 262.92);
+
+  // ---- craft v3 (timings from storyboard) ----
+  tl.fromTo("#s01-inner", {scale:1.05}, {scale:1, duration:3.0, ease:"power1.out"}, 0.0);
+  tl.fromTo("#s01-kicker", {autoAlpha:0, y:-24}, {autoAlpha:1, y:0, duration:0.4, ease:"power2.out"}, 0.1);
+  tl.fromTo("#s01-big .w", {y:90, autoAlpha:0}, {y:0, autoAlpha:1, duration:0.5, ease:"back.out(1.7)", stagger:0.14}, 0.3);
+  tl.fromTo("#s01-sub", {autoAlpha:0, scale:0.8}, {autoAlpha:1, scale:1, duration:0.45, ease:"back.out(2)"}, 1.1);
+  tl.fromTo("#s01-bar", {scaleX:0}, {scaleX:1, duration:0.5, ease:"power3.out"}, 1.45);
+  tl.fromTo("#s01-chip", {autoAlpha:0, y:30}, {autoAlpha:1, y:0, duration:0.4, ease:"power2.out"}, 1.8);
+
+  tl.fromTo("#s05-kicker", {autoAlpha:0, y:-20}, {autoAlpha:1, y:0, duration:0.45, ease:"power2.out"}, 14.36);
+  const m1 = { v: 0 };
+  tl.to(m1, {v: 1000000, duration: 2.6, ease: "power2.out", onUpdate: () => { document.getElementById("s05-num").textContent = Math.round(m1.v).toLocaleString("en-US"); }}, 14.66);
+  tl.fromTo("#s05-money", {scale:0.85}, {scale:1, duration:2.6, ease:"power2.out"}, 14.66);
+  tl.fromTo("#s05-bar", {scaleX:0}, {scaleX:1, duration:0.5, ease:"power3.out"}, 17.26);
+  tl.fromTo("#s05-sub", {autoAlpha:0, y:34}, {autoAlpha:1, y:0, duration:0.5, ease:"power3.out"}, 17.56);
+
+  tl.fromTo("#s08-kicker", {autoAlpha:0, y:-20}, {autoAlpha:1, y:0, duration:0.45, ease:"power2.out"}, 31.91);
+  const a1 = { v: 0 };
+  tl.to(a1, {v: 10000, duration: 2.4, ease: "power2.out", onUpdate: () => { document.getElementById("s08-num").textContent = Math.round(a1.v).toLocaleString("en-US"); }}, 32.31);
+  tl.fromTo("#s08-num-wrap", {scale:0.85}, {scale:1, duration:2.4, ease:"power2.out"}, 32.31);
+  tl.fromTo("#s08-sub", {autoAlpha:0, y:30}, {autoAlpha:1, y:0, duration:0.5, ease:"power3.out"}, 34.61);
+  tl.fromTo("#s08-chip", {autoAlpha:0, scale:0.85}, {autoAlpha:1, scale:1, duration:0.45, ease:"back.out(1.8)"}, 35.61);
+
+  tl.fromTo("#s13-kicker", {autoAlpha:0, y:-20}, {autoAlpha:1, y:0, duration:0.45, ease:"power2.out"}, 73.45);
+  tl.fromTo("#s13-card1", {autoAlpha:0, y:70}, {autoAlpha:1, y:0, duration:0.5, ease:"power3.out"}, 73.85);
+  const c1 = { v: 0 };
+  tl.to(c1, {v: 10000, duration: 2.4, ease: "power2.out", onUpdate: () => { document.getElementById("s13-n1").textContent = Math.round(c1.v).toLocaleString("en-US"); }}, 74.15);
+  tl.fromTo("#s13-card2", {autoAlpha:0, y:70}, {autoAlpha:1, y:0, duration:0.5, ease:"power3.out"}, 76.35);
+  const c2 = { v: 0 };
+  tl.to(c2, {v: 180, duration: 1.8, ease: "power2.out", onUpdate: () => { document.getElementById("s13-n2").textContent = Math.round(c2.v).toLocaleString("en-US"); }}, 76.65);
+  tl.fromTo("#s13-card3", {autoAlpha:0, scale:0.75}, {autoAlpha:1, scale:1, duration:0.5, ease:"back.out(2.2)"}, 78.75);
+  tl.fromTo("#s13-result", {autoAlpha:0, y:40}, {autoAlpha:1, y:0, duration:0.55, ease:"power3.out"}, 80.55);
+
+  tl.fromTo("#s15-mark", {autoAlpha:0, rotation:-12}, {autoAlpha:0.95, rotation:0, duration:0.7, ease:"power2.out"}, 99.17);
+  tl.fromTo("#s15-l1", {y:70, autoAlpha:0}, {y:0, autoAlpha:1, duration:0.55, ease:"power3.out"}, 99.42);
+  tl.fromTo("#s15-l2", {scale:0.7, autoAlpha:0}, {scale:1, autoAlpha:1, duration:0.5, ease:"back.out(2)"}, 100.17);
+  tl.fromTo("#s15-ul", {scaleX:0}, {scaleX:1, duration:0.45, ease:"power3.out"}, 100.72);
+  tl.fromTo("#s15-attr", {autoAlpha:0}, {autoAlpha:1, duration:0.5}, 101.37);
+  tl.fromTo("#s15-role", {autoAlpha:0}, {autoAlpha:1, duration:0.5}, 101.77);
+  tl.fromTo("#s15-inner", {scale:1}, {scale:1.02, duration:10.42, ease:"sine.inOut"}, 98.97);
+
+  tl.fromTo("#s29-person", {y:90, autoAlpha:0}, {y:0, autoAlpha:1, duration:0.9, ease:"power3.out"}, 226.92);
+  tl.fromTo("#s29-l1", {x:70, autoAlpha:0}, {x:0, autoAlpha:1, duration:0.55, ease:"power3.out"}, 227.22);
+  tl.fromTo("#s29-l2", {scale:0.75, autoAlpha:0}, {scale:1, autoAlpha:1, duration:0.5, ease:"back.out(2)"}, 227.92);
+  tl.fromTo("#s29-ul", {scaleX:0}, {scaleX:1, duration:0.45, ease:"power3.out"}, 228.47);
+  tl.fromTo("#s29-attr", {autoAlpha:0}, {autoAlpha:1, duration:0.5}, 229.12);
+  tl.fromTo("#s29-inner", {scale:1}, {scale:1.02, duration:14.87, ease:"sine.inOut"}, 226.72);
+
+  tl.fromTo("#s30-q", {autoAlpha:0, y:40}, {autoAlpha:1, y:0, duration:0.5, ease:"power3.out"}, 242.89);
+  tl.fromTo("#s30-big", {y:80, autoAlpha:0}, {y:0, autoAlpha:1, duration:0.55, ease:"back.out(1.6)"}, 243.59);
+  tl.fromTo("#s30-bar", {scaleX:0}, {scaleX:1, duration:0.5, ease:"power3.out"}, 244.79);
+  tl.fromTo("#s30-chip", {autoAlpha:0, y:30}, {autoAlpha:1, y:0, duration:0.45, ease:"power2.out"}, 245.39);
+
+  tl.fromTo("#s31-kicker", {autoAlpha:0, y:-20}, {autoAlpha:1, y:0, duration:0.45, ease:"power2.out"}, 252.31);
+  tl.fromTo("#s31-big", {y:80, autoAlpha:0}, {y:0, autoAlpha:1, duration:0.55, ease:"power3.out"}, 252.71);
+  tl.fromTo("#s31-when", {scale:0.8, autoAlpha:0}, {scale:1, autoAlpha:1, duration:0.5, ease:"back.out(2)"}, 253.61);
+  tl.fromTo("#s31-chip", {autoAlpha:0, y:30}, {autoAlpha:1, y:0, duration:0.45, ease:"power2.out"}, 254.41);
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

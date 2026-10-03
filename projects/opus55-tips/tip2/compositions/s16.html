@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s16-template">
+  <style>
+
+    .s16-l { position: absolute; right: 110px; font-family: var(--font-en); font-weight: 900; font-size: 28px; letter-spacing: .2em; direction: ltr; }
+    #s16-l1 { top: 560px; color: var(--orange); } #s16-l2 { top: 820px; color: var(--lime); }
+    .s16-t { left: 110px; width: 860px; height: 90px; border-radius: 45px; }
+    #s16-t1 { top: 610px; } #s16-t2 { top: 870px; }
+    .s16-p { position: absolute; left: 110px; font-family: var(--font-en); font-weight: 900; font-size: 44px; direction: ltr; }
+    #s16-p1 { top: 560px; top: 550px; color: var(--fg); } #s16-p2 { top: 810px; color: var(--yellow); }
+    #s16-big { position: absolute; left: 0; right: 0; top: 1030px; text-align: center; font-family: var(--font-ar); font-weight: 900; font-size: 160px; line-height: 1.3; color: var(--yellow); direction: rtl; }
+    #s16-c1 { left: 600px; top: 1430px; } #s16-c2 { left: 160px; top: 1430px; }
+    #s16-src { top: 1600px; }
+
+  </style>
+  <div data-hf-id="hf-esl6" id="s16" data-composition-id="s16" data-width="1080" data-height="1920" data-duration="9.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-y16e" id="s16-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-k810" id="s16-bgp" class="dots"></div>
+    <div data-hf-id="hf-1dx9" id="s16-cam" class="cam">
+
+      <div data-hf-id="hf-i2ic" id="s16-lab" class="row" style="top:250px"><span data-hf-id="hf-uzxi" class="t-label" style="color:var(--lime)">EVERY NEW VIDEO</span></div>
+      <div data-hf-id="hf-zfmq" class="row t-h3" style="top:300px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-187j" class="in" id="s16-h1">بيحرق بس</span></span></div>
+      <div data-hf-id="hf-2xse" id="s16-l1" class="s16-l">FIRST TIME</div><div data-hf-id="hf-rw3b" id="s16-p1" class="s16-p">100%</div>
+      <div data-hf-id="hf-mtpa" id="s16-t1" class="op-track s16-t"><div data-hf-id="hf-iunc" id="s16-f1" class="op-fill" style="background:var(--orange); border-radius:45px"></div></div>
+      <div data-hf-id="hf-txqg" id="s16-l2" class="s16-l">WITH THE SKILL</div><div data-hf-id="hf-ywzg" id="s16-p2" class="s16-p">~25–30%</div>
+      <div data-hf-id="hf-ivl9" id="s16-t2" class="op-track s16-t"><div data-hf-id="hf-lcwi" id="s16-f2" class="op-fill" style="background:var(--lime); border-radius:45px"></div></div>
+      <div data-hf-id="hf-x679" id="s16-big" data-layout-allow-overlap="">٢٥–٣٠٪</div>
+      <div data-hf-id="hf-8taw" class="row t-h3" style="top:1260px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-qksy" class="in" id="s16-k1">من الـــ<span data-hf-id="hf-5lcu" class="lat">tokens</span> بتاعة أول مرة</span></span></div>
+      <div data-hf-id="hf-sefq" id="s16-c1" class="op-chip" style="left:600px; top:1430px"><span data-hf-id="hf-8dw9" class="ic"><svg data-hf-id="hf-y0jp" style="width:34px; height:34px; color:currentColor;"><use data-hf-id="hf-p1gd" href="#i-token" /></svg></span><span data-hf-id="hf-xafn">توفير tokens</span></div>
+      <div data-hf-id="hf-auih" id="s16-c2" class="op-chip y" style="left:160px; top:1430px"><span data-hf-id="hf-hovh" class="ic"><svg data-hf-id="hf-29ax" style="width:34px; height:34px; color:currentColor;"><use data-hf-id="hf-8qr0" href="#i-clock" /></svg></span><span data-hf-id="hf-kb4h">ووقت</span></div>
+      <div data-hf-id="hf-cban" id="s16-src" class="op-src">HOSSAM'S EXAMPLE · APPROXIMATE</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(74.7);
+      const { tl } = fx;
+      fx.drift("#s16-bgp", 74.7, 9.8, 60, -40);
+      fx.drift("#s16-blob", 74.7, 9.8, -110, 60);
+      fx.pushIn("#s16-cam", 74.7, 9.8, 1.035);
+
+      fx.rise("#s16-lab", 74.85, { y: 12 }); fx.maskUp("#s16-h1", 76.8);
+      fx.rise("#s16-l1, #s16-p1, #s16-t1", 75.0, { y: 20 });
+      fx.meter("#s16-f1", 75.2, 0.6, 1, { e: "power2.out" });
+      fx.rise("#s16-l2, #s16-t2", 75.6, { y: 20 });
+      fx.meter("#s16-f2", 75.8, 0.5, 1, { e: "power2.out" });
+      fx.hide("#s16-p2");
+      tl.to("#s16-f2", { scaleX: 0.275, duration: 1.3, ease: "power2.inOut" }, 77.6);
+      tl.to("#s16-p2", { opacity: 1, duration: 0.2 }, 78.6);
+      tl.fromTo("#s16-big", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 77.65);
+      fx.maskUp("#s16-k1", 79.2);
+      fx.pop("#s16-c1", 82.35); fx.pop("#s16-c2", 84.0);
+      fx.rise("#s16-src", 78.0, { y: 8, b: 0 });
+
+      tl.to("#s16-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 84.06);
+      window.__timelines["s16"] = tl.real;
+    })();
+  </script>
+</template></body></html>

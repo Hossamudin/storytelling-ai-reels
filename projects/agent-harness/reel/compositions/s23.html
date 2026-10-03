@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s23-template">
+  <style>
+
+    #s23-bn { left: 0; right: 0; top: 230px; text-align: center; }
+    #s23-h { top: 320px; }
+    #s23-top { left: 140px; top: 600px; width: 800px; height: 230px; border-radius: 36px; background: linear-gradient(135deg, #1a7564, #136052); border: 4px solid var(--lime);
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 60px rgba(0,0,0,.4); }
+    #s23-top b { font-family: var(--font-en); font-weight: 900; font-size: 110px; direction: ltr; }
+    #s23-base { left: 100px; top: 880px; width: 880px; height: 150px; border-radius: 30px; background: rgba(255,255,255,.06); border: 3px dashed rgba(246,248,240,.5);
+      display: flex; align-items: center; justify-content: center; gap: 16px; direction: ltr; }
+    #s23-base b { font-family: var(--font-en); font-weight: 900; font-size: 52px; color: var(--fg-muted); }
+    #s23-on { position: absolute; left: 0; right: 0; top: 836px; text-align: center; }
+    #s23-ar { left: 820px; top: 520px; width: 160px; height: 160px; border-radius: 50%; background: var(--yellow); color: var(--ink); font-size: 96px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+    .s23-p { position: absolute; left: 0; right: 0; text-align: center; }
+    .s23-p .pill { font-size: 44px; height: 96px; padding: 0 40px; border-radius: 48px; }
+    .s23-p .ic { width: 58px; height: 58px; border-radius: 50%; background: var(--lime); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; }
+    #s23-p1 { top: 1130px; } #s23-p2 { top: 1270px; } #s23-p3 { top: 1410px; }
+    #s23-fl { top: 1690px; }
+
+  </style>
+  <div data-hf-id="hf-bb2s" id="s23" data-composition-id="s23" data-width="1080" data-height="1920" data-duration="10.6">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-q88a" id="s23-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-mf78" id="s23-bgp" class="dots"></div>
+    <div data-hf-id="hf-vv5d" id="s23-cam" class="cam">
+
+      <div data-hf-id="hf-u4pt" id="s23-bn" class="abs"><span data-hf-id="hf-8g6w" class="pill bad" style="font-family:var(--font-en); letter-spacing:.14em; font-size:30px; height:64px">BONUS</span></div>
+      <div data-hf-id="hf-th8t" id="s23-h" class="row t-h3"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-os2u" class="in" id="s23-h1">حابب ألفت انتباهك لـ</span></span></div>
+      <div data-hf-id="hf-1l9u" id="s23-top" class="abs"><b data-hf-id="hf-tum6">Zadloop</b></div>
+      <div data-hf-id="hf-ys86" id="s23-on" class="abs"><span data-hf-id="hf-h5gj" class="t-label">BUILT ON</span></div>
+      <div data-hf-id="hf-633q" id="s23-base" class="abs"><b data-hf-id="hf-6iez">DeepSeek</b><b data-hf-id="hf-ilhm" style="color:var(--lime)">Harness</b></div>
+      <div data-hf-id="hf-5lkr" id="s23-ar" class="abs">ع</div>
+      <div data-hf-id="hf-2yyh" class="s23-p" id="s23-p1"><span data-hf-id="hf-4qlt" class="pill">معمول باللغة العربية</span></div>
+      <div data-hf-id="hf-6x2i" class="s23-p" id="s23-p2"><span data-hf-id="hf-xljc" class="pill"><span data-hf-id="hf-8dw9" class="ic"><svg data-hf-id="hf-x98o" width="34" height="40"><use data-hf-id="hf-4h79" href="#i-person" /></svg></span>وراه مبرمج عربي</span></div>
+      <div data-hf-id="hf-av6j" class="s23-p" id="s23-p3"><span data-hf-id="hf-p53c" class="pill"><span data-hf-id="hf-hovh" class="ic"><svg data-hf-id="hf-v323" width="36" height="36"><use data-hf-id="hf-2atz" href="#i-mic" /></svg></span>في بودكاست أخبار الذكاء الاصطناعي</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(153.8);
+      const { tl } = fx;
+      fx.drift("#s23-bgp", 153.8, 10.6, 70, -40);
+      fx.drift("#s23-blob", 153.8, 10.6, -120, 60);
+      fx.pushIn("#s23-cam", 153.8, 10.6, 1.035);
+
+      fx.pop("#s23-bn", 153.85, { from: 0.3 });
+      fx.maskUp("#s23-h1", 154.0);
+      tl.fromTo("#s23-top", { opacity: 0, scale: 1.6, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 155.3);
+      tl.to("#s23-top", { y: -40, duration: 0.5, ease: "power3.out" }, 156.7);
+      tl.fromTo("#s23-base", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 156.95);
+      fx.rise("#s23-on", 157.1, { y: 10 });
+      fx.pop("#s23-ar", 158.7, { from: 0, e: "back.out(2.6)" });
+      fx.pop("#s23-p1", 158.9, { from: 0.5 });
+      fx.pop("#s23-p2", 160.4, { from: 0.5 });
+      fx.pop("#s23-p3", 162.5, { from: 0.5 });
+
+      tl.to("#s23-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 164.1);
+      window.__timelines["s23"] = tl.real;
+    })();
+  </script>
+</template></body></html>

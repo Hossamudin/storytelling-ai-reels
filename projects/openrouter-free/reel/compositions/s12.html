@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s12-template">
+  <style>
+
+    #s12-tape { left: -60px; top: 470px; width: 1200px; height: 90px; background: repeating-linear-gradient(-45deg, #ffec5c 0 50px, #0d0d0d 50px 100px); transform-origin: 50% 50%; }
+    #s12-tx { left: 0; right: 0; top: 489px; text-align: center; }
+    #s12-tx span { background: #0d0d0d; color: var(--yellow); font-family: var(--font-en); font-weight: 900; font-size: 40px; letter-spacing: .2em; padding: 6px 26px; }
+    #s12-box { left: 340px; top: 720px; width: 400px; height: 400px; border-radius: 40px; background: #0b2f29; border: 5px solid var(--lime); display: flex; align-items: center; justify-content: center; }
+    #s12-tr { left: 190px; top: 1260px; width: 700px; }
+    #s12-tl { top: 1200px; }
+
+  </style>
+  <div id="s12" data-composition-id="s12" data-width="1080" data-height="1920" data-duration="4.65">
+    <div class="bg"></div>
+    <div id="s12-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div id="s12-bgp" class="dots"></div>
+    <div id="s12-cam" class="cam">
+
+      <div id="s12-tape" class="abs"></div><div id="s12-tx" class="abs"><span>CAUTION</span></div>
+      <div id="s12-box" class="abs"><div id="s12-sp" class="cl-spark" style="left:100px; top:100px; width:200px; height:200px;"><svg id="s12-sp-svg" viewBox="0 0 100 100"><use href="#i-claude" width="100" height="100" /></svg></div></div>
+      <div id="s12-tl" class="row" style="top:1200px"><span class="t-label" style="color:var(--lime)">QUALITY</span></div>
+      <div id="s12-tr" class="op-track"><div id="s12-f" class="op-fill" style="background:var(--lime)"></div></div>
+      <div class="row t-h3" style="top:1380px"><span class="mask"><span class="in" id="s12-a1">بعض الموديلز مضغوطة</span></span></div>
+      <div class="row t-h3 op-o" style="top:1480px"><span class="mask"><span class="in" id="s12-b1">مش هتديك الكفاءة الكاملة</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(107.5);
+      const { tl } = fx;
+      fx.drift("#s12-bgp", 107.5, 4.65, 60, -40);
+      fx.drift("#s12-blob", 107.5, 4.65, -110, 60);
+      fx.pushIn("#s12-cam", 107.5, 4.65, 1.035);
+
+      tl.fromTo("#s12-tape", { scaleX: 0, rotation: -4 }, { scaleX: 1, rotation: -4, duration: 0.35, ease: "power3.out" }, 107.6);
+      tl.fromTo("#s12-tx", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 107.8);
+      tl.to("#s12-tx", { rotation: -4, duration: 0.01 }, 107.8);
+      fx.pop("#s12-box", 108.0, { from: 0.4 });
+      fx.rise("#s12-tl, #s12-tr", 108.4, { y: 20 });
+      fx.meter("#s12-f", 108.5, 0.4, 1, { e: "power2.out" });
+      tl.to("#s12-box", { scaleY: 0.55, scaleX: 1.2, duration: 0.35, ease: "power3.in" }, 109.9);
+      fx.maskUp("#s12-a1", 109.0);
+      tl.to("#s12-f", { scaleX: 0.6, background: "#ff5a33", duration: 0.5, ease: "power3.inOut" }, 110.5);
+      fx.maskUp("#s12-b1", 110.6);
+
+      tl.to("#s12-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 111.71);
+      window.__timelines["s12"] = tl.real;
+    })();
+  </script>
+</template></body></html>

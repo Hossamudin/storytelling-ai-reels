@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><title>Cut review</title>
+<style>body{font:14px system-ui;margin:16px;background:#f6f4ea;color:#0d0d0d}table{border-collapse:collapse;width:100%}
+td{border-bottom:1px solid #ccc;padding:6px;vertical-align:top}.t{font-size:16px;max-width:420px}audio{height:28px;width:260px}
+button{padding:8px 14px;margin:8px 0;background:#136052;color:#fff;border:0;border-radius:6px}</style>
+<h2>Proposed cuts — openrouter-free</h2><p>Top player = original with 2 s context, bottom = after the cut. Tick what to cut, then export.</p>
+<button onclick="exp()">Copy accepted cuts as JSON</button><pre id="o"></pre>
+<table><tr><th></th><th>time</th><th>kind</th><th>verbatim</th><th>why</th><th>listen</th></tr><tr data-k="0"><td><input type="checkbox" checked></td>
+<td>-0.04–7.61<br><small>7.65s</small></td><td><b>retake</b><br><small>0.98 · rules + gpt-5.5</small></td>
+<td dir="rtl" class="t"> |  |  | شد أو لا؟ | شد أو لا؟ | شد أو لأ، ولكن تقدر.</td><td>no speech in verbatim transcript / Blank non-speech before the actual take starts / no speech in verbatim transcript / no speech in verbatim transcript / chunk 4 restarts chunk 3 (similarity 0.75); keep the later take / Abandoned opening hook; chunk 5 restarts it cleanly and completely</td>
+<td><audio controls preload="none" src="clips/c00_before.mp3"></audio><br><audio controls preload="none" src="clips/c00_after.mp3"></audio></td></tr><tr data-k="1"><td><input type="checkbox" checked></td>
+<td>145.20–148.24<br><small>3.03s</small></td><td><b>retake</b><br><small>0.98 · rules + gpt-5.5</small></td>
+<td dir="rtl" class="t">أنا حسن الدين حسن وهنا بكلمك عن كل ما جديد.</td><td>chunk 33 restarts chunk 32 (similarity 0.64); keep the later take / Abandoned intro/name line; chunk 33 repeats it correctly and continues</td>
+<td><audio controls preload="none" src="clips/c01_before.mp3"></audio><br><audio controls preload="none" src="clips/c01_after.mp3"></audio></td></tr></table>
+<script>const D=[{"cut": [-0.04, 7.605], "kind": "retake", "reason": "no speech in verbatim transcript / Blank non-speech before the actual take starts / no speech in verbatim transcript / no speech in verbatim transcript / chunk 4 restarts chunk 3 (similarity 0.75); keep the later take / Abandoned opening hook; chunk 5 restarts it cleanly and completely"}, {"cut": [145.204, 148.238], "kind": "retake", "reason": "chunk 33 restarts chunk 32 (similarity 0.64); keep the later take / Abandoned intro/name line; chunk 33 repeats it correctly and continues"}];function exp(){const c=[...document.querySelectorAll('tr[data-k]')].filter(r=>r.querySelector('input').checked)
+.map(r=>{const d=D[+r.dataset.k];return [d.cut[0],d.cut[1],d.kind+': '+d.reason]});const s=JSON.stringify({cuts:c},null,1);
+document.getElementById('o').textContent=s;navigator.clipboard&&navigator.clipboard.writeText(s)}</script>

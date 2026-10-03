@@ -1,0 +1,31 @@
+{
+  "name": "openrouter-free",
+  "title": "برامج ذكاء اصطناعي بفلوس ازاي تاخدها ببلاش؟",
+  "stage": "transcribe",
+  "created": "2026-10-02T05:06:37",
+  "updated": "2026-10-02T05:06:56",
+  "aspect": null,
+  "duration_s": 162.52,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-02T05:06:37",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-02T05:06:42",
+      "note": "cleaned voiceover, 162.5s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-02T05:06:56",
+      "note": "openai_whisper: 36 segments",
+      "from": "audio_clean"
+    }
+  ]
+}

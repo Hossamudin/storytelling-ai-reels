@@ -1,0 +1,43 @@
+{
+ "enabled": true,
+ "series": "VIBE AUTOMATION",
+ "sections": [
+  {
+   "t": 0,
+   "label": "THE IDEA"
+  },
+  {
+   "t": 5.8,
+   "label": "THE WORKFLOW"
+  },
+  {
+   "t": 11.1,
+   "label": "THE VERDICT"
+  }
+ ],
+ "wipes": [
+  5.55,
+  10.85
+ ],
+ "steps": [
+  {
+   "t0": 5.9,
+   "t1": 11.0,
+   "items": [
+    {
+     "t": 5.9,
+     "label": "اكتب الطلب"
+    },
+    {
+     "t": 8.15,
+     "label": "اضغط RESEARCH"
+    },
+    {
+     "t": 8.6,
+     "label": "استلم النتيجة"
+    }
+   ]
+  }
+ ],
+ "grain": false
+}

@@ -1,0 +1,5 @@
+{
+  "_comment": "Copy this file to config/api_keys.json and fill in your keys. api_keys.json is gitignored. You can also set keys via the dashboard (Keys tab) or environment variables (env wins).",
+  "GEMINI_API_KEY": "",
+  "OPENAI_API_KEY": ""
+}

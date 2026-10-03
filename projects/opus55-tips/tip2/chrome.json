@@ -1,0 +1,49 @@
+{
+ "enabled": true,
+ "series": "OPUS 5.5 TIPS",
+ "grain": false,
+ "sections": [
+  {
+   "t": 0,
+   "label": "THE HOOK"
+  },
+  {
+   "t": 6.8,
+   "label": "TIP 02"
+  },
+  {
+   "t": 14.4,
+   "label": "THE IDEA"
+  },
+  {
+   "t": 27.4,
+   "label": "THE FIX"
+  },
+  {
+   "t": 38.15,
+   "label": "BUILD A SKILL"
+  },
+  {
+   "t": 61.15,
+   "label": "MY EXAMPLE"
+  },
+  {
+   "t": 74.7,
+   "label": "THE SAVINGS"
+  },
+  {
+   "t": 84.3,
+   "label": "NEXT \u00b7 PART 3"
+  },
+  {
+   "t": 90.6,
+   "label": "FOLLOW"
+  }
+ ],
+ "wipes": [
+  14.3,
+  38.05,
+  61.05,
+  84.2
+ ]
+}

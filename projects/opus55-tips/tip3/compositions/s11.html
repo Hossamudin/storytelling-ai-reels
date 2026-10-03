@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s11-template">
+  <style>
+
+    #s11-doc { left: 190px; top: 470px; width: 700px; height: 760px; }
+    .s11-sel { position: absolute; right: 30px; width: 640px; height: 40px; border-radius: 10px; background: rgba(179,206,101,.55); transform-origin: 100% 50%; }
+    #s11-cp { left: 90px; top: 600px; width: 110px; height: 110px; border-radius: 50%; background: var(--lime); color: var(--ink); display: flex; align-items: center; justify-content: center; }
+    #s11-c1 { left: 560px; top: 1300px; } #s11-c2 { left: 150px; top: 1300px; }
+
+  </style>
+  <div data-hf-id="hf-r4x8" id="s11" data-composition-id="s11" data-width="1080" data-height="1920" data-duration="4.65">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-wjkn" id="s11-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-d5y7" id="s11-bgp" class="dots"></div>
+    <div data-hf-id="hf-z18q" id="s11-cam" class="cam">
+
+      <div data-hf-id="hf-eudu" class="row t-h2" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-wdga" class="in" id="s11-h1">خد بعض الأجزاء وعدّل</span></span></div>
+      <div data-hf-id="hf-rrmy" id="s11-doc" class="op-doc">
+        <div data-hf-id="hf-599o" class="s11-sel" id="s11-s1" style="top:140px"></div><div data-hf-id="hf-4lit" class="s11-sel" id="s11-s2" style="top:186px"></div><div data-hf-id="hf-f3eq" class="s11-sel" id="s11-s3" style="top:416px"></div>
+        <i data-hf-id="hf-gh3a" class="ln s11-ln" style="top:150px; width:600px"></i><i data-hf-id="hf-mek4" class="ln s11-ln s11-ed" style="top:196px; width:540px"></i><i data-hf-id="hf-p1i4" class="ln s11-ln s11-ed" style="top:242px; width:610px"></i><i data-hf-id="hf-scyw" class="ln s11-ln" style="top:288px; width:480px"></i><i data-hf-id="hf-qvye" class="ln s11-ln" style="top:334px; width:590px"></i><i data-hf-id="hf-2zyo" class="ln s11-ln" style="top:380px; width:560px"></i><i data-hf-id="hf-yna6" class="ln s11-ln" style="top:426px; width:400px"></i><i data-hf-id="hf-qbd9" class="ln s11-ln s11-ed" style="top:472px; width:610px"></i><i data-hf-id="hf-6hxb" class="ln s11-ln" style="top:518px; width:520px"></i><i data-hf-id="hf-95qa" class="ln s11-ln" style="top:564px; width:580px"></i><i data-hf-id="hf-34we" class="ln s11-ln" style="top:610px; width:450px"></i><i data-hf-id="hf-m7d1" class="ln s11-ln" style="top:656px; width:600px"></i></div>
+      <div data-hf-id="hf-w9a1" id="s11-cp" class="abs"><svg data-hf-id="hf-t19b" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-kvdx" href="#i-copy" /></svg></div>
+      <div data-hf-id="hf-843a" id="s11-c1" class="op-chip" style="left:560px; top:1300px"><span data-hf-id="hf-8dw9" class="ic"><svg data-hf-id="hf-ufwh" style="width:32px; height:32px; color:currentColor;"><use data-hf-id="hf-8qr0" href="#i-clock" /></svg></span><span data-hf-id="hf-4w6o">وقت أقل</span></div>
+      <div data-hf-id="hf-cr5p" id="s11-c2" class="op-chip y" style="left:150px; top:1300px"><span data-hf-id="hf-uhw1" class="ic">−</span><span data-hf-id="hf-0lc7">مجهود أقل</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(47.8);
+      const { tl } = fx;
+      fx.drift("#s11-bgp", 47.8, 4.65, 60, -40);
+      fx.drift("#s11-blob", 47.8, 4.65, -110, 60);
+      fx.pushIn("#s11-cam", 47.8, 4.65, 1.035);
+
+      fx.maskUp("#s11-h1", 47.95);
+      tl.fromTo("#s11-doc", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 47.85);
+      tl.fromTo("#s11-s1, #s11-s2, #s11-s3", { scaleX: 0 }, { scaleX: 1, duration: 0.25, stagger: 0.12, ease: "power2.out" }, 48.65);
+      fx.pop("#s11-cp", 48.75);
+      tl.to(".s11-ed", { background: "#136052", duration: 0.25, stagger: 0.25 }, 49.3);
+      tl.to("#s11-s1, #s11-s2, #s11-s3", { opacity: 0, duration: 0.3 }, 49.9);
+      fx.pop("#s11-c1", 50.95); fx.pop("#s11-c2", 51.2);
+
+      tl.to("#s11-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 52.01);
+      window.__timelines["s11"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,23 @@
+[
+ {"id": "s1", "start": 0, "duration": 5.7, "beat": "hook: a new small spark beats Opus 5.5 at coding, half the price"},
+ {"id": "s2", "start": 5.4, "duration": 9.05, "beat": "2 weeks ago: Opus built a 3D game in code; today it builds this video (HF Studio)"},
+ {"id": "s3", "start": 14.15, "duration": 5.0, "beat": "the little brother: Sonnet 5.5 (real Anthropic hero)"},
+ {"id": "s4", "start": 18.85, "duration": 5.9, "beat": "up to 30% cheaper per task, excellent results"},
+ {"id": "s5", "start": 24.45, "duration": 5.45, "beat": "far better than Sonnet 5: Terminal-Bench 10.3 -> 70.6"},
+ {"id": "s6", "start": 29.6, "duration": 8.85, "beat": "SPINE: the scale tips — beats Opus 5.5 on Terminal-Bench 4.0 (real table)"},
+ {"id": "s7", "start": 38.15, "duration": 6.4, "beat": "daily work: the scale levels — almost the same (GDPval-AA)"},
+ {"id": "s8", "start": 44.25, "duration": 5.35, "beat": "uses the computer like us: 80% (OSWorld)"},
+ {"id": "s9", "start": 49.3, "duration": 10.6, "beat": "HERO: receipt printer prints the real price $2 / $10 vs Opus $4 / $20"},
+ {"id": "s10", "start": 59.6, "duration": 5.15, "beat": "real X feed: impressive demos"},
+ {"id": "s11", "start": 64.45, "duration": 12.1, "beat": "switching Opus -> Sonnet in the real Claude picker; tokens last longer"},
+ {"id": "s12", "start": 76.25, "duration": 3.7, "beat": "my own test is coming soon"},
+ {"id": "s13", "start": 79.65, "duration": 9.5, "beat": "1M-token context: a whole project, no 'start a new session'"},
+ {"id": "s14", "start": 88.85, "duration": 10.9, "beat": "Anthropic says Opus 5.5 is still the strongest (real quote)"},
+ {"id": "s15", "start": 99.45, "duration": 9.0, "beat": "SIGNATURE: sorting conveyor — everyday tasks drop into the Sonnet tray"},
+ {"id": "s16", "start": 108.15, "duration": 6.75, "beat": "SIGNATURE cont.: plans / complex / more intelligence drop into the Opus tray"},
+ {"id": "s17", "start": 114.6, "duration": 7.6, "beat": "the previous harness reel; same model performs better in a better harness"},
+ {"id": "s18", "start": 121.9, "duration": 9.9, "beat": "harness swap: OpenCode / Claude Code / Pi; model + good harness = results"},
+ {"id": "s19", "start": 131.5, "duration": 3.15, "beat": "go back and watch that reel"},
+ {"id": "s20", "start": 134.35, "duration": 13.5, "beat": "available everywhere: Claude (mobile + web), SureThing AI, Perplexity — all updated"},
+ {"id": "s21", "start": 147.55, "duration": 8.78, "beat": "CTA: follow Hossam for every new model"}
+]

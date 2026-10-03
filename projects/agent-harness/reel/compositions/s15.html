@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s15-template">
+  <style>
+
+    #s15-lab { top: 210px; } #s15-h { top: 250px; } #s15-k { top: 390px; }
+    #s15-g { left: 140px; top: 620px; width: 800px; height: 420px; }
+    #s15-nd { left: 532px; top: 640px; width: 16px; height: 400px; border-radius: 8px; background: var(--fg); transform-origin: 50% 100%; }
+    #s15-hub { left: 500px; top: 1000px; width: 80px; height: 80px; border-radius: 50%; background: var(--yellow); }
+    .s15-hc { position: absolute; top: 1160px; }
+    #s15-ha { left: 590px; } #s15-hb { left: 150px; }
+    #s15-ax { left: 140px; top: 1330px; width: 800px; height: 330px; }
+    #s15-cl { top: 1690px; }
+
+  </style>
+  <div data-hf-id="hf-9kt3" id="s15" data-composition-id="s15" data-width="1080" data-height="1920" data-duration="5.9">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-42y5" id="s15-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#5a2a1c; opacity:.55"></div>
+    <div data-hf-id="hf-xk8z" id="s15-bgp" class="dots"></div>
+    <div data-hf-id="hf-p4zy" id="s15-cam" class="cam">
+
+      <div data-hf-id="hf-8lot" id="s15-lab" class="row"><span data-hf-id="hf-mb9u" class="t-label">COST METER</span></div>
+      <div data-hf-id="hf-s6np" id="s15-h" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-czun" class="in" id="s15-h1">لما الـ<span data-hf-id="hf-nsmw" class="lat ah-l">Harness</span> يختلف</span></span></div>
+      <div data-hf-id="hf-9v8r" id="s15-k" class="row t-h1"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-1mje" class="in" id="s15-k1"><span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-9zyn" class="band" id="s15-band" style="background:var(--orange)"></span><span data-hf-id="hf-1d4n" class="txt" style="color:#fff">التكلفة</span></span> بتفرق</span></span></div>
+      <svg data-hf-id="hf-s8ih" id="s15-g" class="abs" viewBox="0 0 800 420">
+        <defs data-hf-id="hf-mh0t"><lineargradient data-hf-id="hf-a0u5" id="s15-grad" x1="0" x2="1"><stop data-hf-id="hf-ve0a" offset="0" stop-color="#b3ce65" /><stop data-hf-id="hf-20k4" offset=".55" stop-color="#ffec5c" /><stop data-hf-id="hf-b3kf" offset="1" stop-color="#ff5a33" /></lineargradient></defs>
+        <path data-hf-id="hf-n8ov" id="s15-arc" pathLength="1" d="M40 400 A 360 360 0 0 1 760 400" fill="none" stroke="url(#s15-grad)" stroke-width="44" stroke-linecap="round" />
+      </svg>
+      <div data-hf-id="hf-6w36" id="s15-nd" class="abs"></div><div data-hf-id="hf-vjcp" id="s15-hub" class="abs"></div>
+      <div data-hf-id="hf-4kvg" class="ah-mod s15-hc" id="s15-ha"><span data-hf-id="hf-9war" class="lat">HARNESS A</span></div>
+      <div data-hf-id="hf-lyl1" class="ah-mod s15-hc" id="s15-hb" style="border-color:var(--orange)"><span data-hf-id="hf-9hzq" class="lat">HARNESS B</span></div>
+      <svg data-hf-id="hf-wgpz" id="s15-ax" class="abs" viewBox="0 0 800 330"><path data-hf-id="hf-6vdl" id="s15-axp" pathLength="1" d="M20 0 V310 H800" fill="none" stroke="rgba(246,248,240,.6)" stroke-width="6" stroke-linecap="round" /></svg>
+      <div data-hf-id="hf-9831" id="s15-cl" class="row"><span data-hf-id="hf-or81" class="t-label" style="color:var(--yellow)">THEY HAVE A CHART ↓</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(84.3);
+      const { tl } = fx;
+      fx.drift("#s15-bgp", 84.3, 5.9, 70, -40);
+      fx.drift("#s15-blob", 84.3, 5.9, -120, 60);
+      fx.pushIn("#s15-cam", 84.3, 5.9, 1.035);
+
+      fx.rise("#s15-lab", 84.35, { y: 16 });
+      fx.maskUp("#s15-h1", 84.4);
+      fx.draw("#s15-arc", 84.6, 0.7);
+      fx.pop("#s15-hub", 84.9, { from: 0.2 });
+      tl.fromTo("#s15-nd", { opacity: 0, rotation: -80 }, { opacity: 1, rotation: -55, duration: 0.5, ease: "power2.out" }, 84.9);
+      fx.pop("#s15-ha", 85.6, { from: 0.4 });
+      tl.to("#s15-nd", { rotation: 62, duration: 0.45, ease: "back.out(2.5)" }, 86.4);
+      fx.pop("#s15-hb", 86.4, { from: 0.4 });
+      tl.to("#s15-nd", { rotation: -40, duration: 0.4, ease: "back.out(2.5)" }, 87.0);
+      tl.to("#s15-nd", { rotation: 72, duration: 0.5, ease: "back.out(3)" }, 87.6);
+      fx.maskUp("#s15-k1", 87.45);
+      fx.band("#s15-band", 87.7);
+      fx.draw("#s15-axp", 88.4, 0.6);
+      fx.rise("#s15-cl", 88.6, { y: 16 });
+
+      tl.to("#s15-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 89.85);
+      window.__timelines["s15"] = tl.real;
+    })();
+  </script>
+</template></body></html>

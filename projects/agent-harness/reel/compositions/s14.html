@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s14-template">
+  <style>
+
+    #s14-lab { top: 210px; } #s14-h { top: 250px; }
+    #s14-win { left: 110px; top: 470px; width: 860px; height: 820px; }
+    #s14-new { position: absolute; right: 50px; top: 100px; padding: 6px 22px; border-radius: 22px; background: var(--orange); color: #fff; font-family: var(--font-en); font-weight: 900; font-size: 24px; letter-spacing: .14em; direction: ltr; }
+    #s14-days { position: absolute; right: 200px; top: 98px; font-size: 30px; font-weight: 700; color: #5a6b62; }
+    #s14-t { position: absolute; right: 50px; left: 50px; top: 200px; font-size: 58px; font-weight: 900; line-height: 1.35; color: var(--ink); direction: rtl; }
+    #s14-t .hl > .band { background: var(--lime); }
+    #s14-body { position: absolute; left: 50px; right: 50px; top: 480px; }
+    #s14-body span { display: block; height: 18px; border-radius: 9px; background: #e1e4d4; margin-bottom: 26px; margin-left: auto; }
+    #s14-name { top: 1380px; font-size: 130px; }
+    #s14-q { left: 0; right: 0; top: 1590px; text-align: center; }
+
+  </style>
+  <div data-hf-id="hf-3fbg" id="s14" data-composition-id="s14" data-width="1080" data-height="1920" data-duration="6.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-25is" id="s14-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-p46m" id="s14-bgp" class="dots"></div>
+    <div data-hf-id="hf-tf7r" id="s14-cam" class="cam">
+
+      <div data-hf-id="hf-lsvo" id="s14-lab" class="row"><span data-hf-id="hf-6pt0" class="t-label">SOURCE 02 · ARTICLE</span></div>
+      <div data-hf-id="hf-irsg" id="s14-h" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-9f36" class="in" id="s14-h1">مصدر تاني… لسه طالع</span></span></div>
+      <div data-hf-id="hf-95ff" id="s14-win" class="window"><div data-hf-id="hf-ufsv" class="bar"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><b data-hf-id="hf-2sdl">ARENA AI · BLOG</b></div>
+        <div data-hf-id="hf-a5ag" id="s14-new">NEW</div><div data-hf-id="hf-hzom" id="s14-days">من كام يوم</div>
+        <div data-hf-id="hf-3ewa" id="s14-t">اختيار الـ<span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-8tom" class="band" id="s14-band"></span><span data-hf-id="hf-17pk" class="txt lat">Harness</span></span><br data-hf-id="hf-x5px">بيغيّر التكلفة</div>
+        <div data-hf-id="hf-9mp4" id="s14-body"><span data-hf-id="hf-rgxk" style="width:100%"></span><span data-hf-id="hf-d0ll" style="width:86%"></span><span data-hf-id="hf-pg2m" style="width:94%"></span><span data-hf-id="hf-iu8k" style="width:70%"></span><span data-hf-id="hf-qa5f" style="width:88%"></span><span data-hf-id="hf-h15x" style="width:60%"></span></div>
+      </div>
+      <div data-hf-id="hf-4pc3" id="s14-name" class="row ah-en"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-flhr" class="in" id="s14-n1">Arena AI</span></span></div>
+      <div data-hf-id="hf-zw10" id="s14-q" class="t-label">PARAPHRASED</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(78.0);
+      const { tl } = fx;
+      fx.drift("#s14-bgp", 78.0, 6.5, 70, -40);
+      fx.drift("#s14-blob", 78.0, 6.5, -120, 60);
+      fx.pushIn("#s14-cam", 78.0, 6.5, 1.035);
+
+      fx.rise("#s14-lab", 78.0, { y: 16 });
+      fx.maskUp("#s14-h1", 78.1);
+      tl.fromTo("#s14-win", { opacity: 0, y: 400, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "expo.out" }, 79.15);
+      fx.pop("#s14-new", 79.95, { from: 0.3 });
+      fx.rise("#s14-days", 80.2, { y: 10 });
+      fx.maskUp("#s14-n1", 81.6);
+      fx.rise("#s14-t", 82.5, { y: 20 });
+      fx.band("#s14-band", 83.85);
+      fx.rise("#s14-q", 83.0, { y: 10 });
+
+      tl.to("#s14-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 84.2);
+      window.__timelines["s14"] = tl.real;
+    })();
+  </script>
+</template></body></html>

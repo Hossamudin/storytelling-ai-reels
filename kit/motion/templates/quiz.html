@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<!--
+  Quiz card (end-of-section check). Pair with a silent "hold" in the screen edit (pipeline/screen_edit.py)
+  so the voice pauses while the viewer thinks. scenes.json:
+    {"id": "q1", "start": 64.0, "duration": 7.0, "template": "quiz",
+     "data": {"Q": "تقدر تكلم أكتر من وكيل في نفس الوقت؟", "A": "أيوه", "B": "لأ", "C": "بس من Pages",
+              "CORRECT": "A", "COUNT": 3, "LABEL": "QUICK CHECK · 01"}}
+  Timeline: question (0.2) → options (0.8) → countdown COUNT s → reveal correct (lime) + ding.
+  Add cues: {"t": start+0.8+COUNT, "sfx": "library/chime"} and ticks with "library/click-soft".
+-->
+<template id="{{ID}}-template">
+  <style>
+    #{{ID}}-lab { top: 160px; }
+  </style>
+  <div id="{{ID}}" data-composition-id="{{ID}}" data-width="{{W}}" data-height="{{H}}" data-duration="{{DUR}}">
+    <div class="bg"></div>
+    <div id="{{ID}}-dots" class="dots"></div>
+    <div id="{{ID}}-cam" class="cam">
+      <div id="{{ID}}-lab" class="row"><span class="t-label" data-layout-allow-overlap>{{LABEL}}</span></div>
+      <div class="quiz-q" id="{{ID}}-q" data-layout-allow-overlap>{{Q}}</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" id="{{ID}}-A"><span class="k">A</span><span>{{A}}</span></div>
+        <div class="quiz-opt" id="{{ID}}-B"><span class="k">B</span><span>{{B}}</span></div>
+        <div class="quiz-opt" id="{{ID}}-C"><span class="k">C</span><span>{{C}}</span></div>
+      </div>
+      <div class="quiz-ring" id="{{ID}}-ring">
+        <svg viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="64" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="10" />
+          <circle id="{{ID}}-arc" cx="75" cy="75" r="64" fill="none" stroke="#FFEC5C" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" transform="rotate(-90 75 75)" /></svg>
+        <div class="num" id="{{ID}}-n"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const T0 = {{START}}, N = {{COUNT}};
+      const fx = window.HF_SCENE(T0);
+      const { tl } = fx;
+      fx.drift("#{{ID}}-dots", T0, {{DUR}}, 40, -30);
+      fx.rise("#{{ID}}-lab", T0 + 0.1, { y: 20 });
+      fx.rise("#{{ID}}-q", T0 + 0.2, { y: 50, s: 1.05 });
+      fx.rise(["#{{ID}}-A", "#{{ID}}-B", "#{{ID}}-C"], T0 + 0.8, { y: 50, st: 0.12, e: "back.out(1.6)" });
+      fx.pop("#{{ID}}-ring", T0 + 1.1, { from: 0.4 });
+      tl.fromTo("#{{ID}}-arc", { strokeDashoffset: 0 }, { strokeDashoffset: 1, duration: N, ease: "none" }, T0 + 1.2);
+      fx.counter("#{{ID}}-n", T0 + 1.2, T0 + 1.2 + N, N, 0, { e: "none" });
+      const R = T0 + 1.25 + N;
+      ["A", "B", "C"].forEach((k) => {
+        if (k === "{{CORRECT}}") tl.to("#{{ID}}-" + k, { backgroundColor: "#B4CF66", color: "#0D0D0D", borderColor: "#B4CF66", scale: 1.06, duration: 0.3, ease: "back.out(2)" }, R);
+        else tl.to("#{{ID}}-" + k, { opacity: 0.35, duration: 0.3 }, R);
+      });
+      tl.to("#{{ID}}-ring", { opacity: 0, scale: 0.6, duration: 0.25 }, R);
+      window.__timelines["{{ID}}"] = tl.real;
+    })();
+  </script>
+</template></body></html>

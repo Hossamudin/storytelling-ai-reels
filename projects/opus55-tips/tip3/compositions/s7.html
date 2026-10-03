@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s7-template">
+  <style>
+
+    #s7-road { left: 190px; top: 470px; width: 700px; height: 1251px; border-radius: 30px; }
+    #s7-z { left: 470px; top: 1530px; width: 130px; height: 130px; border-radius: 50%; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-ar); font-weight: 900; font-size: 70px; box-shadow: 0 0 40px rgba(255,90,51,.6); }
+    #s7-hl { left: 0; top: 0; width: 1080px; height: 1920px; filter: drop-shadow(0 0 18px rgba(179,206,101,.9)); }
+    #s7-tag { left: 60px; top: 1060px; }
+
+  </style>
+  <div data-hf-id="hf-5zj0" id="s7" data-composition-id="s7" data-width="1080" data-height="1920" data-duration="4.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-is0r" id="s7-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-7b8w" id="s7-bgp" class="dots"></div>
+    <div data-hf-id="hf-crhj" id="s7-cam" class="cam">
+
+      <div data-hf-id="hf-zani" class="row t-h2" data-layout-allow-overlap="" style="top:280px"><span data-hf-id="hf-86r5" class="mask" data-layout-allow-overlap=""><span data-hf-id="hf-kxm4" class="in" data-layout-allow-overlap="" id="s7-h1">بدل ما تبدأ من الصفر</span></span></div>
+      <div data-hf-id="hf-l0jm" class="row t-h2 op-l" data-layout-allow-overlap="" style="top:280px"><span data-hf-id="hf-eiat" class="mask" data-layout-allow-overlap=""><span data-hf-id="hf-9hc6" class="in" data-layout-allow-overlap="" id="s7-h2">اتعلّم من غيرك</span></span></div>
+      <img data-hf-id="hf-j8z8" id="s7-road" class="abs" src="assets/images/road.png">
+      <div data-hf-id="hf-susm" id="s7-z" class="abs op-en">0</div>
+      <svg data-hf-id="hf-56l0" id="s7-hl" class="abs" viewBox="0 0 1080 1920"><path data-hf-id="hf-6x4j" id="s7-hp" d="M309 1167L640 545" pathLength="1" stroke="#e9ff9a" stroke-width="16" stroke-linecap="round" fill="none" /></svg>
+      <div data-hf-id="hf-kj1z" id="s7-tag" class="op-chip" style="left:60px; top:1060px"><span data-hf-id="hf-8dw9" class="ic"><svg data-hf-id="hf-ufwh" style="width:32px; height:32px; color:currentColor;"><use data-hf-id="hf-qr30" href="#i-flag" /></svg></span><span data-hf-id="hf-4ydb">SHORTCUT</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(28.0);
+      const { tl } = fx;
+      fx.drift("#s7-bgp", 28.0, 4.5, 60, -40);
+      fx.drift("#s7-blob", 28.0, 4.5, -110, 60);
+      fx.pushIn("#s7-cam", 28.0, 4.5, 1.02);
+
+      fx.maskUp("#s7-h1", 28.15);
+      tl.fromTo("#s7-road", { opacity: 0, y: 200, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 28.05);
+      fx.pop("#s7-z", 29.35, { from: 0.2 });
+      tl.to("#s7-h1", { yPercent: -115, duration: 0.25, ease: "power2.in" }, 31.6);
+      fx.maskUp("#s7-h2", 31.85);
+      fx.draw("#s7-hp", 31.85, 0.5, "power2.out");
+      fx.pop("#s7-tag", 32.0, { from: 0.4 });
+
+      tl.to("#s7-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 32.06);
+      window.__timelines["s7"] = tl.real;
+    })();
+  </script>
+</template></body></html>

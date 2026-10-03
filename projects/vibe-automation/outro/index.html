@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Vibe Automation — Outro</title>
+    <script src="assets/js/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Noto Kufi Arabic";
+        src: url("assets/fonts/NotoKufiArabic.ttf") format("truetype");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Manrope";
+        src: url("assets/fonts/Manrope.ttf") format("truetype");
+        font-weight: 200 800;
+      }
+      :root {
+        --paper: #f6f4ea;
+        --paper2: #eceee0;
+        --ink: #0d0d0d;
+        --teal: #136052;
+        --teal2: #0f4f44;
+        --green: #437f3e;
+        --lime: #b3ce65;
+        --yellow: #ffec5c;
+        --orange: #ff5a33;
+        --red: #d93a2b;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--paper);
+        font-family: "Noto Kufi Arabic", sans-serif;
+        direction: rtl;
+        color: var(--ink);
+      }
+      .lat {
+        font-family: "Manrope", sans-serif;
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .fill {
+        position: absolute;
+        inset: 0;
+      }
+      .paper {
+        background: var(--paper);
+      }
+      .tealbg {
+        background: radial-gradient(ellipse 80% 70% at 50% 45%, #1a7564 0%, var(--teal) 55%, var(--teal2) 100%);
+      }
+      .dots {
+        position: absolute;
+        inset: -220px;
+        background-image: radial-gradient(circle, rgba(19, 96, 82, 0.2) 2.4px, transparent 2.9px);
+        background-size: 52px 52px;
+      }
+      .dots.lite {
+        background-image: radial-gradient(circle, rgba(179, 206, 101, 0.16) 2.4px, transparent 2.9px);
+      }
+      .cam {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+      }
+      .abs {
+        position: absolute;
+      }
+      .row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        line-height: 1.3;
+      }
+      .w {
+        display: inline-block;
+      }
+      .glow {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .hl {
+        position: relative;
+        isolation: isolate;
+        display: inline-block;
+        padding: 0 22px;
+      }
+      .hl > .band {
+        position: absolute;
+        inset: 12% -4px 8% -4px;
+        border-radius: 14px;
+        transform-origin: 100% 50%;
+      }
+      .hl > .txt {
+        position: relative;
+        display: inline-block;
+      }
+      svg.ic {
+        overflow: visible;
+      }
+      .stroke {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }      .node {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle at 50% 45%, #fff6b8 0%, var(--yellow) 30%, var(--orange) 78%, #e8452a 100%);
+        box-shadow: 0 0 0 6px rgba(255, 236, 92, 0.25), 0 0 40px rgba(255, 236, 92, 0.65), 0 0 110px rgba(255, 90, 51, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .node svg {
+        width: 46%;
+        height: 46%;
+      }      #flash {
+        position: absolute;
+        inset: 0;
+        background: #fffdf2;
+        opacity: 0;
+        z-index: 90;
+        pointer-events: none;
+      }
+      #grain {
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: 95;
+        pointer-events: none;
+        opacity: 0.07;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+        </style>
+  </head>
+  <body>
+    <!-- Icon library -->
+    <svg data-hf-id="hf-6o47" width="0" height="0" style="position: absolute">
+      <defs data-hf-id="hf-mh0t">
+        <filter data-hf-id="hf-hwu1" id="hblur" x="-50%" y="-20%" width="200%" height="140%"><fegaussianblur data-hf-id="hf-a18f" id="hblur-g" stdDeviation="0 0" /></filter>
+        <symbol data-hf-id="hf-hyxc" id="i-like" viewBox="0 0 64 64">
+          <path data-hf-id="hf-foeg" d="M8 28h10v28H8z" fill="currentColor" />
+          <path data-hf-id="hf-p027" d="M22 56V28L33 8c4-2 9 1 8 6l-3 12h15c4 0 7 4 6 8l-4 17c-1 3-4 5-7 5z" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-67q0" id="i-share" viewBox="0 0 64 64">
+          <path data-hf-id="hf-nyg9" d="M36 10l22 20-22 20V38C20 38 11 44 6 56c1-18 11-30 30-32z" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-74yg" id="i-mic" viewBox="0 0 64 64">
+          <rect data-hf-id="hf-d16d" x="22" y="6" width="20" height="32" rx="10" class="stroke" stroke="currentColor" stroke-width="4" />
+          <path data-hf-id="hf-r0wy" d="M14 30c0 10 8 17 18 17s18-7 18-17M32 47v10M22 58h20" class="stroke" stroke="currentColor" stroke-width="4" />
+        </symbol>
+        <symbol data-hf-id="hf-t9cl" id="i-guest" viewBox="0 0 64 64">
+          <circle data-hf-id="hf-7662" cx="28" cy="20" r="10" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <path data-hf-id="hf-q15a" d="M10 54c0-10 8-18 18-18s18 8 18 18" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <path data-hf-id="hf-lzuy" d="M50 10l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L41 17l6-1z" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-ly1t" id="i-search" viewBox="0 0 64 64">
+          <circle data-hf-id="hf-rwti" cx="27" cy="27" r="16" class="stroke" stroke="currentColor" stroke-width="5" />
+          <path data-hf-id="hf-3499" d="M39 39l15 15" class="stroke" stroke="currentColor" stroke-width="6" />
+        </symbol>
+        <symbol data-hf-id="hf-sqjz" id="i-chat" viewBox="0 0 64 64">
+          <path data-hf-id="hf-ow75" d="M8 14c0-4 3-6 6-6h36c3 0 6 2 6 6v24c0 4-3 6-6 6H26l-12 10v-10h0c-3 0-6-2-6-6z" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <circle data-hf-id="hf-8097" cx="22" cy="26" r="3.2" fill="currentColor" />
+          <circle data-hf-id="hf-qvlo" cx="32" cy="26" r="3.2" fill="currentColor" />
+          <circle data-hf-id="hf-vgj9" cx="42" cy="26" r="3.2" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-mcdd" id="i-cal" viewBox="0 0 64 64">
+          <rect data-hf-id="hf-6nwq" x="8" y="12" width="48" height="44" rx="7" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <path data-hf-id="hf-gl9q" d="M8 26h48M20 6v12M44 6v12" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <rect data-hf-id="hf-hq71" x="30" y="34" width="12" height="12" rx="2" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-s88c" id="i-cam" viewBox="0 0 64 64">
+          <rect data-hf-id="hf-s07x" x="6" y="18" width="36" height="30" rx="6" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <path data-hf-id="hf-8elb" d="M42 28l16-9v26l-16-9z" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <circle data-hf-id="hf-2ki3" cx="16" cy="28" r="3.5" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-45ax" id="i-edit" viewBox="0 0 64 64">
+          <rect data-hf-id="hf-gsg5" x="6" y="10" width="52" height="36" rx="6" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <path data-hf-id="hf-6klt" d="M27 20l12 8-12 8z" fill="currentColor" />
+          <path data-hf-id="hf-ouck" d="M6 56h52" class="stroke" stroke="currentColor" stroke-width="4.5" />
+          <circle data-hf-id="hf-xf14" cx="40" cy="56" r="5" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-x85v" id="i-person" viewBox="0 0 48 56">
+          <circle data-hf-id="hf-gqsl" cx="24" cy="13" r="10" fill="currentColor" />
+          <path data-hf-id="hf-0obb" d="M4 54c0-12 9-20 20-20s20 8 20 20z" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-6oz2" id="i-spark" viewBox="0 0 64 64">
+          <path data-hf-id="hf-y012" d="M32 4c2 14 6 22 28 28-22 6-26 14-28 28-2-14-6-22-28-28 22-6 26-14 28-28z" fill="#fff" />
+        </symbol>
+        <symbol data-hf-id="hf-2ja5" id="i-check" viewBox="0 0 64 64">
+          <path data-hf-id="hf-xw1x" d="M14 33l12 12 24-26" class="stroke" stroke="currentColor" stroke-width="8" />
+        </symbol>
+        <symbol data-hf-id="hf-a6vx" id="i-x" viewBox="0 0 64 64">
+          <path data-hf-id="hf-64c5" d="M20 20l24 24M44 20L20 44" class="stroke" stroke="currentColor" stroke-width="7" />
+        </symbol>
+        <symbol data-hf-id="hf-1zx6" id="i-bell" viewBox="0 0 64 64">
+          <path data-hf-id="hf-9qk8" d="M32 8c-11 0-18 8-18 19v11l-6 9h48l-6-9V27c0-11-7-19-18-19z" fill="currentColor" />
+          <path data-hf-id="hf-18q0" d="M25 51a7 7 0 0014 0z" fill="currentColor" />
+        </symbol>
+        <symbol data-hf-id="hf-pf1b" id="i-cursor" viewBox="0 0 70 90">
+          <path data-hf-id="hf-10hh" d="M6 4l58 50-26 4 14 26-12 5-14-26-20 18z" fill="#0d0d0d" stroke="#fff" stroke-width="5" stroke-linejoin="round" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div data-hf-id="hf-wzmi" id="root" data-composition-id="main" data-start="0" data-duration="22" data-width="1920" data-height="1080" data-fps="30">
+      <div data-hf-id="hf-pntn" id="o1-host" data-composition-id="o1" data-composition-src="compositions/o1.html" data-start="0" data-duration="6.0" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-j6im" id="o2-host" data-composition-id="o2" data-composition-src="compositions/o2.html" data-start="5.9" data-duration="5.2" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-3u9l" id="o3-host" data-composition-id="o3" data-composition-src="compositions/o3.html" data-start="11.0" data-duration="11.0" data-track-index="1" data-width="1920" data-height="1080"></div>
+
+      <div data-hf-id="hf-hmg5" id="flash"></div>
+      <div data-hf-id="hf-f6d6" id="grain"></div>
+
+      <!-- ================= Audio ================= -->
+      <audio data-hf-id="hf-0t24" id="vo" src="assets/voice/outro.wav" data-start="0" data-duration="16.912" data-track-index="20" data-volume="1"></audio>
+      <audio data-hf-id="hf-jy3g" id="fx01" src="assets/sfx/whoosh-short.mp3" data-start="0.3" data-duration="0.57" data-track-index="21" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-fjxs" id="fx02" src="assets/sfx/sparkle.mp3" data-start="2.3" data-duration="1.8" data-track-index="22" data-volume="0.16"></audio>
+      <audio data-hf-id="hf-yy7w" id="fx03" src="assets/sfx/pop.mp3" data-start="3.5" data-duration="0.7" data-track-index="23" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-7cjz" id="fx04" src="assets/sfx/pop.mp3" data-start="3.8" data-duration="0.7" data-track-index="24" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-nzq2" id="fx05" src="assets/sfx/pop.mp3" data-start="4.04" data-duration="0.7" data-track-index="25" data-volume="0.6"></audio>
+      <audio data-hf-id="hf-pozc" id="fx06" src="assets/sfx/sparkle.mp3" data-start="4.06" data-duration="1.8" data-track-index="26" data-volume="0.16"></audio>
+      <audio data-hf-id="hf-nocj" id="fx07" src="assets/sfx/whoosh.mp3" data-start="4.32" data-duration="0.57" data-track-index="27" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-7kfe" id="fx08" src="assets/sfx/pop.mp3" data-start="4.64" data-duration="0.7" data-track-index="28" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-k7mz" id="fx09" src="assets/sfx/click-soft.mp3" data-start="5.28" data-duration="0.36" data-track-index="29" data-volume="0.55"></audio>
+      <audio data-hf-id="hf-zmi7" id="fx10" src="assets/sfx/whoosh-short.mp3" data-start="5.75" data-duration="0.57" data-track-index="30" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-4bab" id="fx11" src="assets/sfx/typing.mp3" data-start="6.25" data-duration="1.2" data-track-index="31" data-volume="0.75"></audio>
+      <audio data-hf-id="hf-zt6a" id="fx12" src="assets/sfx/pop.mp3" data-start="7.7" data-duration="0.7" data-track-index="32" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-ypmh" id="fx13" src="assets/sfx/pop.mp3" data-start="7.95" data-duration="0.7" data-track-index="33" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-s6lr" id="fx14" src="assets/sfx/whoosh.mp3" data-start="8.4" data-duration="0.57" data-track-index="34" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-crvt" id="fx15" src="assets/sfx/whoosh-short.mp3" data-start="9.05" data-duration="0.57" data-track-index="35" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-n339" id="fx16" src="assets/sfx/chime.mp3" data-start="10.2" data-duration="2.0" data-track-index="36" data-volume="0.65"></audio>
+      <audio data-hf-id="hf-xop0" id="fx17" src="assets/sfx/whoosh-cinematic.mp3" data-start="10.95" data-duration="2.2" data-track-index="37" data-volume="0.2"></audio>
+      <audio data-hf-id="hf-4arr" id="fx18" src="assets/sfx/sparkle.mp3" data-start="12.44" data-duration="1.8" data-track-index="38" data-volume="0.16"></audio>
+      <audio data-hf-id="hf-xyaz" id="fx19" src="assets/sfx/pop.mp3" data-start="13.1" data-duration="0.7" data-track-index="39" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-5qwd" id="fx20" src="assets/sfx/pop.mp3" data-start="13.28" data-duration="0.7" data-track-index="40" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-xhj4" id="fx21" src="assets/sfx/click-soft.mp3" data-start="13.9" data-duration="0.36" data-track-index="41" data-volume="0.55"></audio>
+      <audio data-hf-id="hf-n0dv" id="fx22" src="assets/sfx/pop.mp3" data-start="14.6" data-duration="0.7" data-track-index="42" data-volume="0.5"></audio>
+      <audio data-hf-id="hf-6i6e" id="fx23" src="assets/sfx/notification.mp3" data-start="14.9" data-duration="1.8" data-track-index="43" data-volume="0.4"></audio>
+    </div>
+
+    <script src="assets/js/fx.js"></script>
+    <script src="assets/js/motion-blur.js"></script>
+    <script>
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const Q = (s) => document.querySelector(s);
+        tl.fromTo("#flash", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+        // grain: stepped, finite, deterministic
+        const GP = [[0, 0], [-5, -5], [-10, 5], [5, -10], [-5, 15], [-10, 5], [15, 0], [0, 10], [-15, 0], [10, 5]];
+        const gObj = { i: 0 };
+        const grain = Q("#grain");
+        tl.fromTo(gObj, { i: 0 }, { i: 220, duration: 22, ease: "none", onUpdate: () => {
+          const p = GP[Math.floor(gObj.i) % GP.length];
+          grain.style.transform = `translate(${p[0]}%, ${p[1]}%)`;
+        } }, 0);
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>

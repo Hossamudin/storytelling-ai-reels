@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s3-template">
+  <style>
+
+    .qr { position: absolute; background: #fff; border-radius: 22px; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+    .qr img { display: block; width: 100%; height: 100%; }
+    .qr-l { position: absolute; left: -40px; right: -40px; bottom: -46px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 22px;
+      letter-spacing: .14em; color: var(--fg); direction: ltr; white-space: nowrap; }
+
+    #s3-ph { left: 330px; top: 470px; width: 420px; height: 760px; }
+    #s3-v { position: absolute; left: 0; top: 0; width: 388px; height: 776px; }
+    #s3-bulb { left: 110px; top: 560px; width: 150px; height: 150px; color: var(--yellow); }
+    #s3-c { left: 0; right: 0; top: 1290px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 150px; color: var(--yellow); direction: ltr; }
+    #s3-src { top: 1530px; }
+    .s3-coin { position: absolute; width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff59a, #e6c63a); border: 4px solid #b89a1e;
+      display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-weight: 900; font-size: 34px; color: #6b5400; }
+
+  </style>
+  <div id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="9.05">
+    <div class="bg"></div>
+    <div id="s3-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s3-bgp" class="dots"></div>
+    <div id="s3-cam" class="cam">
+
+      <div id="s3-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">01 · WHACKA · AI APP BUILDER</span></div>
+      <div class="row t-h2" style="top:340px;" data-layout-allow-overlap><span class="mask"><span class="in" id="s3-a1">فكرة تطبيق؟</span></span></div>
+      <svg id="s3-bulb" class="abs"><use href="#i-bulb" /></svg>
+      <div id="s3-ph" class="op-phone"><div class="scr"><img src="assets/images/whacka_hero.png" />
+        <video id="s3-v" src="assets/videos/whacka_build.mp4" data-start="1.65" data-duration="7.1" data-media-start="0" data-hf-media-start-basis="local" muted playsinline></video></div></div>
+      <div id="s3-k0" class="s3-coin" style="left:820px; top:620px">C</div><div id="s3-k1" class="s3-coin" style="left:880px; top:690px">C</div><div id="s3-k2" class="s3-coin" style="left:820px; top:760px">C</div><div id="s3-k3" class="s3-coin" style="left:880px; top:830px">C</div><div id="s3-k4" class="s3-coin" style="left:820px; top:900px">C</div><div id="s3-k5" class="s3-coin" style="left:880px; top:970px">C</div>
+      <div id="s3-c" class="abs"><span id="s3-cn">8</span> <span style="font-size:70px">CREDITS / DAY</span></div>
+      <div id="s3-src" class="op-src" style="top:1530px">REAL · HOSSAM'S WHACKA BUILD · WHACKA.APP/PRICING</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(12.75);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 12.75, 9.05, 60, -40);
+      fx.drift("#s3-blob", 12.75, 9.05, -110, 60);
+      fx.pushIn("#s3-cam", 12.75, 9.05, 1.035);
+
+      fx.rise("#s3-lab", 12.8, { y: 16 });
+      fx.maskUp("#s3-a1", 13.3);
+      fx.pop("#s3-bulb", 13.6, { from: 0.3 }); fx.breathe("#s3-bulb", 13.9, 2.5, 0.08, 0.8);
+      tl.fromTo("#s3-ph", { opacity: 0, y: 300, rotation: 6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.55, ease: "power3.out" }, 14.4);
+      tl.to("#s3-bulb", { x: 260, y: 160, scale: 0.3, opacity: 0, duration: 0.5, ease: "power3.in" }, 15.3);
+      for (let k = 0; k < 6; k++) tl.fromTo("#s3-k" + k, { opacity: 0, y: -500, rotation: 0 }, { opacity: 1, y: 0, rotation: 360, duration: 0.5, ease: "bounce.out" }, 16.5 + k * 0.12);
+      fx.counter("#s3-cn", 16.7, 17.3, 0, 8, { ar: false });
+      fx.rise("#s3-src", 17.5, { y: 10, b: 0 });
+      for (let k = 0; k < 6; k++) tl.to("#s3-k" + k, { y: -20, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 19.85 + k * 0.06);
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 21.36);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

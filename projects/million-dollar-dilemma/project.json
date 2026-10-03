@@ -1,0 +1,115 @@
+{
+  "name": "million-dollar-dilemma",
+  "title": "معضلة بمليون دولار حلها الذكاء الاصطناعي",
+  "stage": "assembly",
+  "created": "2026-09-11T15:23:15",
+  "updated": "2026-09-12T09:21:14",
+  "aspect": "9:16",
+  "duration_s": 265.43,
+  "approved": true,
+  "total_cost_usd": 0.4,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-09-11T15:23:15",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-09-11T15:23:21",
+      "note": "cleaned voiceover, 300.6s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-09-11T15:44:31",
+      "note": "gemini_api: 38 segments",
+      "from": "audio_clean"
+    },
+    {
+      "stage": "plan",
+      "at": "2026-09-11T15:51:10",
+      "note": "31 scenes, est $5.8",
+      "from": "transcribe"
+    },
+    {
+      "stage": "approval",
+      "at": "2026-09-11T18:23:06",
+      "note": "storyboard approved via dashboard",
+      "from": "plan"
+    },
+    {
+      "stage": "generation",
+      "at": "2026-09-11T18:23:14",
+      "note": "asset generation started",
+      "from": "approval"
+    },
+    {
+      "stage": "generation",
+      "at": "2026-09-11T18:28:27",
+      "note": "asset generation started",
+      "from": "generation"
+    },
+    {
+      "stage": "assembly",
+      "at": "2026-09-11T18:36:28",
+      "note": "scaffold generated (31 scenes, 301.16s)",
+      "from": "generation"
+    },
+    {
+      "stage": "assembly",
+      "at": "2026-09-11T18:38:11",
+      "note": "scaffold generated (31 scenes, 301.16s)",
+      "from": "assembly"
+    },
+    {
+      "stage": "assembly",
+      "at": "2026-09-11T18:46:58",
+      "note": "craft pass done; awaiting Higgsfield videos (session 2)",
+      "from": "assembly"
+    },
+    {
+      "stage": "approval",
+      "at": "2026-09-12T01:44:26",
+      "note": "storyboard approved via dashboard",
+      "from": "assembly"
+    },
+    {
+      "stage": "done",
+      "at": "2026-09-12T03:44:37",
+      "note": "v1 rendered: 1080x1920, 30fps, 301.2s, h264+aac, 176MB",
+      "from": "approval"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-09-12T07:09:07",
+      "note": "gemini_api: 26 segments",
+      "from": "done"
+    },
+    {
+      "stage": "assembly",
+      "at": "2026-09-12T07:09:20",
+      "note": "scaffold generated (31 scenes, 301.16s)",
+      "from": "transcribe"
+    },
+    {
+      "stage": "assembly",
+      "at": "2026-09-12T07:09:46",
+      "note": "scaffold generated (31 scenes, 266.03s)",
+      "from": "assembly"
+    },
+    {
+      "stage": "done",
+      "at": "2026-09-12T07:23:19",
+      "note": "v2: voice tightened (-35.1s), word-pill captions, resynced scenes",
+      "from": "assembly"
+    },
+    {
+      "stage": "assembly",
+      "at": "2026-09-12T09:21:14",
+      "note": "scaffold generated (31 scenes, 266.03s)",
+      "from": "done"
+    }
+  ]
+}

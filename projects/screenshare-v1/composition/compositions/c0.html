@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="c0-template">
+  <style>
+    #c0-lab { top: 330px; }
+    #c0-t { top: 380px; font-size: 190px; font-weight: 900; letter-spacing: -3px; }
+    #c0-sub { top: 640px; }
+    #c0-glow { left: 360px; top: 220px; width: 1200px; height: 640px; background: radial-gradient(ellipse, rgba(180, 207, 102, 0.28), transparent 68%); }
+  </style>
+  <div data-hf-id="hf-t14n" id="c0" data-composition-id="c0" data-width="1920" data-height="1080" data-duration="2.35">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-zcto" id="c0-dots" class="dots"></div>
+    <div data-hf-id="hf-ehg0" id="c0-cam" class="cam">
+      <div data-hf-id="hf-z3z6" id="c0-glow" class="glow"></div>
+      <div data-hf-id="hf-63d9" id="c0-lab" class="row"><span data-hf-id="hf-oakp" class="t-label" data-layout-allow-overlap="">SCREEN TOUR · EPISODE 01</span></div>
+      <div data-hf-id="hf-uxcv" id="c0-t" class="row lat nowrap">SureThing</div>
+      <div data-hf-id="hf-lwut" id="c0-sub" class="row t-h2" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-mo4x" class="in" id="c0-s">جولة سريعة في الواجهة</span></span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0);
+      fx.drift("#c0-dots", 0, 2.35, 40, -20);
+      fx.punch("#c0-cam", 0, 1.12);
+      fx.pop("#c0-glow", 0.05, { from: 0.4, d: 0.9, e: "power2.out" });
+      fx.rise("#c0-lab", 0.1, { y: 20 });
+      fx.letterDrop("#c0-t", 0.2, { st: 0.04 });
+      fx.maskUp("#c0-s", 0.8);
+      fx.zoomThrough("#c0-cam", 2.0);
+      window.__timelines["c0"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

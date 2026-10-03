@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s5-template">
+  <style>
+
+    .s5-r { position: absolute; left: 110px; width: 860px; height: 150px; border-radius: 26px; background: rgba(255,255,255,.05); border: 2px solid var(--edge); }
+    .s5-r b { position: absolute; left: 30px; top: 22px; font-family: var(--font-en); font-weight: 900; font-size: 26px; letter-spacing: .2em; color: var(--fg-muted); }
+    .s5-r .op-track { left: 30px; right: 30px; top: 78px; height: 40px; }
+    #s5-r1 { top: 560px; } #s5-r2 { top: 740px; } #s5-r3 { top: 920px; }
+
+  </style>
+  <div data-hf-id="hf-vn7g" id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="7.2">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-idoi" id="s5-blob" class="blob" style="left:160px; top:380px; width:760px; height:760px; background:#3a1a12; opacity:.55"></div>
+    <div data-hf-id="hf-6aiy" id="s5-bgp" class="dots"></div>
+    <div data-hf-id="hf-kq71" id="s5-cam" class="cam">
+
+      <div data-hf-id="hf-eudu" class="row t-h2" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-a9kn" class="in" id="s5-h1">مش كل مرة</span></span></div>
+      <div data-hf-id="hf-r6qo" class="row t-h3 muted" style="top:400px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-ipuv" class="in" id="s5-h2">تطلّع حاجة مشابهة</span></span></div>
+      <div data-hf-id="hf-hh97" class="s5-r" id="s5-r1"><b data-hf-id="hf-4n42">RUN 1 · TOKENS</b><div data-hf-id="hf-nht3" class="op-track"><div data-hf-id="hf-wbes" class="op-fill s5-f" id="s5-f1" style="background:var(--yellow)"></div></div></div><div data-hf-id="hf-6lrk" class="s5-r" id="s5-r2"><b data-hf-id="hf-f4zd">RUN 2 · TOKENS</b><div data-hf-id="hf-5j7r" class="op-track"><div data-hf-id="hf-hre9" class="op-fill s5-f" id="s5-f2" style="background:var(--yellow)"></div></div></div><div data-hf-id="hf-7dfd" class="s5-r" id="s5-r3"><b data-hf-id="hf-hlto">RUN 3 · TOKENS</b><div data-hf-id="hf-54wq" class="op-track"><div data-hf-id="hf-v8be" class="op-fill s5-f" id="s5-f3" style="background:var(--yellow)"></div></div></div>
+      <div data-hf-id="hf-phhl" class="row t-h2" style="top:1150px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-6bvm" class="in" id="s5-k1">الموديل يقعد يحرق</span></span></div>
+      <div data-hf-id="hf-gifc" class="row t-h1 op-o" style="top:1290px"><span data-hf-id="hf-3qrr" class="mask"><span data-hf-id="hf-dfws" class="in" id="s5-k2"><span data-hf-id="hf-5lcu" class="lat">tokens</span> كتير</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(20.4);
+      const { tl } = fx;
+      fx.drift("#s5-bgp", 20.4, 7.2, 60, -40);
+      fx.drift("#s5-blob", 20.4, 7.2, -110, 60);
+      fx.pushIn("#s5-cam", 20.4, 7.2, 1.035);
+
+      fx.maskUp("#s5-h1", 20.8); fx.maskUp("#s5-h2", 22.3);
+      fx.rise("#s5-r1", 21.5, { y: 40 }); fx.rise("#s5-r2", 21.9, { y: 40 }); fx.rise("#s5-r3", 22.3, { y: 40 });
+      fx.meter("#s5-f1", 21.7, 0.9, 1, { e: "power2.out" }); fx.meter("#s5-f2", 22.1, 0.9, 1, { e: "power2.out" }); fx.meter("#s5-f3", 22.5, 0.9, 1, { e: "power2.out" });
+      tl.to(".s5-f", { background: "#ff5a33", duration: 0.25 }, 26.3);
+      fx.shake("#s5-r1, #s5-r2, #s5-r3", 26.35, 10, 6);
+      fx.maskUp("#s5-k1", 25.2); fx.maskUp("#s5-k2", 26.3);
+
+      tl.to("#s5-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 27.16);
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>

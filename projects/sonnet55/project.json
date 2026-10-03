@@ -1,0 +1,43 @@
+{
+  "name": "sonnet55",
+  "title": "Claude Sonnet 5.5",
+  "stage": "transcribe",
+  "created": "2026-10-02T02:22:58",
+  "updated": "2026-10-02T02:23:43",
+  "aspect": null,
+  "duration_s": 188.37,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-02T02:22:58",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-02T02:23:00",
+      "note": "cleaned voiceover, 67.1s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-02T02:23:03",
+      "note": "openai_whisper: 3 segments",
+      "from": "audio_clean"
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-02T02:23:21",
+      "note": "cleaned voiceover, 188.4s",
+      "from": "transcribe"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-02T02:23:43",
+      "note": "openai_whisper: 25 segments",
+      "from": "audio_clean"
+    }
+  ]
+}

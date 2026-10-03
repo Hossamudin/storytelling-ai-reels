@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s2-template">
+  <style>
+
+    .op-n { position: absolute; left: 0; right: 0; text-align: center; white-space: nowrap; }
+    .op-lk { position: absolute; left: 50%; top: 50%; width: 80px; height: 80px; margin: -40px 0 0 -40px; color: rgba(179,206,101,.55); }
+    .op-done { position: absolute; right: 18px; top: 18px; width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+
+    #s2-c2b, #s2-c2 { left: 370px; top: 560px; width: 340px; height: 500px; }
+
+  </style>
+  <div data-hf-id="hf-9lby" id="s2" data-composition-id="s2" data-width="1080" data-height="1920" data-duration="4.1">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-w2c6" id="s2-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-aoeh" id="s2-bgp" class="dots"></div>
+    <div data-hf-id="hf-uzmy" id="s2-cam" class="cam">
+
+      <div data-hf-id="hf-hrsy" id="s2-lab" class="row" style="top:280px"><span data-hf-id="hf-fp92" class="t-label" style="color:var(--lime)">THE SERIES · 3 TIPS</span></div>
+      <div data-hf-id="hf-65m7" class="row t-h3" style="top:330px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-aaeo" class="in" id="s2-h1">عشان تطلّع منه نتايج كويسة</span></span></div>
+      <div data-hf-id="hf-4opx" id="s2-c1" class="op-card" style="left:80px; top:610px; width:260px; height:400px"><div data-hf-id="hf-gi4w" class="op-n op-en" data-layout-allow-overlap="" style="top:132px; font-size:26px; letter-spacing:.3em; color:var(--lime)">TIP</div><div data-hf-id="hf-rapz" class="op-n op-en op-y" data-layout-allow-overlap="" style="top:168px; font-size:130px; line-height:1">01</div><div data-hf-id="hf-emgd" class="op-n op-en" data-layout-allow-overlap="" style="top:336px; font-size:19px; color:var(--fg-muted)"></div><div data-hf-id="hf-1mcy" class="op-done"><svg data-hf-id="hf-lzsx" style="width:36px; height:36px; color:currentColor;"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div></div>
+      <div data-hf-id="hf-m44v" id="s2-c3" class="op-card back" style="left:740px; top:610px; width:260px; height:400px"><svg data-hf-id="hf-h73m" class="op-lk"><use data-hf-id="hf-i53r" href="#i-lock" /></svg></div>
+      <div data-hf-id="hf-rvm8" id="s2-c2b" class="op-card back"><svg data-hf-id="hf-33zq" class="op-lk"><use data-hf-id="hf-j0pj" href="#i-lock" /></svg></div>
+      <div data-hf-id="hf-mlr0" id="s2-c2" class="op-card" style="left:370px; top:560px; width:340px; height:500px"><div data-hf-id="hf-xsrt" id="s2-c2-sp" class="cl-spark" style="left:120px; top:36px; width:100px; height:100px;"><svg data-hf-id="hf-pnjr" id="s2-c2-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div><div data-hf-id="hf-c28b" class="op-n op-en" data-layout-allow-overlap="" style="top:165px; font-size:34px; letter-spacing:.3em; color:var(--lime)">PART</div><div data-hf-id="hf-h988" class="op-n op-en op-y" data-layout-allow-overlap="" style="top:210px; font-size:170px; line-height:1">02</div><div data-hf-id="hf-cja1" class="op-n op-en" data-layout-allow-overlap="" style="top:420px; font-size:25px; color:var(--fg-muted)">TODAY</div></div>
+      <div data-hf-id="hf-g8wf" class="row t-h1" style="top:1180px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-33vl" class="in" id="s2-k1">السلسلة دي</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(2.9);
+      const { tl } = fx;
+      fx.drift("#s2-bgp", 2.9, 4.1, 60, -40);
+      fx.drift("#s2-blob", 2.9, 4.1, -110, 60);
+      fx.pushIn("#s2-cam", 2.9, 4.1, 1.035);
+
+      fx.rise("#s2-lab", 2.9, { y: 12 }); fx.maskUp("#s2-h1", 2.95);
+      fx.rise("#s2-c1", 2.9, { y: 80 }); fx.rise("#s2-c3", 2.95, { y: 80 }); fx.rise("#s2-c2b", 3.0, { y: 120 });
+      fx.maskUp("#s2-k1", 5.2);
+      fx.hide("#s2-c2");
+      tl.to("#s2-c2b", { scaleX: 0, duration: 0.16, ease: "power2.in" }, 6.25);
+      tl.fromTo("#s2-c2", { opacity: 1, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.22, ease: "power2.out", immediateRender: false }, 6.41);
+      tl.fromTo("#s2-c2-sp-svg", { rotation: 0 }, { rotation: 120, duration: 0.6, ease: "power2.out" }, 6.41);
+
+      tl.to("#s2-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 6.56);
+      window.__timelines["s2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

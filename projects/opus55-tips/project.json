@@ -1,0 +1,31 @@
+{
+  "name": "opus55-tips",
+  "title": "Claude Opus 5.5 Tips (series)",
+  "stage": "transcribe",
+  "created": "2026-10-01T23:48:05",
+  "updated": "2026-10-01T23:49:01",
+  "aspect": null,
+  "duration_s": 324.26,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-01T23:48:05",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-01T23:48:25",
+      "note": "cleaned voiceover, 324.3s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-01T23:49:01",
+      "note": "openai_whisper: 92 segments",
+      "from": "audio_clean"
+    }
+  ]
+}

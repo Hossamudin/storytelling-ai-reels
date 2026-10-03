@@ -1,0 +1,31 @@
+{
+  "name": "agent-harness",
+  "title": "Agent Harness",
+  "stage": "transcribe",
+  "created": "2026-10-01T09:06:46",
+  "updated": "2026-10-01T09:07:16",
+  "aspect": null,
+  "duration_s": 173.4,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-01T09:06:46",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-01T09:06:54",
+      "note": "cleaned voiceover, 173.4s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-01T09:07:16",
+      "note": "openai_whisper: 90 segments",
+      "from": "audio_clean"
+    }
+  ]
+}

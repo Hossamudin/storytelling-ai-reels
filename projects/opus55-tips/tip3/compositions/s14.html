@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s14-template">
+  <style>
+
+    #s14-r { left: 560px; top: 520px; width: 440px; height: 622px; }
+    #s14-h { left: 80px; top: 520px; width: 440px; height: 450px; }
+    .s14-n { position: absolute; top: 1170px; width: 440px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 50px; direction: ltr; }
+    #s14-rn { left: 560px; } #s14-hn { left: 80px; top: 1000px; color: var(--lime); }
+    #s14-pk { left: 110px; top: 1090px; color: var(--lime); border-color: var(--lime); font-family: var(--font-en); font-size: 58px; background: rgba(4,22,20,.92); }
+    #s14-src { top: 1500px; }
+
+  </style>
+  <div data-hf-id="hf-wrsv" id="s14" data-composition-id="s14" data-width="1080" data-height="1920" data-duration="5.9">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-25is" id="s14-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-p46m" id="s14-bgp" class="dots"></div>
+    <div data-hf-id="hf-tf7r" id="s14-cam" class="cam">
+
+      <div data-hf-id="hf-zfmq" class="row t-h3" style="top:300px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-ckzj" class="in" id="s14-h1">مكتبتين مشهورتين</span></span></div>
+      <div data-hf-id="hf-waq1" id="s14-r" class="op-shot"><img data-hf-id="hf-5m89" src="assets/images/rem_card.png" style="width:440px"></div>
+      <div data-hf-id="hf-t0v9" id="s14-rn" class="s14-n">Remotion</div>
+      <div data-hf-id="hf-crcj" id="s14-h" class="op-shot"><img data-hf-id="hf-n37l" src="assets/images/hf_card.png" style="width:440px"></div>
+      <div data-hf-id="hf-dhjg" id="s14-hn" class="s14-n">HyperFrames</div>
+      <div data-hf-id="hf-w8sx" id="s14-pk" class="stamp">MY PICK ✓</div>
+      <div data-hf-id="hf-xjcd" class="row t-h2 op-l" style="top:1330px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-3ddx" class="in" id="s14-k1">ودي اللي بعتمد عليها</span></span></div>
+      <div data-hf-id="hf-3pk2" id="s14-src" class="op-src">REAL SITES · REMOTION.DEV · HYPERFRAMES.HEYGEN.COM</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(64.6);
+      const { tl } = fx;
+      fx.drift("#s14-bgp", 64.6, 5.9, 60, -40);
+      fx.drift("#s14-blob", 64.6, 5.9, -110, 60);
+      fx.pushIn("#s14-cam", 64.6, 5.9, 1.02);
+
+      fx.maskUp("#s14-h1", 64.75);
+      tl.fromTo("#s14-r", { opacity: 0, y: 160, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "power3.out" }, 65.4);
+      fx.rise("#s14-rn", 65.6, { y: 20 });
+      tl.fromTo("#s14-h", { opacity: 0, y: 160, rotation: -4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "power3.out" }, 67.2);
+      fx.rise("#s14-hn", 67.4, { y: 20 });
+      tl.to("#s14-r, #s14-rn", { opacity: 0.35, scale: 0.92, filter: "grayscale(.8)", duration: 0.5 }, 68.0);
+      tl.to("#s14-h", { scale: 1.06, boxShadow: "0 0 0 6px #b3ce65, 0 30px 80px rgba(0,0,0,.55)", duration: 0.45, ease: "back.out(1.6)" }, 68.0);
+      fx.maskUp("#s14-k1", 68.7);
+      fx.stamp("#s14-pk", 69.3);
+      fx.rise("#s14-src", 65.8, { y: 8, b: 0 });
+
+      tl.to("#s14-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 70.06);
+      window.__timelines["s14"] = tl.real;
+    })();
+  </script>
+</template></body></html>

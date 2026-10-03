@@ -1,0 +1,46 @@
+{
+ "enabled": true,
+ "series": "CLAUDE 5.5",
+ "grain": false,
+ "sections": [
+  {
+   "t": 0,
+   "label": "THE NEWS"
+  },
+  {
+   "t": 18.85,
+   "label": "THE PROOF"
+  },
+  {
+   "t": 49.3,
+   "label": "THE PRICE"
+  },
+  {
+   "t": 59.6,
+   "label": "MY TAKE"
+  },
+  {
+   "t": 88.85,
+   "label": "SONNET VS OPUS"
+  },
+  {
+   "t": 114.6,
+   "label": "THE HARNESS"
+  },
+  {
+   "t": 134.35,
+   "label": "WHERE TO TRY"
+  },
+  {
+   "t": 147.55,
+   "label": "FOLLOW"
+  }
+ ],
+ "wipes": [
+  18.75,
+  49.2,
+  88.75,
+  114.5,
+  134.25
+ ]
+}

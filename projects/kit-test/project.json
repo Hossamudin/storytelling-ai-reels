@@ -1,0 +1,19 @@
+{
+  "name": "kit-test",
+  "title": "Kit test",
+  "stage": "ingest",
+  "created": "2026-09-30T18:58:52",
+  "updated": "2026-09-30T18:58:52",
+  "aspect": null,
+  "duration_s": null,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-09-30T18:58:52",
+      "note": "project created",
+      "from": null
+    }
+  ]
+}

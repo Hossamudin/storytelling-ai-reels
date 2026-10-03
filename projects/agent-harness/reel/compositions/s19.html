@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s19-template">
+  <style>
+
+    #s19-lab { top: 210px; }
+    .s19-r { position: absolute; left: 0; right: 0; text-align: center; }
+    .s19-r .pill { font-size: 48px; height: 100px; padding: 0 44px; border-radius: 50px; }
+    .s19-r .ok { width: 54px; height: 54px; border-radius: 50%; background: var(--green); color: #fff; display: inline-flex; align-items: center; justify-content: center; }
+    #s19-r1 { top: 290px; } #s19-r2 { top: 420px; } #s19-r3 { top: 560px; }
+    #s19-l1 { top: 840px; } #s19-l2 { top: 1100px; }
+    .s19-lb { position: absolute; right: 110px; font-size: 40px; font-weight: 800; }
+    #s19-t1 { left: 110px; top: 920px; width: 860px; height: 70px; border-radius: 35px; } #s19-t2 { left: 110px; top: 1180px; width: 860px; height: 70px; border-radius: 35px; }
+    #s19-t1 .ah-fill, #s19-t2 .ah-fill { border-radius: 35px; }
+    #s19-cut { left: 528px; top: 1150px; width: 24px; height: 130px; border-radius: 12px; background: var(--yellow); }
+    #s19-half { left: 0; right: 0; top: 1330px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 200px; color: var(--yellow); direction: ltr; line-height: 1; }
+    #s19-k { top: 1580px; }
+
+  </style>
+  <div data-hf-id="hf-2rk2" id="s19" data-composition-id="s19" data-width="1080" data-height="1920" data-duration="6.7">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ixii" id="s19-blob" class="blob" style="left:160px; top:820px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-41rr" id="s19-bgp" class="dots"></div>
+    <div data-hf-id="hf-rx9u" id="s19-cam" class="cam">
+
+      <div data-hf-id="hf-me8x" id="s19-lab" class="row"><span data-hf-id="hf-4e1z" class="t-label">THE FORMULA</span></div>
+      <div data-hf-id="hf-7xrb" class="s19-r" id="s19-r1"><span data-hf-id="hf-3zu8" class="pill"><span data-hf-id="hf-4evv" class="ok"><svg data-hf-id="hf-hqrv" width="34" height="34"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></span>نفس النموذج</span></div>
+      <div data-hf-id="hf-z9vg" class="s19-r" id="s19-r2"><span data-hf-id="hf-rz8c" class="pill"><span data-hf-id="hf-unbv" class="ok"><svg data-hf-id="hf-2mnf" width="34" height="34"><use data-hf-id="hf-8nki" href="#i-check" /></svg></span>نفس التاسك</span></div>
+      <div data-hf-id="hf-01j9" class="s19-r" id="s19-r3"><span data-hf-id="hf-grb4" class="pill on">+ <span data-hf-id="hf-4w5s" class="lat">Harness</span> مختلف</span></div>
+      <div data-hf-id="hf-iwvt" class="s19-lb" id="s19-l1">قبل</div>
+      <div data-hf-id="hf-4w90" class="ah-track" id="s19-t1"><div data-hf-id="hf-ep84" class="ah-fill" id="s19-f1" style="background:var(--orange)"></div></div>
+      <div data-hf-id="hf-k2j6" class="s19-lb" id="s19-l2">بعد</div>
+      <div data-hf-id="hf-frqn" class="ah-track" id="s19-t2"><div data-hf-id="hf-yarm" class="ah-fill" id="s19-f2" style="background:var(--lime)"></div></div>
+      <div data-hf-id="hf-1jko" id="s19-cut" class="abs"></div>
+      <div data-hf-id="hf-gz8i" id="s19-half" class="abs">½</div>
+      <div data-hf-id="hf-e5wy" id="s19-k" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-u0z2" class="in" id="s19-k1">التكلفة توصل للنص</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(124.4);
+      const { tl } = fx;
+      fx.drift("#s19-bgp", 124.4, 6.7, 70, -40);
+      fx.drift("#s19-blob", 124.4, 6.7, -120, 60);
+      fx.pushIn("#s19-cam", 124.4, 6.7, 1.035);
+
+      fx.rise("#s19-lab", 124.45, { y: 16 });
+      fx.pop("#s19-r1", 124.7, { from: 0.5 });
+      fx.pop("#s19-r2", 125.5, { from: 0.5 });
+      fx.pop("#s19-r3", 127.0, { from: 0.3, e: "back.out(3)" });
+      fx.rise("#s19-l1, #s19-t1", 127.85, { y: 20 });
+      fx.meter("#s19-f1", 128.0, 0.6, 1, { e: "power3.out" });
+      fx.rise("#s19-l2, #s19-t2", 128.9, { y: 20 });
+      fx.meter("#s19-f2", 129.0, 0.4, 1, { e: "power3.out" });
+      tl.fromTo("#s19-cut", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.2, ease: "expo.out" }, 129.9);
+      tl.to("#s19-f2", { scaleX: 0.5, duration: 0.5, ease: "expo.out" }, 130.1);
+      tl.to("#s19-cut", { opacity: 0, duration: 0.2 }, 130.5);
+      tl.fromTo("#s19-half", { opacity: 0, scale: 2.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 130.3);
+      fx.maskUp("#s19-k1", 130.35);
+
+      tl.to("#s19-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 130.8);
+      window.__timelines["s19"] = tl.real;
+    })();
+  </script>
+</template></body></html>

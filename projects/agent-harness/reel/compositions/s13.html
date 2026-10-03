@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s13-template">
+  <style>
+
+    #s13-lab { top: 360px; }
+    #s13-card { left: 90px; top: 440px; width: 900px; height: 380px; }
+    #s13-a { top: 70px; } #s13-b { top: 200px; }
+    #s13-st { left: 60px; top: 560px; width: 960px; height: 140px; }
+    #s13-x { left: 900px; top: 400px; width: 120px; height: 120px; }
+    #s13-big { top: 1060px; font-size: 170px; } #s13-k { top: 1290px; }
+
+  </style>
+  <div data-hf-id="hf-zu27" id="s13" data-composition-id="s13" data-width="1080" data-height="1920" data-duration="5.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-j1nh" id="s13-blob" class="blob" style="left:160px; top:320px; width:760px; height:760px; background:#5a2a1c; opacity:.55"></div>
+    <div data-hf-id="hf-3of9" id="s13-bgp" class="dots"></div>
+    <div data-hf-id="hf-auhs" id="s13-cam" class="cam">
+
+      <div data-hf-id="hf-ybar" id="s13-lab" class="row"><span data-hf-id="hf-r3xl" class="t-label" style="color:var(--orange)">MYTH</span></div>
+      <div data-hf-id="hf-mz1y" id="s13-card" class="card">
+        <div data-hf-id="hf-bpse" id="s13-a" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-bd9d" class="in" id="s13-a1">الموديل الأرخص</span></span></div>
+        <div data-hf-id="hf-5ali" id="s13-b" class="row t-h2 muted"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-vlxw" class="in" id="s13-b1">= أرخص في المهام؟</span></span></div>
+      </div>
+      <svg data-hf-id="hf-qgab" id="s13-st" class="abs" viewBox="0 0 960 140"><path data-hf-id="hf-82ln" id="s13-sp" pathLength="1" d="M20 100 C 300 40, 620 110, 940 30" fill="none" stroke="#ff5a33" stroke-width="14" stroke-linecap="round" /></svg>
+      <div data-hf-id="hf-qfh5" id="s13-x" class="xbadge" style="width:120px; height:120px"><svg data-hf-id="hf-o2an" width="70" height="70" style="color:#fff"><use data-hf-id="hf-r08i" href="#i-x" /></svg></div>
+      <div data-hf-id="hf-692k" id="s13-big" class="row ah-en ah-l" style="text-shadow:0 0 60px rgba(179,206,101,.5)"><span data-hf-id="hf-z6os" id="s13-big1" style="display:inline-block">HARNESS</span></div>
+      <div data-hf-id="hf-lkxt" id="s13-k" class="row t-h1"><span data-hf-id="hf-d7u5" id="s13-k1" style="display:inline-block">بيفرق</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(72.7);
+      const { tl } = fx;
+      fx.drift("#s13-bgp", 72.7, 5.5, 70, -40);
+      fx.drift("#s13-blob", 72.7, 5.5, -120, 60);
+      fx.pushIn("#s13-cam", 72.7, 5.5, 1.035);
+
+      fx.rise("#s13-lab", 72.75, { y: 16 });
+      fx.pop("#s13-card", 72.8, { from: 0.85, e: "power3.out" });
+      fx.maskUp("#s13-a1", 73.4);
+      fx.maskUp("#s13-b1", 75.0);
+      fx.strike("#s13-sp", 75.85, "#s13-x");
+      tl.to("#s13-card", { filter: "grayscale(0.9) brightness(0.6)", duration: 0.4 }, 76.0);
+      tl.fromTo("#s13-big1", { opacity: 0, scale: 2.4, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, 76.65);
+      tl.fromTo("#s13-k1", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.28, ease: "expo.out" }, 77.3);
+      fx.shake("#s13-cam", 77.4, 16, 7);
+
+      tl.to("#s13-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 77.9);
+      window.__timelines["s13"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s14-template">
+  <style>
+
+    .s14-b { position: absolute; height: 92px; padding: 0 34px; border-radius: 46px; display: flex; align-items: center; gap: 14px; font-family: var(--font-ar); font-weight: 700; font-size: 36px; white-space: nowrap; }
+    .s14-me { right: 90px; background: #3d3c39; color: #ecebe4; }
+    .s14-ai { left: 90px; background: #0b2f29; border: 3px solid rgba(217,119,87,.7); }
+    #s14-b1 { top: 480px; } #s14-b2 { top: 610px; } #s14-b3 { top: 740px; } #s14-b4 { top: 870px; }
+    #s14-tl { top: 1080px; } #s14-tr { left: 110px; top: 1140px; width: 860px; height: 56px; border-radius: 28px; }
+
+  </style>
+  <div data-hf-id="hf-mbll" id="s14" data-composition-id="s14" data-width="1080" data-height="1920" data-duration="4.75">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ws4k" id="s14-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#3a1a12; opacity:.55"></div>
+    <div data-hf-id="hf-p46m" id="s14-bgp" class="dots"></div>
+    <div data-hf-id="hf-tf7r" id="s14-cam" class="cam">
+
+      <div data-hf-id="hf-eudu" class="row t-h2" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-iu73" class="in" id="s14-h1">ادّيت <span data-hf-id="hf-mg37" class="lat">feedback</span></span></span></div>
+      <div data-hf-id="hf-uotk" id="s14-b1" class="s14-b s14-me">في حاجات مش مظبوطة</div>
+      <div data-hf-id="hf-z5iz" id="s14-b2" class="s14-b s14-ai"><div data-hf-id="hf-u6wi" id="s14-sa" class="cl-spark" style="left:0px; top:0px; width:50px; height:50px;position:relative"><svg data-hf-id="hf-y023" id="s14-sa-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div><span data-hf-id="hf-45so">اتعلّمت · هجرّب تاني</span></div>
+      <div data-hf-id="hf-htrh" id="s14-b3" class="s14-b s14-me">لسه في غلطة هنا</div>
+      <div data-hf-id="hf-cfp9" id="s14-b4" class="s14-b s14-ai"><div data-hf-id="hf-okab" id="s14-sb" class="cl-spark" style="left:0px; top:0px; width:50px; height:50px;position:relative"><svg data-hf-id="hf-mdfw" id="s14-sb-svg" viewBox="0 0 100 100"><use data-hf-id="hf-7e43" href="#i-claude" width="100" height="100" /></svg></div><span data-hf-id="hf-xkri">صلّحتها</span></div>
+      <div data-hf-id="hf-cdeb" id="s14-tl" class="row" style="top:1080px"><span data-hf-id="hf-uofe" class="t-label" style="color:var(--lime)">TOKENS · FIRST TIME</span></div>
+      <div data-hf-id="hf-fuyu" id="s14-tr" class="op-track"><div data-hf-id="hf-w2m4" id="s14-tf" class="op-fill" style="background:linear-gradient(270deg, var(--yellow), var(--orange)); border-radius:28px"></div></div>
+      <div data-hf-id="hf-qghd" class="row t-h2 op-o" style="top:1300px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-ltyr" class="in" id="s14-k1">وحرق <span data-hf-id="hf-5lcu" class="lat">tokens</span> كتير</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(67.6);
+      const { tl } = fx;
+      fx.drift("#s14-bgp", 67.6, 4.75, 60, -40);
+      fx.drift("#s14-blob", 67.6, 4.75, -110, 60);
+      fx.pushIn("#s14-cam", 67.6, 4.75, 1.035);
+
+      fx.maskUp("#s14-h1", 67.8);
+      tl.fromTo("#s14-b1", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 67.85);
+      tl.fromTo("#s14-b2", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 68.6);
+      tl.fromTo("#s14-b3", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 69.5);
+      tl.fromTo("#s14-b4", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 70.25);
+      fx.rise("#s14-tl, #s14-tr", 68.2, { y: 20 });
+      fx.meter("#s14-tf", 68.4, 3.0, 1, { e: "power1.in" });
+      fx.maskUp("#s14-k1", 70.7);
+
+      tl.to("#s14-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 71.91);
+      window.__timelines["s14"] = tl.real;
+    })();
+  </script>
+</template></body></html>

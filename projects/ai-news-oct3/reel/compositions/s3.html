@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s3-template">
+  <style>
+
+    #s3-ring { position: absolute; left: 290px; top: 330px; width: 500px; height: 500px; }
+    #s3-num { position: absolute; left: 290px; top: 440px; width: 500px; text-align: center; font-family: var(--font-ar); font-weight: 900; font-size: 210px; line-height: 1.2; }
+    #s3-u { position: absolute; left: 0; right: 0; top: 860px; text-align: center; }
+    .s3-c { right: 140px; }
+
+  </style>
+  <div data-hf-id="hf-ihvy" id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="4.7">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ymnn" id="s3-blob" class="blob" style="left:160px; top:220px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-rsys" id="s3-bgp" class="dots"></div>
+    <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+
+      <svg data-hf-id="hf-3hhu" id="s3-ring" viewBox="0 0 100 100" style="overflow:visible"><circle data-hf-id="hf-kb8f" cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5" />
+        <circle data-hf-id="hf-q2ac" id="s3-arc" cx="50" cy="50" r="46" fill="none" stroke="#b3ce65" stroke-width="5" stroke-linecap="round" pathLength="1" transform="rotate(-90 50 50)" /></svg>
+      <div data-hf-id="hf-6c35" id="s3-num" class="num">٢٤</div>
+      <div data-hf-id="hf-qebb" id="s3-u" class="t-h2">ساعة شغّال</div>
+      <div data-hf-id="hf-yy11" id="s3-c1" class="chipn" style="left:0px; top:1060px;right:150px; left:auto"><span data-hf-id="hf-5jqr" class="d"><svg data-hf-id="hf-esgd" style="width:30px; height:30px; color:currentColor;"><use data-hf-id="hf-stv0" href="#i-doc" /></svg></span><span data-hf-id="hf-7dp5">يحضّر فاتورة نسيتها</span></div>
+      <div data-hf-id="hf-5swo" id="s3-c2" class="chipn y" style="left:0px; top:1180px;right:150px; left:auto"><span data-hf-id="hf-fjwz" class="d"><svg data-hf-id="hf-2qbl" style="width:30px; height:30px; color:currentColor;"><use data-hf-id="hf-6cs7" href="#i-gear" /></svg></span><span data-hf-id="hf-mxx3">يصلّح bug من Slack</span></div>
+      <div data-hf-id="hf-vs10" id="s3-c3" class="chipn" style="left:0px; top:1300px;right:150px; left:auto"><span data-hf-id="hf-f5ly" class="d"><svg data-hf-id="hf-3x8o" style="width:30px; height:30px; color:currentColor;"><use data-hf-id="hf-tgyz" href="#i-mail" /></svg></span><span data-hf-id="hf-3t53">يجهّز بوستات المحتوى</span></div>
+      <div data-hf-id="hf-2tec" class="row t-h1" style="top:1470px;font-size:110px; color:var(--lime)" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-verl" class="in" id="s3-h">في الخلفية</span></span></div>
+      <div data-hf-id="hf-g9zi" id="s3-src" class="src" style="top:1650px">EXAMPLES FROM <b data-hf-id="hf-6auk">OPENAI.COM</b> · INTRODUCING DOTS</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(10.3);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 10.3, 4.7, 60, -40);
+      fx.drift("#s3-blob", 10.3, 4.7, -110, 60);
+      fx.pushIn("#s3-cam", 10.3, 4.7, 1.035);
+
+      fx.draw("#s3-arc", 10.35, 0.75, "power2.out");
+      fx.counter("#s3-num", 10.4, 11.05, 0, 24);
+      fx.rise("#s3-u", 11.3, { y: 30 });
+      fx.rise("#s3-c1", 12.3, { y: 40 }); fx.rise("#s3-c2", 12.6, { y: 40 }); fx.rise("#s3-c3", 12.9, { y: 40 });
+      fx.maskUp("#s3-h", 13.75);
+      fx.rise("#s3-src", 12.5, { y: 10, b: 0 });
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 14.56);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

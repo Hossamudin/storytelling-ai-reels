@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<!--
+  End-of-section recap card ("what you just learned"). Pair with a silent "hold" (voice paused) or play it
+  under a summary sentence. scenes.json:
+    {"id": "r1", "start": 100.9, "duration": 5.0, "template": "recap",
+     "data": {"LABEL": "RECAP · 02 PAGES", "TITLE": "اللي اتعلمناه", "P1": "...", "P2": "...", "P3": "..."}}
+-->
+<template id="r1-template">
+  <style>
+    #r1-lab { top: 170px; }
+    #r1-t { top: 220px; }
+    #r1-list { position: absolute; left: 14%; right: 14%; top: 420px; display: flex; flex-direction: column; gap: 26px; direction: rtl; }
+    .r1-p { display: flex; align-items: center; gap: 22px; font-size: 46px; font-weight: 800; line-height: 1.35; }
+    .r1-p .ck { flex: none; width: 58px; height: 58px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; color: #fff; }
+  </style>
+  <div id="r1" data-composition-id="r1" data-width="1080" data-height="1920" data-duration="5.0">
+    <div class="bg"></div>
+    <div id="r1-dots" class="dots"></div>
+    <div id="r1-cam" class="cam">
+      <div id="r1-lab" class="row"><span class="t-label" data-layout-allow-overlap>RECAP · 01</span></div>
+      <div id="r1-t" class="row t-h1" data-layout-allow-overlap><span class="mask"><span class="in" id="r1-ti">اللي اتعلمناه</span></span></div>
+      <div id="r1-list">
+        <div class="r1-p" id="r1-p1"><span class="ck"><svg width="30" height="30"><use href="#i-check" /></svg></span><span data-layout-allow-overlap>المحادثة: تكلم وكيل أو أكتر</span></div>
+        <div class="r1-p" id="r1-p2"><span class="ck"><svg width="30" height="30"><use href="#i-check" /></svg></span><span data-layout-allow-overlap>الصفحات: برنامج صغير للتحكم</span></div>
+        <div class="r1-p" id="r1-p3"><span class="ck"><svg width="30" height="30"><use href="#i-check" /></svg></span><span data-layout-allow-overlap>الروتينات: شغل في ميعاده</span></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const T0 = 24.7;
+      const fx = window.HF_SCENE(T0);
+      fx.drift("#r1-dots", T0, 5.0, -40, 30);
+      fx.pushIn("#r1-cam", T0, 5.0, 1.03);
+      fx.rise("#r1-lab", T0 + 0.1, { y: 20 });
+      fx.maskUp("#r1-ti", T0 + 0.2);
+      fx.rise(["#r1-p1", "#r1-p2", "#r1-p3"], T0 + 0.7, { x: 0, y: 30, st: 0.35 });
+      window.__timelines["r1"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

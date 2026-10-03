@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="aa1-template">
+  <style>
+
+    #aa1-lab { top: 210px; } #aa1-h { top: 250px; font-size: 64px; }
+    #aa1-win { left: 50px; top: 430px; width: 980px; height: 820px; }
+    #aa1-vp { position: absolute; left: 0; right: 0; top: 56px; bottom: 0; overflow: hidden; background: #fff; }
+    #aa1-img { position: absolute; left: 0; top: 40px; width: 1500px; height: 772px; }
+    #aa1-k { top: 1300px; font-size: 64px; }
+    #aa1-src { top: 1430px; }
+
+  </style>
+  <div data-hf-id="hf-115l" id="aa1" data-composition-id="aa1" data-width="1080" data-height="1920" data-duration="3.65">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-u3l9" id="aa1-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-5rdt" id="aa1-bgp" class="dots"></div>
+    <div data-hf-id="hf-kr10" id="aa1-cam" class="cam">
+
+      <div data-hf-id="hf-7fi7" id="aa1-lab" class="row"><span data-hf-id="hf-34m5" class="t-label">SOURCE 01 · ARTIFICIAL ANALYSIS</span></div>
+      <div data-hf-id="hf-691l" id="aa1-h" class="row ah-en"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-e5ow" class="in" id="aa1-h1">Coding Agent Index</span></span></div>
+      <div data-hf-id="hf-sjog" id="aa1-win" class="window"><div data-hf-id="hf-ufsv" class="bar"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><b data-hf-id="hf-intc">ARTIFICIALANALYSIS.AI/AGENTS/CODING-AGENTS</b></div>
+        <div data-hf-id="hf-vtci" id="aa1-vp" data-layout-allow-overflow=""><img data-hf-id="hf-6hhx" id="aa1-img" src="assets/images/aa/index_bars.png" alt=""></div></div>
+      <div data-hf-id="hf-5034" id="aa1-k" class="row t-h2"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-62aw" class="in" id="aa1-k1">الـ<span data-hf-id="hf-nsmw" class="lat ah-l">Harness</span> كمان ليه ترتيب</span></span></div>
+      <div data-hf-id="hf-g9lw" id="aa1-src" class="row"><span data-hf-id="hf-xnjd" class="t-label">REAL DATA · CAPTURED OCT 2026</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(52.3);
+      const { tl } = fx;
+      fx.drift("#aa1-bgp", 52.3, 3.65, 70, -40);
+      fx.drift("#aa1-blob", 52.3, 3.65, -120, 60);
+      fx.pushIn("#aa1-cam", 52.3, 3.65, 1.035);
+
+      fx.rise("#aa1-lab", 52.35, { y: 16 });
+      fx.maskUp("#aa1-h1", 52.4);
+      tl.fromTo("#aa1-win", { opacity: 0, y: 260 }, { opacity: 1, y: 0, duration: 0.55, ease: "expo.out" }, 52.45);
+      tl.fromTo("#aa1-img", { x: 0 }, { x: -520, duration: 3.3, ease: "power1.inOut" }, 52.6);
+      fx.maskUp("#aa1-k1", 53.3);
+      fx.rise("#aa1-src", 53.8, { y: 10 });
+
+      tl.to("#aa1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 55.65);
+      window.__timelines["aa1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

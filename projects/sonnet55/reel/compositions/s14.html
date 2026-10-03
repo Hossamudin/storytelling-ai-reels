@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s14-template">
+  <style>
+
+    #s14-q { left: 90px; top: 960px; width: 900px; height: 560px; border-radius: 34px; background: #f6f4ea; color: var(--ink); box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+    #s14-q .qt { position: absolute; left: 60px; right: 60px; top: 60px; font-family: var(--font-en); font-weight: 700; font-size: 46px; line-height: 1.36; direction: ltr; }
+    #s14-q .mk { position: absolute; left: 40px; top: -70px; font-family: var(--font-en); font-weight: 900; font-size: 200px; color: #D97757; }
+    .s14-u { position: relative; display: inline-block; }
+    .s14-u { background: linear-gradient(var(--yellow), var(--yellow)) no-repeat 0 88% / 0% 34%; }
+    #s14-src { top: 1560px; }
+
+  </style>
+  <div data-hf-id="hf-gyin" id="s14" data-composition-id="s14" data-width="1080" data-height="1920" data-duration="10.9">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-86u7" id="s14-blob" class="blob" style="left:160px; top:320px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-p46m" id="s14-bgp" class="dots"></div>
+    <div data-hf-id="hf-tf7r" id="s14-cam" class="cam">
+
+      <div data-hf-id="hf-e6lc" id="s14-lab" class="row" style="top:300px"><span data-hf-id="hf-q480" class="t-label" style="color:var(--lime)">ANTHROPIC SAYS</span></div>
+      <div data-hf-id="hf-c97j" id="s14-sp" class="cl-spark" style="left:420px; top:380px; width:240px; height:240px;"><div data-hf-id="hf-dn2w" class="cl-bloom" id="s14-sp-bl"></div><svg data-hf-id="hf-h7te" id="s14-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-1fp0" class="row t-h2" style="top:660px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-gwdw" class="in" id="s14-a1"><span data-hf-id="hf-e78k" class="lat op-c">Opus 5.5</span> ما زال</span></span></div>
+      <div data-hf-id="hf-phe2" class="row t-h1 op-y" style="top:770px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-em51" class="in" id="s14-b1">الأقوى</span></span></div>
+      <div data-hf-id="hf-wo68" id="s14-q" class="abs"><div data-hf-id="hf-a4or" class="mk" data-layout-allow-overlap="" data-layout-allow-overflow="">“</div><div data-hf-id="hf-7qfn" class="qt" id="s14-qt">Opus 5.5 remains clearly stronger at
+        <span data-hf-id="hf-je3q" class="s14-u" id="s14-u1">complex, open-ended work</span> requiring <span data-hf-id="hf-kymz" class="s14-u" id="s14-u2">sustained judgment.</span></div></div>
+      <div data-hf-id="hf-ba5b" id="s14-src" class="op-src" style="top:1560px">REAL QUOTE · ANTHROPIC.COM/CLAUDE-SONNET-5-5</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(88.85);
+      const { tl } = fx;
+      fx.drift("#s14-bgp", 88.85, 10.9, 60, -40);
+      fx.drift("#s14-blob", 88.85, 10.9, -110, 60);
+      fx.pushIn("#s14-cam", 88.85, 10.9, 1.035);
+
+      fx.rise("#s14-lab", 89.0, { y: 16 });
+      fx.pop("#s14-sp", 91.2, { from: 0.3, e: "expo.out", d: 0.7 });
+      tl.fromTo("#s14-sp-svg", { rotation: 0 }, { rotation: 120, duration: 8, ease: "none" }, 91.2);
+      fx.breathe("#s14-sp-bl", 92.0, 7, 0.08, 1.4);
+      fx.maskUp("#s14-a1", 91.25);
+      fx.maskUp("#s14-b1", 93.1);
+      tl.fromTo("#s14-q", { opacity: 0, y: 220, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.55, ease: "power3.out" }, 93.9);
+      tl.fromTo("#s14-u1", { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.5, ease: "power2.out" }, 94.9);
+      tl.fromTo("#s14-u2", { backgroundSize: "0% 34%" }, { backgroundSize: "100% 34%", duration: 0.5, ease: "power2.out" }, 97.6);
+      fx.rise("#s14-src", 94.4, { y: 10, b: 0 });
+
+      tl.to("#s14-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 99.31);
+      window.__timelines["s14"] = tl.real;
+    })();
+  </script>
+</template></body></html>

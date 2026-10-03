@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template id="s4-template">
+      <style>
+        #s4 { position: absolute; inset: 0; overflow: hidden; direction: rtl; }
+      #s4-t1 {
+        top: 40px;
+        font-size: 62px;
+        font-weight: 700;
+        color: #fff;
+      }
+      #s4-t2 {
+        top: 855px;
+        font-size: 120px;
+        font-weight: 900;
+        color: #fff;
+      }
+      #s4-t2 .ai {
+        color: var(--yellow);
+        text-shadow: 0 0 30px rgba(255, 236, 92, 0.6);
+      }
+      #s4-bloom {
+        left: 560px;
+        top: 100px;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(255, 236, 92, 0.5), rgba(255, 90, 51, 0.16) 40%, transparent 68%);
+      }
+      #s4-ring {
+        left: 560px;
+        top: 100px;
+        width: 800px;
+        height: 800px;
+      }
+      </style>
+      <div data-hf-id="hf-app2" id="s4" data-composition-id="s4" data-width="1920" data-height="1080" data-duration="5.0">
+        <div data-hf-id="hf-2foy" class="fill tealbg"></div>
+        <div data-hf-id="hf-7moz" id="s4-bgp" class="dots lite"></div>
+        <div data-hf-id="hf-94n8" id="s4-cam" class="cam">
+          <div data-hf-id="hf-htvt" id="s4-t1" class="row"><span data-hf-id="hf-3rrz" class="w" id="s4-a">وهنا هستخدم</span> <span data-hf-id="hf-airk" class="w lat" id="s4-b" style="color: var(--yellow)">AI</span></div>
+          <div data-hf-id="hf-0dya" id="s4-bloom" class="glow"></div>
+          <svg data-hf-id="hf-icru" id="s4-ring" class="abs" viewBox="0 0 800 800">
+            <polygon data-hf-id="hf-c6kp" id="s4-poly" points="400,110 651.1,255 651.1,545 400,690 148.9,545 148.9,255" pathLength="1" fill="none" stroke="#B3CE65" stroke-width="5" stroke-dasharray="1" stroke-dashoffset="1" opacity=".8" />
+            <g data-hf-id="hf-xyau" stroke="#FFEC5C" stroke-width="4" opacity=".7">
+              <line data-hf-id="hf-6rt3" class="s4-sp" x1="400" y1="400" x2="400" y2="110" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+              <line data-hf-id="hf-4vim" class="s4-sp" x1="400" y1="400" x2="651.1" y2="255" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+              <line data-hf-id="hf-761e" class="s4-sp" x1="400" y1="400" x2="651.1" y2="545" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+              <line data-hf-id="hf-tro8" class="s4-sp" x1="400" y1="400" x2="400" y2="690" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+              <line data-hf-id="hf-0537" class="s4-sp" x1="400" y1="400" x2="148.9" y2="545" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+              <line data-hf-id="hf-hi3n" class="s4-sp" x1="400" y1="400" x2="148.9" y2="255" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+            </g>
+          </svg>
+          <div data-hf-id="hf-k99v" id="s4-kids" class="fill" style="transform-origin: 960px 500px"></div>
+          <div data-hf-id="hf-dddb" id="s4-core" class="node" style="left: 875px; top: 415px; width: 170px; height: 170px"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-iqr9" href="#i-spark" /></svg></div>
+          <div data-hf-id="hf-lrzu" id="s4-t2" class="row"><span data-hf-id="hf-ll0l" class="w" id="s4-c">فريق</span> <span data-hf-id="hf-vc3j" class="w" id="s4-d">من</span> <span data-hf-id="hf-l9o0" class="w ai" id="s4-e">الـــ<span data-hf-id="hf-ex0q" class="lat">AI</span></span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const { tl, Q, QA, rise, pop, out, draw, band, shake, breathe, drift } = window.HF_SCENE(15.95);
+        const cx = 960,
+          cy = 500,
+          R = 290;
+        const kids = Q("#s4-kids");
+        for (let i = 0; i < 6; i++) {
+          const a = ((i * 60 - 90) * Math.PI) / 180;
+          const n = document.createElement("div");
+          n.className = "node s4-kid";
+          n.style.cssText = `left:${cx - 50}px;top:${cy - 50}px;width:100px;height:100px`;
+          n.innerHTML = '<svg><use href="#i-spark"/></svg>';
+          n.dataset.x = Math.round(Math.cos(a) * R);
+          n.dataset.y = Math.round(Math.sin(a) * R);
+          kids.appendChild(n);
+        }
+        drift("#s4-bgp", 15.95, 5.0, -40, 30);
+        tl.fromTo("#s4-cam", { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "expo.out" }, 15.95);
+        rise("#s4-a", 15.98, { y: 30 });
+        pop("#s4-b", 17.0, { from: 0.2 });
+        tl.fromTo("#s4-core", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2.4)" }, 17.02);
+        tl.fromTo("#s4-bloom", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 17.02);
+        breathe("#s4-bloom", 17.85, 3.0, 0.08, 1.3);
+        QA(".s4-kid").forEach((n, i) => {
+          tl.fromTo(n, { x: 0, y: 0, scale: 0.2, opacity: 0 }, { x: +n.dataset.x, y: +n.dataset.y, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)" }, 17.9 + i * 0.05);
+        });
+        draw(".s4-sp", 18.05, 0.4, "power2.out");
+        draw("#s4-poly", 18.3, 0.7, "power2.inOut");
+        tl.fromTo("#s4-ring", { rotation: 0 }, { rotation: 20, duration: 2.6, ease: "none" }, 18.3);
+        tl.fromTo("#s4-kids", { rotation: 0 }, { rotation: 20, duration: 2.6, ease: "none" }, 18.3);
+        tl.fromTo("#s4-core", { scale: 1 }, { scale: 1.18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 18.9);
+        tl.fromTo("#s4-core", { scale: 1 }, { scale: 1.18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 19.3);
+        rise("#s4-c", 18.26, { y: 60, s: 1.3, d: 0.4 });
+        rise("#s4-d", 18.88, { y: 40, d: 0.35 });
+        rise("#s4-e", 19.28, { y: 60, s: 1.3, d: 0.4 });
+        // push-slide exit (RTL forward = content moves right)
+        tl.to("#s4-cam", { x: 900, filter: "blur(14px)", duration: 0.45, ease: "power3.in" }, 20.5);
+          window.__timelines["s4"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

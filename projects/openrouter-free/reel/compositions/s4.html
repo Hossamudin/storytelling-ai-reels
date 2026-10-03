@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s4-template">
+  <style>
+
+    .tg { position: absolute; }
+    .tg .str { position: absolute; left: 50%; top: -90px; width: 4px; height: 100px; margin-left: -2px; background: rgba(246,248,240,.5); }
+    .tg .lay { position: absolute; inset: 0; border-radius: 28px 28px 28px 28px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: var(--font-en); font-weight: 900; direction: ltr; white-space: nowrap; }
+    .tg .lay::before { content: ""; position: absolute; left: 50%; top: 22px; width: 30px; height: 30px; margin-left: -15px; border-radius: 50%; background: var(--bg); }
+    .tg .under { background: var(--lime); color: var(--ink); }
+    .tg .top { background: #f3efe2; color: #8c3a22; box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+    .tg .ta { clip-path: polygon(0 0, 52% 0, 46% 18%, 55% 34%, 45% 52%, 54% 70%, 47% 86%, 52% 100%, 0 100%); }
+    .tg .tb { clip-path: polygon(52% 0, 100% 0, 100% 100%, 52% 100%, 47% 86%, 54% 70%, 45% 52%, 55% 34%, 46% 18%); }
+
+    .qr { position: absolute; background: #fff; border-radius: 22px; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+    .qr img { display: block; width: 100%; height: 100%; }
+    .qr-l { position: absolute; left: -40px; right: -40px; bottom: -46px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 22px;
+      letter-spacing: .14em; color: var(--fg); direction: ltr; white-space: nowrap; }
+
+    .s4-app { position: absolute; top: 520px; width: 240px; height: 240px; border-radius: 56px; display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-en); font-weight: 900; font-size: 110px; color: var(--ink); box-shadow: 0 20px 40px rgba(0,0,0,.4); }
+    #s4-p1 { left: 760px; background: var(--lime); } #s4-p2 { left: 420px; background: var(--yellow); } #s4-p3 { left: 80px; background: #e8977c; }
+    .s4-cr { position: absolute; top: 790px; width: 240px; text-align: center; font-family: var(--font-en); font-weight: 800; font-size: 28px; color: var(--fg-muted); direction: ltr; }
+    #s4-win { left: 60px; top: 900px; width: 620px; height: 605px; }
+    #s4-v, #s4-still { position: absolute; left: 0; top: 0; width: 620px; height: 551px; }
+    #s4-hl { left: 378px; top: 222px; width: 236px; height: 34px; border-radius: 8px; border: 5px solid var(--yellow); }
+    #s4-src { top: 1600px; }
+
+  </style>
+  <div id="s4" data-composition-id="s4" data-width="1080" data-height="1920" data-duration="10.35">
+    <div class="bg"></div>
+    <div id="s4-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div id="s4-bgp" class="dots"></div>
+    <div id="s4-cam" class="cam">
+
+      <div id="s4-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">ON THE FREE PLAN</span></div>
+      <div class="row t-h2" style="top:340px;" data-layout-allow-overlap><span class="mask"><span class="in" id="s4-a1">تبني تطبيق و٢ و٣</span></span></div>
+      <div id="s4-p1" class="s4-app">1</div><div id="s4-p2" class="s4-app">2</div><div id="s4-p3" class="s4-app">3</div>
+      <div id="s4-c1" class="s4-cr" style="left:760px">~2 CREDITS</div><div id="s4-c2" class="s4-cr" style="left:420px">~2 CREDITS</div><div id="s4-c3" class="s4-cr" style="left:80px">~2 CREDITS</div>
+      <div id="s4-win" class="op-win"><div class="bar"><i></i><i></i><i></i><b>whacka.app · PotionPop</b></div>
+        <div class="body"><img id="s4-still" src="assets/images/whacka_live_still.png" />
+        <video id="s4-v" src="assets/videos/whacka_live.mp4" data-start="6.8" data-duration="3.55" data-media-start="4.3" data-hf-media-start-basis="local" muted playsinline></video>
+        <div id="s4-hl" class="abs"></div></div></div>
+      <div id="s4-tg" class="tg" style="left:730px; top:960px; width:290px; height:220px; transform-origin:50% -90px" data-layout-allow-overlap><div class="str"></div><div class="lay under" data-layout-allow-overlap style="font-size:73px">ببلاش<span data-layout-allow-overlap style="font-size:38px; font-family:var(--font-en)">14 DAYS</span></div><div id="s4-tg-a" class="lay top ta" data-layout-allow-overlap style="font-size:55px">PUBLISH<span data-layout-allow-overlap style="font-size:28px">$ / MONTH</span></div><div id="s4-tg-b" class="lay top tb" data-layout-allow-overlap style="font-size:55px">PUBLISH<span data-layout-allow-overlap style="font-size:28px">$ / MONTH</span></div></div>
+      <div id="s4-qr" class="qr" style="left:770px; top:1270px; width:210px; height:210px"><img src="assets/images/qr_whacka.png" /><div class="qr-l">WHACKA</div></div>
+      <div id="s4-src" class="op-src" style="top:1600px">REAL · HOSSAM'S APP · LIVE SEP 17 → OCT 1</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(21.4);
+      const { tl } = fx;
+      fx.drift("#s4-bgp", 21.4, 10.35, 60, -40);
+      fx.drift("#s4-blob", 21.4, 10.35, -110, 60);
+      fx.pushIn("#s4-cam", 21.4, 10.35, 1.035);
+
+      fx.rise("#s4-lab", 21.5, { y: 16 });
+      fx.maskUp("#s4-a1", 23.6);
+      fx.pop("#s4-p1", 23.9, { from: 0.2 }); fx.pop("#s4-p2", 24.5, { from: 0.2 }); fx.pop("#s4-p3", 24.75, { from: 0.2 });
+      fx.rise("#s4-c1, #s4-c2, #s4-c3", 26.9, { y: 16, st: 0.08 });
+      tl.fromTo("#s4-win", { opacity: 0, x: -300 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 28.2);
+      tl.fromTo("#s4-tg", { opacity: 0, y: -400, rotation: -30 }, { opacity: 1, y: 0, rotation: -6, duration: 0.6, ease: "elastic.out(1, 0.5)" }, 28.6);
+      tl.to("#s4-tg-a", { x: -260, y: 520, rotation: -38, opacity: 0, duration: 0.7, ease: "power2.in" }, 29.8);
+      tl.to("#s4-tg-b", { x: 260, y: 560, rotation: 42, opacity: 0, duration: 0.7, ease: "power2.in" }, 29.8);
+      tl.fromTo("#s4-tg", { scale: 1 }, { scale: 1.12, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 29.85);
+      fx.shake("#s4-cam", 29.85, 10, 6);
+      tl.fromTo("#s4-hl", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 30.5);
+      fx.pop("#s4-qr", 30.2, { from: 0.4 });
+      fx.rise("#s4-src", 28.8, { y: 10, b: 0 });
+
+      tl.to("#s4-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 31.31);
+      window.__timelines["s4"] = tl.real;
+    })();
+  </script>
+</template></body></html>

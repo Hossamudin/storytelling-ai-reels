@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><title>Cut review</title>
+<style>body{font:14px system-ui;margin:16px;background:#f6f4ea;color:#0d0d0d}table{border-collapse:collapse;width:100%}
+td{border-bottom:1px solid #ccc;padding:6px;vertical-align:top}.t{font-size:16px;max-width:420px}audio{height:28px;width:260px}
+button{padding:8px 14px;margin:8px 0;background:#136052;color:#fff;border:0;border-radius:6px}</style>
+<h2>Proposed cuts — ai-news-oct3</h2><p>Top player = original with 2 s context, bottom = after the cut. Tick what to cut, then export.</p>
+<button onclick="exp()">Copy accepted cuts as JSON</button><pre id="o"></pre>
+<table><tr><th></th><th>time</th><th>kind</th><th>verbatim</th><th>why</th><th>listen</th></tr><tr data-k="0"><td><input type="checkbox" checked></td>
+<td>1.70–8.07<br><small>6.37s</small></td><td><b>retake</b><br><small>0.96 · gpt-5.5+refine</small></td>
+<td dir="rtl" class="t">ده ملخص اللي حصل الأسبوع ده في عالم الذكاء الاصطناعي، وتعالوا نبدأ مع OpenAI اللي عملت لك. | مساعد ذكي.</td><td>First attempt at the OpenAI intro; repeated more completely in chunks 2-3. (located 0.64)</td>
+<td><audio controls preload="none" src="clips/c00_before.mp3"></audio><br><audio controls preload="none" src="clips/c00_after.mp3"></audio></td></tr><tr data-k="1"><td><input type="checkbox" checked></td>
+<td>8.18–10.58<br><small>2.40s</small></td><td><b>retake</b><br><small>0.96 · gpt-5.5</small></td>
+<td dir="rtl" class="t">تقدر تتواصل معاه.</td><td>Abandoned first take; later repeated with the phone detail.</td>
+<td><audio controls preload="none" src="clips/c01_before.mp3"></audio><br><audio controls preload="none" src="clips/c01_after.mp3"></audio></td></tr><tr data-k="2"><td><input type="checkbox" checked></td>
+<td>209.17–211.16<br><small>2.00s</small></td><td><b>retake</b><br><small>0.82 · gpt-5.5</small></td>
+<td dir="rtl" class="t">ودي الفيتشر الجديدة دي.</td><td>Starts to describe the feature, then immediately says it again more clearly.</td>
+<td><audio controls preload="none" src="clips/c02_before.mp3"></audio><br><audio controls preload="none" src="clips/c02_after.mp3"></audio></td></tr><tr data-k="3"><td><input type="checkbox" checked></td>
+<td>236.76–241.20<br><small>4.44s</small></td><td><b>retake</b><br><small>0.95 · gpt-5.5</small></td>
+<td dir="rtl" class="t">وأخيراً الـ AI leaders اللي في الوطن.</td><td>Abandoned intro to the final news item; restarted in the next chunk.</td>
+<td><audio controls preload="none" src="clips/c03_before.mp3"></audio><br><audio controls preload="none" src="clips/c03_after.mp3"></audio></td></tr><tr data-k="4"><td><input type="checkbox" checked></td>
+<td>253.94–255.52<br><small>1.58s</small></td><td><b>noise</b><br><small>0.98 · rules + gpt-5.5</small></td>
+<td dir="rtl" class="t"></td><td>no speech in verbatim transcript / Empty/non-speech chunk.</td>
+<td><audio controls preload="none" src="clips/c04_before.mp3"></audio><br><audio controls preload="none" src="clips/c04_after.mp3"></audio></td></tr></table>
+<script>const D=[{"cut": [1.703, 8.072], "kind": "retake", "reason": "First attempt at the OpenAI intro; repeated more completely in chunks 2-3. (located 0.64)"}, {"cut": [8.178, 10.581], "kind": "retake", "reason": "Abandoned first take; later repeated with the phone detail."}, {"cut": [209.166, 211.162], "kind": "retake", "reason": "Starts to describe the feature, then immediately says it again more clearly."}, {"cut": [236.756, 241.201], "kind": "retake", "reason": "Abandoned intro to the final news item; restarted in the next chunk."}, {"cut": [253.945, 255.521], "kind": "noise", "reason": "no speech in verbatim transcript / Empty/non-speech chunk."}];function exp(){const c=[...document.querySelectorAll('tr[data-k]')].filter(r=>r.querySelector('input').checked)
+.map(r=>{const d=D[+r.dataset.k];return [d.cut[0],d.cut[1],d.kind+': '+d.reason]});const s=JSON.stringify({cuts:c},null,1);
+document.getElementById('o').textContent=s;navigator.clipboard&&navigator.clipboard.writeText(s)}</script>

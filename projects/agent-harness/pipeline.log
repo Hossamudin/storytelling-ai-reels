@@ -1,0 +1,10 @@
+[2026-10-01 09:06:46] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\agent-harness
+[2026-10-01 09:06:46] Audio cleanup: rawreel.mov
+[2026-10-01 09:06:56] Transcribing (openai_whisper) voiceover_clean.wav (173.4s, upload 0.71MB)
+[2026-10-01 09:11:48] voice_edit: 1 part(s), 2 manual cuts
+[2026-10-01 10:00:51] th_cut: reel -> reel_th.mp4
+[2026-10-01 10:43:54] th_layer: reel_th
+[2026-10-01 11:07:10] th_layer: reel_th
+[2026-10-01 11:08:18] th_layer: reel_th
+[2026-10-01 11:10:50] th_layer: reel_th
+[2026-10-01 11:14:44] th_layer: reel_th

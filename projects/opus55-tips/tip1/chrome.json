@@ -1,0 +1,48 @@
+{
+ "enabled": true,
+ "series": "OPUS 5.5 TIPS",
+ "grain": false,
+ "sections": [
+  {
+   "t": 0,
+   "label": "THE HOOK"
+  },
+  {
+   "t": 5.55,
+   "label": "TIP 01"
+  },
+  {
+   "t": 9.75,
+   "label": "THE MODEL"
+  },
+  {
+   "t": 18.55,
+   "label": "DON'T BOX IT IN"
+  },
+  {
+   "t": 33.95,
+   "label": "EXAMPLE"
+  },
+  {
+   "t": 64.9,
+   "label": "THE COST"
+  },
+  {
+   "t": 72.05,
+   "label": "THE RESULT"
+  },
+  {
+   "t": 74.7,
+   "label": "NEXT \u00b7 PART 2"
+  },
+  {
+   "t": 82.9,
+   "label": "FOLLOW"
+  }
+ ],
+ "wipes": [
+  18.45,
+  33.85,
+  74.6
+ ]
+}

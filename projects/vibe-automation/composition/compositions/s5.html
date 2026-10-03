@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template id="s5-template">
+      <style>
+        #s5 { position: absolute; inset: 0; overflow: hidden; direction: rtl; }
+      #s5-world {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2640px;
+        height: 1080px;
+        transform-origin: 0 0;
+      }
+      .stage {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+      }
+      .stage .slot {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 5px dashed rgba(19, 96, 82, 0.4);
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .stage .sf {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: var(--teal);
+        box-shadow: 0 14px 30px rgba(19, 96, 82, 0.28);
+      }
+      .stage svg {
+        position: absolute;
+        left: 38px;
+        top: 38px;
+        width: 74px;
+        height: 74px;
+      }
+      .stage .num {
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--lime);
+        color: var(--ink);
+        font-size: 28px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid var(--paper);
+      }
+      .slbl {
+        position: absolute;
+        width: 280px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1.3;
+        color: var(--ink);
+      }
+      .team {
+        position: absolute;
+        width: 216px;
+        height: 56px;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+      }
+      .team svg {
+        width: 48px;
+        height: 56px;
+      }
+      .ainode {
+        width: 100px;
+        height: 100px;
+      }
+      #s5-ep {
+        left: 150px;
+        top: 425px;
+        width: 290px;
+        height: 190px;
+        border-radius: 26px;
+        background: #fff;
+        border: 5px solid var(--teal);
+        box-shadow: 0 18px 40px rgba(19, 96, 82, 0.2);
+      }
+      #s5-ep .t {
+        position: absolute;
+        right: 26px;
+        top: 26px;
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--teal);
+      }
+      #s5-ep .bar {
+        position: absolute;
+        left: 26px;
+        right: 26px;
+        bottom: 30px;
+        height: 18px;
+        border-radius: 9px;
+        background: rgba(19, 96, 82, 0.14);
+        overflow: hidden;
+      }
+      #s5-epfill {
+        position: absolute;
+        inset: 0;
+        border-radius: 9px;
+        background: var(--orange);
+        transform-origin: 100% 50%;
+      }
+      #s5-clock {
+        position: absolute;
+        left: 26px;
+        top: 24px;
+        width: 60px;
+        height: 60px;
+      }
+      #s5-epck {
+        position: absolute;
+        left: -26px;
+        top: -26px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: var(--lime);
+        border: 5px solid var(--paper);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #s5-beam {
+        left: 2200px;
+        top: 510px;
+        width: 460px;
+        height: 20px;
+        border-radius: 10px;
+        background: linear-gradient(to right, #fff6b8, var(--yellow) 25%, var(--orange) 70%, rgba(255, 90, 51, 0));
+        box-shadow: 0 0 30px rgba(255, 236, 92, 0.9), 0 0 70px rgba(255, 90, 51, 0.6);
+      }
+      .head5 {
+        top: 110px;
+        font-size: 68px;
+        font-weight: 900;
+        color: var(--teal);
+      }
+      #s5-intro-k {
+        top: 330px;
+        font-size: 60px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      #s5-intro-t {
+        top: 430px;
+        font-size: 150px;
+        font-weight: 900;
+        color: var(--teal);
+      }
+      #s5-intro-u {
+        left: 560px;
+        top: 660px;
+        width: 800px;
+        height: 60px;
+      }
+      </style>
+      <div data-hf-id="hf-62lg" id="s5" data-composition-id="s5" data-width="1920" data-height="1080" data-duration="24.25">
+        <div data-hf-id="hf-vdai" id="s5-wrap" class="fill">
+          <div data-hf-id="hf-hbf9" class="fill paper"></div>
+          <div data-hf-id="hf-6aiy" id="s5-bgp" class="dots"></div>
+          <div data-hf-id="hf-kq71" id="s5-cam" class="cam">
+            <div data-hf-id="hf-u4pe" id="s5-world">
+              <svg data-hf-id="hf-vs2u" class="abs" style="left: 0; top: 0" width="2640" height="1080" viewBox="0 0 2640 1080">
+                <line data-hf-id="hf-1n0y" x1="2460" y1="520" x2="440" y2="520" stroke="rgba(19,96,82,.28)" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round" />
+                <g data-hf-id="hf-r307" id="s5-segs" stroke="#FF5A33" stroke-width="9" stroke-linecap="round" fill="none" />
+                <g data-hf-id="hf-8pj2" id="s5-mesh" stroke="#FF5A33" stroke-width="5" stroke-linecap="round" fill="none" opacity=".75" />
+              </svg>
+              <div data-hf-id="hf-tzgf" id="s5-stages"></div>
+              <div data-hf-id="hf-ckuo" id="s5-ep" class="abs">
+                <div data-hf-id="hf-jeje" class="t">الحلقة ٣</div>
+                <svg data-hf-id="hf-9yru" id="s5-clock" viewBox="0 0 64 64">
+                  <circle data-hf-id="hf-1x9a" cx="32" cy="32" r="26" fill="none" stroke="#136052" stroke-width="5" />
+                  <line data-hf-id="hf-cwm7" id="s5-hand" x1="32" y1="32" x2="32" y2="14" stroke="#FF5A33" stroke-width="5" stroke-linecap="round" />
+                  <circle data-hf-id="hf-k932" cx="32" cy="32" r="4" fill="#136052" />
+                </svg>
+                <div data-hf-id="hf-ufsv" class="bar"><div data-hf-id="hf-j7ki" id="s5-epfill"></div></div>
+                <div data-hf-id="hf-bawv" id="s5-epck"><svg data-hf-id="hf-x952" class="ic" width="40" height="40" style="color: #0d0d0d"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div>
+              </div>
+              <div data-hf-id="hf-xa5y" id="s5-beam" class="abs" data-hf-motion-blur="{&quot;samplesPerFrame&quot;: 8}"></div>
+            </div>
+          </div>
+          <!-- overlay headers (screen space) -->
+          <div data-hf-id="hf-1qsa" id="s5-h1" class="row head5">مراحل حلقة البودكاست</div>
+          <div data-hf-id="hf-f9xn" id="s5-h2" class="row head5">
+            فِرق كاملة من
+            <span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-tl5u" class="band" id="s5-h2b" style="background: var(--lime)"></span><span data-hf-id="hf-bu1n" class="txt">البشر</span></span>
+          </div>
+          <div data-hf-id="hf-2qrw" id="s5-h3" class="row head5"><span data-hf-id="hf-mzfq">الـــ<span data-hf-id="hf-ex0q" class="lat">AI</span></span> كفريق متكامل</div>
+          <div data-hf-id="hf-n090" id="s5-intro" class="fill">
+            <div data-hf-id="hf-wbcl" id="s5-intro-k" class="row" data-layout-allow-overlap="">علشان أشرح ليك</div>
+            <div data-hf-id="hf-w1rj" id="s5-intro-t" class="row" data-layout-allow-overlap="">الفكرة ببساطة</div>
+            <svg data-hf-id="hf-oudv" id="s5-intro-u" class="abs" viewBox="0 0 800 60" preserveAspectRatio="none">
+              <path data-hf-id="hf-4x5z" id="s5-u" d="M20 34 C 220 12, 520 50, 780 22" pathLength="1" fill="none" stroke="#FF5A33" stroke-width="14" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const { tl, Q, QA, rise, pop, out, draw, band, shake, breathe, drift } = window.HF_SCENE(20.5);
+        const SX = [2340, 2020, 1700, 1380, 1060, 740];
+        const SY = 520;
+        const ICONS = ["i-guest", "i-search", "i-chat", "i-cal", "i-cam", "i-edit"];
+        const LBL = ["اختيار الضيف", "البحث عنه", "التواصل معاه", "تحديد موعد", "التصوير", "إنتاج المحتوى"];
+        const NUM = ["١", "٢", "٣", "٤", "٥", "٦"];
+        const T_ON = [27.81, 28.61, 29.51, 30.49, 32.34, 32.88];
+        const stages = Q("#s5-stages");
+        const segs = Q("#s5-segs");
+        const mesh = Q("#s5-mesh");
+        SX.forEach((x, i) => {
+          const s = document.createElement("div");
+          s.className = "stage";
+          s.id = `st${i}`;
+          s.style.cssText = `left:${x - 75}px;top:${SY - 75}px`;
+          s.innerHTML = `<div class="slot"></div><div class="sf" id="st${i}f"></div><svg id="st${i}i" style="color:#fff"><use href="#${ICONS[i]}"/></svg><div class="num" id="st${i}n">${NUM[i]}</div>`;
+          stages.appendChild(s);
+          const l = document.createElement("div");
+          l.className = "slbl";
+          l.id = `st${i}l`;
+          l.style.cssText = `left:${x - 140}px;top:${SY + 92}px`;
+          l.textContent = LBL[i];
+          stages.appendChild(l);
+          const tm = document.createElement("div");
+          tm.className = "team";
+          tm.id = `tm${i}`;
+          tm.style.cssText = `left:${x - 108}px;top:${SY + 175}px`;
+          tm.innerHTML = [0, 1, 2, 3].map((k) => `<svg viewBox="0 0 48 56" style="color:${k % 2 ? "#437F3E" : "#136052"}"><use href="#i-person"/></svg>`).join("");
+          stages.appendChild(tm);
+          const an = document.createElement("div");
+          an.className = "node ainode";
+          an.id = `an${i}`;
+          an.style.cssText = `left:${x - 50}px;top:${SY + 153}px`;
+          an.innerHTML = '<svg><use href="#i-spark"/></svg>';
+          stages.appendChild(an);
+          // beam segment to next stage (or to the episode card)
+          const nx = i < 5 ? SX[i + 1] + 75 : 440;
+          const seg = document.createElementNS("http://www.w3.org/2000/svg", "line");
+          seg.setAttribute("x1", x - 75);
+          seg.setAttribute("y1", SY);
+          seg.setAttribute("x2", nx);
+          seg.setAttribute("y2", SY);
+          seg.setAttribute("pathLength", "1");
+          seg.setAttribute("stroke-dasharray", "1");
+          seg.setAttribute("stroke-dashoffset", "1");
+          seg.id = `sg${i}`;
+          segs.appendChild(seg);
+          // mesh: AI node -> stage, and AI node -> next AI node
+          const m1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+          m1.setAttribute("x1", x);
+          m1.setAttribute("y1", SY + 153);
+          m1.setAttribute("x2", x);
+          m1.setAttribute("y2", SY + 78);
+          m1.setAttribute("pathLength", "1");
+          m1.setAttribute("stroke-dasharray", "1");
+          m1.setAttribute("stroke-dashoffset", "1");
+          m1.setAttribute("class", "mesh");
+          mesh.appendChild(m1);
+          if (i < 5) {
+            const m2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            const x2 = SX[i + 1];
+            m2.setAttribute("d", `M${x - 50} ${SY + 203} Q ${(x + x2) / 2} ${SY + 290} ${x2 + 50} ${SY + 203}`);
+            m2.setAttribute("pathLength", "1");
+            m2.setAttribute("stroke-dasharray", "1");
+            m2.setAttribute("stroke-dashoffset", "1");
+            m2.setAttribute("class", "mesh");
+            mesh.appendChild(m2);
+          }
+        });
+
+        // camera: world transform + parallax dot layer at 0.35x
+        const W = Q("#s5-world");
+        let camState = { x: 0, y: 0, s: 1 };
+        function view(wx, wy, s) {
+          return { x: 960 - wx * s, y: 540 - wy * s, s };
+        }
+        function cam(t, d, v, e = "power3.inOut") {
+          const from = camState;
+          tl.fromTo(W, { x: from.x, y: from.y, scale: from.s }, { x: v.x, y: v.y, scale: v.s, duration: d, ease: e, immediateRender: false }, t);
+          tl.fromTo("#s5-bgp", { x: from.x * 0.35, y: from.y * 0.35 }, { x: v.x * 0.35, y: v.y * 0.35, duration: d, ease: e, immediateRender: false }, t);
+          camState = v;
+        }
+        const OV = view(1282, 600, 0.78);
+        camState = view(1282, 600, 0.7);
+        tl.set(W, { x: camState.x, y: camState.y, scale: camState.s }, 20.5);
+        tl.set("#s5-bgp", { x: camState.x * 0.35, y: camState.y * 0.35 }, 20.5);
+        cam(20.6, 2.0, OV, "power2.out");
+        // enter: push from the left
+        tl.fromTo("#s5-wrap", { x: -1920 }, { x: 0, duration: 0.55, ease: "power3.out" }, 20.5);
+        // intro card
+        rise("#s5-intro-k", 20.63, { y: 30 });
+        rise("#s5-intro-t", 21.0, { y: 70, s: 1.15 });
+        draw("#s5-u", 21.5, 0.45, "power2.out");
+        out("#s5-intro", 22.1, { y: -120, b: 14, d: 0.4 });
+        tl.fromTo("#s5-world", { opacity: 0.25 }, { opacity: 1, duration: 0.4, immediateRender: true }, 22.1);
+        // slots appear right -> left
+        tl.fromTo(
+          QA(".stage"),
+          { opacity: 0, scale: 0.3 },
+          { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)", stagger: 0.18 },
+          22.35,
+        );
+        tl.fromTo(QA(".stage .sf"), { scale: 0 }, { scale: 0, duration: 0.01 }, 22.3);
+        tl.fromTo(QA(".stage svg"), { opacity: 0 }, { opacity: 0, duration: 0.01 }, 22.3);
+        tl.fromTo(QA(".slbl"), { opacity: 0 }, { opacity: 0, duration: 0.01 }, 22.3);
+        tl.fromTo(QA(".team"), { opacity: 0 }, { opacity: 0, duration: 0.01 }, 22.3);
+        tl.fromTo(QA(".ainode"), { opacity: 0, scale: 0 }, { opacity: 0, scale: 0, duration: 0.01 }, 22.3);
+        rise("#s5-h1", 23.6, { y: 30 });
+        pop("#s5-ep", 25.02, { from: 0.4 });
+        tl.fromTo("#s5-epfill", { scaleX: 0 }, { scaleX: 0.04, duration: 0.3 }, 25.3);
+        tl.fromTo("#s5-epck", { opacity: 0, scale: 0 }, { opacity: 0, scale: 0, duration: 0.01 }, 22.3);
+        out("#s5-h1", 26.2, { y: -30 });
+        // fly to stage 1 then track stages
+        const CL = 1.25;
+        cam(26.35, 1.15, view(SX[0], 600, CL));
+        T_ON.forEach((t, i) => {
+          if (i > 0) {
+            const pan = i === 4 ? 31.5 : i === 5 ? null : t - 0.42;
+            if (pan !== null) cam(pan, i === 4 ? 0.8 : 0.5, view(i === 4 ? (SX[4] + SX[5]) / 2 : SX[i], 600, i === 4 ? 1.08 : CL));
+          }
+          tl.fromTo(`#st${i}f`, { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2)", immediateRender: false }, t);
+          tl.fromTo(`#st${i}i`, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.5)", immediateRender: false }, t + 0.06);
+          tl.fromTo(`#st${i}l`, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }, t + 0.05);
+          tl.fromTo(`#st${i}n`, { scale: 1 }, { scale: 1.35, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t);
+          if (i > 0) draw(`#sg${i - 1}`, t - 0.3, 0.3, "power2.in");
+        });
+        // pull back to overview
+        cam(33.45, 1.0, OV);
+        // human teams stack up
+        for (let i = 0; i < 6; i++) {
+          tl.fromTo(
+            `#tm${i}`,
+            { opacity: 0 },
+            { opacity: 1, duration: 0.01, immediateRender: false },
+            35.05 + i * 0.28,
+          );
+          tl.fromTo(`#tm${i} svg`, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.05, immediateRender: false }, 35.05 + i * 0.28);
+        }
+        rise("#s5-h2", 36.85, { y: 30 });
+        band("#s5-h2b", 37.1, 0.35);
+        // episode crawls — heavy, slow
+        cam(37.6, 2.0, view(1150, 600, 0.84), "power1.inOut");
+        tl.fromTo("#s5-epfill", { scaleX: 0.04 }, { scaleX: 0.2, duration: 2.8, ease: "power1.inOut", immediateRender: false }, 37.66);
+        tl.fromTo("#s5-hand", { rotation: 0, svgOrigin: "32 32" }, { rotation: 720, svgOrigin: "32 32", duration: 6.6, ease: "none" }, 37.66);
+        out("#s5-h2", 39.5, { y: -30 });
+        // THE FLIP — teams become AI nodes, right -> left
+        for (let i = 0; i < 6; i++) {
+          const t = 40.62 + i * 0.12;
+          tl.to(`#tm${i}`, { opacity: 0, scale: 0.3, filter: "blur(6px)", duration: 0.3, ease: "power2.in" }, t);
+          tl.fromTo(`#an${i}`, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.6)", immediateRender: false }, t + 0.18);
+        }
+        cam(40.5, 1.4, OV, "power2.inOut");
+        rise("#s5-h3", 41.68, { y: 30 });
+        draw(".mesh", 42.12, 0.5, "power2.out");
+        // "يساعد في العملية دي" — stage ring pulse
+        tl.fromTo(QA(".stage .sf"), { boxShadow: "0 0 0 0 rgba(255,90,51,0)" }, { boxShadow: "0 0 0 16px rgba(255,90,51,0.55)", duration: 0.25, ease: "power2.out", stagger: 0.08, yoyo: true, repeat: 1, immediateRender: false }, 43.2);
+        // "ويسرعها" — speed beam + progress snap
+        tl.fromTo("#s5-beam", { x: 0, opacity: 0 }, { x: -2150, opacity: 1, duration: 0.34, ease: "power2.in" }, 44.24);
+        tl.to("#s5-epfill", { scaleX: 1, duration: 0.18, ease: "power4.out" }, 44.45);
+        tl.to("#s5-epck", { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(3)" }, 44.5);
+        tl.to("#s5-cam", { scale: 1.06, duration: 0.3, ease: "power2.in" }, 44.3);
+        // flash handoff
+          window.__timelines["s5"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="c2-template">
+  <style>
+    #c2-lab { top: 170px; }
+    #c2-head { top: 220px; direction: rtl; }
+    #c2-head .lat { color: var(--lime); }
+    #c2-chips { position: absolute; left: 0; right: 0; top: 450px; display: flex; justify-content: center; gap: 22px; direction: rtl; }
+    #c2-free { top: 590px; color: var(--fg-muted); }
+    #c2-url { top: 730px; font-size: 110px; font-weight: 800; letter-spacing: -1px; }
+    #c2-glow { left: 460px; top: 600px; width: 1000px; height: 400px; background: radial-gradient(ellipse, rgba(180, 207, 102, 0.3), transparent 68%); }
+  </style>
+  <div data-hf-id="hf-62hv" id="c2" data-composition-id="c2" data-width="1920" data-height="1080" data-duration="5.34">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-vxpi" id="c2-dots" class="dots"></div>
+    <div data-hf-id="hf-8cl6" id="c2-cam" class="cam">
+      <div data-hf-id="hf-fu50" id="c2-glow" class="glow"></div>
+      <div data-hf-id="hf-pxqv" id="c2-lab" class="row"><span data-hf-id="hf-cdhb" class="t-label" data-layout-allow-overlap="">RECAP</span></div>
+      <div data-hf-id="hf-j355" id="c2-head" class="row t-h2" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-7aaj" class="in" id="c2-h">مهارتك الجاية على مهارة <span data-hf-id="hf-ex0q" class="lat">AI</span></span></span></div>
+      <div data-hf-id="hf-1iws" id="c2-chips">
+        <span data-hf-id="hf-jgdf" class="pill" id="c2-p1">حدد اهتماماتك</span>
+        <span data-hf-id="hf-xfcp" class="pill" id="c2-p2">تصفّح كل المهارات</span>
+        <span data-hf-id="hf-u5oa" class="pill" id="c2-p3">ابحث أو صنّف</span>
+      </div>
+      <div data-hf-id="hf-7mjk" id="c2-free" class="row t-h3" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-zrq7" class="in" id="c2-f">كلها مجانية دلوقتي</span></span></div>
+      <div data-hf-id="hf-dtmk" id="c2-url" class="row lat nowrap">maharaai.com</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(96.79);
+      const { tl } = fx;
+      fx.drift("#c2-dots", 96.79, 5.34, 40, -30);
+      fx.pushIn("#c2-cam", 96.79, 5.34, 1.04);
+      fx.rise("#c2-lab", 96.85, { y: 20 });
+      fx.maskUp("#c2-h", 96.9);
+      const P = ["#c2-p1", "#c2-p2", "#c2-p3"];
+      fx.pop(P, 97.45, { from: 0.4, st: 0.15 });
+      P.forEach((p, i) => tl.fromTo(p, { backgroundColor: "rgba(255,255,255,0.05)", color: "#F6F8F0" }, { backgroundColor: "#B4CF66", color: "#0D0D0D", duration: 0.2, immediateRender: false }, 98.1 + i * 0.2));
+      fx.maskUp("#c2-f", 98.6);
+      fx.pop("#c2-glow", 99.0, { from: 0.4, d: 0.8, e: "power2.out" });
+      fx.letterDrop("#c2-url", 99.1, { st: 0.03 });
+      window.__timelines["c2"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

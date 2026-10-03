@@ -1,0 +1,5 @@
+[2026-10-03 07:20:10] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\ai-news-oct3
+[2026-10-03 07:20:11] Audio cleanup: voice.m4a
+[2026-10-03 07:20:23] Transcribing (openai_whisper) voiceover_clean.wav (289.3s, upload 1.12MB)
+[2026-10-03 07:22:01] find_retakes: 53 chunks, 5 cuts proposed, 1 manual
+[2026-10-03 07:23:54] voice_edit: 1 part(s), 6 manual cuts

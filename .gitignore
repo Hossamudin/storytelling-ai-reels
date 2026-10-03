@@ -1,0 +1,54 @@
+# ---- secrets / local settings
+config/api_keys.json
+.env
+.claude/settings.local.json
+
+# ---- tooling caches
+node_modules/
+__pycache__/
+*.pyc
+.media/
+.opencode/session/
+.playwright-mcp/
+**/.transcode-cache/
+**/.hyperframes/
+
+# ---- raw inputs, personal photos, reference media (kept locally / in the library, not in git)
+videos/
+Hossam Images/
+Video GPT image 2.5/
+
+# ---- asset library: track the catalog, not the media
+library/**
+!library/
+!library/INDEX.md
+!library/index.jsonl
+
+# ---- per-project heavy / generated stuff (code, json, briefs, transcripts stay tracked)
+projects/_selftest/
+projects/*/input/*.mp4
+projects/*/input/*.mov
+projects/*/input/*.m4a
+projects/*/input/*.wav
+projects/*/input/*.png
+projects/*/assets/
+projects/*/renders/
+projects/*/deliverables/
+projects/*/work/
+projects/*/review/clips/
+projects/*/*/assets/
+projects/*/*/renders/
+projects/*/*/snapshots/
+projects/*/composition/assets/
+projects/**/*.mp4
+projects/**/*.mov
+projects/**/*.webm
+projects/**/*.wav
+projects/**/*.m4a
+projects/**/*.mp3
+projects/**/*.png
+projects/**/*.jpg
+projects/**/*.jpeg
+projects/**/*.webp
+projects/**/*.pre-retime.json
+**/.waveform-cache/

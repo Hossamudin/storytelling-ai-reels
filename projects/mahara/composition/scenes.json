@@ -1,0 +1,6 @@
+[
+ {"id": "screen", "start": 0, "duration": 102.13, "beat": "screen recording + annotations"},
+ {"id": "c0", "start": 0, "duration": 2.4, "beat": "opening title"},
+ {"id": "c1", "start": 7.03, "duration": 12.58, "beat": "what is an AI skill: files -> AI (Claude/ChatGPT) -> task done right every time"},
+ {"id": "c2", "start": 96.79, "duration": 5.34, "beat": "recap + maharaai.com"}
+]

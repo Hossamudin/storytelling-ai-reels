@@ -1,0 +1,11 @@
+[2026-10-02 02:22:58] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\sonnet55
+[2026-10-02 02:22:58] Audio cleanup: screen_x.mp4
+[2026-10-02 02:23:01] Transcribing (openai_whisper) voiceover_clean.wav (67.1s, upload 0.01MB)
+[2026-10-02 02:23:17] Audio cleanup: voiceover.m4a
+[2026-10-02 02:23:23] Transcribing (openai_whisper) voiceover_clean.wav (188.4s, upload 0.79MB)
+[2026-10-02 02:27:40] find_retakes: 51 chunks, 4 cuts proposed, 0 manual
+[2026-10-02 02:28:46] find_retakes: 51 chunks, 4 cuts proposed, 0 manual
+[2026-10-02 02:29:59] voice_edit: 1 part(s), 4 manual cuts
+[2026-10-02 02:31:26] voice_edit: 1 part(s), 4 manual cuts
+[2026-10-02 02:32:15] voice_edit: 1 part(s), 4 manual cuts
+[2026-10-02 02:32:58] voice_edit: 1 part(s), 4 manual cuts

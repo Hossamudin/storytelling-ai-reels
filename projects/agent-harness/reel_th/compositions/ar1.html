@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="ar1-template">
+  <style>
+
+    #ar1-lab { top: 210px; } #ar1-h { top: 250px; }
+    #ar1-win { left: 70px; top: 440px; width: 940px; height: 584px; }
+    #ar1-win img { position: absolute; left: 0; top: 56px; width: 940px; height: 528px; }
+    #ar1-new { left: 70px; top: 1060px; }
+    #ar1-dt { left: 230px; top: 1066px; font-family: var(--font-en); font-weight: 800; font-size: 32px; color: var(--fg-muted); direction: ltr; }
+    #ar1-name { top: 1150px; font-size: 120px; }
+    #ar1-q { left: 70px; top: 1330px; width: 940px; height: 300px; }
+    #ar1-qa { position: absolute; right: 40px; left: 40px; top: 40px; font-size: 54px; font-weight: 800; line-height: 1.4; direction: rtl; }
+    #ar1-qe { position: absolute; left: 40px; right: 40px; top: 200px; font-family: var(--font-en); font-size: 28px; font-weight: 600; font-style: italic; color: var(--fg-muted); direction: ltr; }
+
+  </style>
+  <div data-hf-id="hf-jbk7" id="ar1" data-composition-id="ar1" data-width="1080" data-height="1920" data-duration="6.35">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-j902" id="ar1-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-gmh0" id="ar1-bgp" class="dots"></div>
+    <div data-hf-id="hf-fh9l" id="ar1-cam" class="cam">
+
+      <div data-hf-id="hf-0xby" id="ar1-lab" class="row"><span data-hf-id="hf-dj8d" class="t-label">SOURCE 02 · ARENA AI · RESEARCH</span></div>
+      <div data-hf-id="hf-wr1a" id="ar1-h" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-uum0" class="in" id="ar1-h1">مصدر تاني… لسه طالع</span></span></div>
+      <div data-hf-id="hf-ce0x" id="ar1-win" class="window"><div data-hf-id="hf-ufsv" class="bar"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><b data-hf-id="hf-yvvo">ARENA.AI/BLOG/CODING-AGENTS-HARNESS-TAX</b></div><img data-hf-id="hf-ra5i" src="assets/images/arena/hero.png" alt=""></div>
+      <div data-hf-id="hf-e8st" id="ar1-new" class="abs"><span data-hf-id="hf-ajpc" class="pill bad" style="font-family:var(--font-en); font-size:28px; height:60px; letter-spacing:.12em">NEW</span></div>
+      <div data-hf-id="hf-tni8" id="ar1-dt" class="abs">16 SEPT 2026</div>
+      <div data-hf-id="hf-075l" id="ar1-name" class="row ah-en"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-mgr1" class="in" id="ar1-n1">Arena AI</span></span></div>
+      <div data-hf-id="hf-4b60" id="ar1-q" class="card"><div data-hf-id="hf-zou8" id="ar1-qa">اختيار الـ<span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-iioj" class="band" id="ar1-band" style="background:var(--lime)"></span><span data-hf-id="hf-kg85" class="txt lat" id="ar1-ht" style="color:var(--lime)">Harness</span></span> بيأثر جدًا على التكلفة</div>
+        <div data-hf-id="hf-5vzs" id="ar1-qe">“harness choice can significantly impact cost” — Arena AI</div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(78.0);
+      const { tl } = fx;
+      fx.drift("#ar1-bgp", 78.0, 6.35, 70, -40);
+      fx.drift("#ar1-blob", 78.0, 6.35, -120, 60);
+      fx.pushIn("#ar1-cam", 78.0, 6.35, 1.035);
+
+      fx.rise("#ar1-lab", 78.05, { y: 16 });
+      fx.maskUp("#ar1-h1", 78.1);
+      tl.fromTo("#ar1-win", { opacity: 0, y: 400, rotation: 4 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "expo.out" }, 79.1);
+      fx.pop("#ar1-new", 79.95, { from: 0.3 });
+      fx.rise("#ar1-dt", 80.15, { y: 10 });
+      fx.maskUp("#ar1-n1", 81.6);
+      fx.rise("#ar1-q", 82.55, { y: 30 });
+      fx.band("#ar1-band", 83.85);
+      tl.to("#ar1-ht", { color: "#0d0d0d", duration: 0.15 }, 83.95);
+
+      tl.to("#ar1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 84.05);
+      window.__timelines["ar1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s1-template">
+  <style>
+
+    #s1-win { left: 40px; top: 860px; width: 1000px; height: 526px; }
+    #s1-vw { position: absolute; left: 0; top: 0; width: 1000px; height: 472px; transform-origin: 49% 32%; }
+    #s1-tt { position: absolute; left: 0; right: 0; top: 480px; text-align: center; font-size: 100px; white-space: nowrap; direction: ltr; line-height: 1.15; }
+    #s1-tt2 { color: #e8977c; }
+
+  </style>
+  <div data-hf-id="hf-iwux" id="s1" data-composition-id="s1" data-width="1080" data-height="1920" data-duration="3.1">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-8e72" id="s1-blob" class="blob" style="left:160px; top:120px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-xdf2" id="s1-bgp" class="dots"></div>
+    <div data-hf-id="hf-q35l" id="s1-cam" class="cam">
+
+      <div data-hf-id="hf-iphx" id="s1-sp" class="cl-spark" style="left:440px; top:250px; width:200px; height:200px;"><div data-hf-id="hf-wf8q" class="cl-bloom" id="s1-sp-bl"></div><svg data-hf-id="hf-buoi" id="s1-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-70si" id="s1-tt" class="op-en" data-layout-allow-overlap=""><span data-hf-id="hf-89gi" id="s1-tt1">Claude</span> <span data-hf-id="hf-qboa" id="s1-tt2">Opus 5.5</span></div>
+      <div data-hf-id="hf-r8fu" class="row t-h2" style="top:640px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-c18z" class="in" id="s1-h1">هو اللي عمل الفيديو ده</span></span></div>
+      <div data-hf-id="hf-m9a7" id="s1-win" class="op-win"><div data-hf-id="hf-ufsv" class="bar"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><b data-hf-id="hf-vyy7">HyperFrames Studio</b></div>
+        <div data-hf-id="hf-2t3w" class="body"><div data-hf-id="hf-7gb3" id="s1-vw"><video data-hf-id="hf-9uwa" id="s1-v" class="abs" src="assets/videos/hf_studio.mp4" style="width:1000px; height:472px" data-start="0" data-duration="3.1" data-media-start="0.5" muted playsinline></video></div></div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0);
+      const { tl } = fx;
+      fx.drift("#s1-bgp", 0, 3.1, 60, -40);
+      fx.drift("#s1-blob", 0, 3.1, -110, 60);
+      fx.pushIn("#s1-cam", 0, 3.1, 1.035);
+
+      fx.punch("#s1-cam", 0, 1.15);
+      fx.pop("#s1-sp", 0.0, { from: 0.2, e: "expo.out", d: 0.8 });
+      tl.fromTo("#s1-sp-svg", { rotation: -60 }, { rotation: 90, duration: 3.1, ease: "power2.out" }, 0);
+      fx.letterDrop("#s1-tt1", 0.45, { st: 0.03 }); fx.letterDrop("#s1-tt2", 0.95, { st: 0.035 });
+      fx.maskUp("#s1-h1", 2.0);
+      tl.fromTo("#s1-win", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.3);
+      tl.fromTo("#s1-vw", { scale: 1 }, { scale: 1.6, duration: 0.8, ease: "power3.inOut" }, 2.3);
+
+      tl.to("#s1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 2.95);
+      window.__timelines["s1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

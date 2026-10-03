@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s10-template">
+  <style>
+
+    .s10-p { position: absolute; left: 140px; width: 800px; height: 150px; border-radius: 34px; border: 3px solid rgba(179,206,101,.35); background: #0b2f29;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 44px; direction: ltr; }
+    .s10-p b { font-family: var(--font-en); font-weight: 900; font-size: 46px; letter-spacing: .06em; color: var(--fg); }
+    .s10-p .ck { width: 74px; height: 74px; border-radius: 50%; background: var(--lime); color: var(--ink); display: flex; align-items: center; justify-content: center; }
+    #s10-f { border-color: rgba(255,90,51,.6); background: rgba(255,255,255,.03); }
+    #s10-f .ck { background: var(--orange); color: #fff; }
+
+  </style>
+  <div data-hf-id="hf-9tox" id="s10" data-composition-id="s10" data-width="1080" data-height="1920" data-duration="7.05">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-04mp" id="s10-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-86iy" id="s10-bgp" class="dots"></div>
+    <div data-hf-id="hf-hpoj" id="s10-cam" class="cam">
+
+      <div data-hf-id="hf-nqz3" class="row t-h2" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-5dpa" class="in" id="s10-h1">بس للأسف مش للكل</span></span></div>
+      <div data-hf-id="hf-sjk7" id="s10-p0" class="s10-p" style="top:480px"><b data-hf-id="hf-0n2w">PRO</b><span data-hf-id="hf-tzjp" class="ck" id="s10-c0"><svg data-hf-id="hf-4yo7" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></span></div><div data-hf-id="hf-3pi6" id="s10-p1" class="s10-p" style="top:660px"><b data-hf-id="hf-qdea">BUSINESS PREMIUM</b><span data-hf-id="hf-t7vw" class="ck" id="s10-c1"><svg data-hf-id="hf-0ujr" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-8nki" href="#i-check" /></svg></span></div><div data-hf-id="hf-pk3h" id="s10-p2" class="s10-p" style="top:840px"><b data-hf-id="hf-29uq">ENTERPRISE</b><span data-hf-id="hf-43dj" class="ck" id="s10-c2"><svg data-hf-id="hf-0g8q" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-91vj" href="#i-check" /></svg></span></div>
+      <div data-hf-id="hf-mlq6" id="s10-f" class="s10-p" style="top:1060px"><b data-hf-id="hf-o3jv">FREE</b><span data-hf-id="hf-nab1" class="ck" id="s10-fc"><svg data-hf-id="hf-01xp" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-r08i" href="#i-x" /></svg></span></div>
+      <div data-hf-id="hf-fggm" class="row t-h2" style="top:1290px;color:var(--orange)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-4xro" class="in" id="s10-h2">مش في الخطط المجانية</span></span></div>
+      <div data-hf-id="hf-s8t0" id="s10-src" class="src" style="top:1430px"><b data-hf-id="hf-6auk">OPENAI.COM</b> · PRO + BUSINESS PREMIUM · ENTERPRISE BETA</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(50.0);
+      const { tl } = fx;
+      fx.drift("#s10-bgp", 50.0, 7.05, 60, -40);
+      fx.drift("#s10-blob", 50.0, 7.05, -110, 60);
+      fx.pushIn("#s10-cam", 50.0, 7.05, 1.035);
+
+      fx.maskUp("#s10-h1", 50.2);
+      fx.rise("#s10-p0", 51.6, { y: 40 }); fx.pop("#s10-c0", 51.85, { from: 0.2 });
+      fx.rise("#s10-p1", 52.1, { y: 40 }); fx.pop("#s10-c1", 52.35, { from: 0.2 });
+      fx.rise("#s10-p2", 53.1, { y: 40 }); fx.pop("#s10-c2", 53.35, { from: 0.2 });
+
+      fx.rise("#s10-f", 54.4, { y: 40 }); fx.pop("#s10-fc", 55.3, { from: 0.2 });
+      tl.to("#s10-f", { opacity: 0.5, duration: 0.3 }, 55.5);
+      fx.shake("#s10-f", 55.35, 12, 6);
+      fx.maskUp("#s10-h2", 55.2);
+      fx.rise("#s10-src", 53.6, { y: 10, b: 0 });
+
+      tl.to("#s10-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 56.61);
+      window.__timelines["s10"] = tl.real;
+    })();
+  </script>
+</template></body></html>

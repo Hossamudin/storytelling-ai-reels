@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s13-template">
+  <style>
+
+    .tg { position: absolute; }
+    .tg .str { position: absolute; left: 50%; top: -90px; width: 4px; height: 100px; margin-left: -2px; background: rgba(246,248,240,.5); }
+    .tg .lay { position: absolute; inset: 0; border-radius: 28px 28px 28px 28px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: var(--font-en); font-weight: 900; direction: ltr; white-space: nowrap; }
+    .tg .lay::before { content: ""; position: absolute; left: 50%; top: 22px; width: 30px; height: 30px; margin-left: -15px; border-radius: 50%; background: var(--bg); }
+    .tg .under { background: var(--lime); color: var(--ink); }
+    .tg .top { background: #f3efe2; color: #8c3a22; box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+    .tg .ta { clip-path: polygon(0 0, 52% 0, 46% 18%, 55% 34%, 45% 52%, 54% 70%, 47% 86%, 52% 100%, 0 100%); }
+    .tg .tb { clip-path: polygon(52% 0, 100% 0, 100% 100%, 52% 100%, 47% 86%, 54% 70%, 45% 52%, 55% 34%, 46% 18%); }
+
+    .s13-c { position: absolute; top: 560px; width: 400px; height: 520px; border-radius: 34px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+      font-family: var(--font-en); font-weight: 900; direction: ltr; }
+    #s13-p1 { left: 600px; background: #0b2f29; border: 4px solid var(--lime); color: var(--lime); }
+    #s13-p2 { left: 80px; background: repeating-linear-gradient(45deg, #0b332c 0 18px, #0d3a32 18px 36px); border: 4px dashed rgba(179,206,101,.5); color: var(--fg-muted); }
+
+  </style>
+  <div id="s13" data-composition-id="s13" data-width="1080" data-height="1920" data-duration="7.35">
+    <div class="bg"></div>
+    <div id="s13-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s13-bgp" class="dots"></div>
+    <div id="s13-cam" class="cam">
+
+      <div id="s13-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">THE SERIES</span></div>
+      <div id="s13-p1" class="s13-c"><span style="font-size:44px">PART 1</span><span id="s13-ok" style="width:140px; height:140px; border-radius:50%; background:var(--lime); display:flex; align-items:center; justify-content:center"><svg style="width:90px; height:90px; color:var(--ink);"><use href="#i-check" /></svg></span><span style="font-size:30px">3 TOOLS</span></div>
+      <div id="s13-p2" class="s13-c"><span style="font-size:44px">PART 2</span><svg style="width:110px; height:110px; color:rgba(179,206,101,.6);"><use href="#i-lock" /></svg><span style="font-size:30px">MORE FREE TOOLS</span></div>
+      <div id="s13-tg" class="tg" style="left:390px; top:1160px; width:300px; height:220px; transform-origin:50% -90px" data-layout-allow-overlap><div class="str"></div><div class="lay under" data-layout-allow-overlap style="font-size:73px">$0</div><div id="s13-tg-a" class="lay top ta" data-layout-allow-overlap style="font-size:55px">SUBSCRIPTIONS<span data-layout-allow-overlap style="font-size:24px">$$$ / MONTH</span></div><div id="s13-tg-b" class="lay top tb" data-layout-allow-overlap style="font-size:55px">SUBSCRIPTIONS<span data-layout-allow-overlap style="font-size:24px">$$$ / MONTH</span></div></div>
+      <div class="row t-h3" style="top:1500px"><span class="mask"><span class="in" id="s13-a1">بدل ما تدفع اشتراكات</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(111.95);
+      const { tl } = fx;
+      fx.drift("#s13-bgp", 111.95, 7.35, 60, -40);
+      fx.drift("#s13-blob", 111.95, 7.35, -110, 60);
+      fx.pushIn("#s13-cam", 111.95, 7.35, 1.035);
+
+      fx.rise("#s13-lab", 112.0, { y: 16 });
+      tl.fromTo("#s13-p1", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 112.3);
+      fx.pop("#s13-ok", 112.9, { from: 0.2 });
+      tl.fromTo("#s13-p2", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 113.5);
+      tl.to("#s13-p2", { rotation: -3, duration: 0.15, yoyo: true, repeat: 3, ease: "sine.inOut" }, 114.4);
+      tl.fromTo("#s13-tg", { opacity: 0, y: -400 }, { opacity: 1, y: 0, duration: 0.6, ease: "elastic.out(1, 0.5)" }, 116.4);
+      fx.maskUp("#s13-a1", 116.75);
+      tl.to("#s13-tg-a", { x: -260, y: 520, rotation: -38, opacity: 0, duration: 0.7, ease: "power2.in" }, 117.4);
+      tl.to("#s13-tg-b", { x: 260, y: 560, rotation: 42, opacity: 0, duration: 0.7, ease: "power2.in" }, 117.4);
+      tl.fromTo("#s13-tg", { scale: 1 }, { scale: 1.12, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 117.45);
+      fx.shake("#s13-cam", 117.45, 10, 6);
+
+      tl.to("#s13-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 118.86);
+      window.__timelines["s13"] = tl.real;
+    })();
+  </script>
+</template></body></html>

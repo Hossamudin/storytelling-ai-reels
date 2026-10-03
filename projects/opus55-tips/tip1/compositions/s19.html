@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s19-template">
+  <style>
+
+    #s19-plate { left: 120px; top: 1300px; width: 840px; height: 170px; border-radius: 30px; background: rgba(4,22,20,.82); border: 2px solid rgba(179,206,101,.45); }
+    #s19-nm { position: absolute; left: 0; right: 0; top: 18px; text-align: center; }
+    #s19-en { position: absolute; left: 0; right: 0; top: 112px; text-align: center; }
+    #s19-btn { left: 300px; top: 1530px; }
+    #s19-btn2 { left: 300px; top: 1530px; }
+    #s19-cur { left: 640px; top: 1600px; }
+    #s19-rip { left: 560px; top: 1580px; }
+    #s19-glow { left: 90px; top: 520px; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, rgba(19,96,82,.9), transparent 68%); }
+
+  </style>
+  <div data-hf-id="hf-10oy" id="s19" data-composition-id="s19" data-width="1080" data-height="1920" data-duration="5.64">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-9jsg" id="s19-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-41rr" id="s19-bgp" class="dots"></div>
+    <div data-hf-id="hf-rx9u" id="s19-cam" class="cam">
+
+      <div data-hf-id="hf-4jlr" class="row t-h3" style="top:240px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-az5s" class="in" id="s19-h1">لو عايز تعرف كل جديد في</span></span></div>
+      <div data-hf-id="hf-s74y" class="row t-h2 op-l" style="top:330px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-npdl" class="in" id="s19-h2">عالم الذكاء الاصطناعي</span></span></div>
+      <div data-hf-id="hf-jvur" id="s19-glow" class="abs"></div>
+      <div data-hf-id="hf-5w08" id="s19-hs" class="op-hossam" style="left:170px; top:560px; width:740px; height:1315px"><img data-hf-id="hf-kgdx" src="assets/images/hossam_suit.png"></div>
+      <div data-hf-id="hf-uxng" id="s19-plate" class="abs"><div data-hf-id="hf-vzyv" id="s19-nm" class="t-h3">حسام الدين حسن</div><div data-hf-id="hf-dy56" id="s19-en" class="t-label" style="color:var(--lime)">HOSSAMUDIN HASSAN · AI</div></div>
+      <div data-hf-id="hf-0xnc" id="s19-btn" class="op-btn"><svg data-hf-id="hf-6r7a" style="width:44px; height:44px; color:#fff;"><use data-hf-id="hf-4h79" href="#i-person" /></svg> اعمل فولو</div>
+      <div data-hf-id="hf-yrag" id="s19-btn2" class="op-btn on"><svg data-hf-id="hf-jp0s" style="width:44px; height:44px; color:var(--lime);"><use data-hf-id="hf-yk3y" href="#i-check" /></svg> متابِع</div>
+      <div data-hf-id="hf-ywe7" id="s19-rip" class="ripple"></div>
+      <svg data-hf-id="hf-tfj7" id="s19-cur" class="cursor"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(82.9);
+      const { tl } = fx;
+      fx.drift("#s19-bgp", 82.9, 5.64, 60, -40);
+      fx.drift("#s19-blob", 82.9, 5.64, -110, 60);
+      fx.pushIn("#s19-cam", 82.9, 5.64, 1.02);
+
+      fx.maskUp("#s19-h1", 83.05); fx.maskUp("#s19-h2", 84.6);
+      tl.fromTo("#s19-glow", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 83.0);
+      tl.fromTo("#s19-hs", { opacity: 0, y: 260 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 83.1);
+      tl.fromTo("#s19-plate", { opacity: 0, y: 60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 85.35);
+      fx.pop("#s19-btn", 85.9, { from: 0.4 });
+      fx.hide("#s19-btn2");
+      tl.fromTo("#s19-cur", { opacity: 0, x: 200, y: 160 }, { opacity: 1, x: 0, y: 0, duration: 0.45, ease: "power3.out" }, 85.95);
+      fx.click("#s19-cur", 86.35, "#s19-btn", "#s19-rip");
+      tl.to("#s19-btn", { opacity: 0, duration: 0.1 }, 86.45);
+      tl.to("#s19-btn2", { opacity: 1, duration: 0.1 }, 86.45);
+
+      tl.to("#s19-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 88.25);
+      window.__timelines["s19"] = tl.real;
+    })();
+  </script>
+</template></body></html>

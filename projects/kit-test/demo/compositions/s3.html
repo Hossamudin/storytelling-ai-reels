@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s3-template">
+  <style>
+    #s3-lab { top: 330px; }
+    #s3-bad { left: 140px; top: 420px; width: 800px; height: 150px; }
+    #s3-badt { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 900; }
+    #s3-sk { position: absolute; left: 60px; top: 30px; width: 680px; height: 90px; overflow: visible; }
+    #s3-x { left: 890px; top: 395px; }
+    #s3-good { top: 780px; }
+    #s3-nd { left: 400px; top: 1170px; width: 280px; height: 280px; }
+  </style>
+  <div id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="6.6">
+    <div class="bg"></div>
+    <div id="s3-bgp" class="dots"></div>
+    <div id="s3-cam" class="cam">
+      <div id="s3-lab" class="row"><span class="t-label">THE VERDICT</span></div>
+      <div id="s3-bad" class="card"><div id="s3-badt">تعمل كل حاجة بإيدك</div>
+        <svg id="s3-sk" viewBox="0 0 680 90" preserveAspectRatio="none"><path id="s3-skp" d="M10 50 C 200 36, 450 62, 670 42" pathLength="1" fill="none" stroke="#FF5A33" stroke-width="14" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" /></svg></div>
+      <div id="s3-x" class="xbadge"><svg width="34" height="34" style="color: #fff"><use href="#i-x" /></svg></div>
+      <div id="s3-good" class="row t-h2" data-layout-allow-overlap><span class="hl"><span class="band" id="s3-band"></span><span class="txt" id="s3-gt">فريق AI معاك</span></span></div>
+      <div id="s3-nd" class="node"><svg><use href="#i-spark" /></svg><div class="ring" id="s3-r1"></div><div class="ring" id="s3-r2"></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(11.1);
+      fx.drift("#s3-bgp", 11.1, 6.6, 40, 60);
+      fx.pushIn("#s3-cam", 11.1, 6.6);
+      fx.rise("#s3-lab", 11.2, { y: 20 });
+      fx.pop("#s3-bad", 11.3, { from: 0.6 });
+      fx.strike("#s3-skp", 12.25, "#s3-x");
+      fx.tl.to("#s3-bad", { opacity: 0.45, duration: 0.3 }, 12.7);
+      fx.rise("#s3-gt", 13.4, { y: 40, s: 1.1 });
+      fx.band("#s3-band", 13.55, 0.45);
+      fx.pop("#s3-nd", 14.5, { from: 0 });
+      fx.ringPulse("#s3-r1, #s3-r2", 14.6);
+      fx.breathe("#s3-nd", 15.2, 2.4, 0.06, 1.2);
+      window.__timelines["s3"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

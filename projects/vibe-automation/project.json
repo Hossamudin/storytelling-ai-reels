@@ -1,0 +1,37 @@
+{
+  "name": "vibe-automation",
+  "title": "Vibe Automation",
+  "stage": "transcribe",
+  "created": "2026-09-30T16:54:12",
+  "updated": "2026-09-30T19:10:37",
+  "aspect": null,
+  "duration_s": 99.41,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-09-30T16:54:12",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-09-30T16:54:20",
+      "note": "cleaned voiceover, 99.4s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-09-30T18:45:07",
+      "note": "openai_whisper: 23 segments",
+      "from": "audio_clean"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-09-30T19:10:37",
+      "note": "openai_whisper: 23 segments",
+      "from": "transcribe"
+    }
+  ]
+}

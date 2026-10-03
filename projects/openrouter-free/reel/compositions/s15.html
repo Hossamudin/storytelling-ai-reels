@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s15-template">
+  <style>
+
+    .qr { position: absolute; background: #fff; border-radius: 22px; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+    .qr img { display: block; width: 100%; height: 100%; }
+    .qr-l { position: absolute; left: -40px; right: -40px; bottom: -46px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 22px;
+      letter-spacing: .14em; color: var(--fg); direction: ltr; white-space: nowrap; }
+
+    #s15-th { left: 90px; top: 520px; width: 900px; height: 506px; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.55); border: 4px solid var(--lime); }
+    #s15-th img { width: 900px; height: 506px; }
+    #s15-pl { left: 470px; top: 703px; width: 140px; height: 140px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; }
+    #s15-t { left: 90px; right: 90px; top: 1060px; text-align: center; font-family: var(--font-ar); font-weight: 800; font-size: 46px; line-height: 1.45; color: var(--fg); direction: rtl; }
+    #s15-qr { left: 400px; top: 1300px; width: 280px; height: 280px; }
+
+  </style>
+  <div id="s15" data-composition-id="s15" data-width="1080" data-height="1920" data-duration="5.0">
+    <div class="bg"></div>
+    <div id="s15-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s15-bgp" class="dots"></div>
+    <div id="s15-cam" class="cam">
+
+      <div id="s15-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">WATCH NEXT · FULL VIDEO</span></div>
+      <div class="row t-h2" style="top:350px;" data-layout-allow-overlap><span class="mask"><span class="in" id="s15-a1">كمّل في الفيديو ده</span></span></div>
+      <div id="s15-th" class="abs"><img src="assets/images/watch_next_thumb.jpg" /></div>
+      <div id="s15-pl" class="abs"><svg style="width:70px; height:70px; color:#fff;"><use href="#i-play" /></svg></div>
+      <div id="s15-t" class="abs" data-layout-allow-overlap>كنز في عالم الذكاء الاصطناعي محدش بيتكلم عنه — ٧ أدوات مجانية غيّرت شغلي</div>
+      <div id="s15-qr" class="qr"><img src="assets/images/qr_watch_next.png" /><div class="qr-l">SCAN TO WATCH</div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(132.5);
+      const { tl } = fx;
+      fx.drift("#s15-bgp", 132.5, 5.0, 60, -40);
+      fx.drift("#s15-blob", 132.5, 5.0, -110, 60);
+      fx.pushIn("#s15-cam", 132.5, 5.0, 1.035);
+
+      fx.rise("#s15-lab", 132.6, { y: 16 });
+      fx.maskUp("#s15-a1", 132.7);
+      tl.fromTo("#s15-th", { opacity: 0, y: 200, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.4)" }, 132.8);
+      fx.pop("#s15-pl", 133.3, { from: 0.3 });
+      fx.rise("#s15-t", 133.4, { y: 30 });
+      fx.pop("#s15-qr", 133.9, { from: 0.4 });
+      tl.to("#s15-pl", { scale: 1.12, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 134.6);
+
+      
+      window.__timelines["s15"] = tl.real;
+    })();
+  </script>
+</template></body></html>

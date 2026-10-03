@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s8-template">
+  <style>
+
+    #s8-lab { top: 300px; }
+    #s8-desk { left: 140px; top: 470px; width: 800px; height: 500px; border-radius: 30px; background: #0b2f29; border: 3px solid rgba(179,206,101,.45); overflow: hidden; }
+    .s8-ico { position: absolute; width: 120px; height: 120px; border-radius: 28px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: var(--lime); }
+    #s8-i1 { left: 90px; top: 80px; } #s8-i2 { left: 340px; top: 80px; } #s8-i3 { left: 590px; top: 80px; } #s8-i4 { left: 90px; top: 290px; } #s8-i5 { left: 340px; top: 290px; }
+    #s8-cur { left: 700px; top: 380px; color: #fff; }
+    #s8-rp { left: 400px; top: 140px; }
+    #s8-num { position: absolute; left: 0; right: 0; top: 1030px; text-align: center; font-family: var(--font-ar); font-weight: 900; font-size: 230px; line-height: 1.2; color: var(--yellow); }
+    #s8-shot { left: 90px; top: 1360px; width: 900px; height: 314px; }
+    #s8-shot img { width: 900px; }
+    #s8-hl { left: 50px; top: 150px; width: 218px; height: 154px; border-radius: 12px; border: 7px solid var(--yellow); }
+
+  </style>
+  <div data-hf-id="hf-puv8" id="s8" data-composition-id="s8" data-width="1080" data-height="1920" data-duration="5.35">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-fd3w" id="s8-blob" class="blob" style="left:160px; top:380px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-3n6j" id="s8-bgp" class="dots"></div>
+    <div data-hf-id="hf-ln7s" id="s8-cam" class="cam">
+
+      <div data-hf-id="hf-izw1" id="s8-lab" class="row" style="top:300px"><span data-hf-id="hf-tvzq" class="t-label" style="color:var(--lime)">COMPUTER USE · OSWORLD 2.1</span></div>
+      <div data-hf-id="hf-4k6y" class="row t-h3" style="top:350px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-fvbi" class="in" id="s8-a1">بيستخدم الكمبيوتر زينا</span></span></div>
+      <div data-hf-id="hf-efkn" id="s8-desk" class="abs">
+        <div data-hf-id="hf-cqu5" id="s8-i1" class="s8-ico"><svg data-hf-id="hf-t19b" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-hyr2" href="#i-search" /></svg></div><div data-hf-id="hf-goy6" id="s8-i2" class="s8-ico"><svg data-hf-id="hf-tbfj" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-9pe4" href="#i-chat" /></svg></div>
+        <div data-hf-id="hf-kn27" id="s8-i3" class="s8-ico"><svg data-hf-id="hf-sx4i" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-kvdx" href="#i-copy" /></svg></div><div data-hf-id="hf-ol68" id="s8-i4" class="s8-ico"><svg data-hf-id="hf-sith" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-4d91" href="#i-book" /></svg></div><div data-hf-id="hf-pcu1" id="s8-i5" class="s8-ico"><svg data-hf-id="hf-vayo" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-th2b" href="#i-plan" /></svg></div>
+        <div data-hf-id="hf-7dh8" id="s8-rp" class="ripple"></div>
+        <svg data-hf-id="hf-y52x" id="s8-cur" class="cursor"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+      </div>
+      <div data-hf-id="hf-g1c2" id="s8-num" class="num">٨٠٪</div>
+      <div data-hf-id="hf-t6ly" id="s8-shot" class="op-shot"><img data-hf-id="hf-pnom" src="assets/images/osworld.png"><div data-hf-id="hf-hqjs" id="s8-hl" class="abs"></div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(44.25);
+      const { tl } = fx;
+      fx.drift("#s8-bgp", 44.25, 5.35, 60, -40);
+      fx.drift("#s8-blob", 44.25, 5.35, -110, 60);
+      fx.pushIn("#s8-cam", 44.25, 5.35, 1.035);
+
+      fx.rise("#s8-lab", 44.3, { y: 16 });
+      fx.maskUp("#s8-a1", 44.4);
+      tl.fromTo("#s8-desk", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }, 44.3);
+      fx.pop("#s8-i1, #s8-i2, #s8-i3, #s8-i4, #s8-i5", 44.45, { st: 0.07 });
+      fx.cursorTo("#s8-cur", 44.9, -300, -240, 0.55);
+      fx.click("#s8-cur", 45.5, "#s8-i2", "#s8-rp");
+      tl.to("#s8-i2", { background: "rgba(179,206,101,.35)", duration: 0.15 }, 45.55);
+      fx.cursorTo("#s8-cur", 45.85, -550, -30, 0.5);
+      tl.to("#s8-i4", { background: "rgba(179,206,101,.35)", duration: 0.15 }, 46.4);
+      fx.counter("#s8-num", 46.3, 47.35, 0, 80, { suffix: "٪" });
+      tl.fromTo("#s8-shot", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 47.5);
+      tl.fromTo("#s8-hl", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 48.0);
+
+      tl.to("#s8-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 49.16);
+      window.__timelines["s8"] = tl.real;
+    })();
+  </script>
+</template></body></html>

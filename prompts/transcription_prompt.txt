@@ -1,0 +1,24 @@
+Transcribe this audio (arabic language is main with English keywords) - بلهجة عامية مصرية وبدقة عالية مثل الكلام بالضبط بدون تحريف من نقص او زيادة. مع توضيق التوقيتات بدقة عالية.
+
+OUTPUT FORMAT — return ONLY valid JSON, no markdown fences, no commentary:
+{
+  "language": "ar-EG",
+  "duration_estimate_s": <number>,
+  "segments": [
+    {
+      "start": <seconds, number, 2 decimals>,
+      "end": <seconds, number, 2 decimals>,
+      "text": "<verbatim transcript, Egyptian Arabic dialect exactly as spoken, English keywords kept in Latin script>",
+      "words": [
+        { "w": "<word>", "s": <start seconds>, "e": <end seconds> }
+      ]
+    }
+  ]
+}
+
+RULES:
+- Verbatim only: no corrections, no summarizing, no additions, no omissions. Keep filler words.
+- Egyptian colloquial Arabic (عامية مصرية) spelled naturally. English technical keywords (AI, GPT, prompt, model...) stay in Latin script exactly as spoken.
+- Word-level timestamps ("words" array) are REQUIRED and must be precise — they drive on-screen captions. Times must be monotonic and inside the segment window.
+- Segments must tile the whole audio: first segment starts at 0, last ends at the audio end, no overlaps.
+- Numbers in digits. Pause markers are not needed.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s6-template">
+  <style>
+
+    #s6-ph { left: 330px; top: 520px; width: 420px; height: 800px; }
+    #s6-v { position: absolute; left: -1461px; top: -171px; width: 3376px; height: 1595px; }
+
+  </style>
+  <div data-hf-id="hf-2fr0" id="s6" data-composition-id="s6" data-width="1080" data-height="1920" data-duration="3.55">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-vnpq" id="s6-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-84yt" id="s6-bgp" class="dots"></div>
+    <div data-hf-id="hf-o7se" id="s6-cam" class="cam">
+
+      <div data-hf-id="hf-bh5h" class="row t-h3" style="top:260px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-bakf" class="in" id="s6-h1">تعالى نفترض إنك عايز الـــ<span data-hf-id="hf-ex0q" class="lat">AI</span></span></span></div>
+      <div data-hf-id="hf-sid9" class="row t-h2" style="top:360px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-ef9k" class="in" id="s6-h2">يعملك فيديوهات زي دي</span></span></div>
+      <div data-hf-id="hf-aknc" id="s6-ph" class="op-phone"><div data-hf-id="hf-zn7g" class="scr"><video data-hf-id="hf-um31" id="s6-v" src="assets/videos/hf_studio.mp4" data-start="0" data-duration="3.55" data-media-start="4.5" muted playsinline></video></div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(24.6);
+      const { tl } = fx;
+      fx.drift("#s6-bgp", 24.6, 3.55, 60, -40);
+      fx.drift("#s6-blob", 24.6, 3.55, -110, 60);
+      fx.pushIn("#s6-cam", 24.6, 3.55, 1.035);
+
+      fx.maskUp("#s6-h1", 24.75); fx.maskUp("#s6-h2", 26.3);
+      tl.fromTo("#s6-ph", { opacity: 0, y: 220, rotation: 6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.55, ease: "back.out(1.4)" }, 26.5);
+
+      tl.to("#s6-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 27.71);
+      window.__timelines["s6"] = tl.real;
+    })();
+  </script>
+</template></body></html>

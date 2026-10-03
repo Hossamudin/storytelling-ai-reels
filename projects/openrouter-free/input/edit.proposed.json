@@ -1,0 +1,53 @@
+{
+ "parts": [
+  {
+   "name": "voice",
+   "from": 0,
+   "to": 162.517
+  }
+ ],
+ "cuts": [
+  [
+   -0.04,
+   7.605,
+   "retake: no speech in verbatim transcript / Blank non-speech before the actual take starts / no speech in verbatim transcript / no speech in verbatim transcript / chunk 4 restarts chunk 3 (similarity 0.75); keep the later take / Abandoned opening hook; chunk 5 restarts it cleanly and completely"
+  ],
+  [
+   145.204,
+   148.238,
+   "retake: chunk 33 restarts chunk 32 (similarity 0.64); keep the later take / Abandoned intro/name line; chunk 33 repeats it correctly and continues"
+  ]
+ ],
+ "fix": {},
+ "max_pause": 0.38,
+ "keep_pause": 0.24,
+ "silence_db": -38,
+ "proposals": [
+  {
+   "from": 0,
+   "to": 0,
+   "kind": "retake",
+   "reason": "no speech in verbatim transcript / Blank non-speech before the actual take starts / no speech in verbatim transcript / no speech in verbatim transcript / chunk 4 restarts chunk 3 (similarity 0.75); keep the later take / Abandoned opening hook; chunk 5 restarts it cleanly and completely",
+   "confidence": 0.98,
+   "source": "rules + gpt-5.5",
+   "cut": [
+    -0.04,
+    7.605
+   ],
+   "text": " |  |  | شد أو لا؟ | شد أو لا؟ | شد أو لأ، ولكن تقدر."
+  },
+  {
+   "from": 32,
+   "to": 32,
+   "kind": "retake",
+   "reason": "chunk 33 restarts chunk 32 (similarity 0.64); keep the later take / Abandoned intro/name line; chunk 33 repeats it correctly and continues",
+   "confidence": 0.98,
+   "source": "rules + gpt-5.5",
+   "cut": [
+    145.204,
+    148.238
+   ],
+   "text": "أنا حسن الدين حسن وهنا بكلمك عن كل ما جديد."
+  }
+ ]
+}

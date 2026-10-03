@@ -1,0 +1,79 @@
+{
+  "window": {"x": 64, "y": 140, "k": 0.9343},
+  "items": [
+    {"type": "blur", "rect": [8, 728, 266, 70], "note": "account card (name + credits)"},
+
+    {"type": "zoom", "src": 8.6, "d": 1.0, "rect": [300, 250, 440, 300], "s": 1.5},
+    {"type": "spot", "src": [10.4, 17.0], "rect": [356, 370, 318, 114], "ar": "سجّل مجاناً", "en": "FREE SIGN-UP", "pos": "right"},
+
+    {"type": "zoom", "src": 20.76, "d": 0.7, "rect": [694, 160, 536, 560], "s": 1.3},
+    {"type": "circle", "src": [21.6, 25.6], "rect": [844, 320, 236, 234]},
+    {"type": "spot", "src": [24.3, 25.95], "rect": [712, 624, 502, 70], "ar": "كريدتس إضافية", "en": "BONUS CREDITS", "pos": "bottom", "dim": false},
+
+    {"type": "zoom", "src": 27.82, "d": 0.6, "rect": [356, 330, 318, 120], "s": 1.8},
+    {"type": "spot", "src": [28.3, 30.3], "rect": [356, 370, 318, 42], "ar": "تسجيل بجوجل", "en": "GOOGLE SIGN-UP", "pos": "bottom"},
+    {"type": "zoom", "src": 30.5, "d": 0.9, "s": 1},
+    {"type": "spot", "src": [34.0, 37.4], "rect": [10, 238, 260, 410], "ar": "مشاريعك", "en": "YOUR PROJECTS", "pos": "right"},
+
+    {"type": "zoom", "src": 43.0, "d": 0.9, "rect": [0, 150, 420, 220], "s": 1.9},
+    {"type": "spot", "src": [43.6, 46.5], "rect": [236, 192, 32, 30], "ar": "مشروع جديد", "en": "NEW PROJECT", "pos": "right", "circle": true},
+    {"type": "click", "src": 45.4, "x": 252, "y": 207},
+    {"type": "zoom", "src": 46.6, "d": 0.9, "rect": [754, 286, 416, 290], "s": 1.75},
+    {"type": "spot", "src": [49.4, 55.6], "rect": [820, 352, 326, 36], "ar": "اسم المشروع", "en": "NAME", "pos": "left"},
+    {"type": "spot", "src": [56.24, 59.5], "rect": [776, 428, 370, 78], "ar": "وصف (اختياري)", "en": "DESCRIPTION", "pos": "left"},
+    {"type": "spot", "src": [69.6, 71.3], "rect": [1050, 524, 96, 32], "ar": "إنشاء", "en": "CREATE", "pos": "bottom", "circle": true},
+    {"type": "click", "src": 70.85, "x": 1098, "y": 540},
+    {"type": "zoom", "out": 52.4, "d": 0.4, "s": 1, "note": "reset under cutaway C1"},
+
+    {"type": "badge", "out": [53.13, 55.3], "text": "×4", "ar": "تسريع"},
+
+    {"type": "spot", "src": [117.7, 120.4], "rect": [690, 20, 114, 38], "ar": "١ · المحادثة", "en": "01 CONVERSATION", "pos": "bottom", "circle": true},
+    {"type": "zoom", "src": 120.4, "d": 0.9, "rect": [520, 200, 760, 520], "s": 1.25},
+    {"type": "zoom", "src": 122.5, "d": 0.8, "rect": [1150, 260, 760, 420], "s": 1.35},
+    {"type": "spot", "src": [122.8, 126.9], "rect": [1534, 326, 356, 54], "ar": "وكيل: Hossamudin Instagram Expert", "en": "AGENT", "pos": "left"},
+    {"type": "spot", "src": [127.0, 129.3], "rect": [1534, 432, 356, 54], "ar": "وكيل تاني", "en": "AGENT 2", "pos": "left"},
+    {"type": "zoom", "src": 129.36, "d": 0.8, "rect": [510, 600, 764, 150], "s": 1.7},
+    {"type": "spot", "src": [130.1, 134.7], "rect": [530, 692, 440, 34], "ar": "اعمل منشن واتكلم مع أكتر من وكيل", "en": "@MENTION", "pos": "top"},
+
+    {"type": "zoom", "src": 135.0, "d": 0.7, "s": 1},
+    {"type": "spot", "src": [135.7, 139.8], "rect": [1020, 26, 76, 26], "ar": "٢ · الصفحات", "en": "02 PAGES", "pos": "bottom", "circle": true},
+    {"type": "zoom", "src": 141.3, "d": 0.9, "rect": [296, 110, 1584, 520], "s": 1.15},
+    {"type": "spot", "src": [141.5, 147.2], "rect": [930, 118, 320, 36], "ar": "برنامج صغير جوه SureThing", "en": "MINI APP", "pos": "bottom", "dim": false},
+    {"type": "spot", "src": [147.32, 150.55], "rect": [1784, 236, 110, 560], "ar": "تحكّم في الأوتوميشن وتابع النتائج", "en": "CONTROL & RESULTS", "pos": "left"},
+
+    {"type": "zoom", "out": 100.0, "d": 0.4, "s": 1, "note": "reset under cutaway C2"},
+    {"type": "spot", "out": [101.0, 103.35], "rect": [916, 22, 80, 36], "ar": "٣ · الوكلاء", "en": "03 AGENTS", "pos": "bottom", "circle": true},
+    {"type": "zoom", "src": 183.0, "d": 0.8, "rect": [296, 126, 590, 330], "s": 1.6},
+    {"type": "spot", "src": [183.3, 189.5], "rect": [306, 404, 420, 38], "ar": "تقدر تربطه بمنصات تانية", "en": "CHANNELS", "pos": "bottom"},
+    {"type": "spot", "src": [191.4, 196.5], "rect": [300, 124, 584, 160], "ar": "الإعدادات · System Prompt · الأدوات", "en": "AGENT SETTINGS", "pos": "bottom", "dim": false},
+    {"type": "zoom", "src": 196.6, "d": 0.8, "rect": [1150, 40, 400, 140], "s": 1.6},
+    {"type": "spot", "src": [197.0, 199.1], "rect": [1376, 76, 104, 26], "ar": "وكيل جديد", "en": "NEW AGENT", "pos": "bottom", "circle": true},
+    {"type": "zoom", "src": 199.22, "d": 0.8, "rect": [754, 282, 416, 294], "s": 1.75},
+    {"type": "spot", "src": [199.4, 200.9], "rect": [776, 428, 370, 80], "ar": "اكتب مهاراته", "en": "SKILLS", "pos": "bottom"},
+    {"type": "zoom", "src": 201.0, "d": 0.7, "rect": [510, 560, 764, 180], "s": 1.5},
+    {"type": "spot", "src": [201.8, 205.2], "rect": [510, 650, 764, 160], "ar": "أو اطلب منه يبني الوكيل في المحادثة", "en": "BUILD BY CHAT", "pos": "top"},
+    {"type": "zoom", "src": 205.3, "d": 0.6, "s": 1},
+    {"type": "spot", "src": [205.5, 207.3], "rect": [1020, 26, 90, 28], "ar": "٤ · الروتينات", "en": "04 ROUTINES", "pos": "bottom", "circle": true},
+
+    {"type": "label", "out": [142.4, 143.6], "x": 895, "y": 70, "pos": "bottom", "ar": "مشروع تاني", "en": "ANOTHER PROJECT"},
+    {"type": "zoom", "src": 263.6, "d": 0.8, "rect": [300, 80, 1190, 160], "s": 1.45},
+    {"type": "spot", "src": [264.95, 266.3], "rect": [300, 126, 1190, 80], "ar": "روتين: يتكرر أول كل شهر ٩:٠٠ ص", "en": "ROUTINE", "pos": "bottom"},
+    {"type": "spot", "src": [266.4, 268.0], "rect": [302, 132, 44, 28], "ar": "تشغيل / إيقاف", "en": "ON / OFF", "pos": "bottom", "circle": true},
+    {"type": "zoom", "src": 268.1, "d": 0.9, "rect": [566, 100, 1054, 660], "s": 1.15},
+    {"type": "label", "src": [269.0, 274.4], "x": 1093, "y": 40, "pos": "bottom", "ar": "التوقيت + التعليمات… أو اطلبه من الوكيل", "en": "ROUTINE SETUP"},
+
+    {"type": "zoom", "src": 296.4, "d": 0.9, "rect": [1290, 20, 610, 480], "s": 1.45},
+    {"type": "spot", "src": [296.9, 300.5], "rect": [1530, 20, 190, 28], "ar": "٥ · معلومات المشروع", "en": "05 PROJECT INFO", "pos": "bottom", "circle": true},
+    {"type": "spot", "src": [300.7, 303.6], "rect": [1540, 196, 350, 64], "ar": "الكريدتس واستهلاكها", "en": "CREDITS", "pos": "left"},
+    {"type": "spot", "src": [303.8, 307.1], "rect": [1530, 76, 370, 400], "ar": "الوكلاء بيعملوا إيه بالتفصيل", "en": "AI WORK LOG", "pos": "left"},
+    {"type": "zoom", "src": 307.2, "d": 0.8, "s": 1}
+  ],
+  "cutaways": [
+    {"id": "c0", "src": [null, null], "out": [0, 2.35], "until_out": 2.35, "label": "opening title"},
+    {"id": "c1", "src": [75.28, null], "until_out": 53.15, "label": "5 sections map"},
+    {"id": "c2", "src": [150.62, null], "until_out": 100.95, "label": "two systems -> one umbrella"},
+    {"id": "c3", "src": [178.86, null], "until_out": 107.75, "label": "AI team lives here"},
+    {"id": "c4", "src": [207.28, null], "until_out": 142.25, "label": "routines = schedule, no message needed"},
+    {"id": "c5", "src": [307.24, null], "until_out": 169.23, "label": "recap"}
+  ]
+}

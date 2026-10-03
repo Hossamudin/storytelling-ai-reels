@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s2-template">
+  <style>
+
+    #s2-q { left: 120px; top: 260px; font-size: 1200px; line-height: 1; }
+    #s2-hl { position: absolute; left: 0; right: 0; top: 960px; text-align: center; }
+    #s2-tr { left: 150px; top: 1320px; width: 780px; } #s2-trl { top: 1260px; }
+
+  </style>
+  <div data-hf-id="hf-8o3f" id="s2" data-composition-id="s2" data-width="1080" data-height="1920" data-duration="2.75">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-3uwi" id="s2-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-aoeh" id="s2-bgp" class="dots"></div>
+    <div data-hf-id="hf-uzmy" id="s2-cam" class="cam">
+
+      <div data-hf-id="hf-sya4" id="s2-q" class="abs" aria-hidden="true" data-layout-ignore="" style="font-family:var(--font-ar); font-weight:900; color:rgba(179,206,101,.07)">؟</div>
+      <div data-hf-id="hf-sewd" class="row t-h1" style="top:560px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-2jyq" class="in" id="s2-a1">محدش بيقولك</span></span></div>
+      <div data-hf-id="hf-nwj8" class="row t-h2" style="top:760px;" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-nm2j" class="in" id="s2-b1">ازاي تطلع منه</span></span></div>
+      <div data-hf-id="hf-17uy" id="s2-hl" class="t-h1"><span data-hf-id="hf-9pcw" class="hl" id="s2-hlw"><span data-hf-id="hf-qlbn" class="band" id="s2-band"></span><span data-hf-id="hf-bi8x" class="txt">أحسن نتائج</span></span></div>
+      <div data-hf-id="hf-i1vm" id="s2-trl" class="row" style="top:1260px"><span data-hf-id="hf-tur9" class="t-label" style="color:var(--lime)">YOUR RESULTS</span></div>
+      <div data-hf-id="hf-hfwt" id="s2-tr" class="op-track"><div data-hf-id="hf-0hep" id="s2-fill" class="op-fill" style="background:var(--lime)"></div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(3.0);
+      const { tl } = fx;
+      fx.drift("#s2-bgp", 3.0, 2.75, 60, -40);
+      fx.drift("#s2-blob", 3.0, 2.75, -110, 60);
+      fx.pushIn("#s2-cam", 3.0, 2.75, 1.035);
+
+      fx.drift("#s2-q", 3.0, 2.75, -40, 30);
+      fx.maskUp("#s2-a1", 3.3);
+      fx.maskUp("#s2-b1", 4.05);
+      fx.pop("#s2-hlw", 4.75, { from: 0.6 }); fx.band("#s2-band", 4.75, 0.25);
+      fx.rise("#s2-trl, #s2-tr", 3.6, { y: 20 });
+      fx.meter("#s2-fill", 3.8, 0.5, 0.3, { e: "power2.out" });
+      tl.to("#s2-fill", { background: "#ff5a33", duration: 0.2 }, 4.3);
+      fx.shake("#s2-tr", 4.35, 10, 5);
+      tl.to("#s2-fill", { scaleX: 1, background: "#b3ce65", duration: 0.5, ease: "power3.out" }, 4.95);
+
+      tl.to("#s2-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 5.31);
+      window.__timelines["s2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

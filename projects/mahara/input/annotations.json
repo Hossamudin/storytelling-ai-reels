@@ -1,0 +1,53 @@
+{
+  "window": {"x": 135, "y": 88, "k": 0.86},
+  "items": [
+    {"type": "blur", "src": [14.25, 31.6], "rect": [832, 62, 112, 34], "note": "screen-recorder 'Stop recording' tooltip"},
+    {"type": "zoom", "src": 14.6, "d": 1.2, "rect": [660, 120, 600, 290], "s": 1.45, "note": "hero headline while 'AI skills' is introduced"},
+    {"type": "zoom", "src": 19.2, "d": 0.4, "s": 1, "note": "reset under cutaway C1"},
+
+    {"type": "spot", "src": [33.6, 36.2], "rect": [1622, 14, 92, 38], "ar": "مصدر مهارات مجانية", "en": "MAHARA AI", "pos": "bottom", "circle": true},
+
+    {"type": "zoom", "src": 36.3, "d": 0.9, "rect": [800, 436, 732, 458], "s": 1.6},
+    {"type": "spot", "src": [39.66, 40.6], "rect": [822, 458, 686, 78], "ar": "إنت مين؟", "en": "WHO YOU ARE", "pos": "top"},
+    {"type": "spot", "src": [40.68, 41.55], "rect": [838, 563, 672, 136], "ar": "اهتماماتك (لحد ٣)", "en": "INTERESTS", "pos": "top"},
+    {"type": "spot", "src": [41.6, 43.55], "rect": [820, 724, 690, 150], "ar": "المهام اللي بتعملها", "en": "YOUR TASKS", "pos": "top"},
+
+    {"type": "zoom", "src": 43.65, "d": 0.8, "rect": [372, 430, 410, 620], "s": 1.5, "note": "freeze frame (src 40.3): recommendations list"},
+    {"type": "spot", "src": [44.0, 46.65], "rect": [377, 477, 400, 565], "ar": "ترشيحات تناسبك", "en": "RECOMMENDED", "pos": "right", "dim": false},
+    {"type": "spot", "src": [46.8, 48.6], "rect": [377, 478, 400, 90], "ar": "مفيش ترشيحات؟ فاضي", "en": "NO MATCH", "pos": "bottom"},
+    {"type": "zoom", "src": 48.62, "d": 0.8, "s": 1},
+    {"type": "circle", "src": [49.4, 50.8], "rect": [1030, 16, 104, 34]},
+
+    {"type": "spot", "src": [57.0, 59.7], "rect": [820, 120, 270, 160], "ar": "مهارات لأدوات معينة", "en": "MANUS SKILLS", "pos": "bottom", "dim": false},
+    {"type": "spot", "src": [60.6, 62.1], "rect": [1280, 16, 66, 34], "ar": "كل المهارات", "en": "ALL SKILLS", "pos": "bottom", "circle": true},
+    {"type": "click", "out": 45.1, "x": 1312, "y": 33},
+
+    {"type": "spot", "src": [72.9, 74.15], "rect": [1350, 96, 360, 132], "ar": "21 مهارة في مكان واحد", "en": "ALL SKILLS", "pos": "left", "dim": false},
+    {"type": "zoom", "src": 76.5, "d": 0.9, "rect": [200, 120, 1218, 860], "s": 1.25, "note": "card grid after the scroll"},
+    {"type": "spot", "src": [77.0, 79.2], "rect": [1132, 372, 284, 398], "ar": "مهارات SEO", "en": "SEO", "pos": "left"},
+    {"type": "spot", "src": [79.3, 81.8], "rect": [512, 372, 284, 398], "ar": "سيو يوتيوب", "en": "YOUTUBE SEO", "pos": "right"},
+    {"type": "spot", "src": [81.9, 83.7], "rect": [202, 372, 284, 398], "ar": "إنتاج الفيديوهات", "en": "VIDEO", "pos": "right"},
+    {"type": "spot", "src": [84.1, 87.1], "rect": [202, 145, 284, 400], "ar": "محتوى مش باين إنه AI", "en": "CONTENT WRITING", "pos": "right"},
+    {"type": "spot", "src": [88.5, 91.7], "rect": [1132, 497, 284, 398], "ar": "تثبيت مشاريع برمجية", "en": "INSTALL PROJECTS", "pos": "left"},
+    {"type": "spot", "src": [92.3, 95.0], "rect": [822, 497, 284, 398], "ar": "تحسين بروفايل LinkedIn", "en": "LINKEDIN", "pos": "left"},
+    {"type": "spot", "src": [97.4, 101.9], "rect": [202, 520, 284, 356], "ar": "أحسن سعر لأي منتج", "en": "PRICE FINDER", "pos": "right"},
+
+    {"type": "zoom", "src": 103.0, "d": 0.8, "s": 1},
+    {"type": "zoom", "src": 104.6, "d": 0.9, "rect": [1300, 200, 560, 880], "s": 1.2},
+    {"type": "spot", "src": [105.0, 108.0], "rect": [1450, 233, 256, 42], "ar": "ابحث عن أي مهارة", "en": "SEARCH", "pos": "left"},
+    {"type": "spot", "src": [108.05, 110.45], "rect": [1448, 580, 260, 490], "ar": "أو استخدم التصنيفات", "en": "CATEGORIES", "pos": "left"},
+    {"type": "zoom", "src": 110.45, "d": 0.7, "s": 1},
+    {"type": "label", "src": [110.6, 112.9], "x": 809, "y": 470, "pos": "bottom", "ar": "كلها مجانية تماماً حالياً", "en": "100% FREE"},
+
+    {"type": "zoom", "src": 113.3, "d": 0.9, "rect": [560, 110, 800, 720], "s": 1.35},
+    {"type": "spot", "src": [113.5, 115.45], "rect": [830, 116, 260, 80], "ar": "قريباً: مهارات بريميوم", "en": "PREMIUM · SOON", "pos": "bottom", "dim": false},
+    {"type": "spot", "src": [115.5, 118.3], "rect": [568, 400, 376, 420], "ar": "اشتراك شهري", "en": "MONTHLY PLAN", "pos": "right"},
+    {"type": "spot", "src": [118.34, 119.65], "rect": [858, 252, 194, 40], "ar": "السعر حسب بلدك", "en": "LOCAL CURRENCY", "pos": "top", "circle": true},
+    {"type": "spot", "src": [119.7, 124.4], "rect": [640, 500, 290, 126], "ar": "كل المهارات + تحديثاتها", "en": "ALL PREMIUM SKILLS", "pos": "right"}
+  ],
+  "cutaways": [
+    {"id": "c0", "src": [null, null], "out": [0, 2.4], "until_out": 2.4, "label": "opening title"},
+    {"id": "c1", "src": [18.88, null], "until_out": 19.61, "label": "what is an AI skill: files -> AI -> task done right every time"},
+    {"id": "c2", "src": [124.45, null], "until_out": 101.333, "label": "recap + maharaai.com"}
+  ]
+}

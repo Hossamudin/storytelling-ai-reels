@@ -1,0 +1,19 @@
+{
+ "enabled": true,
+ "series": "MAHARA AI TOUR",
+ "wipes": [2.15, 6.8, 19.4, 96.55],
+ "sections": [
+  {"t": 0, "label": "INTRO", "title": "يعني إيه AI Skill؟"},
+  {"t": 24.39, "label": "FOR YOU", "title": "ترشيحات حسب اهتماماتك"},
+  {"t": 36.79, "label": "ALL SKILLS", "title": "مكتبة المهارات كلها"},
+  {"t": 75.18, "label": "SEARCH", "title": "البحث والتصنيفات", "chapter": false},
+  {"t": 82.68, "label": "PRICING", "title": "مجانية دلوقتي… وبريميوم قريباً"},
+  {"t": 96.79, "label": "RECAP", "title": "الخلاصة", "chapter": false}
+ ],
+ "steps": [{"t0": 24.39, "t1": 82.6, "items": [
+   {"t": 24.39, "label": "حدد اهتماماتك"},
+   {"t": 45.1, "label": "تصفّح كل المهارات"},
+   {"t": 75.18, "label": "ابحث أو صنّف"}
+ ]}],
+ "grain": false
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s15-template">
+  <style>
+
+    #s15-tr { left: 110px; top: 610px; width: 860px; height: 64px; border-radius: 32px; }
+    #s15-tl { top: 540px; }
+    #s15-ov { left: 330px; top: 700px; font-size: 54px; padding: 6px 30px; }
+    #s15-clk { left: 160px; top: 900px; width: 220px; height: 220px; color: var(--yellow); }
+    #s15-hand { left: 160px; top: 900px; width: 220px; height: 220px; }
+    #s15-ct { right: 120px; top: 950px; position: absolute; }
+    .s15-x { position: absolute; width: 110px; height: 110px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; color: #fff; }
+    #s15-x1 { left: 160px; top: 1300px; } #s15-x2 { left: 485px; top: 1250px; } #s15-x3 { left: 810px; top: 1300px; }
+
+  </style>
+  <div data-hf-id="hf-qe26" id="s15" data-composition-id="s15" data-width="1080" data-height="1920" data-duration="3.75">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-zi9d" id="s15-blob" class="blob" style="left:160px; top:320px; width:760px; height:760px; background:#3a1a12; opacity:.55"></div>
+    <div data-hf-id="hf-xk8z" id="s15-bgp" class="dots"></div>
+    <div data-hf-id="hf-p4zy" id="s15-cam" class="cam">
+
+      <div data-hf-id="hf-lcz3" id="s15-lab" class="row" style="top:250px"><span data-hf-id="hf-apys" class="t-label" style="color:var(--lime)">FIRST RUN · THE PRICE</span></div>
+      <div data-hf-id="hf-wj3f" class="row t-h2" style="top:300px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-wniq" class="in" id="s15-h1">حرق <span data-hf-id="hf-5lcu" class="lat">tokens</span> كتير جدًا</span></span></div>
+      <div data-hf-id="hf-ihim" id="s15-tl" class="row" style="top:540px"><span data-hf-id="hf-49bi" class="t-label" style="color:var(--lime)">TOKENS</span></div>
+      <div data-hf-id="hf-pgzc" id="s15-tr" class="op-track" data-layout-allow-overflow=""><div data-hf-id="hf-ea7g" id="s15-fill" class="op-fill" style="background:linear-gradient(270deg, var(--yellow), var(--orange)); border-radius:32px" data-layout-allow-overflow=""></div></div>
+      <div data-hf-id="hf-7cb8" id="s15-ov" class="stamp">OVERLOAD</div>
+      <svg data-hf-id="hf-0vat" id="s15-clk" class="abs"><use data-hf-id="hf-8qr0" href="#i-clock" /></svg>
+      <svg data-hf-id="hf-zptx" id="s15-hand" class="abs" viewBox="0 0 64 64"><path data-hf-id="hf-3uqm" d="M32 32V12" stroke="#ff5a33" stroke-width="4" stroke-linecap="round" /></svg>
+      <div data-hf-id="hf-mpcy" id="s15-ct" class="t-h2"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-2zxh" class="in" id="s15-c1">وقت طويل</span></span></div>
+      <div data-hf-id="hf-p0rj" class="s15-x" id="s15-x1"><svg data-hf-id="hf-23od" style="width:70px; height:70px; color:currentColor;"><use data-hf-id="hf-r08i" href="#i-x" /></svg></div><div data-hf-id="hf-gcvo" class="s15-x" id="s15-x2"><svg data-hf-id="hf-s27l" style="width:70px; height:70px; color:currentColor;"><use data-hf-id="hf-31di" href="#i-x" /></svg></div><div data-hf-id="hf-h4jh" class="s15-x" id="s15-x3"><svg data-hf-id="hf-t94o" style="width:70px; height:70px; color:currentColor;"><use data-hf-id="hf-3foj" href="#i-x" /></svg></div>
+      <div data-hf-id="hf-xlr0" class="row t-h2 op-o" style="top:1460px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-aeyj" class="in" id="s15-k1">وغلط في حاجات</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(64.9);
+      const { tl } = fx;
+      fx.drift("#s15-bgp", 64.9, 3.75, 60, -40);
+      fx.drift("#s15-blob", 64.9, 3.75, -110, 60);
+      fx.pushIn("#s15-cam", 64.9, 3.75, 1.035);
+
+      fx.rise("#s15-lab", 65.0, { y: 12 }); fx.maskUp("#s15-h1", 65.4);
+      fx.rise("#s15-tl, #s15-tr", 65.1, { y: 20 });
+      tl.fromTo("#s15-fill", { scaleX: 0 }, { scaleX: 1.12, duration: 1.0, ease: "power2.in" }, 65.45);
+      fx.stamp("#s15-ov", 66.35, "#s15-cam");
+      fx.pop("#s15-clk, #s15-hand", 66.6, { from: 0.3 });
+      tl.fromTo("#s15-hand", { rotation: 0 }, { rotation: 1080, duration: 1.6, ease: "power1.inOut", immediateRender: false }, 66.7);
+      fx.maskUp("#s15-c1", 66.75);
+      fx.pop("#s15-x1", 67.85, { from: 0.2 }); fx.pop("#s15-x2", 68.0, { from: 0.2 }); fx.pop("#s15-x3", 68.15, { from: 0.2 });
+      fx.maskUp("#s15-k1", 67.9);
+
+      tl.to("#s15-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 68.21);
+      window.__timelines["s15"] = tl.real;
+    })();
+  </script>
+</template></body></html>

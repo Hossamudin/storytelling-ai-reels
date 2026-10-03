@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s1-template">
+  <style>
+
+    #s1-date { position: absolute; left: 0; right: 0; top: 1130px; display: flex; justify-content: center; }
+    #s1-date span { height: 70px; padding: 0 30px; border-radius: 35px; background: var(--yellow); color: var(--ink); font-family: var(--font-en); font-weight: 900;
+      font-size: 30px; letter-spacing: .2em; display: flex; align-items: center; direction: ltr; }
+    #s1-tick { position: absolute; left: 0; right: 0; top: 1300px; height: 84px; background: var(--orange); overflow: hidden; }
+    #s1-tk { position: absolute; left: 0; top: 0; height: 84px; display: flex; align-items: center; gap: 46px; white-space: nowrap; direction: ltr;
+      font-family: var(--font-en); font-weight: 900; font-size: 34px; letter-spacing: .14em; color: #fff; }
+
+  </style>
+  <div data-hf-id="hf-2wtg" id="s1" data-composition-id="s1" data-width="1080" data-height="1920" data-duration="3.15">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-dzqw" id="s1-blob" class="blob" style="left:160px; top:320px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-xdf2" id="s1-bgp" class="dots"></div>
+    <div data-hf-id="hf-q35l" id="s1-cam" class="cam">
+
+      <div data-hf-id="hf-a5yg" id="s1-a" class="flap" style="top:520px;" data-layout-allow-overlap=""><span data-hf-id="hf-zfa4" class="fl" style="width:125px; height:170px; line-height:170px; font-size:118px"><i data-hf-id="hf-lv10" style="font-style:normal">A</i></span><span data-hf-id="hf-hul0" class="fl" style="width:125px; height:170px; line-height:170px; font-size:118px"><i data-hf-id="hf-p1h8" style="font-style:normal">I</i></span><span data-hf-id="hf-8ivz" class="fl sp" style="width:50px; height:170px"></span><span data-hf-id="hf-gnnx" class="fl" style="width:125px; height:170px; line-height:170px; font-size:118px"><i data-hf-id="hf-pfs9" style="font-style:normal">N</i></span><span data-hf-id="hf-h1yy" class="fl" style="width:125px; height:170px; line-height:170px; font-size:118px"><i data-hf-id="hf-ng94" style="font-style:normal">E</i></span><span data-hf-id="hf-j1i3" class="fl" style="width:125px; height:170px; line-height:170px; font-size:118px"><i data-hf-id="hf-t0ji" style="font-style:normal">W</i></span><span data-hf-id="hf-jft4" class="fl" style="width:125px; height:170px; line-height:170px; font-size:118px"><i data-hf-id="hf-rfbe" style="font-style:normal">S</i></span></div>
+      <div data-hf-id="hf-m6o8" class="row t-h1" style="top:790px;font-size:104px" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-5415" class="in" id="s1-h1">اللي حصل الأسبوع ده</span></span></div>
+      <div data-hf-id="hf-i4rq" id="s1-date"><span data-hf-id="hf-lb56">3 OCT 2026</span></div>
+      <div data-hf-id="hf-a5vd" id="s1-tick"><div data-hf-id="hf-8tsu" id="s1-tk">BREAKING · OPENAI DOTS · GPT-6.1 SOL · GEMINI 4 ARGON · SONNET 5.5 · MUSE CHARM · SUPER INTELLIGENCE · BREAKING · OPENAI DOTS · GPT-6.1 SOL</div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0.0);
+      const { tl } = fx;
+      fx.drift("#s1-bgp", 0.0, 3.15, 60, -40);
+      fx.drift("#s1-blob", 0.0, 3.15, -110, 60);
+      fx.pushIn("#s1-cam", 0.0, 3.15, 1.035);
+
+      fx.punch("#s1-cam", 0, 1.15);
+      window.HF_FLAP(fx, "#s1-a", 0.0, { st: 0.06 });
+      fx.maskUp("#s1-h1", 0.95);
+      fx.pop("#s1-date", 1.7, { from: 0.5 });
+      tl.fromTo("#s1-tick", { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "power3.out" }, 1.4);
+      tl.fromTo("#s1-tk", { x: 0 }, { x: -1500, duration: 1.75, ease: "none" }, 1.4);
+
+      tl.to("#s1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 2.71);
+      window.__timelines["s1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

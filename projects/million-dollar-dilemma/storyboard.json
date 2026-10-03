@@ -1,0 +1,754 @@
+{
+  "title": "الذكاء الاصطناعي يحل معضلة المليون دولار",
+  "logline": "كيف تمكن 10 آلاف عميل ذكاء اصطناعي من حل معضلة رياضية عجز عنها البشر لـ 90 عاماً والفوز بجائزة المليون دولار.",
+  "aspect": "9:16",
+  "total_duration": 265.43,
+  "estimated_cost_usd": 4.8,
+  "hook": {
+    "end_s": 14.06,
+    "scene_ids": [
+      "S01",
+      "S02",
+      "S03",
+      "S04"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "S01",
+      "start": 0.0,
+      "end": 3.0,
+      "narration": "AI حل مسألة بمليون دولار",
+      "beat": "hook",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "AI يحل معضلة بمليون دولار!",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "impact",
+      "caption_keywords": [
+        "AI",
+        "million dollar"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "High-impact kinetic typography. Large golden '$1,000,000' text scales up rapidly on a dark slate background (#1A1A24) with glowing cyan accents (#00F0FF).",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S02",
+      "start": 3.0,
+      "end": 6.0,
+      "narration": "AI حل مسألة بمليون دولار",
+      "beat": "hook",
+      "style": "cinematic_broll",
+      "method": "image_animate",
+      "headline": "حل معضلة مستعصية",
+      "image_prompt": "Ultra-clean premium editorial hero frame, 9:16. A complex mathematical equation written as clean typographic layers in #136052 on a warm off-white #FAF7F0 base with a subtle receding grid; the final symbols resolve into a bold #FF5A33 checkmark node with a #FFEC5C glow core, energy streaks implying motion. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "Plays under an Arabic hook narration: 'AI solved a million dollar problem'. Slow camera push-in: equation lines draw themselves in #136052, then the final symbol pulses and snaps into a #FF5A33 checkmark with a #FFEC5C glow flash at second 6, holds. Single continuous shot, 9:16 vertical, 720p. No speech, no music; one soft whoosh + subtle click at the snap only.",
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, speech, gold, black background, faces, hands, robots, blue, purple, glitch",
+      "video_clip_seconds": 3.0,
+      "sfx": "whoosh",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Pattern interrupt: transition from clean typography to a deep, cinematic particle animation.",
+      "estimated_cost_usd": 0.34,
+      "assets": {
+        "first_frame": "assets\\images\\S02_first.png"
+      }
+    },
+    {
+      "id": "S03",
+      "start": 6.0,
+      "end": 9.45,
+      "narration": "AI قدر يحل مسألة كانت صعبة علينا 90 سنة",
+      "beat": "hook",
+      "style": "vox_animation",
+      "method": "hossam_image",
+      "headline": "عجز عنها البشر 90 سنة!",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "90 years"
+      ],
+      "hossam_image_hint": "speaking",
+      "screenshot_hint": "",
+      "notes": "Hossam cutout on the left. On the right, a dynamic timeline graphic appears showing '1934' transitioning rapidly to '2024' with a red 'X' over it.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S03_first.png"
+      }
+    },
+    {
+      "id": "S04",
+      "start": 9.45,
+      "end": 14.06,
+      "narration": "ده غير إن هو كسب مليون دولار",
+      "beat": "hook",
+      "style": "scientific_infographic",
+      "method": "screenshot",
+      "headline": "جائزة المليون دولار",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "million dollar"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "A screenshot of a news article headline about an AI winning or solving a Millennium Prize Problem.",
+      "notes": "Fast zoom-in on the screenshot highlighting the words 'Millennium Prize' and '$1 Million'.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S04_first.png"
+      }
+    },
+    {
+      "id": "S05",
+      "start": 14.06,
+      "end": 19.35,
+      "narration": "ده غير إن هو كسب مليون دولار",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "الجائزة الكبرى",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [
+        "million dollar"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A clean, minimalist financial counter graphic ticking up rapidly from $0 to $1,000,000 in gold text.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S06",
+      "start": 19.35,
+      "end": 24.61,
+      "narration": "الـ AI ده قدر يحل مشكلة",
+      "beat": "explain",
+      "style": "3d_animation",
+      "method": "direct_image",
+      "headline": "حل شفرة المعضلة",
+      "image_prompt": "A giant geometric key made of digital light lines (#FF5A33 with #FFEC5C glow core) unlocking a massive layered geometric lock (#136052 with #437F3E inner rings), warm off-white #FAF7F0 base, subtle receding grid, dramatic but clean. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "",
+      "negative_prompt": "clutter, realistic faces, computers, blue, purple",
+      "video_clip_seconds": 0,
+      "sfx": "riser",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Parallax effect applied to the layers of the geometric puzzle to create depth.",
+      "estimated_cost_usd": 0.04,
+      "assets": {
+        "first_frame": "assets\\images\\S06_first.png"
+      }
+    },
+    {
+      "id": "S07",
+      "start": 24.61,
+      "end": 31.61,
+      "narration": "الـ AI ده قدر يحل مشكلة كانت صعبة علينا لـ 90 سنة ومحطوط لها جايزة بمليون دولار",
+      "beat": "proof",
+      "style": "scientific_infographic",
+      "method": "screenshot",
+      "headline": "معضلات الألفية الرياضية",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "90 years",
+        "million dollar"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "Official Clay Mathematics Institute website page showing the Millennium Prize Problems list.",
+      "notes": "Smooth red digital box highlights the 'Navier-Stokes Existence and Smoothness' problem on the page.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S07_first.png"
+      }
+    },
+    {
+      "id": "S08",
+      "start": 31.61,
+      "end": 39.21,
+      "narration": "ده اللي OpenAI أعلنت عليه من أقل من يوم إن 10000 موظف ذكاء اصطناعي اشتغلوا عندها بنموذج AI ما تمش",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "10,000 عميل ذكاء اصطناعي!",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "OpenAI",
+        "10000 AI agents"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A grid of stylized, glowing node icons multiplying rapidly on screen, representing the swarm of 10,000 agents.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S09",
+      "start": 39.21,
+      "end": 47.21,
+      "narration": "ده اللي OpenAI أطلـ ده اللي OpenAI أعلنت عنه من أقل من يوم وده بعد إطلاق الـ GPT 6 الجديد قالوا إن عندهم ذكاء اصطناعي تاني أذكى منه ولكن ما حدش عنده القدرة يستخدمه",
+      "beat": "demo",
+      "style": "scientific_infographic",
+      "method": "screenshot",
+      "headline": "مفاجأة OpenAI السرية",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [
+        "OpenAI",
+        "GPT 6"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "A screenshot of a tech news article or tweet discussing OpenAI's internal models and GPT-6 rumors.",
+      "notes": "Slow scroll down the screenshot with a subtle dark vignette around the edges.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S09_first.png"
+      }
+    },
+    {
+      "id": "S10",
+      "start": 47.21,
+      "end": 60.21,
+      "narration": "وهم شغلوا الـ AI agent ده",
+      "beat": "explain",
+      "style": "cinematic_broll",
+      "method": "image_animate",
+      "headline": "العميل الخارق",
+      "image_prompt": "An intricate digital brain core: a cluster of geometric nodes (#437F3E linked by thin light lines, 2-3 nodes hot #FF5A33) locked inside a translucent sphere of #136052 lines, floating over a warm off-white #FAF7F0 base with soft receding grid. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "Plays under Arabic narration about running a secret AI agent non-stop. Slow dolly-in toward the brain core; nodes light up in sequence (#FFEC5C flashes), the outer sphere rotates gently; at second 7 the whole core pulses once, strongly. Single continuous shot, 9:16, 720p. No speech, no music; faint electrical hum only.",
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, speech, gold, black background, faces, hands, robots, blue, purple, glitch",
+      "video_clip_seconds": 10.0,
+      "sfx": "riser",
+      "caption_keywords": [
+        "AI agent"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Creates suspense and visualizes the 'locked away' powerful model.",
+      "estimated_cost_usd": 1.04,
+      "assets": {
+        "first_frame": "assets\\images\\S10_first.png"
+      }
+    },
+    {
+      "id": "S11",
+      "start": 60.21,
+      "end": 65.14,
+      "narration": "وهم شغلوا الـ AI ده على",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "تشغيل النظام الجماعي",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A stylized terminal screen typing out code: 'initializing_swarm_agents... OK' in glowing green and gold text.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S12",
+      "start": 65.14,
+      "end": 73.15,
+      "narration": "وهم شغلوا 10000 AI agent بالنموذج ده لمدة 8 180 ساعة وقدروا يحلوا المسألة الصعبة دي",
+      "beat": "explain",
+      "style": "vox_animation",
+      "method": "image_animate",
+      "headline": "180 ساعة من التفكير المستمر",
+      "image_prompt": "A massive sphere built from thousands of interconnected glowing nodes (#437F3E links, clusters hot #FF5A33, glow cores #FFEC5C) like a living network, small worker dots #B3CE65 orbiting it, warm off-white #FAF7F0 base with receding grid depth. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "Plays under Arabic narration: 'they ran 10,000 AI agents for 180 hours'. Slow orbit around the node sphere; cascading light pulses travel across the network like synchronized work waves (#FFEC5C), orbits speed up subtly, then settle. Single continuous shot, 9:16, 720p. No speech, no music; soft ambient data hum.",
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, speech, gold, black background, faces, hands, robots, blue, purple, glitch",
+      "video_clip_seconds": 8.0,
+      "sfx": "whoosh",
+      "caption_keywords": [
+        "10000 AI agent",
+        "180 hours"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Visually represents the massive scale of parallel processing.",
+      "estimated_cost_usd": 0.84,
+      "assets": {
+        "first_frame": "assets\\images\\S12_first.png"
+      }
+    },
+    {
+      "id": "S13",
+      "start": 73.15,
+      "end": 85.45,
+      "narration": "",
+      "beat": "recap",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "10,000 وكيل × 180 ساعة",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "recap counter strip: 10,000 AI agents x 180 hours x GPT-6 -> solved; numbers count up in brand palette",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S14",
+      "start": 85.45,
+      "end": 98.97,
+      "narration": "الـ 10,000 AI agent دول فضلوا شغالين لمدة 88 ساعة وفضلوا يتبادلوا الرسائل والـ chat بقرابة الـ 3 مليون رسالة وقدروا مع بعض إن هما يحلوا المعضلة دي واللي كان محطوط لها جايزة بمليون دولار وده",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "3,000,000 رسالة متبادلة!",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "88 hours",
+        "3 million messages",
+        "million dollar"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A dynamic counter rapidly spinning up to '3,000,000' with stylized chat bubble icons flying across the screen in a clean, high-end motion graphic.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S15",
+      "start": 98.97,
+      "end": 109.89,
+      "narration": "",
+      "beat": "quote",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "مستقبل حل المعضلات",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A beautiful quote card scene: 'الذكاء الاصطناعي الجماعي هو القوة القادمة لتغيير العلم' (Collective AI is the next power to change science) in elegant Noto Kufi Arabic font.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S16",
+      "start": 109.89,
+      "end": 123.79,
+      "narration": "فلو إنت انبهرت من GPT-6 اللي إحنا لسه فلو إنت فلو إنت انبهرت بالـ GPT-6 اللي لسه طالع فالموديل ده المفروض يكون مبهر ولكن واضح إن OpenAI بتختبر نماذج داخلية مش هنقدر نشوفها غير بعد فترة",
+      "beat": "explain",
+      "style": "scientific_infographic",
+      "method": "screenshot",
+      "headline": "تجارب OpenAI السرية",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "GPT-6",
+        "OpenAI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "A screenshot of an official OpenAI research blog post discussing internal testing and safety protocols.",
+      "notes": "Slow zoom into the text highlighting 'internal testing of advanced reasoning models'.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S16_first.png"
+      }
+    },
+    {
+      "id": "S17",
+      "start": 123.79,
+      "end": 130.24,
+      "narration": "المهم لو رجعنا للمشكلة اللي الـ AI agents دول قدروا يحلوها فاسمها Navier-Stokes ودي معادلات",
+      "beat": "explain",
+      "style": "scientific_infographic",
+      "method": "direct_image",
+      "headline": "معادلات Navier-Stokes",
+      "image_prompt": "The Navier-Stokes equations as elegant typographic layers (#136052 on warm off-white #FAF7F0), with flowing ribbons of #B3CE65 and #FF5A33 weaving between the symbols suggesting fluid motion, clean editorial layout with generous negative space. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "",
+      "negative_prompt": "clutter, realistic faces, computers, blue, purple",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [
+        "Navier-Stokes"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A clean, educational infographic frame to explain the mathematical concept.",
+      "estimated_cost_usd": 0.04,
+      "assets": {
+        "first_frame": "assets\\images\\S17_first.png"
+      }
+    },
+    {
+      "id": "S18",
+      "start": 130.24,
+      "end": 134.15,
+      "narration": "اللي بتوصف حركة المية والهوا مع بعض",
+      "beat": "explain",
+      "style": "cinematic_broll",
+      "method": "image_animate",
+      "headline": "حركة الماء والهواء",
+      "image_prompt": "Abstract premium fluid-dynamics visual: layered flowing ribbons and currents (deep teal #136052 into green #437F3E) with #FFEC5C glow cores and #FF5A33 highlights, suggesting water and air intertwining, on warm off-white. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "Plays under Arabic narration describing the movement of water and air together. Camera drifts slowly through flowing layered currents (#136052 -> #437F3E ribbons, #FFEC5C glow cores, #FF5A33 highlights); currents braid and unbraid smoothly. Single continuous shot, 9:16, 720p. No speech, no music; soft airy whoosh.",
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, speech, gold, black background, faces, hands, robots, blue, purple, glitch",
+      "video_clip_seconds": 3.0,
+      "sfx": "whoosh",
+      "caption_keywords": [],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Visually stunning representation of the physical equations in action.",
+      "estimated_cost_usd": 0.34,
+      "assets": {
+        "first_frame": "assets\\images\\S18_first.png"
+      }
+    },
+    {
+      "id": "S19",
+      "start": 134.15,
+      "end": 141.19,
+      "narration": "وبُتستخدم في التنبؤ بالجو والـ climate change وغيره وبُتـ",
+      "beat": "explain",
+      "style": "scientific_infographic",
+      "method": "direct_image",
+      "headline": "التنبؤ بالمناخ والطقس",
+      "image_prompt": "A stylized globe drawn as clean geometric latitude/longitude lines (#136052) on warm off-white #FAF7F0; weather patterns as flowing #B3CE65 streams, climate hotspots pulsing #FF5A33, a small #FFEC5C sun icon. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "",
+      "negative_prompt": "clutter, realistic faces, computers, blue, purple",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [
+        "climate change"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Parallax movement on the globe layers to make the weather patterns feel alive.",
+      "estimated_cost_usd": 0.04,
+      "assets": {
+        "first_frame": "assets\\images\\S19_first.png"
+      }
+    },
+    {
+      "id": "S20",
+      "start": 141.19,
+      "end": 149.7,
+      "narration": "وبُتستخدم بشكل عام في الـ forecasting بتاع الجو وهكذا والمشكلة دي أو المعضلة دي كانت واحدة من سبع مشاكل رياضية...",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "أصعب 7 معضلات في التاريخ",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "forecasting"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A list of 7 items appearing on screen with checkmarks, with the Navier-Stokes item highlighted in gold.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S21",
+      "start": 149.7,
+      "end": 161.41,
+      "narration": "والمعضلة دي كانت واحدة من سبع مشاكل رياضية سميتها... والمشكلة دي تعتبر واحدة من سبع معضلات رياضية سماها معهد Clay إنها",
+      "beat": "proof",
+      "style": "scientific_infographic",
+      "method": "screenshot",
+      "headline": "معهد Clay للرياضيات",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "Clay"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "A screenshot of the Clay Mathematics Institute homepage or logo.",
+      "notes": "Slow zoom onto the institute's official emblem/logo.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S21_first.png"
+      }
+    },
+    {
+      "id": "S22",
+      "start": 161.41,
+      "end": 165.63,
+      "narration": "مشاكل الألفية وكل واحدة منهم عليها جايزة بمليون دولار",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "مسائل الألفية: مليون دولار",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "impact",
+      "caption_keywords": [
+        "million dollar"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A bold graphic showing a golden seal with the text 'Millennium Prize' and '$1,000,000' in large, impactful typography.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S23",
+      "start": 165.63,
+      "end": 170.36,
+      "narration": "طبعاً في ضجة إنه في بعض الـ",
+      "beat": "recap",
+      "style": "vox_animation",
+      "method": "hossam_image",
+      "headline": "الجدل والضجة المثارة",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [],
+      "hossam_image_hint": "podcast",
+      "notes": "Hossam cutout looking thoughtful/serious. Background is a dark, abstract digital wave pattern moving slowly.",
+      "estimated_cost_usd": 0.0,
+      "screenshot_hint": "",
+      "assets": {
+        "first_frame": "assets\\images\\S23_first.png"
+      }
+    },
+    {
+      "id": "S24",
+      "start": 170.36,
+      "end": 182.36,
+      "narration": "طبعاً في ضجة حصلت وطلع باحث بعد كده قال إنه هو كان شغال على حل المشكلة دي وإنه هو بيتهم OpenAI في إن هما سرقوا الشغل بتاعه لكن دي قصة أنا ما عنديش يعني أو مش مهتم بيها دلوقتي",
+      "beat": "explain",
+      "style": "scientific_infographic",
+      "method": "screenshot",
+      "headline": "اتهام بالسرقة العلمية!",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "OpenAI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "A screenshot of a social media post or forum thread where a researcher accuses OpenAI of stealing their solution.",
+      "notes": "Red highlight box appears around the accusation text in the screenshot.",
+      "estimated_cost_usd": 0.0,
+      "assets": {
+        "first_frame": "assets\\images\\S24_first.png"
+      }
+    },
+    {
+      "id": "S25",
+      "start": 182.36,
+      "end": 197.62,
+      "narration": "اللي يهمني دلوقتي هو إن الـ AI وصل لمرحلة مرعبة جداً يا جماعة ذكاء اصطناعي قادر يشتغل لساعات طويلة جداً يوازي مجهود بشري لشهور أو سنوات ويطلع نتائج لأمور يمكن صعب علينا إحنا نفسنا نحلها",
+      "beat": "explain",
+      "style": "cinematic_broll",
+      "method": "image_animate",
+      "headline": "مرحلة مرعبة من الذكاء",
+      "image_prompt": "A human silhouette in #136052 standing small before a towering wall of glowing data streams and neural-network lines (#437F3E with #FF5A33 pulse nodes and #FFEC5C glow cores) flowing downward like a digital waterfall; background a deep teal gradient #0D2B23 to #136052 for dramatic depth (no black). Layered z-depth for parallax. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "Plays under Arabic narration about AI reaching a frightening capability level. Camera pans slowly up from the small human silhouette to reveal the towering digital waterfall of data streams; pulses of #FF5A33 light cascade down. Single continuous shot, 9:16, 720p. No speech, no music; deep ambient hum + one soft riser.",
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, speech, gold, black background, faces, hands, robots, blue, purple, glitch",
+      "video_clip_seconds": 10.0,
+      "sfx": "riser",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Creates a powerful visual metaphor for the scale of AI compared to human effort.",
+      "estimated_cost_usd": 1.04,
+      "assets": {
+        "first_frame": "assets\\images\\S25_first.png"
+      }
+    },
+    {
+      "id": "S26",
+      "start": 197.62,
+      "end": 203.61,
+      "narration": "الـ AI مش بس بيكتب يا جماعة إيميلات أو ينجزلك شوية تاسكات صغيرة،",
+      "beat": "explain",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "أكبر من مجرد كتابة إيميلات!",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A clean graphic showing a stylized 'Email' icon and a 'Task' checklist being swept off the screen to make room for bigger concepts.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S27",
+      "start": 203.61,
+      "end": 213.87,
+      "narration": "إنت فعلياً ممكن تبني موظف متكامل، أو شريك لشغل معين، أو زميل ليك يساعدك في حاجة، أو مساعد شخصي ينجز عليك بعض الشغل.",
+      "beat": "example",
+      "style": "vox_animation",
+      "method": "direct_image",
+      "headline": "شريكك الرقمي الجديد",
+      "image_prompt": "Three stylized holographic geometric avatars side by side — the employee, the partner, the personal assistant — as clean layered figures (#437F3E and #136052 with #FF5A33 accent edges and #FFEC5C glow cores), connected by thin light lines, warm off-white #FAF7F0 base, labels as small #B3CE65 tags. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "",
+      "negative_prompt": "clutter, realistic faces, computers, blue, purple",
+      "video_clip_seconds": 0,
+      "sfx": "none",
+      "caption_keywords": [],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Parallax effect on the three avatars as they slide into view one by one.",
+      "estimated_cost_usd": 0.04,
+      "assets": {
+        "first_frame": "assets\\images\\S27_first.png"
+      }
+    },
+    {
+      "id": "S28",
+      "start": 213.87,
+      "end": 226.72,
+      "narration": "ولكن الخبر الأخير ده بيوريلك إن الموضوع مبيقفش عند تاسك ممكن تاخد تلاتة أربعة خمس دقايق أو حتى نص ساعة، لا الموضوع ممكن يتقدم إلى شغل بياخد شهور بل سنين طويلة.",
+      "beat": "explain",
+      "style": "cinematic_broll",
+      "method": "image_animate",
+      "headline": "مشاريع تستغرق سنوات!",
+      "image_prompt": "An elegant abstract clock mechanism made of glowing digital lines: gears and rings in #136052 and #437F3E, energy tips #FF5A33, glow cores #FFEC5C, warm off-white #FAF7F0 base with receding grid depth. Palette strictly Tropical Fruit Punch: #136052 deep teal, #437F3E green, #B3CE65 light green, #FFEC5C yellow glow, #FF5A33 orange energy. Warm off-white #FAF7F0 base (or deep teal #0D2B23->#136052 gradient only for dramatic depth). Premium minimal 2D-vector editorial, layered z-depth for parallax, 9:16 vertical. Avoid: gold, black background, realistic faces, robots, clutter, glitch.",
+      "video_prompt": "Plays under Arabic narration about tasks now taking months or years. Camera zooms slowly into the turning digital gears; small #FF5A33 energy pulses travel along the gear teeth; the largest ring completes one full turn and locks with a #FFEC5C flash. Single continuous shot, 9:16, 720p. No speech, no music; precise mechanical clicks.",
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, speech, gold, black background, faces, hands, robots, blue, purple, glitch",
+      "video_clip_seconds": 10.0,
+      "sfx": "none",
+      "caption_keywords": [],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "Visualizes the concept of long-term computational work and time.",
+      "estimated_cost_usd": 1.04,
+      "assets": {
+        "first_frame": "assets\\images\\S28_first.png"
+      }
+    },
+    {
+      "id": "S29",
+      "start": 226.72,
+      "end": 242.59,
+      "narration": "والهدف من إن أنا أقولك على الخبر ده، إن أعرفك بالجديد وفي نفس الوقت أقولك إن إنت لازم دلوقتي تستثمر في نفسك، وتعرف إزاي تستخدم الـ AI بشكل ذكي، مش عشان يستبدلك بل علشان يساعدك،",
+      "beat": "quote",
+      "style": "vox_animation",
+      "method": "hossam_image",
+      "headline": "استثمر في نفسك الآن",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "speaking",
+      "notes": "Hossam cutout on the right. On the left, a bold text overlay appears: 'الذكاء الاصطناعي لن يستبدلك، بل من يستخدمه سيفعل' (AI won't replace you, but those who use it will).",
+      "estimated_cost_usd": 0.0,
+      "screenshot_hint": "",
+      "assets": {
+        "first_frame": "assets\\images\\S29_first.png"
+      }
+    },
+    {
+      "id": "S30",
+      "start": 242.59,
+      "end": 252.01,
+      "narration": "وتقدر إن إنت تسبق وتحقق أهدافك، وده اللي أنا بحاول أعمله هنا، أنا عاصم الدين حسن، اتأكد تعملي فولو، ولو عندك تحدي معين بيواجهك أو هدف عايز تحققه بمساعدة الـ AI، عرفهولي في التعليقات.",
+      "beat": "cta",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "شاركني برأيك في التعليقات",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "click",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "An interactive-looking 'Follow' button animation with a cursor clicking it, followed by a glowing comment box icon.",
+      "estimated_cost_usd": 0.0
+    },
+    {
+      "id": "S31",
+      "start": 252.01,
+      "end": 265.43,
+      "narration": "أنا كنت فاكر إن أنا هديهم أخبار تانية خالص. وبالمناسبة، أنا بجمّعلك أخبار الـ AI كل أسبوع الساعة 7 يوم السبت، فأتأكد تكون عامل فولو وتتابع البودكاست.",
+      "beat": "cta",
+      "style": "motion_graphics",
+      "method": "code",
+      "headline": "أخبار الـ AI كل سبت 7 مساءً",
+      "image_prompt": "",
+      "video_prompt": "",
+      "negative_prompt": "",
+      "video_clip_seconds": 0,
+      "sfx": "pop",
+      "caption_keywords": [
+        "AI"
+      ],
+      "hossam_image_hint": "",
+      "screenshot_hint": "",
+      "notes": "A sleek final card showing a podcast microphone icon and the schedule: 'كل سبت - 7 مساءً' in gold and white typography.",
+      "estimated_cost_usd": 0.0
+    }
+  ],
+  "status": "approved"
+}

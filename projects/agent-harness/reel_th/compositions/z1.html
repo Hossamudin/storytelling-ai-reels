@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="z1-template">
+  <style>
+
+    #z1-bn { left: 0; right: 0; top: 930px; text-align: center; }
+    #z1-top { left: 140px; top: 1020px; width: 800px; height: 190px; border-radius: 34px; background: linear-gradient(135deg, #1a7564, #136052); border: 4px solid var(--lime);
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 60px rgba(0,0,0,.4); }
+    #z1-top b { font-family: var(--font-en); font-weight: 900; font-size: 96px; direction: ltr; }
+    #z1-base { left: 100px; top: 1250px; width: 880px; height: 120px; border-radius: 28px; background: rgba(255,255,255,.06); border: 3px dashed rgba(246,248,240,.5);
+      display: flex; align-items: center; justify-content: center; gap: 16px; direction: ltr; }
+    #z1-base b { font-family: var(--font-en); font-weight: 900; font-size: 46px; color: var(--fg-muted); }
+    #z1-ar { left: 850px; top: 960px; width: 130px; height: 130px; border-radius: 50%; background: var(--yellow); color: var(--ink); font-size: 80px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+    .z1-p { position: absolute; left: 0; right: 0; text-align: center; }
+    .z1-p .pill { font-size: 40px; height: 88px; padding: 0 36px; border-radius: 44px; }
+    .z1-p .ic { width: 54px; height: 54px; border-radius: 50%; background: var(--lime); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; }
+    #z1-p1 { top: 1420px; } #z1-p2 { top: 1530px; } #z1-p3 { top: 1640px; }
+
+  </style>
+  <div data-hf-id="hf-2wt5" id="z1" data-composition-id="z1" data-width="1080" data-height="1920" data-duration="10.45">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-claf" id="z1-blob" class="blob" style="left:160px; top:920px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-m3b5" id="z1-bgp" class="dots"></div>
+    <div data-hf-id="hf-kmlq" id="z1-cam" class="cam">
+
+      <div data-hf-id="hf-by0u" id="z1-bn" class="abs"><span data-hf-id="hf-iciz" class="pill bad" style="font-family:var(--font-en); letter-spacing:.14em; font-size:28px; height:60px">BONUS</span></div>
+      <div data-hf-id="hf-9wkn" id="z1-top" class="abs"><b data-hf-id="hf-tum6">Zadloop</b></div>
+      <div data-hf-id="hf-qwed" id="z1-base" class="abs"><b data-hf-id="hf-6iez">DeepSeek</b><b data-hf-id="hf-ilhm" style="color:var(--lime)">Harness</b></div>
+      <div data-hf-id="hf-bq12" id="z1-ar" class="abs">ع</div>
+      <div data-hf-id="hf-iou7" class="z1-p" id="z1-p1"><span data-hf-id="hf-4qlt" class="pill">معمول باللغة العربية</span></div>
+      <div data-hf-id="hf-a0yc" class="z1-p" id="z1-p2"><span data-hf-id="hf-xljc" class="pill"><span data-hf-id="hf-8dw9" class="ic"><svg data-hf-id="hf-8d8d" width="30" height="36"><use data-hf-id="hf-4h79" href="#i-person" /></svg></span>وراه مبرمج عربي</span></div>
+      <div data-hf-id="hf-asm5" class="z1-p" id="z1-p3"><span data-hf-id="hf-nn5h" class="pill"><span data-hf-id="hf-hovh" class="ic"><svg data-hf-id="hf-oyqb" width="32" height="32"><use data-hf-id="hf-2atz" href="#i-mic" /></svg></span>بودكاست أخبار الذكاء الاصطناعي</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(153.8);
+      const { tl } = fx;
+      fx.drift("#z1-bgp", 153.8, 10.45, 70, -40);
+      fx.drift("#z1-blob", 153.8, 10.45, -120, 60);
+      
+
+      fx.pop("#z1-bn", 154.0, { from: 0.3 });
+      tl.fromTo("#z1-top", { opacity: 0, scale: 1.6, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 155.3);
+      tl.fromTo("#z1-base", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 156.95);
+      fx.pop("#z1-ar", 158.7, { from: 0, e: "back.out(2.6)" });
+      fx.pop("#z1-p1", 158.9, { from: 0.5 });
+      fx.pop("#z1-p2", 160.4, { from: 0.5 });
+      fx.pop("#z1-p3", 162.5, { from: 0.5 });
+
+      tl.to("#z1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 164.0);
+      window.__timelines["z1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

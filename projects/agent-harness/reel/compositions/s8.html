@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s8-template">
+  <style>
+
+    #s8-lab { top: 210px; } #s8-h { top: 250px; }
+    .s8-chip { position: absolute; padding: 0 26px; height: 66px; border-radius: 33px; border: 3px solid var(--lime); background: #0b2f29; color: var(--lime);
+      font-family: var(--font-en); font-weight: 900; font-size: 26px; letter-spacing: .14em; display: flex; align-items: center; direction: ltr; white-space: nowrap; }
+    #s8-q1 { left: 120px; top: 600px; } #s8-q2 { left: 700px; top: 600px; } #s8-q3 { left: 120px; top: 1290px; } #s8-q4 { left: 660px; top: 1290px; }
+    #s8-k { top: 1420px; } #s8-big { top: 1500px; font-size: 170px; }
+    #s8-glow { left: 140px; top: 560px; width: 800px; height: 800px; border-radius: 80px; background: radial-gradient(circle, rgba(179,206,101,.35), transparent 70%); }
+
+  </style>
+  <div data-hf-id="hf-bcvc" id="s8" data-composition-id="s8" data-width="1080" data-height="1920" data-duration="5.2">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-h7ov" id="s8-blob" class="blob" style="left:160px; top:580px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-3n6j" id="s8-bgp" class="dots"></div>
+    <div data-hf-id="hf-ln7s" id="s8-cam" class="cam">
+
+      <div data-hf-id="hf-edn9" id="s8-lab" class="row"><span data-hf-id="hf-7yzt" class="t-label">THE HARNESS</span></div>
+      <div data-hf-id="hf-3ugn" id="s8-h" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-vpb5" class="in" id="s8-h1">لازم يبقى جوّه برنامج</span></span></div>
+      <div data-hf-id="hf-bdu7" id="s8-glow" class="abs"></div>
+      <div data-hf-id="hf-ykmv" id="s8-core" class="abs" style="left:400px; top:820px; width:280px; height:280px"><div data-hf-id="hf-bs3j" class="ah-bloom" id="s8-core-bl" style="left:-60%; top:-60%; width:220%; height:220%"></div><svg data-hf-id="hf-dmfv" class="ah-gear" id="s8-core-g"><use data-hf-id="hf-6cs7" href="#i-gear" /></svg><div data-hf-id="hf-umrc" class="ah-core" style="inset:0"></div><div data-hf-id="hf-m6j4" class="ring" id="s8-core-r1" style="border-radius:50%"></div><div data-hf-id="hf-586b" class="ring" id="s8-core-r2" style="border-radius:50%"></div></div>
+      <div data-hf-id="hf-6stt" class="s8-chip" id="s8-q1">FILES</div><div data-hf-id="hf-9ocp" class="s8-chip" id="s8-q2">EDIT</div>
+      <div data-hf-id="hf-5me4" class="s8-chip" id="s8-q3">ORDER</div><div data-hf-id="hf-jams" class="s8-chip" id="s8-q4">PROGRESS</div>
+      <div data-hf-id="hf-ebu6" id="s8-frame" class="abs" style="left:0; top:0; width:1080px; height:1920px"><div data-hf-id="hf-27fa" class="ah-brk a" id="s8-b-a" style="left:220px; top:640px; width:160px; height:160px"></div><div data-hf-id="hf-u8cp" class="ah-brk b" id="s8-b-b" style="left:700px; top:640px; width:160px; height:160px"></div><div data-hf-id="hf-ua1a" class="ah-brk c" id="s8-b-c" style="left:220px; top:1120px; width:160px; height:160px"></div><div data-hf-id="hf-4thz" class="ah-brk d" id="s8-b-d" style="left:700px; top:1120px; width:160px; height:160px"></div></div>
+      <div data-hf-id="hf-np85" id="s8-k" class="row t-h3"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-ncsq" class="in" id="s8-k1">البرنامج ده هو الـ</span></span></div>
+      <div data-hf-id="hf-wvs0" id="s8-big" class="row ah-en ah-l" style="text-shadow:0 0 70px rgba(179,206,101,.6)"><span data-hf-id="hf-fsod" id="s8-big1">HARNESS</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(37.3);
+      const { tl } = fx;
+      fx.drift("#s8-bgp", 37.3, 5.2, 70, -40);
+      fx.drift("#s8-blob", 37.3, 5.2, -120, 60);
+      fx.pushIn("#s8-cam", 37.3, 5.2, 1.035);
+
+      fx.rise("#s8-lab", 37.35, { y: 16 });
+      fx.maskUp("#s8-h1", 37.4);
+      fx.pop("#s8-core", 37.35, { from: 0.5, e: "expo.out", d: 0.6 });
+      tl.fromTo("#s8-core-g", { rotation: 0 }, { rotation: 240, duration: 5.2, ease: "none" }, 37.3);
+      fx.pop("#s8-q1, #s8-q2, #s8-q3, #s8-q4", 37.7, { from: 0.4, st: 0.1 });
+      // chips get pulled into the corners and the brackets slam shut around the engine
+      tl.to("#s8-q1", { x: 160, y: 120, scale: 0.4, opacity: 0, duration: 0.3, ease: "power3.in" }, 38.55);
+      tl.to("#s8-q2", { x: -80, y: 120, scale: 0.4, opacity: 0, duration: 0.3, ease: "power3.in" }, 38.6);
+      tl.to("#s8-q3", { x: 160, y: -120, scale: 0.4, opacity: 0, duration: 0.3, ease: "power3.in" }, 38.65);
+      tl.to("#s8-q4", { x: -40, y: -120, scale: 0.4, opacity: 0, duration: 0.3, ease: "power3.in" }, 38.7);
+      [["#s8-b-a", -260, -260], ["#s8-b-b", 260, -260], ["#s8-b-c", -260, 260], ["#s8-b-d", 260, 260]].forEach(([s, x, y], i) => {
+        tl.fromTo(s, { opacity: 0, x, y, scale: 1.6, filter: "blur(14px)" }, { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)", duration: 0.26, ease: "expo.out" }, 38.82 + i * 0.04);
+      });
+      fx.shake("#s8-cam", 39.05, 18, 7);
+      tl.fromTo("#s8-glow", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 39.0);
+      fx.ringPulse("#s8-core-r1, #s8-core-r2", 39.1);
+      fx.breathe("#s8-frame", 39.4, 2.6, 0.015, 1.3);
+      fx.maskUp("#s8-k1", 40.05);
+      fx.letterDrop("#s8-big1", 41.75, { st: 0.04 });
+
+      tl.to("#s8-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 42.2);
+      window.__timelines["s8"] = tl.real;
+    })();
+  </script>
+</template></body></html>

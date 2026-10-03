@@ -1,0 +1,3 @@
+{"enabled": true, "series": "AGENT HARNESS",
+ "sections": [{"t":0,"label":"THE QUESTION"},{"t":8.85,"label":"THE ENGINE"},{"t":23.1,"label":"THE HARNESS"},{"t":42.3,"label":"BENCHMARKS"},{"t":72.7,"label":"THE COST"},{"t":90.0,"label":"THE CHART"},{"t":120.3,"label":"THE VERDICT"},{"t":130.9,"label":"SOURCES"},{"t":164.2,"label":"SEE YOU"}],
+ "wipes": [22.95, 42.15, 89.85, 120.15, 153.65]}

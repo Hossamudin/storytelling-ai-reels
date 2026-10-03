@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s21-template">
+  <style>
+
+    #s21-lab { top: 210px; } #s21-h { top: 250px; }
+    .s21-row { position: absolute; left: 110px; width: 860px; height: 170px; border-radius: 30px; display: flex; align-items: center; gap: 30px; padding: 0 40px; direction: ltr; }
+    .s21-row .rk { font-family: var(--font-en); font-weight: 900; font-size: 60px; width: 90px; }
+    .s21-row .nm { font-family: var(--font-en); font-weight: 900; font-size: 64px; }
+    #s21-pi { top: 560px; background: rgba(179,206,101,.14); border: 4px solid var(--lime); }
+    #s21-r2 { top: 770px; background: rgba(255,255,255,.04); border: 2px solid var(--edge); }
+    #s21-r3 { top: 980px; background: rgba(255,255,255,.04); border: 2px solid var(--edge); }
+    #s21-nw { top: 1500px; background: rgba(255,236,92,.14); border: 4px solid var(--yellow); }
+    #s21-cr { left: 760px; top: 600px; width: 90px; height: 90px; color: var(--yellow); }
+    #s21-td { position: absolute; right: 40px; padding: 4px 16px; border-radius: 16px; background: var(--lime); color: var(--ink); font-family: var(--font-en); font-weight: 900; font-size: 22px; letter-spacing: .14em; }
+    #s21-k { top: 1250px; }
+
+  </style>
+  <div data-hf-id="hf-j7rt" id="s21" data-composition-id="s21" data-width="1080" data-height="1920" data-duration="8.2">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-puko" id="s21-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-atha" id="s21-bgp" class="dots"></div>
+    <div data-hf-id="hf-jyfv" id="s21-cam" class="cam">
+
+      <div data-hf-id="hf-7s9w" id="s21-lab" class="row"><span data-hf-id="hf-52az" class="t-label">TODAY'S #1</span></div>
+      <div data-hf-id="hf-jyrv" id="s21-h" class="row t-h3"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-fdj9" class="in" id="s21-h1">مش هقولك «خليك في <span data-hf-id="hf-4zqv" class="lat">Pi</span>»</span></span></div>
+      <div data-hf-id="hf-hyzt" class="s21-row" id="s21-pi"><span data-hf-id="hf-n8x3" class="rk" style="position:relative; display:inline-block"><span data-hf-id="hf-p6hi" id="s21-pr">01</span><span data-hf-id="hf-zd33" id="s21-pr2" style="position:absolute; left:0; top:0; opacity:0">02</span></span><span data-hf-id="hf-4av9" class="nm ah-l">Pi</span><span data-hf-id="hf-lvc4" id="s21-td">TODAY</span></div>
+      <div data-hf-id="hf-a8hw" class="s21-row" id="s21-r2"><span data-hf-id="hf-jkdm" class="rk muted" style="position:relative; display:inline-block"><span data-hf-id="hf-1fw3" id="s21-q1">02</span><span data-hf-id="hf-4jfb" id="s21-q2" style="position:absolute; left:0; top:0; opacity:0">03</span></span><span data-hf-id="hf-rlf9" class="nm muted" style="opacity:.4">· · ·</span></div>
+      <div data-hf-id="hf-b05p" class="s21-row" id="s21-r3"><span data-hf-id="hf-z0ds" class="rk muted">03</span><span data-hf-id="hf-c8yx" class="nm muted" style="opacity:.4">· · ·</span></div>
+      <div data-hf-id="hf-5llh" class="s21-row" id="s21-nw"><span data-hf-id="hf-thba" class="rk ah-y">01</span><span data-hf-id="hf-npv3" class="nm ah-y">NEXT ?</span></div>
+      <svg data-hf-id="hf-tnrj" id="s21-cr" class="abs"><use data-hf-id="hf-0cfz" href="#i-crown" /></svg>
+      <div data-hf-id="hf-yrrr" id="s21-k" class="row t-h3 muted"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-fzy9" class="in" id="s21-k1">ممكن يطلع أحسن منه بعدين</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(137.9);
+      const { tl } = fx;
+      fx.drift("#s21-bgp", 137.9, 8.2, 70, -40);
+      fx.drift("#s21-blob", 137.9, 8.2, -120, 60);
+      fx.pushIn("#s21-cam", 137.9, 8.2, 1.035);
+
+      fx.rise("#s21-lab", 137.95, { y: 16 });
+      fx.maskUp("#s21-h1", 138.0);
+      fx.rise("#s21-pi, #s21-r2, #s21-r3", 138.3, { y: 40, st: 0.1 });
+      tl.fromTo("#s21-cr", { opacity: 0, y: -80, rotation: -20 }, { opacity: 1, y: 0, rotation: 0, duration: 0.45, ease: "back.out(2)" }, 138.6);
+      fx.pop("#s21-td", 141.2, { from: 0.3 });
+      fx.maskUp("#s21-k1", 142.9);
+      tl.fromTo("#s21-nw", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 143.3);
+      tl.to("#s21-nw", { y: -940, duration: 0.6, ease: "power3.inOut" }, 144.0);
+      tl.to("#s21-pi", { y: 210, duration: 0.6, ease: "power3.inOut" }, 144.0);
+      tl.to("#s21-r2", { y: 210, opacity: 0.6, duration: 0.6, ease: "power3.inOut" }, 144.0);
+      tl.to("#s21-r3", { y: 210, opacity: 0, duration: 0.6, ease: "power3.inOut" }, 144.0);
+      tl.to("#s21-cr", { y: -20, x: -40, rotation: 15, duration: 0.6, ease: "power3.inOut" }, 144.0);
+      tl.to("#s21-pi", { borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.04)", duration: 0.4 }, 144.2);
+      tl.to("#s21-pr, #s21-q1", { opacity: 0, duration: 0.2 }, 144.3);
+      tl.to("#s21-pr2, #s21-q2", { opacity: 1, duration: 0.2 }, 144.3);
+      tl.to("#s21-k", { y: 300, duration: 0.6, ease: "power3.inOut" }, 144.0);
+
+      tl.to("#s21-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 145.8);
+      window.__timelines["s21"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,410 @@
+[
+ {
+  "id": "vo",
+  "t": 0,
+  "src": "assets/voice/voice.wav",
+  "dur": 133.167,
+  "vol": 1.0,
+  "voice": true
+ },
+ {
+  "t": 0.0,
+  "sfx": "lib/title-slam",
+  "accent": 0.7
+ },
+ {
+  "t": 3.7,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 3.98,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 4.26,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 4.54,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 4.82,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 6.2,
+  "sfx": "lib/box-burst",
+  "accent": 0.9
+ },
+ {
+  "t": 6.25,
+  "sfx": "library/whoosh-short",
+  "accent": 0.6
+ },
+ {
+  "t": 7.5,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 7.9,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 10.7,
+  "sfx": "library/click",
+  "accent": 0.8
+ },
+ {
+  "t": 12.1,
+  "sfx": "lib/title-slam",
+  "accent": 0.6
+ },
+ {
+  "t": 12.8,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 13.6,
+  "sfx": "lib/spark-ignite",
+  "accent": 0.6
+ },
+ {
+  "t": 14.4,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 16.5,
+  "sfx": "library/sparkle",
+  "accent": 0.6
+ },
+ {
+  "t": 19.85,
+  "sfx": "library/chime",
+  "accent": 0.4
+ },
+ {
+  "t": 21.5,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 23.9,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 24.5,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 24.75,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 28.6,
+  "sfx": "lib/cartridge-click",
+  "accent": 0.6
+ },
+ {
+  "t": 29.8,
+  "sfx": "lib/box-burst",
+  "accent": 1.0
+ },
+ {
+  "t": 30.2,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 30.5,
+  "sfx": "library/ping",
+  "accent": 0.5
+ },
+ {
+  "t": 31.6,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 31.75,
+  "sfx": "lib/title-slam",
+  "accent": 0.6
+ },
+ {
+  "t": 34.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 38.0,
+  "sfx": "library/whoosh-short",
+  "accent": 0.6
+ },
+ {
+  "t": 40.4,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 41.8,
+  "sfx": "lib/core-powerup",
+  "accent": 0.7
+ },
+ {
+  "t": 43.6,
+  "sfx": "library/chime",
+  "accent": 0.5
+ },
+ {
+  "t": 45.5,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 49.4,
+  "sfx": "library/whoosh-short",
+  "accent": 0.4
+ },
+ {
+  "t": 52.0,
+  "sfx": "library/sparkle",
+  "accent": 0.6
+ },
+ {
+  "t": 53.45,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 54.3,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 54.9,
+  "sfx": "library/typing",
+  "accent": 0.5
+ },
+ {
+  "t": 55.7,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 60.6,
+  "sfx": "lib/cartridge-click",
+  "accent": 0.6
+ },
+ {
+  "t": 62.65,
+  "sfx": "lib/box-burst",
+  "accent": 1.0
+ },
+ {
+  "t": 66.3,
+  "sfx": "library/sparkle",
+  "accent": 0.6
+ },
+ {
+  "t": 68.7,
+  "sfx": "lib/tape-seal",
+  "accent": 1.0
+ },
+ {
+  "t": 70.8,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 71.35,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 72.6,
+  "sfx": "lib/spark-ignite",
+  "accent": 0.8
+ },
+ {
+  "t": 75.55,
+  "sfx": "library/error",
+  "accent": 0.4
+ },
+ {
+  "t": 76.6,
+  "sfx": "library/whoosh-cinematic",
+  "accent": 0.5
+ },
+ {
+  "t": 77.1,
+  "sfx": "lib/title-slam",
+  "accent": 0.6
+ },
+ {
+  "t": 83.0,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 85.4,
+  "sfx": "library/typing",
+  "accent": 0.5
+ },
+ {
+  "t": 88.0,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 89.4,
+  "sfx": "library/key-press",
+  "accent": 0.8
+ },
+ {
+  "t": 90.5,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 91.4,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 92.2,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 99.0,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 101.3,
+  "sfx": "library/typing",
+  "accent": 0.6
+ },
+ {
+  "t": 103.9,
+  "sfx": "library/click",
+  "accent": 0.7
+ },
+ {
+  "t": 105.95,
+  "sfx": "library/click-soft",
+  "accent": 0.8
+ },
+ {
+  "t": 106.75,
+  "sfx": "library/click-soft",
+  "accent": 0.8
+ },
+ {
+  "t": 107.6,
+  "sfx": "library/error",
+  "accent": 0.5
+ },
+ {
+  "t": 109.9,
+  "sfx": "library/glitch-1",
+  "accent": 0.35
+ },
+ {
+  "t": 110.5,
+  "sfx": "library/error",
+  "accent": 0.35
+ },
+ {
+  "t": 112.0,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 112.9,
+  "sfx": "library/chime",
+  "accent": 0.6
+ },
+ {
+  "t": 113.5,
+  "sfx": "library/whoosh-short",
+  "accent": 0.4
+ },
+ {
+  "t": 116.4,
+  "sfx": "lib/cartridge-click",
+  "accent": 0.5
+ },
+ {
+  "t": 117.4,
+  "sfx": "lib/box-burst",
+  "accent": 0.9
+ },
+ {
+  "t": 119.2,
+  "sfx": "library/whoosh-cinematic",
+  "accent": 0.5
+ },
+ {
+  "t": 123.1,
+  "sfx": "library/click",
+  "accent": 1.0
+ },
+ {
+  "t": 124.2,
+  "sfx": "library/notification",
+  "accent": 0.7
+ },
+ {
+  "t": 125.0,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 127.5,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 127.6,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 127.7,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 127.9,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 132.6,
+  "sfx": "library/whoosh",
+  "accent": 0.6
+ },
+ {
+  "t": 133.3,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 133.9,
+  "sfx": "library/chime",
+  "accent": 0.6
+ }
+]

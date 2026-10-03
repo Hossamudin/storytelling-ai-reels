@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s19-template">
+  <style>
+
+    #s19-ph { left: 330px; top: 520px; width: 420px; height: 746px; }
+    #s19-v { position: absolute; left: 0; top: 0; width: 388px; height: 690px; }
+    #s19-pl { left: 470px; top: 820px; width: 140px; height: 140px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; color: #fff; }
+    #s19-arr { left: 760px; top: 640px; width: 220px; height: 260px; }
+
+  </style>
+  <div data-hf-id="hf-5bsg" id="s19" data-composition-id="s19" data-width="1080" data-height="1920" data-duration="3.15">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-gxrj" id="s19-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-41rr" id="s19-bgp" class="dots"></div>
+    <div data-hf-id="hf-rx9u" id="s19-cam" class="cam">
+
+      <div data-hf-id="hf-34t1" id="s19-lab" class="row" style="top:300px"><span data-hf-id="hf-iqfj" class="t-label" style="color:var(--lime)">WATCH · THE HARNESS REEL</span></div>
+      <div data-hf-id="hf-5ciu" id="s19-ph" class="op-phone"><div data-hf-id="hf-zn7g" class="scr"><video data-hf-id="hf-3uca" id="s19-v" src="assets/videos/harness_reel.mp4" data-start="0" data-duration="3.15" data-media-start="2" data-hf-media-start-basis="local" muted playsinline></video></div></div>
+      <div data-hf-id="hf-64b0" id="s19-pl" class="abs"><svg data-hf-id="hf-5a4g" style="width:70px; height:70px; color:#fff;"><use data-hf-id="hf-n4do" href="#i-play" /></svg></div>
+      <svg data-hf-id="hf-rlmz" id="s19-arr" class="abs" viewBox="0 0 220 260" style="overflow:visible"><path data-hf-id="hf-0bbg" id="s19-ap" d="M200 20 C 210 150, 120 230, 20 220" fill="none" stroke="var(--yellow)" stroke-width="12" stroke-linecap="round" />
+        <path data-hf-id="hf-xw9l" d="M44 190 L16 222 L56 240" fill="none" stroke="var(--yellow)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <div data-hf-id="hf-txuk" class="row t-h1" style="top:1330px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-j5mi" class="in" id="s19-a1">ارجع له</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(131.5);
+      const { tl } = fx;
+      fx.drift("#s19-bgp", 131.5, 3.15, 60, -40);
+      fx.drift("#s19-blob", 131.5, 3.15, -110, 60);
+      fx.pushIn("#s19-cam", 131.5, 3.15, 1.035);
+
+      fx.rise("#s19-lab", 131.55, { y: 16 });
+      tl.fromTo("#s19-ph", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 131.6);
+      fx.pop("#s19-pl", 132.2);
+      fx.draw("#s19-ap", 132.6, 0.5);
+      fx.rise("#s19-arr", 132.6, { y: 0, b: 0, d: 0.2 });
+      fx.maskUp("#s19-a1", 133.1);
+
+      tl.to("#s19-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 134.21);
+      window.__timelines["s19"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s3-template">
+  <style>
+
+    #s3-hl { position: absolute; left: 0; right: 0; top: 900px; text-align: center; }
+
+  </style>
+  <div data-hf-id="hf-7b5y" id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="3.4">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-4iig" id="s3-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-rsys" id="s3-bgp" class="dots"></div>
+    <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+
+      <div data-hf-id="hf-pijy" class="row t-h2" style="top:600px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-gij4" class="in" id="s3-h1">بس عشان تطلّع منه</span></span></div>
+      <div data-hf-id="hf-x0jl" id="s3-hl" class="t-h1"><span data-hf-id="hf-5lal" class="hl" id="s3-hw"><span data-hf-id="hf-vk6w" class="band" id="s3-band"></span><span data-hf-id="hf-bi8x" class="txt">أحسن نتائج</span></span></div>
+      <div data-hf-id="hf-7euc" class="row t-h2 op-l" style="top:1160px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-n8gm" class="in" id="s3-k1">تعالى أقولك التيب دي</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(7.8);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 7.8, 3.4, 60, -40);
+      fx.drift("#s3-blob", 7.8, 3.4, -110, 60);
+      fx.pushIn("#s3-cam", 7.8, 3.4, 1.035);
+
+      fx.maskUp("#s3-h1", 8.0);
+      fx.pop("#s3-hw", 9.15, { from: 0.6 }); fx.band("#s3-band", 9.2);
+      fx.maskUp("#s3-k1", 10.0);
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 10.76);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

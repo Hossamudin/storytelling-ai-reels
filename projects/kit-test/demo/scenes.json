@@ -1,0 +1,49 @@
+[
+ {
+  "id": "s1",
+  "start": 0,
+  "duration": 5.9,
+  "beat": "title + stamp + counter",
+  "title": "Vibe Automation"
+ },
+ {
+  "id": "s2",
+  "start": 5.8,
+  "duration": 5.4,
+  "beat": "mock UI: typing, cursor, toasts"
+ },
+ {
+  "id": "s3",
+  "start": 11.1,
+  "duration": 6.6,
+  "beat": "strike + highlighter + ring pulse"
+ },
+ {
+  "id": "q1",
+  "start": 17.7,
+  "duration": 7.0,
+  "template": "quiz",
+  "data": {
+   "Q": "تقدر تكلم أكتر من وكيل في نفس الوقت؟",
+   "A": "أيوه",
+   "B": "لأ",
+   "C": "من Pages بس",
+   "CORRECT": "A",
+   "COUNT": 3,
+   "LABEL": "QUICK CHECK · 01"
+  }
+ },
+ {
+  "id": "r1",
+  "start": 24.7,
+  "duration": 5.0,
+  "template": "recap",
+  "data": {
+   "LABEL": "RECAP · 01",
+   "TITLE": "اللي اتعلمناه",
+   "P1": "المحادثة: تكلم وكيل أو أكتر",
+   "P2": "الصفحات: برنامج صغير للتحكم",
+   "P3": "الروتينات: شغل في ميعاده"
+  }
+ }
+]

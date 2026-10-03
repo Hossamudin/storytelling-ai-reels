@@ -1,0 +1,24 @@
+{
+  "source": "input/screen.mp4",
+  "crop": [0, 178, 1918, 852],
+  "timeline": [
+    {"hold": 2.2, "label": "opening title card (C0)"},
+    {"keep": [7.30, 17.14], "label": "signup free"},
+    {"keep": [20.76, 26.00], "label": "invite link + QR"},
+    {"keep": [27.82, 41.90], "label": "google signup, workspace, quick recap"},
+    {"keep": [43.00, 59.58], "label": "new project + name + description"},
+    {"keep": [69.52, 71.34], "label": "create"},
+    {"keep": [75.28, 78.30], "label": "five sections (C1) - repeat 71.78-73.40 cut"},
+    {"hold": 1.5, "label": "C1 breathing room"},
+    {"ramp": [104.0, 112.9], "speed": 4, "label": "opening an existing project x4 (first pass 78.3-101.3 cut: redone better)"},
+    {"keep": [112.98, 160.62], "label": "conversation + pages + one umbrella (C2)"},
+    {"keep": [176.26, 189.64], "label": "agents (first take 163.58-166.54 cut)"},
+    {"keep": [191.38, 210.20], "label": "agent settings + routines intro"},
+    {"keep": [213.96, 223.08], "label": "routines = schedule (first take 210.2-213.36 cut)"},
+    {"keep": [263.46, 274.50], "label": "routines in another project (silent search 223-263 cut)"},
+    {"keep": [296.20, 309.16], "label": "project info + AI work log (dialogs 275-293 cut)"},
+    {"hold": 3.0, "label": "recap card (C5)"}
+  ],
+  "max_pause": 0.9, "keep_pause": 0.4, "busy_pause_keep": 1.2,
+  "jl": {"l_max": 0.5, "j": 0.2, "busy": 0.6}
+}

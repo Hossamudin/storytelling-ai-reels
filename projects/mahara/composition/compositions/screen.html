@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="screen-template">
+  <style>
+    #scr-cam { transform-origin: 0 0; }
+    #scr-win { left: 135px; top: 88px; width: 1650px; height: 927px; }
+    #scr-inner { width: 1918px; height: 1078px; transform: scale(0.86); }
+    #scr-annot { width: 1918px; height: 1078px; }
+    #scr-blob1 { left: -200px; top: 500px; width: 900px; height: 700px; background: var(--glow-b); }
+    #scr-blob2 { left: 1300px; top: -300px; width: 800px; height: 700px; background: var(--glow-a); }
+  </style>
+  <div data-hf-id="hf-r8ui" id="screen" data-composition-id="screen" data-width="1920" data-height="1080" data-duration="102.13">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-hu0r" id="scr-dots" class="dots"></div>
+    <div data-hf-id="hf-3aez" id="scr-blob1" class="blob" data-layout-allow-overflow=""></div>
+    <div data-hf-id="hf-sexc" id="scr-blob2" class="blob" data-layout-allow-overflow=""></div>
+    <div data-hf-id="hf-6ubf" id="scr-cam" class="cam">
+      <div data-hf-id="hf-wq54" id="scr-win" class="scr-win">
+        <div data-hf-id="hf-t90c" id="scr-inner" class="scr-inner">
+          <video data-hf-id="hf-eb19" id="scr-video" src="assets/screen/edited.mp4" data-start="0" data-duration="101.333" width="1918" height="1078" muted playsinline></video>
+          <div data-hf-id="hf-3qkg" id="scr-annot" class="scr-annot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0);
+      fx.drift("#scr-dots", 0, 101.33, -120, 60);
+      fx.drift("#scr-blob1", 0, 101.33, 300, -150);
+      fx.drift("#scr-blob2", 0, 101.33, -260, 200);
+      window.HF_SCREEN(fx, { cam: "#scr-cam", layer: "#scr-annot" });
+      window.__timelines["screen"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

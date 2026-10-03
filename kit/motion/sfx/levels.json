@@ -1,0 +1,116 @@
+{
+ "library/chime.mp3": {
+  "lufs": -28.0,
+  "peak_dbfs": -9.2,
+  "gain": 1.0,
+  "duration": 2.5
+ },
+ "library/click-soft.mp3": {
+  "lufs": -70.0,
+  "peak_dbfs": -4.8,
+  "gain": 0.437,
+  "duration": 0.366
+ },
+ "library/click.mp3": {
+  "lufs": -70.0,
+  "peak_dbfs": -4.8,
+  "gain": 0.437,
+  "duration": 0.366
+ },
+ "library/error.mp3": {
+  "lufs": -29.3,
+  "peak_dbfs": -21.2,
+  "gain": 1.0,
+  "duration": 1.62
+ },
+ "library/glitch-1.mp3": {
+  "lufs": -13.2,
+  "peak_dbfs": 0.3,
+  "gain": 0.204,
+  "duration": 2.638
+ },
+ "library/glitch-2.mp3": {
+  "lufs": -4.5,
+  "peak_dbfs": 2.2,
+  "gain": 0.075,
+  "duration": 3.504
+ },
+ "library/glitch-3.mp3": {
+  "lufs": -22.3,
+  "peak_dbfs": -4.4,
+  "gain": 0.582,
+  "duration": 3.096
+ },
+ "library/impact-bass-1.mp3": {
+  "lufs": -6.5,
+  "peak_dbfs": -0.4,
+  "gain": 0.094,
+  "duration": 2.116
+ },
+ "library/impact-bass-2.mp3": {
+  "lufs": -4.5,
+  "peak_dbfs": 0.0,
+  "gain": 0.075,
+  "duration": 2.592
+ },
+ "library/key-press.mp3": {
+  "lufs": -36.3,
+  "peak_dbfs": -5.6,
+  "gain": 1.0,
+  "duration": 0.4
+ },
+ "library/notification.mp3": {
+  "lufs": -19.3,
+  "peak_dbfs": -2.2,
+  "gain": 0.412,
+  "duration": 2.455
+ },
+ "library/ping.mp3": {
+  "lufs": -25.4,
+  "peak_dbfs": -4.5,
+  "gain": 0.832,
+  "duration": 1.32
+ },
+ "library/pop.mp3": {
+  "lufs": -21.3,
+  "peak_dbfs": -3.2,
+  "gain": 0.519,
+  "duration": 0.72
+ },
+ "library/riser.mp3": {
+  "lufs": -6.6,
+  "peak_dbfs": 0.8,
+  "gain": 0.095,
+  "duration": 10.032
+ },
+ "library/sparkle.mp3": {
+  "lufs": -11.1,
+  "peak_dbfs": 0.1,
+  "gain": 0.16,
+  "duration": 1.802
+ },
+ "library/typing.mp3": {
+  "lufs": -30.6,
+  "peak_dbfs": -9.0,
+  "gain": 1.0,
+  "duration": 1.5
+ },
+ "library/whoosh-cinematic.mp3": {
+  "lufs": -14.1,
+  "peak_dbfs": 0.2,
+  "gain": 0.226,
+  "duration": 5.544
+ },
+ "library/whoosh-short.mp3": {
+  "lufs": -15.2,
+  "peak_dbfs": -2.0,
+  "gain": 0.257,
+  "duration": 0.575
+ },
+ "library/whoosh.mp3": {
+  "lufs": -15.2,
+  "peak_dbfs": -2.0,
+  "gain": 0.257,
+  "duration": 0.575
+ }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s7-template">
+  <style>
+
+    #s7-lab { top: 210px; } #s7-h { top: 250px; } #s7-k { top: 1080px; }
+    #s7-line { left: 225px; top: 798px; width: 630px; height: 8px; border-radius: 4px; background: rgba(246,248,240,.2); }
+    #s7-lf { position: absolute; inset: 0; background: var(--lime); transform-origin: 100% 50%; border-radius: 4px; }
+    .s7-st { position: absolute; top: 725px; width: 150px; height: 150px; border-radius: 50%; border: 5px solid rgba(246,248,240,.3); background: #0b2f29; color: var(--fg); font-family: var(--font-en); font-weight: 900; font-size: 52px; display: flex; align-items: center; justify-content: center; }
+    #s7-tr { left: 110px; top: 1300px; width: 860px; }
+    #s7-pct { left: 0; right: 0; top: 1380px; text-align: center; font-family: var(--font-en); font-size: 120px; font-weight: 900; direction: ltr; }
+    #s7-ck { left: 470px; top: 1560px; width: 140px; height: 140px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+
+  </style>
+  <div data-hf-id="hf-3obe" id="s7" data-composition-id="s7" data-width="1080" data-height="1920" data-duration="3.75">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ywnh" id="s7-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-7b8w" id="s7-bgp" class="dots"></div>
+    <div data-hf-id="hf-crhj" id="s7-cam" class="cam">
+
+      <div data-hf-id="hf-aep6" id="s7-lab" class="row"><span data-hf-id="hf-9bue" class="t-label">ORDER · PROGRESS</span></div>
+      <div data-hf-id="hf-suvr" id="s7-h" class="row t-h1"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-dk10" class="in" id="s7-h1">بترتيب معيّن</span></span></div>
+      <div data-hf-id="hf-jd1v" id="s7-line" class="abs"><div data-hf-id="hf-dhti" id="s7-lf"></div></div>
+      <div data-hf-id="hf-z36s" class="s7-st" id="s7-s1" style="left:780px">01</div>
+      <div data-hf-id="hf-r0e8" class="s7-st" id="s7-s2" style="left:465px">02</div>
+      <div data-hf-id="hf-3emh" class="s7-st" id="s7-s3" style="left:150px">03</div>
+      <div data-hf-id="hf-27ir" id="s7-k" class="row t-h2"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-4b3y" class="in" id="s7-k1">ويتابع الـ<span data-hf-id="hf-0r3r" class="lat">Progress</span></span></span></div>
+      <div data-hf-id="hf-ui3c" id="s7-tr" class="ah-track"><div data-hf-id="hf-ng3d" class="ah-fill" id="s7-fill" style="background:linear-gradient(270deg, #b3ce65, #ffec5c)"></div></div>
+      <div data-hf-id="hf-w8l9" id="s7-pct" class="abs num"><span data-hf-id="hf-d1m7" id="s7-n">0</span>%</div>
+      <div data-hf-id="hf-myzn" id="s7-ck" class="abs"><svg data-hf-id="hf-oull" width="80" height="80"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(33.6);
+      const { tl } = fx;
+      fx.drift("#s7-bgp", 33.6, 3.75, 70, -40);
+      fx.drift("#s7-blob", 33.6, 3.75, -120, 60);
+      fx.pushIn("#s7-cam", 33.6, 3.75, 1.035);
+
+      fx.rise("#s7-lab", 33.65, { y: 16 });
+      fx.maskUp("#s7-h1", 33.7);
+      fx.pop("#s7-s1, #s7-s2, #s7-s3", 33.8, { from: 0.4, st: 0.08 });
+      tl.fromTo("#s7-line", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 33.8);
+      fx.meter("#s7-lf", 34.2, 0.8, 1, { e: "power1.inOut" });
+      ["#s7-s1", "#s7-s2", "#s7-s3"].forEach((s, i) => {
+        tl.to(s, { backgroundColor: "#b3ce65", color: "#0d0d0d", borderColor: "#b3ce65", scale: 1.12, duration: 0.18 }, 34.2 + i * 0.36);
+        tl.to(s, { scale: 1, duration: 0.2 }, 34.38 + i * 0.36);
+      });
+      fx.maskUp("#s7-k1", 35.05);
+      tl.fromTo("#s7-tr", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 35.1);
+      fx.meter("#s7-fill", 35.2, 1.3, 1, { e: "power2.inOut" });
+      fx.counter("#s7-n", 35.2, 36.5, 0, 100, { ar: false });
+      fx.pop("#s7-ck", 36.55, { from: 0.2 });
+
+      tl.to("#s7-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 37.2);
+      window.__timelines["s7"] = tl.real;
+    })();
+  </script>
+</template></body></html>

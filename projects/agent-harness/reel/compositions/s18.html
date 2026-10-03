@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s18-template">
+  <style>
+
+    #s18-lab { top: 360px; } #s18-h { top: 420px; }
+    #s18-ring { left: 190px; top: 610px; width: 700px; height: 700px; }
+    #s18-x { left: 0; right: 0; top: 700px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 400px; line-height: 1; color: var(--yellow); direction: ltr;
+      text-shadow: 0 0 80px rgba(255,236,92,.55); }
+    #s18-bl { left: 140px; top: 560px; width: 800px; height: 800px; }
+    #s18-k { top: 1400px; }
+
+  </style>
+  <div data-hf-id="hf-chag" id="s18" data-composition-id="s18" data-width="1080" data-height="1920" data-duration="4.3">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-y56w" id="s18-blob" class="blob" style="left:160px; top:580px; width:760px; height:760px; background:#5a2a1c; opacity:.55"></div>
+    <div data-hf-id="hf-bsiq" id="s18-bgp" class="dots"></div>
+    <div data-hf-id="hf-hbd7" id="s18-cam" class="cam">
+
+      <div data-hf-id="hf-aox4" id="s18-lab" class="row"><span data-hf-id="hf-xrkm" class="t-label">SOMETIMES…</span></div>
+      <div data-hf-id="hf-p9yk" id="s18-h" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-facd" class="in" id="s18-h1">الفرق ممكن يوصل</span></span></div>
+      <div data-hf-id="hf-81t0" id="s18-bl" class="ah-bloom"></div>
+      <svg data-hf-id="hf-cmyn" id="s18-ring" class="abs" viewBox="0 0 700 700"><circle data-hf-id="hf-pk9k" id="s18-rc" pathLength="1" cx="350" cy="350" r="320" fill="none" stroke="#ff5a33" stroke-width="10" transform="rotate(-90 350 350)" /></svg>
+      <div data-hf-id="hf-6qb9" id="s18-x" class="abs"><span data-hf-id="hf-stwo" id="s18-x1" style="display:inline-block">×2</span></div>
+      <div data-hf-id="hf-2xtu" id="s18-k" class="row t-h1"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-gba5" class="in" id="s18-k1">ضعف <span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-v1ci" class="band" id="s18-band" style="background:var(--orange)"></span><span data-hf-id="hf-1d4n" class="txt" style="color:#fff">التكلفة</span></span></span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(120.3);
+      const { tl } = fx;
+      fx.drift("#s18-bgp", 120.3, 4.3, 70, -40);
+      fx.drift("#s18-blob", 120.3, 4.3, -120, 60);
+      fx.pushIn("#s18-cam", 120.3, 4.3, 1.035);
+
+      fx.rise("#s18-lab", 120.35, { y: 16 });
+      fx.maskUp("#s18-h1", 120.6);
+      fx.draw("#s18-rc", 121.4, 2.0, "power1.in");
+      tl.fromTo("#s18-x1", { opacity: 0, scale: 3, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 123.42);
+      tl.fromTo("#s18-bl", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 123.45);
+      fx.shake("#s18-cam", 123.5, 22, 8);
+      fx.maskUp("#s18-k1", 123.6);
+      fx.band("#s18-band", 123.85);
+
+      tl.to("#s18-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 124.3);
+      window.__timelines["s18"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,31 @@
+{
+  "name": "ai-news-oct3",
+  "title": "أخبار الـAI — 3 أكتوبر 2026",
+  "stage": "transcribe",
+  "created": "2026-10-03T07:20:10",
+  "updated": "2026-10-03T07:20:45",
+  "aspect": null,
+  "duration_s": 289.28,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-03T07:20:10",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-03T07:20:21",
+      "note": "cleaned voiceover, 289.3s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-03T07:20:45",
+      "note": "openai_whisper: 46 segments",
+      "from": "audio_clean"
+    }
+  ]
+}

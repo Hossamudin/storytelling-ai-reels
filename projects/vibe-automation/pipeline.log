@@ -1,0 +1,8 @@
+[2026-09-30 16:54:12] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\vibe-automation
+[2026-09-30 16:54:17] Audio cleanup: voiceover.m4a
+[2026-09-30 16:54:25] Transcribing (gemini_api) voiceover_clean.wav (99.4s, upload 0.42MB)
+[2026-09-30 16:59:43] Transcribing (gemini_api) voiceover_clean.wav (99.4s, upload 0.42MB)
+[2026-09-30 18:44:57] Transcribing (openai_whisper) voiceover_clean.wav (99.4s, upload 0.42MB)
+[2026-09-30 19:10:00] voice_edit: 2 part(s), 3 manual cuts
+[2026-09-30 19:10:26] Transcribing (openai_whisper) voiceover_clean.wav (99.4s, upload 0.42MB)
+[2026-09-30 19:10:37] voice_edit: 2 part(s), 3 manual cuts

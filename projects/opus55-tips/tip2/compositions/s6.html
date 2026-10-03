@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s6-template">
+  <style>
+
+    #s6-st { left: 330px; top: 470px; font-size: 96px; color: var(--lime); border-color: var(--lime); }
+    #s6-res { left: 240px; top: 800px; width: 600px; height: 420px; }
+    #s6-rt { position: absolute; left: 0; right: 0; top: 260px; text-align: center; }
+    #s6-like { left: 760px; top: 760px; width: 150px; height: 150px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+
+  </style>
+  <div data-hf-id="hf-x1f1" id="s6" data-composition-id="s6" data-width="1080" data-height="1920" data-duration="4.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-a2bn" id="s6-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-84yt" id="s6-bgp" class="dots"></div>
+    <div data-hf-id="hf-o7se" id="s6-cam" class="cam">
+
+      <div data-hf-id="hf-tbra" id="s6-lab" class="row" style="top:280px"><span data-hf-id="hf-a5io" class="t-label" style="color:var(--lime)">THE FIX</span></div>
+      <div data-hf-id="hf-65m7" class="row t-h3" style="top:330px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-cpe4" class="in" id="s6-h1">والموضوع</span></span></div>
+      <div data-hf-id="hf-cace" id="s6-st" class="stamp">بسيط</div>
+      <div data-hf-id="hf-oj3w" id="s6-res" class="op-card"><div data-hf-id="hf-b5iu" id="s6-sp" class="cl-spark" style="left:230px; top:60px; width:140px; height:140px;"><svg data-hf-id="hf-0d8r" id="s6-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div><div data-hf-id="hf-6vye" id="s6-rt" class="t-h3">النتيجة</div></div>
+      <div data-hf-id="hf-wmfj" id="s6-like" class="abs"><svg data-hf-id="hf-v7vf" style="width:80px; height:80px; color:currentColor;"><use data-hf-id="hf-2m8z" href="#i-like" /></svg><div data-hf-id="hf-966x" class="ring" id="s6-r" style="border-radius:50%"></div></div>
+      <div data-hf-id="hf-0zfs" class="row t-h2" style="top:1300px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-bqwv" class="in" id="s6-k1">اللي انت راضي عنها</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(27.4);
+      const { tl } = fx;
+      fx.drift("#s6-bgp", 27.4, 4.8, 60, -40);
+      fx.drift("#s6-blob", 27.4, 4.8, -110, 60);
+      fx.pushIn("#s6-cam", 27.4, 4.8, 1.035);
+
+      fx.rise("#s6-lab", 27.5, { y: 12 }); fx.maskUp("#s6-h1", 27.6);
+      fx.stamp("#s6-st", 28.15, "#s6-cam");
+      tl.fromTo("#s6-res", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 28.9);
+      fx.maskUp("#s6-k1", 29.6);
+      fx.pop("#s6-like", 29.85, { from: 0 }); fx.ringPulse("#s6-r", 29.95);
+
+      tl.to("#s6-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 31.76);
+      window.__timelines["s6"] = tl.real;
+    })();
+  </script>
+</template></body></html>

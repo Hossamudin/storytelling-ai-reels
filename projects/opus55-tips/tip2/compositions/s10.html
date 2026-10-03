@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s10-template">
+  <style>
+
+    #s10-ns { position: absolute; left: 110px; top: 460px; width: 860px; height: 380px; border-radius: 30px; background: #1f1e1d; border: 2px dashed #5a5953; }
+    #s10-nl { position: absolute; left: 30px; top: 24px; font-family: var(--font-en); font-weight: 800; font-size: 24px; letter-spacing: .18em; color: #9a988f; direction: ltr; }
+    #s10-pk { left: 380px; top: 470px; width: 320px; height: 320px; }
+    .s10-r { position: absolute; top: 1000px; width: 270px; height: 300px; }
+    #s10-a { left: 750px; } #s10-b { left: 405px; } #s10-c { left: 60px; }
+    .s10-ok { position: absolute; left: 50%; top: 180px; width: 74px; height: 74px; margin-left: -37px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+
+  </style>
+  <div data-hf-id="hf-sm1t" id="s10" data-composition-id="s10" data-width="1080" data-height="1920" data-duration="5.25">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-jx6o" id="s10-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-86iy" id="s10-bgp" class="dots"></div>
+    <div data-hf-id="hf-hpoj" id="s10-cam" class="cam">
+
+      <div data-hf-id="hf-jmux" id="s10-ns"><div data-hf-id="hf-bvxo" id="s10-nl">NEW SESSION</div></div>
+      <img data-hf-id="hf-bgbm" id="s10-pk" class="abs" src="assets/images/package_cut.png">
+      <div data-hf-id="hf-3q9t" class="row t-h3" style="top:880px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-3266" class="in" id="s10-h1">نتيجة يُعتمد عليها</span></span></div>
+      <div data-hf-id="hf-y71b" id="s10-a" class="op-card s10-r"><div data-hf-id="hf-0khd" id="s10-a-sp" class="cl-spark" style="left:85px; top:40px; width:100px; height:100px;"><svg data-hf-id="hf-0i5c" id="s10-a-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div><div data-hf-id="hf-nkkj" class="s10-ok"><svg data-hf-id="hf-4yo7" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div></div><div data-hf-id="hf-pj5g" id="s10-b" class="op-card s10-r"><div data-hf-id="hf-k69o" id="s10-b-sp" class="cl-spark" style="left:85px; top:40px; width:100px; height:100px;"><svg data-hf-id="hf-ddtl" id="s10-b-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-7e43" href="#i-claude" width="100" height="100" /></svg></div><div data-hf-id="hf-8jj7" class="s10-ok"><svg data-hf-id="hf-0ujr" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-8nki" href="#i-check" /></svg></div></div><div data-hf-id="hf-qat9" id="s10-c" class="op-card s10-r"><div data-hf-id="hf-0a0r" id="s10-c-sp" class="cl-spark" style="left:85px; top:40px; width:100px; height:100px;"><svg data-hf-id="hf-8q1q" id="s10-c-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-6zt2" href="#i-claude" width="100" height="100" /></svg></div><div data-hf-id="hf-8586" class="s10-ok"><svg data-hf-id="hf-0g8q" style="width:46px; height:46px; color:currentColor;"><use data-hf-id="hf-91vj" href="#i-check" /></svg></div></div>
+      <div data-hf-id="hf-57r0" class="row t-h1 op-y" style="top:1380px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-mpqh" class="in" id="s10-k1">كل مرة</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(47.25);
+      const { tl } = fx;
+      fx.drift("#s10-bgp", 47.25, 5.25, 60, -40);
+      fx.drift("#s10-blob", 47.25, 5.25, -110, 60);
+      fx.pushIn("#s10-cam", 47.25, 5.25, 1.035);
+
+      tl.fromTo("#s10-ns", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 47.4);
+      tl.fromTo("#s10-pk", { opacity: 0, y: -500, rotation: -20 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "bounce.out" }, 48.5);
+      tl.to("#s10-ns", { borderColor: "#b3ce65", duration: 0.2 }, 49.0);
+      fx.maskUp("#s10-h1", 50.0);
+      fx.pop("#s10-a", 50.5, { from: 0.3 }); fx.pop("#s10-b", 51.0, { from: 0.3 }); fx.pop("#s10-c", 51.5, { from: 0.3 });
+      fx.maskUp("#s10-k1", 51.6);
+
+      tl.to("#s10-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 52.06);
+      window.__timelines["s10"] = tl.real;
+    })();
+  </script>
+</template></body></html>

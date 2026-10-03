@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<!--
+  Quiz card (end-of-section check). Pair with a silent "hold" in the screen edit (pipeline/screen_edit.py)
+  so the voice pauses while the viewer thinks. scenes.json:
+    {"id": "q1", "start": 64.0, "duration": 7.0, "template": "quiz",
+     "data": {"Q": "تقدر تكلم أكتر من وكيل في نفس الوقت؟", "A": "أيوه", "B": "لأ", "C": "بس من Pages",
+              "CORRECT": "A", "COUNT": 3, "LABEL": "QUICK CHECK · 01"}}
+  Timeline: question (0.2) → options (0.8) → countdown COUNT s → reveal correct (lime) + ding.
+  Add cues: {"t": start+0.8+COUNT, "sfx": "library/chime"} and ticks with "library/click-soft".
+-->
+<template id="q1-template">
+  <style>
+    #q1-lab { top: 160px; }
+  </style>
+  <div id="q1" data-composition-id="q1" data-width="1080" data-height="1920" data-duration="7.0">
+    <div class="bg"></div>
+    <div id="q1-dots" class="dots"></div>
+    <div id="q1-cam" class="cam">
+      <div id="q1-lab" class="row"><span class="t-label" data-layout-allow-overlap>QUICK CHECK · 01</span></div>
+      <div class="quiz-q" id="q1-q" data-layout-allow-overlap>تقدر تكلم أكتر من وكيل في نفس الوقت؟</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" id="q1-A"><span class="k">A</span><span>أيوه</span></div>
+        <div class="quiz-opt" id="q1-B"><span class="k">B</span><span>لأ</span></div>
+        <div class="quiz-opt" id="q1-C"><span class="k">C</span><span>من Pages بس</span></div>
+      </div>
+      <div class="quiz-ring" id="q1-ring">
+        <svg viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="64" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="10" />
+          <circle id="q1-arc" cx="75" cy="75" r="64" fill="none" stroke="#FFEC5C" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" transform="rotate(-90 75 75)" /></svg>
+        <div class="num" id="q1-n"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const T0 = 17.7, N = 3;
+      const fx = window.HF_SCENE(T0);
+      const { tl } = fx;
+      fx.drift("#q1-dots", T0, 7.0, 40, -30);
+      fx.rise("#q1-lab", T0 + 0.1, { y: 20 });
+      fx.rise("#q1-q", T0 + 0.2, { y: 50, s: 1.05 });
+      fx.rise(["#q1-A", "#q1-B", "#q1-C"], T0 + 0.8, { y: 50, st: 0.12, e: "back.out(1.6)" });
+      fx.pop("#q1-ring", T0 + 1.1, { from: 0.4 });
+      tl.fromTo("#q1-arc", { strokeDashoffset: 0 }, { strokeDashoffset: 1, duration: N, ease: "none" }, T0 + 1.2);
+      fx.counter("#q1-n", T0 + 1.2, T0 + 1.2 + N, N, 0, { e: "none" });
+      const R = T0 + 1.25 + N;
+      ["A", "B", "C"].forEach((k) => {
+        if (k === "A") tl.to("#q1-" + k, { backgroundColor: "#B4CF66", color: "#0D0D0D", borderColor: "#B4CF66", scale: 1.06, duration: 0.3, ease: "back.out(2)" }, R);
+        else tl.to("#q1-" + k, { opacity: 0.35, duration: 0.3 }, R);
+      });
+      tl.to("#q1-ring", { opacity: 0, scale: 0.6, duration: 0.25 }, R);
+      window.__timelines["q1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

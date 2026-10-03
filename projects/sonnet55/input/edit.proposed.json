@@ -1,0 +1,89 @@
+{
+ "parts": [
+  {
+   "name": "voice",
+   "from": 0,
+   "to": 188.373
+  }
+ ],
+ "cuts": [
+  [
+   0.907,
+   2.516,
+   "noise: no speech in verbatim transcript / Empty non-speech before the take starts / no speech in verbatim transcript"
+  ],
+  [
+   27.815,
+   30.772,
+   "false_start: Abandoned comparison phrase; speaker restarts with the next sentence"
+  ],
+  [
+   30.792,
+   33.927,
+   "noise: no speech in verbatim transcript / Empty non-speech during pause after false start / no speech in verbatim transcript / no speech in verbatim transcript"
+  ],
+  [
+   80.149,
+   84.196,
+   "retake: chunk 23 restarts chunk 22 (similarity 0.70); keep the later take / Earlier abandoned phrasing; repeated and completed more clearly in the next chunk"
+  ]
+ ],
+ "fix": {},
+ "max_pause": 0.38,
+ "keep_pause": 0.24,
+ "silence_db": -38,
+ "proposals": [
+  {
+   "from": 0,
+   "to": 0,
+   "kind": "noise",
+   "reason": "no speech in verbatim transcript / Empty non-speech before the take starts / no speech in verbatim transcript",
+   "confidence": 0.98,
+   "source": "rules + gpt-5.5",
+   "cut": [
+    0.907,
+    2.516
+   ],
+   "text": ""
+  },
+  {
+   "from": 11,
+   "to": 11,
+   "kind": "false_start",
+   "reason": "Abandoned comparison phrase; speaker restarts with the next sentence",
+   "confidence": 0.96,
+   "source": "gpt-5.5",
+   "cut": [
+    27.815,
+    30.772
+   ],
+   "text": "أحسن طبعاً من."
+  },
+  {
+   "from": 12,
+   "to": 12,
+   "kind": "noise",
+   "reason": "no speech in verbatim transcript / Empty non-speech during pause after false start / no speech in verbatim transcript / no speech in verbatim transcript",
+   "confidence": 0.98,
+   "source": "rules + gpt-5.5",
+   "cut": [
+    30.792,
+    33.927
+   ],
+   "text": ""
+  },
+  {
+   "from": 22,
+   "to": 22,
+   "kind": "retake",
+   "reason": "chunk 23 restarts chunk 22 (similarity 0.70); keep the later take / Earlier abandoned phrasing; repeated and completed more clearly in the next chunk",
+   "confidence": 0.98,
+   "source": "rules + gpt-5.5",
+   "cut": [
+    80.149,
+    84.196
+   ],
+   "text": "وبالرغم من أن كل الأيام اللي فاتت عمال بستخدم الأوبس بوينت."
+  }
+ ]
+}

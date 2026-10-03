@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="c3-template">
+  <style>
+    #c3-lab { top: 120px; }
+    #c3-head { top: 165px; }
+    #c3-hub { left: 810px; top: 470px; width: 300px; height: 220px; }
+    #c3-hub .ar { position: absolute; left: 0; right: 0; top: 46px; text-align: center; font-size: 46px; font-weight: 900; }
+    #c3-hub .en { position: absolute; left: 0; right: 0; top: 158px; text-align: center; }
+    #c3-spokes { left: 0; top: 0; width: 1920px; height: 1080px; }
+    .c3-n { width: 110px; height: 110px; }
+    .c3-l { position: absolute; width: 300px; text-align: center; font-size: 34px; font-weight: 800; color: var(--fg-muted); }
+    #c3-glow { left: 560px; top: 330px; width: 800px; height: 520px; background: radial-gradient(ellipse, rgba(180, 207, 102, 0.3), transparent 68%); }
+  </style>
+  <div data-hf-id="hf-fof0" id="c3" data-composition-id="c3" data-width="1920" data-height="1080" data-duration="4.25">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-whid" id="c3-dots" class="dots"></div>
+    <div data-hf-id="hf-dw8j" id="c3-cam" class="cam">
+      <div data-hf-id="hf-248b" id="c3-glow" class="glow"></div>
+      <div data-hf-id="hf-zapq" id="c3-lab" class="row"><span data-hf-id="hf-ihdb" class="t-label" data-layout-allow-overlap="">03 · AI TEAM</span></div>
+      <div data-hf-id="hf-362e" id="c3-head" class="row t-h2" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-5mee" class="in" id="c3-h">وكلاءك كلهم عايشين هنا</span></span></div>
+      <svg data-hf-id="hf-0to5" id="c3-spokes" class="abs" viewBox="0 0 1920 1080">
+        <g data-hf-id="hf-pu7x" stroke="#B4CF66" stroke-width="5" opacity=".75" fill="none">
+          <path data-hf-id="hf-ff58" class="c3-sp" d="M960 580 L560 420" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+          <path data-hf-id="hf-v7f1" class="c3-sp" d="M960 580 L1360 420" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+          <path data-hf-id="hf-90z7" class="c3-sp" d="M960 580 L560 760" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+          <path data-hf-id="hf-8ci2" class="c3-sp" d="M960 580 L1360 760" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" />
+        </g>
+      </svg>
+      <div data-hf-id="hf-qmm0" id="c3-hub" class="card"><div data-hf-id="hf-uce1" class="ar" data-layout-allow-overlap="">مشروعك</div><div data-hf-id="hf-ulsb" class="en t-label" data-layout-allow-overlap="">PROJECT</div><div data-hf-id="hf-srvr" class="ring" id="c3-r"></div></div>
+      <div data-hf-id="hf-sl3w" class="node c3-n" id="c3-n1" style="left: 505px; top: 365px"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-iqr9" href="#i-spark" /></svg></div>
+      <div data-hf-id="hf-r3qc" class="node c3-n" id="c3-n2" style="left: 1305px; top: 365px"><svg data-hf-id="hf-8vth"><use data-hf-id="hf-9161" href="#i-spark" /></svg></div>
+      <div data-hf-id="hf-fihk" class="node c3-n" id="c3-n3" style="left: 505px; top: 705px"><svg data-hf-id="hf-e4po"><use data-hf-id="hf-a834" href="#i-spark" /></svg></div>
+      <div data-hf-id="hf-ulko" class="node c3-n" id="c3-n4" style="left: 1305px; top: 705px"><svg data-hf-id="hf-dqen"><use data-hf-id="hf-9ts3" href="#i-spark" /></svg></div>
+      <div data-hf-id="hf-h74k" class="c3-l lat" id="c3-l1" style="left: 410px; top: 290px">AGENT</div>
+      <div data-hf-id="hf-t50u" class="c3-l lat" id="c3-l2" style="left: 1210px; top: 290px">AGENT</div>
+      <div data-hf-id="hf-cdnq" class="c3-l lat" id="c3-l3" style="left: 410px; top: 830px">AGENT</div>
+      <div data-hf-id="hf-9c1k" class="c3-l lat" id="c3-l4" style="left: 1210px; top: 830px">AGENT</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(103.5);
+      fx.drift("#c3-dots", 103.5, 4.25, -40, 40);
+      fx.pushIn("#c3-cam", 103.5, 4.25, 1.05);
+      fx.rise("#c3-lab", 103.55, { y: 20 });
+      fx.maskUp("#c3-h", 103.6);
+      fx.pop("#c3-hub", 103.75, { from: 0.5 });
+      fx.pop("#c3-glow", 103.8, { from: 0.4, d: 0.8, e: "power2.out" });
+      fx.draw(".c3-sp", 104.1, 0.45, "power2.out");
+      fx.pop(["#c3-n1", "#c3-n2", "#c3-n3", "#c3-n4"], 104.3, { st: 0.12 });
+      fx.rise(["#c3-l1", "#c3-l2", "#c3-l3", "#c3-l4"], 104.5, { y: 14, st: 0.1, d: 0.3 });
+      fx.ringPulse("#c3-r", 105.6);
+      fx.breathe(["#c3-n1", "#c3-n2", "#c3-n3", "#c3-n4"], 105.2, 2.4, 0.06, 1.2);
+      window.__timelines["c3"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

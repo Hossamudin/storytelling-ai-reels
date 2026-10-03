@@ -1,0 +1,16 @@
+{
+  "source": "input/screen.mp4",
+  "crop": null,
+  "timeline": [
+    {"hold": 2.4, "at": 14.3, "label": "opening title card (C0); 0-14.3 = note to the editor, cut"},
+    {"keep": [14.25, 43.62], "label": "what is an AI skill (C1 cutaway) + Mahara AI + who/interests/tasks"},
+    {"freeze": [43.62, 46.70], "at": 40.3, "label": "'it recommends skills for you' over the frame where the list is full (live list is already empty here)"},
+    {"keep": [46.70, 50.80], "label": "empty state + 'go to skills'"},
+    {"keep": [54.20, 62.10], "label": "Manus skills page (slow page load 50.8-54.2 cut)"},
+    {"keep": [64.70, 65.50], "label": "click Skills nav -> all skills page loads"},
+    {"keep": [72.75, 124.50], "label": "all skills tour, search + categories, free now / premium soon (silent 65.5-72.75 cut)"},
+    {"hold": 4.5, "at": 124.4, "label": "recap card (C2)"}
+  ],
+  "max_pause": 0.9, "keep_pause": 0.4, "busy_pause_keep": 1.2,
+  "jl": {"l_max": 0.5, "j": 0.2, "busy": 0.6}
+}

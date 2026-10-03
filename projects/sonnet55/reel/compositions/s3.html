@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s3-template">
+  <style>
+
+    #s3-hero { left: 160px; top: 860px; width: 760px; height: 760px; }
+    #s3-hero img { width: 760px; top: -40px; }
+    #s3-src { top: 1650px; }
+
+  </style>
+  <div data-hf-id="hf-bxsk" id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="5.0">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ywym" id="s3-blob" class="blob" style="left:160px; top:720px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-rsys" id="s3-bgp" class="dots"></div>
+    <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+
+      <div data-hf-id="hf-fgpl" id="s3-op" class="cl-spark" style="left:600px; top:290px; width:300px; height:300px;"><svg data-hf-id="hf-c57s" id="s3-op-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-4kgl" id="s3-so" class="cl-spark" style="left:330px; top:420px; width:170px; height:170px;"><div data-hf-id="hf-fm7l" class="cl-bloom" id="s3-so-bl"></div><svg data-hf-id="hf-w97z" id="s3-so-svg" viewBox="0 0 100 100"><use data-hf-id="hf-7e43" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-3coc" id="s3-lb" class="abs" style="left:180px; top:610px; height:64px; padding:0 28px; border-radius:32px; display:flex; align-items:center; border:3px solid var(--lime); color:var(--lime); background:rgba(4,22,20,.75); font-family:var(--font-en); font-weight:900; font-size:30px; letter-spacing:.08em; white-space:nowrap; direction:ltr">LITTLE BROTHER</div>
+      <div data-hf-id="hf-mfkq" class="row t-h2" style="top:670px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-cwmo" class="in" id="s3-a1">أخوه الصغير</span></span></div>
+      <div data-hf-id="hf-ycrj" id="s3-hero" class="op-shot"><img data-hf-id="hf-aja2" src="assets/images/hero.png"></div>
+      <div data-hf-id="hf-p5e9" id="s3-src" class="op-src" style="top:1650px">REAL · ANTHROPIC.COM · SEP 28, 2026</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(14.15);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 14.15, 5.0, 60, -40);
+      fx.drift("#s3-blob", 14.15, 5.0, -110, 60);
+      fx.pushIn("#s3-cam", 14.15, 5.0, 1.035);
+
+      fx.pop("#s3-op", 14.2, { from: 0.5 });
+      tl.fromTo("#s3-op-svg", { rotation: 0 }, { rotation: 90, duration: 4.6, ease: "none" }, 14.2);
+      fx.pop("#s3-so", 15.7, { from: 0.1, e: "back.out(3)", d: 0.5 });
+      tl.fromTo("#s3-so-svg", { rotation: 0 }, { rotation: -180, duration: 3.1, ease: "power1.out" }, 15.7);
+      fx.rise("#s3-lb", 16.0, { y: 20 });
+      fx.maskUp("#s3-a1", 15.72);
+      tl.fromTo("#s3-hero", { opacity: 0, y: 260, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 17.45);
+      tl.to("#s3-op, #s3-so, #s3-lb", { y: -60, opacity: 0.35, duration: 0.5, ease: "power2.out" }, 17.45);
+      fx.rise("#s3-src", 17.8, { y: 10, b: 0 });
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 18.71);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

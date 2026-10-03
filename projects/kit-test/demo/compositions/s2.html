@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s2-template">
+  <style>
+    #s2-lab { top: 250px; }
+    #s2-h { top: 300px; }
+    #s2-win { left: 90px; top: 560px; width: 900px; height: 620px; }
+    #s2-field { position: absolute; left: 40px; right: 40px; top: 110px; height: 120px; border-radius: 18px; border: 3px solid #d7dccb; background: #fff; }
+    #s2-type { position: absolute; right: 30px; top: 30px; font-size: 44px; font-weight: 700; direction: rtl; white-space: nowrap; }
+    #s2-btn { position: absolute; left: 40px; top: 280px; width: 360px; height: 100px; border-radius: 50px; background: var(--lime); font-family: var(--font-en); font-size: 30px; font-weight: 900; letter-spacing: 0.16em; display: flex; align-items: center; justify-content: center; direction: ltr; }
+    #s2-rows { position: absolute; left: 40px; right: 40px; top: 430px; }
+    .s2-r { height: 50px; border-radius: 12px; background: #eceee0; margin-bottom: 18px; }
+    #s2-cur { left: 700px; top: 1500px; }
+    #s2-rip { left: 330px; top: 890px; }
+  </style>
+  <div id="s2" data-composition-id="s2" data-width="1080" data-height="1920" data-duration="5.4">
+    <div class="bg"></div>
+    <div id="s2-bgp" class="dots"></div>
+    <div id="s2-cam" class="cam">
+      <div id="s2-lab" class="row"><span class="t-label">RESEARCH AGENT</span></div>
+      <div id="s2-h" class="row t-h2 head" data-layout-allow-overlap><span class="mask"><span class="in" id="s2-hi">اكتب طلبك… والوكيل يشتغل</span></span></div>
+      <div id="s2-win" class="window">
+        <div class="bar"><i></i><i></i><i></i><b>GUEST FINDER</b></div>
+        <div id="s2-field"><div id="s2-type"><span id="s2-tt"></span><span class="caret" id="s2-car"></span></div></div>
+        <div id="s2-btn"><span>RESEARCH</span><div class="ring" id="s2-ring1"></div><div class="ring" id="s2-ring2"></div></div>
+        <div id="s2-rows"><div class="s2-r" id="s2-r1"></div><div class="s2-r" id="s2-r2"></div><div class="s2-r" id="s2-r3"></div></div>
+      </div>
+      <div id="s2-rip" class="ripple abs"></div>
+      <svg id="s2-cur" class="cursor"><use href="#i-cursor" /></svg>
+      <div class="toast" id="s2-t1"><div class="ic"><svg width="30" height="30" style="color: #fff"><use href="#i-check" /></svg></div><div><div class="en">GUEST FOUND</div><div class="ar">لقينا ضيف مناسب</div></div></div>
+      <div class="toast" id="s2-t2"><div class="ic" style="background: var(--teal)"><svg width="30" height="30" style="color: #fff"><use href="#i-check" /></svg></div><div><div class="en">EMAIL DRAFTED</div><div class="ar">الرسالة جاهزة للإرسال</div></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(5.8);
+      fx.drift("#s2-bgp", 5.8, 5.4, -60, 30);
+      fx.pushIn("#s2-cam", 5.8, 5.0);
+      fx.rise("#s2-lab", 5.9, { y: 20 });
+      fx.maskUp("#s2-hi", 6.0);
+      fx.pop("#s2-win", 6.1, { from: 0.85, e: "power3.out" });
+      fx.typeText("#s2-tt", 6.4, "ضيف بودكاست عن الذكاء الاصطناعي", 22);
+      fx.tl.fromTo("#s2-car", { opacity: 1 }, { opacity: 0.15, duration: 0.25, ease: "steps(1)", yoyo: true, repeat: 7 }, 6.3);
+      fx.cursorTo("#s2-cur", 7.5, -330, -560, 0.6);
+      fx.click("#s2-cur", 8.15, "#s2-btn", "#s2-rip");
+      fx.ringPulse("#s2-ring1, #s2-ring2", 8.2);
+      fx.rise("#s2-r1, #s2-r2, #s2-r3", 8.4, { y: 20, st: 0.12, d: 0.35 });
+      fx.toasts([{ sel: "#s2-t1", t: 8.6 }, { sel: "#s2-t2", t: 9.5 }], { bottom: 200, gap: 124 });
+      fx.whipOut("#s2-cam", 10.85);
+      window.__timelines["s2"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

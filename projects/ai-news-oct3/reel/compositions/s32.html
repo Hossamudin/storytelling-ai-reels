@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s32-template">
+  <style>
+
+    #s32-h { position: absolute; left: 230px; top: 820px; width: 620px; height: 1102px; }
+    #s32-h img { position: absolute; left: 0; top: 0; width: 620px; filter: drop-shadow(0 30px 50px rgba(0,0,0,.55)); }
+    #s32-nm { position: absolute; left: 0; right: 0; top: 1420px; text-align: center; }
+    #s32-btn { position: absolute; left: 0; right: 0; top: 1580px; display: flex; justify-content: center; }
+    #s32-btn span { height: 110px; padding: 0 60px; border-radius: 55px; background: var(--red); color: #fff; font-family: var(--font-ar); font-weight: 900; font-size: 48px;
+      display: flex; align-items: center; white-space: nowrap; box-shadow: 0 20px 50px rgba(217,58,43,.4); }
+
+  </style>
+  <div data-hf-id="hf-28mt" id="s32" data-composition-id="s32" data-width="1080" data-height="1920" data-duration="6.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-06ny" id="s32-blob" class="blob" style="left:160px; top:720px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-v2ha" id="s32-bgp" class="dots"></div>
+    <div data-hf-id="hf-ltez" id="s32-cam" class="cam">
+
+      <div data-hf-id="hf-3ceo" id="s32-a" class="flap" style="top:250px;" data-layout-allow-overlap=""><span data-hf-id="hf-4kyw" class="fl" style="width:88px; height:120px; line-height:120px; font-size:84px"><i data-hf-id="hf-lv10" style="font-style:normal">A</i></span><span data-hf-id="hf-9yxs" class="fl" style="width:88px; height:120px; line-height:120px; font-size:84px"><i data-hf-id="hf-p1h8" style="font-style:normal">I</i></span><span data-hf-id="hf-2ebb" class="fl sp" style="width:35px; height:120px"></span><span data-hf-id="hf-8s0p" class="fl" style="width:88px; height:120px; line-height:120px; font-size:84px"><i data-hf-id="hf-pfs9" style="font-style:normal">N</i></span><span data-hf-id="hf-96bq" class="fl" style="width:88px; height:120px; line-height:120px; font-size:84px"><i data-hf-id="hf-ng94" style="font-style:normal">E</i></span><span data-hf-id="hf-7zen" class="fl" style="width:88px; height:120px; line-height:120px; font-size:84px"><i data-hf-id="hf-t0ji" style="font-style:normal">W</i></span><span data-hf-id="hf-8dpo" class="fl" style="width:88px; height:120px; line-height:120px; font-size:84px"><i data-hf-id="hf-rfbe" style="font-style:normal">S</i></span></div>
+      <div data-hf-id="hf-kk4h" class="row t-h2" style="top:420px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-wlbf" class="in" id="s32-h1">كل أسبوع · حلقة سريعة</span></span></div>
+      <div data-hf-id="hf-m28t" class="row t-h3" style="top:545px;color:var(--yellow)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-dom4" class="in" id="s32-h2">ملخص الأخبار في دقايق</span></span></div>
+      <div data-hf-id="hf-6e1k" id="s32-h"><img data-hf-id="hf-kgdx" src="assets/images/hossam_suit.png"></div>
+      <div data-hf-id="hf-n9j3" id="s32-nm"><span data-hf-id="hf-6hgh" style="display:inline-block; padding:6px 40px; border-radius:30px; background:rgba(4,22,20,.85); font-size:64px; font-weight:900">حسام الدين حسن</span></div>
+      <div data-hf-id="hf-cqso" id="s32-btn"><span data-hf-id="hf-axab" id="s32-b">تابعني</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(185.8);
+      const { tl } = fx;
+      fx.drift("#s32-bgp", 185.8, 6.8, 60, -40);
+      fx.drift("#s32-blob", 185.8, 6.8, -110, 60);
+      fx.pushIn("#s32-cam", 185.8, 6.8, 1.035);
+
+      window.HF_FLAP(fx, "#s32-a", 185.9, { st: 0.05 });
+      fx.maskUp("#s32-h1", 186.3);
+      fx.maskUp("#s32-h2", 187.9);
+      tl.fromTo("#s32-h", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 186.6);
+      fx.rise("#s32-nm", 188.8, { y: 20 });
+      fx.pop("#s32-btn", 189.4, { from: 0.4 });
+      tl.to("#s32-b", { scale: 0.92, duration: 0.08, yoyo: true, repeat: 1 }, 190.6);
+      tl.to("#s32-b", { background: "#2b2a28", duration: 0.1 }, 190.75);
+
+      
+      window.__timelines["s32"] = tl.real;
+    })();
+  </script>
+</template></body></html>

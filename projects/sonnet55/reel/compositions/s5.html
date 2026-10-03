@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s5-template">
+  <style>
+
+    #s5-lab { top: 300px; }
+    .s5-col { position: absolute; bottom: 300px; width: 260px; }
+    .s5-bar { position: absolute; left: 0; right: 0; top: 0; bottom: 0; border-radius: 24px 24px 8px 8px; transform-origin: 50% 100%; }
+    .s5-v { position: absolute; left: -40px; right: -40px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 74px; direction: ltr; }
+    .s5-n { position: absolute; left: -60px; right: -60px; bottom: -84px; text-align: center; font-family: var(--font-en); font-weight: 800; font-size: 30px; letter-spacing: .12em; direction: ltr; }
+    #s5-c1 { left: 640px; height: 93px; } #s5-c2 { left: 180px; height: 635px; }
+    #s5-x { left: 420px; top: 760px; width: 230px; height: 120px; border-radius: 60px; background: var(--yellow); color: var(--ink); font-family: var(--font-en);
+      font-weight: 900; font-size: 64px; display: flex; align-items: center; justify-content: center; direction: ltr; }
+    #s5-src { top: 1730px; }
+
+  </style>
+  <div data-hf-id="hf-4s8v" id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="5.45">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-3tgo" id="s5-blob" class="blob" style="left:160px; top:720px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-6aiy" id="s5-bgp" class="dots"></div>
+    <div data-hf-id="hf-kq71" id="s5-cam" class="cam">
+
+      <div data-hf-id="hf-iyk4" id="s5-lab" class="row" style="top:300px"><span data-hf-id="hf-1fc5" class="t-label" style="color:var(--lime)">AGENTIC CODING · TERMINAL-BENCH 4.0</span></div>
+      <div data-hf-id="hf-ap5m" class="row t-h2" style="top:370px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-75df" class="in" id="s5-a1">أحسن من <span data-hf-id="hf-9p04" class="lat">Sonnet 5</span></span></span></div>
+      <div data-hf-id="hf-0uy3" class="row t-h1 op-y" style="top:490px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-jmxf" class="in" id="s5-b1">بكتير جدًا</span></span></div>
+      <div data-hf-id="hf-v4bw" id="s5-c1" class="s5-col"><div data-hf-id="hf-rkv3" id="s5-b1b" class="s5-bar" style="background:#5d7d73"></div><div data-hf-id="hf-ig8v" class="s5-v" style="top:-100px; color:#9fbfb4" id="s5-v1">10.3%</div><div data-hf-id="hf-41un" class="s5-n" style="color:var(--fg-muted)">SONNET 5</div></div>
+      <div data-hf-id="hf-5ztj" id="s5-c2" class="s5-col"><div data-hf-id="hf-g2gl" id="s5-b2b" class="s5-bar" style="background:var(--lime); box-shadow:0 0 50px rgba(179,206,101,.45)"></div><div data-hf-id="hf-kp5w" class="s5-v op-y" style="top:-100px" id="s5-v2">70.6%</div><div data-hf-id="hf-9rge" class="s5-n" style="color:var(--lime)">SONNET 5.5</div></div>
+      <div data-hf-id="hf-ggh7" id="s5-x" class="abs">×7</div>
+      <div data-hf-id="hf-1a4h" id="s5-src" class="op-src" style="top:1730px">REAL DATA · ANTHROPIC.COM</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(24.45);
+      const { tl } = fx;
+      fx.drift("#s5-bgp", 24.45, 5.45, 60, -40);
+      fx.drift("#s5-blob", 24.45, 5.45, -110, 60);
+      fx.pushIn("#s5-cam", 24.45, 5.45, 1.035);
+
+      fx.rise("#s5-lab", 24.5, { y: 16 });
+      fx.maskUp("#s5-a1", 25.35);
+      tl.fromTo("#s5-b1b", { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power3.out" }, 26.3);
+      fx.rise("#s5-v1", 26.6, { y: 20 });
+      tl.fromTo("#s5-b2b", { scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "expo.out" }, 27.15);
+      fx.rise("#s5-v2", 27.7, { y: 30 });
+      fx.maskUp("#s5-b1", 27.65);
+      fx.stamp("#s5-x", 28.1, "#s5-cam");
+      fx.rise("#s5-src", 26.5, { y: 10, b: 0 });
+
+      tl.to("#s5-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 29.46);
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>

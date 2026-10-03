@@ -1,0 +1,22 @@
+<!doctype html><meta charset="utf-8"><title>Cut review</title>
+<style>body{font:14px system-ui;margin:16px;background:#f6f4ea;color:#0d0d0d}table{border-collapse:collapse;width:100%}
+td{border-bottom:1px solid #ccc;padding:6px;vertical-align:top}.t{font-size:16px;max-width:420px}audio{height:28px;width:260px}
+button{padding:8px 14px;margin:8px 0;background:#136052;color:#fff;border:0;border-radius:6px}</style>
+<h2>Proposed cuts — sonnet55</h2><p>Top player = original with 2 s context, bottom = after the cut. Tick what to cut, then export.</p>
+<button onclick="exp()">Copy accepted cuts as JSON</button><pre id="o"></pre>
+<table><tr><th></th><th>time</th><th>kind</th><th>verbatim</th><th>why</th><th>listen</th></tr><tr data-k="0"><td><input type="checkbox" checked></td>
+<td>0.91–2.52<br><small>1.61s</small></td><td><b>noise</b><br><small>0.98 · rules + gpt-5.5</small></td>
+<td dir="rtl" class="t"></td><td>no speech in verbatim transcript / Empty non-speech before the take starts / no speech in verbatim transcript</td>
+<td><audio controls preload="none" src="clips/c00_before.mp3"></audio><br><audio controls preload="none" src="clips/c00_after.mp3"></audio></td></tr><tr data-k="1"><td><input type="checkbox" checked></td>
+<td>27.82–30.77<br><small>2.96s</small></td><td><b>false_start</b><br><small>0.96 · gpt-5.5</small></td>
+<td dir="rtl" class="t">أحسن طبعاً من.</td><td>Abandoned comparison phrase; speaker restarts with the next sentence</td>
+<td><audio controls preload="none" src="clips/c01_before.mp3"></audio><br><audio controls preload="none" src="clips/c01_after.mp3"></audio></td></tr><tr data-k="2"><td><input type="checkbox" checked></td>
+<td>30.79–33.93<br><small>3.13s</small></td><td><b>noise</b><br><small>0.98 · rules + gpt-5.5</small></td>
+<td dir="rtl" class="t"></td><td>no speech in verbatim transcript / Empty non-speech during pause after false start / no speech in verbatim transcript / no speech in verbatim transcript</td>
+<td><audio controls preload="none" src="clips/c02_before.mp3"></audio><br><audio controls preload="none" src="clips/c02_after.mp3"></audio></td></tr><tr data-k="3"><td><input type="checkbox" checked></td>
+<td>80.15–84.20<br><small>4.05s</small></td><td><b>retake</b><br><small>0.98 · rules + gpt-5.5</small></td>
+<td dir="rtl" class="t">وبالرغم من أن كل الأيام اللي فاتت عمال بستخدم الأوبس بوينت.</td><td>chunk 23 restarts chunk 22 (similarity 0.70); keep the later take / Earlier abandoned phrasing; repeated and completed more clearly in the next chunk</td>
+<td><audio controls preload="none" src="clips/c03_before.mp3"></audio><br><audio controls preload="none" src="clips/c03_after.mp3"></audio></td></tr></table>
+<script>const D=[{"cut": [0.907, 2.516], "kind": "noise", "reason": "no speech in verbatim transcript / Empty non-speech before the take starts / no speech in verbatim transcript"}, {"cut": [27.815, 30.772], "kind": "false_start", "reason": "Abandoned comparison phrase; speaker restarts with the next sentence"}, {"cut": [30.792, 33.927], "kind": "noise", "reason": "no speech in verbatim transcript / Empty non-speech during pause after false start / no speech in verbatim transcript / no speech in verbatim transcript"}, {"cut": [80.149, 84.196], "kind": "retake", "reason": "chunk 23 restarts chunk 22 (similarity 0.70); keep the later take / Earlier abandoned phrasing; repeated and completed more clearly in the next chunk"}];function exp(){const c=[...document.querySelectorAll('tr[data-k]')].filter(r=>r.querySelector('input').checked)
+.map(r=>{const d=D[+r.dataset.k];return [d.cut[0],d.cut[1],d.kind+': '+d.reason]});const s=JSON.stringify({cuts:c},null,1);
+document.getElementById('o').textContent=s;navigator.clipboard&&navigator.clipboard.writeText(s)}</script>

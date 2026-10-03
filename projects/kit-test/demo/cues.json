@@ -1,0 +1,7 @@
+[
+ {"id": "vo", "t": 0, "src": "assets/voice/outro.wav", "dur": 16.912, "voice": true},
+ {"t": 0.3, "sfx": "library/whoosh"}, {"t": 2.2, "sfx": "library/impact-bass-1", "accent": 1.5},
+ {"t": 5.7, "sfx": "library/whoosh-short"}, {"t": 6.4, "sfx": "library/typing"},
+ {"t": 8.2, "sfx": "library/click"}, {"t": 8.6, "sfx": "library/notification"},
+ {"t": 11.0, "sfx": "library/whoosh"}, {"t": 12.3, "sfx": "library/error"}, {"t": 14.6, "sfx": "library/ping"}
+]

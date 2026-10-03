@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s7-template">
+  <style>
+
+    #s7-eq1, #s7-eq2 { position: absolute; font-family: var(--font-en); font-weight: 900; font-size: 90px; color: var(--fg-muted); }
+
+  </style>
+  <div data-hf-id="hf-2cg9" id="s7" data-composition-id="s7" data-width="1080" data-height="1920" data-duration="6.55">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-af9t" id="s7-blob" class="blob" style="left:160px; top:380px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-7b8w" id="s7-bgp" class="dots"></div>
+    <div data-hf-id="hf-crhj" id="s7-cam" class="cam">
+
+      <div data-hf-id="hf-nqz3" class="row t-h2" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-21vr" class="in" id="s7-h1">ببساطة حاجة زي</span></span></div>
+      <div data-hf-id="hf-kkh6" id="s7-b" class="blobby" style="left:390px; top:520px; width:300px; height:300px"><i data-hf-id="hf-784d" class="a"></i><i data-hf-id="hf-b68e" class="b"></i><b data-hf-id="hf-xujp"></b></div>
+      <div data-hf-id="hf-pfqo" id="s7-eq1" style="left:505px; top:880px">≈</div>
+      <div data-hf-id="hf-c0jd" id="s7-m" class="co" style="top:1010px"><span data-hf-id="hf-3u08" style="height:110px; font-size:46px; letter-spacing:.06em; border-color:var(--yellow); color:var(--yellow)">MUSE SPARK · META</span></div>
+      <div data-hf-id="hf-cbm1" id="s7-eq2" style="left:505px; top:1140px">≈</div>
+      <div data-hf-id="hf-4lgz" id="s7-g" class="co" style="top:1270px"><span data-hf-id="hf-3mns" style="height:110px; font-size:46px; letter-spacing:.06em">GROK · xAI</span></div>
+      <div data-hf-id="hf-lk9y" class="row t-h2" style="top:1460px;color:var(--lime)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-zath" class="in" id="s7-h2"><span data-hf-id="hf-b1sl" class="lat">Agent</span> سهل وبسيط</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(30.15);
+      const { tl } = fx;
+      fx.drift("#s7-bgp", 30.15, 6.55, 60, -40);
+      fx.drift("#s7-blob", 30.15, 6.55, -110, 60);
+      fx.pushIn("#s7-cam", 30.15, 6.55, 1.035);
+
+      fx.maskUp("#s7-h1", 30.6);
+      fx.pop("#s7-b", 30.3, { from: 0.3 });
+      fx.breathe("#s7-b", 30.8, 5.5, 0.04, 1.4);
+      fx.pop("#s7-eq1", 32.1); fx.pop("#s7-m", 32.3, { from: 0.4 });
+      fx.pop("#s7-eq2", 35.3); fx.pop("#s7-g", 35.7, { from: 0.4 });
+      fx.maskUp("#s7-h2", 36.65);
+
+      tl.to("#s7-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 36.26);
+      window.__timelines["s7"] = tl.real;
+    })();
+  </script>
+</template></body></html>

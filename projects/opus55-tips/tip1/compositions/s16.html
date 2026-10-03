@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s16-template">
+  <style>
+
+    #s16-tg { left: 410px; top: 770px; width: 260px; height: 260px; color: var(--yellow); }
+    #s16-orb { left: 210px; top: 570px; width: 660px; height: 660px; }
+    #s16-arm { left: 540px; top: 900px; width: 0; height: 0; }
+    #s16-tgr { left: 410px; top: 770px; width: 260px; height: 260px; border-radius: 50%; }
+
+  </style>
+  <div data-hf-id="hf-jje4" id="s16" data-composition-id="s16" data-width="1080" data-height="1920" data-duration="3.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-y16e" id="s16-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-k810" id="s16-bgp" class="dots"></div>
+    <div data-hf-id="hf-1dx9" id="s16-cam" class="cam">
+
+      <div data-hf-id="hf-eudu" class="row t-h2" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-lr5m" class="in" id="s16-h1">بس لفّ في إطار</span></span></div>
+      <svg data-hf-id="hf-hyfg" id="s16-orb" class="abs" viewBox="0 0 660 660"><circle data-hf-id="hf-m85c" id="s16-oc" cx="330" cy="330" r="320" fill="none" stroke="rgba(179,206,101,.45)" stroke-width="5" stroke-dasharray="14 18" /></svg>
+      <svg data-hf-id="hf-39ql" id="s16-tg" class="abs"><use data-hf-id="hf-770x" href="#i-target" /></svg>
+      <div data-hf-id="hf-keo8" id="s16-tgr" class="abs"><div data-hf-id="hf-11os" class="ring" id="s16-r1" style="border-radius:50%; border-color:var(--yellow)"></div><div data-hf-id="hf-x9xn" class="ring" id="s16-r2" style="border-radius:50%; border-color:var(--yellow)"></div></div>
+      <div data-hf-id="hf-td3p" id="s16-arm" class="abs"><div data-hf-id="hf-409f" id="s16-off" class="abs" style="left:0; top:0"><div data-hf-id="hf-2e9m" id="s16-sp" class="cl-spark" style="left:-60px; top:-60px; width:120px; height:120px;"><svg data-hf-id="hf-e7xw" id="s16-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div></div></div>
+      <div data-hf-id="hf-0zfs" class="row t-h2" style="top:1300px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-t7ze" class="in" id="s16-k1">عشان يحقق</span></span></div>
+      <div data-hf-id="hf-b6b2" class="row t-h1 op-y" style="top:1430px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-ikmy" class="in" id="s16-k2">الهدف</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(68.45);
+      const { tl } = fx;
+      fx.drift("#s16-bgp", 68.45, 3.8, 60, -40);
+      fx.drift("#s16-blob", 68.45, 3.8, -110, 60);
+      fx.pushIn("#s16-cam", 68.45, 3.8, 1.02);
+
+      fx.maskUp("#s16-h1", 68.6);
+      fx.pop("#s16-tg", 68.6, { from: 0.4 });
+      tl.fromTo("#s16-orb", { opacity: 0, scale: 0.6, rotation: 0 }, { opacity: 1, scale: 1, rotation: 60, duration: 3.4, ease: "power1.out" }, 68.7);
+      tl.fromTo("#s16-off", { x: 320 }, { x: 0, duration: 2.4, ease: "power2.in" }, 69.5);
+      tl.fromTo("#s16-arm", { rotation: 0, opacity: 0 }, { rotation: -900, opacity: 1, duration: 2.4, ease: "power1.in" }, 69.5);
+      tl.fromTo("#s16-sp-svg", { rotation: 0 }, { rotation: 900, duration: 2.4, ease: "power1.in" }, 69.5);
+      tl.to("#s16-sp", { scale: 1.6, duration: 0.3, ease: "expo.out" }, 71.9);
+      fx.ringPulse("#s16-r1, #s16-r2", 71.92, { scale: 2.4 });
+      tl.to("#s16-orb", { opacity: 0, duration: 0.3 }, 71.9);
+      fx.shake("#s16-cam", 71.92, 12, 6);
+      fx.maskUp("#s16-k1", 70.95);
+      fx.maskUp("#s16-k2", 71.85);
+
+      tl.to("#s16-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 71.81);
+      window.__timelines["s16"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,45 @@
+{
+ "enabled": true,
+ "series": "FREE AI \u00b7 PART 1",
+ "grain": false,
+ "sections": [
+  {
+   "t": 0,
+   "label": "THE HOOK"
+  },
+  {
+   "t": 7.45,
+   "label": "01 \u00b7 WHACKA"
+  },
+  {
+   "t": 31.55,
+   "label": "02 \u00b7 SURETHING"
+  },
+  {
+   "t": 76.55,
+   "label": "03 \u00b7 OPENROUTER"
+  },
+  {
+   "t": 107.5,
+   "label": "CAUTION"
+  },
+  {
+   "t": 111.95,
+   "label": "NEXT \u00b7 PART 2"
+  },
+  {
+   "t": 119.1,
+   "label": "SUBSCRIBE"
+  },
+  {
+   "t": 132.5,
+   "label": "WATCH NEXT"
+  }
+ ],
+ "wipes": [
+  7.35,
+  31.45,
+  76.45,
+  111.85
+ ]
+}

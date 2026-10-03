@@ -1,0 +1,53 @@
+{
+ "enabled": true,
+ "series": "OPUS 5.5 TIPS",
+ "grain": false,
+ "sections": [
+  {
+   "t": 0,
+   "label": "THE HOOK"
+  },
+  {
+   "t": 11.0,
+   "label": "TIP 03"
+  },
+  {
+   "t": 18.4,
+   "label": "WHY IT MATTERS"
+  },
+  {
+   "t": 24.6,
+   "label": "THE SHORTCUT"
+  },
+  {
+   "t": 38.4,
+   "label": "LEARN FROM OTHERS"
+  },
+  {
+   "t": 52.3,
+   "label": "THE LIBRARY"
+  },
+  {
+   "t": 70.4,
+   "label": "HOW TO USE IT"
+  },
+  {
+   "t": 76.8,
+   "label": "THE RESULT"
+  },
+  {
+   "t": 82.9,
+   "label": "SERIES COMPLETE"
+  },
+  {
+   "t": 88.2,
+   "label": "SUBSCRIBE"
+  }
+ ],
+ "wipes": [
+  18.3,
+  38.3,
+  52.2,
+  76.7
+ ]
+}

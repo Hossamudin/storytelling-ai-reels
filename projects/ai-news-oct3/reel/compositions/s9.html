@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s9-template">
+  <style>
+
+    #s9-dd { position: absolute; left: 190px; top: 560px; width: 700px; border-radius: 30px; background: #f4f4f1; color: #0d0d0d; overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0,0,0,.45); direction: ltr; }
+    #s9-dd .hd { height: 100px; padding: 0 36px; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-en); font-weight: 800; font-size: 34px;
+      border-bottom: 2px solid #e1e1dc; color: #6b6b66; }
+    #s9-dd .op { height: 96px; padding: 0 36px; display: flex; align-items: center; font-family: var(--font-en); font-weight: 700; font-size: 38px; border-bottom: 2px solid #ececea; }
+    #s9-x { position: absolute; left: 170px; top: 560px; width: 740px; height: 390px; }
+    #s9-auto { position: absolute; left: 0; right: 0; top: 1090px; display: flex; justify-content: center; }
+    #s9-auto span { height: 120px; padding: 0 50px; border-radius: 60px; background: var(--lime); color: var(--ink); font-family: var(--font-ar); font-weight: 900; font-size: 52px;
+      display: flex; align-items: center; gap: 18px; white-space: nowrap; }
+
+  </style>
+  <div data-hf-id="hf-u5np" id="s9" data-composition-id="s9" data-width="1080" data-height="1920" data-duration="6.95">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-iof0" id="s9-blob" class="blob" style="left:160px; top:480px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-ogp2" id="s9-bgp" class="dots"></div>
+    <div data-hf-id="hf-do3l" id="s9-cam" class="cam">
+
+      <div data-hf-id="hf-nqz3" class="row t-h2" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-xyrk" class="in" id="s9-h1">مش هتختار موديل</span></span></div>
+      <div data-hf-id="hf-arxm" id="s9-dd"><div data-hf-id="hf-0hws" class="hd"><span data-hf-id="hf-w01i">Model</span><span data-hf-id="hf-5zkd">▾</span></div><div data-hf-id="hf-3lag" class="op">GPT-6 Astra</div><div data-hf-id="hf-k8v2" class="op">GPT-6.1 Sol</div><div data-hf-id="hf-sq6h" class="op">GPT-6 Luna</div></div>
+      <svg data-hf-id="hf-8wqz" id="s9-x" viewBox="0 0 740 390" style="overflow:visible"><path data-hf-id="hf-3r10" id="s9-x1" d="M20 20 L720 370" stroke="#ff5a33" stroke-width="18" stroke-linecap="round" fill="none" pathLength="1" />
+        <path data-hf-id="hf-ze5f" id="s9-x2" d="M720 20 L20 370" stroke="#ff5a33" stroke-width="18" stroke-linecap="round" fill="none" pathLength="1" /></svg>
+      <div data-hf-id="hf-ztar" id="s9-auto"><span data-hf-id="hf-9x6q" id="s9-a"><div data-hf-id="hf-a5s8" id="s9-ab" class="blobby" style="position:relative; width:80px; height:80px"><i data-hf-id="hf-784d" class="a"></i><i data-hf-id="hf-b68e" class="b"></i><b data-hf-id="hf-xujp"></b></div> هو اللي بيختار</span></div>
+      <div data-hf-id="hf-elt0" class="row t-h1" style="top:1290px;font-size:94px; color:var(--yellow)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-2kpm" class="in" id="s9-h2">على حسب الـــ<span data-hf-id="hf-qju1" class="lat">task</span></span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(43.25);
+      const { tl } = fx;
+      fx.drift("#s9-bgp", 43.25, 6.95, 60, -40);
+      fx.drift("#s9-blob", 43.25, 6.95, -110, 60);
+      fx.pushIn("#s9-cam", 43.25, 6.95, 1.035);
+
+      fx.maskUp("#s9-h1", 43.4);
+      tl.fromTo("#s9-dd", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 43.6);
+      fx.strike("#s9-x1", 44.3); fx.strike("#s9-x2", 44.45);
+      tl.to("#s9-dd", { opacity: 0.35, scale: 0.94, duration: 0.3 }, 44.8);
+      fx.pop("#s9-auto", 45.7, { from: 0.4 });
+      fx.maskUp("#s9-h2", 47.4);
+
+      tl.to("#s9-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 49.76);
+      window.__timelines["s9"] = tl.real;
+    })();
+  </script>
+</template></body></html>

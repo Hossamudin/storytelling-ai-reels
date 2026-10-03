@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s14-template">
+  <style>
+
+    #s14-sh { left: 90px; top: 560px; width: 900px; height: 507px; } #s14-sh img { width: 900px; }
+    #s14-n { position: absolute; left: 0; right: 0; top: 1120px; text-align: center; font-size: 180px; line-height: 1.1; }
+    #s14-p { position: absolute; left: 0; right: 0; top: 1490px; display: flex; justify-content: center; }
+    #s14-p span { height: 90px; padding: 0 40px; border-radius: 45px; background: var(--yellow); color: var(--ink); font-family: var(--font-ar); font-weight: 900; font-size: 42px;
+      display: flex; align-items: center; white-space: nowrap; }
+
+  </style>
+  <div data-hf-id="hf-bqv5" id="s14" data-composition-id="s14" data-width="1080" data-height="1920" data-duration="5.3">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-hicn" id="s14-blob" class="blob" style="left:160px; top:440px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-p46m" id="s14-bgp" class="dots"></div>
+    <div data-hf-id="hf-tf7r" id="s14-cam" class="cam">
+
+      <div data-hf-id="hf-nqz3" class="row t-h2" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-sat8" class="in" id="s14-h1">وإطلاقات تانية كتير</span></span></div>
+      <div data-hf-id="hf-auvs" id="s14-co" class="co" style="top:400px"><span data-hf-id="hf-bczw">DEVDAY 2026</span></div>
+      <div data-hf-id="hf-2jqf" id="s14-sh" class="shot" style="left:90px; top:560px; width:900px; height:507px"><img data-hf-id="hf-il2e" id="s14-img" src="assets/images/devday_grid.png"></div>
+      <div data-hf-id="hf-92vw" id="s14-n" class="en y"><span data-hf-id="hf-aa75" id="s14-nn">0</span>+</div>
+      <div data-hf-id="hf-fex8" id="s14-src" class="src" style="top:1340px">ANNOUNCEMENTS · <b data-hf-id="hf-6auk">OPENAI.COM</b> · DEVDAY 2026 RECAP</div>
+      <div data-hf-id="hf-qkto" id="s14-p"><span data-hf-id="hf-xbve">في الحلقة الكاملة</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(77.5);
+      const { tl } = fx;
+      fx.drift("#s14-bgp", 77.5, 5.3, 60, -40);
+      fx.drift("#s14-blob", 77.5, 5.3, -110, 60);
+      fx.pushIn("#s14-cam", 77.5, 5.3, 1.035);
+
+      fx.maskUp("#s14-h1", 77.7);
+      fx.pop("#s14-co", 78.0, { from: 0.4 });
+      tl.fromTo("#s14-sh", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 78.1);
+      tl.fromTo("#s14-img", { scale: 1.15 }, { scale: 1, duration: 4.5, ease: "power1.out" }, 78.1);
+      fx.counter("#s14-nn", 78.3, 79.3, 0, 20, { ar: false });
+      fx.rise("#s14-src", 79.0, { y: 10, b: 0 });
+      fx.pop("#s14-p", 80.9, { from: 0.4 });
+
+      tl.to("#s14-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 82.36);
+      window.__timelines["s14"] = tl.real;
+    })();
+  </script>
+</template></body></html>

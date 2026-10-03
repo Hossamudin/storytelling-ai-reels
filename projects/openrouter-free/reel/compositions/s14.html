@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s14-template">
+  <style>
+
+    .qr { position: absolute; background: #fff; border-radius: 22px; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+    .qr img { display: block; width: 100%; height: 100%; }
+    .qr-l { position: absolute; left: -40px; right: -40px; bottom: -46px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 22px;
+      letter-spacing: .14em; color: var(--fg); direction: ltr; white-space: nowrap; }
+
+    #s14-sub { left: 300px; top: 1660px; }
+    #s14-bell { left: 700px; top: 1666px; width: 92px; height: 92px; border-radius: 50%; background: var(--yellow); display: flex; align-items: center; justify-content: center; color: var(--ink); }
+    #s14-cm { left: 60px; top: 1390px; width: 440px; height: 110px; border-radius: 30px; background: #f6f4ea; color: var(--ink); display: flex; align-items: center; gap: 18px; padding: 0 26px;
+      font-family: var(--font-ar); font-weight: 800; font-size: 36px; direction: rtl; }
+    #s14-ql { top: 760px; }
+    #s14-nm { top: 1530px; }
+
+  </style>
+  <div id="s14" data-composition-id="s14" data-width="1080" data-height="1920" data-duration="13.7">
+    <div class="bg"></div>
+    <div id="s14-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s14-bgp" class="dots"></div>
+    <div id="s14-cam" class="cam">
+
+      <div class="row t-h3" style="top:320px"><span class="mask"><span class="in" id="s14-a1">كل جديد في عالم الذكاء الاصطناعي</span></span></div>
+      <div id="s14-ho" class="op-hossam" style="left:240px; top:800px; width:600px; height:1066px"><img src="assets/images/hossam_suit.png" /></div>
+      <div id="s14-q0" class="qr" style="left:790px; top:470px; width:220px; height:220px"><img src="assets/images/qr_whacka.png" /><div class="qr-l">WHACKA</div></div><div id="s14-q1" class="qr" style="left:440px; top:470px; width:220px; height:220px"><img src="assets/images/qr_surething.png" /><div class="qr-l">SURETHING</div></div><div id="s14-q2" class="qr" style="left:90px; top:470px; width:220px; height:220px"><img src="assets/images/qr_openrouter.png" /><div class="qr-l">OPENROUTER</div></div>
+      <div id="s14-ql" class="op-src" style="top:760px">SCAN FOR THE LINKS</div>
+      <div id="s14-cm" class="abs"><svg style="width:52px; height:52px; color:#136052;"><use href="#i-chat" /></svg> اكتبلي أسئلتك</div>
+      <div id="s14-nm" class="op-name t-h2" style="top:1530px">حسام الدين حسن</div>
+      <div id="s14-sub" class="op-btn">اشترك</div>
+      <div id="s14-bell" class="abs"><svg style="width:54px; height:54px; color:var(--ink);"><use href="#i-bell" /></svg></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(119.1);
+      const { tl } = fx;
+      fx.drift("#s14-bgp", 119.1, 13.7, 60, -40);
+      fx.drift("#s14-blob", 119.1, 13.7, -110, 60);
+      fx.pushIn("#s14-cam", 119.1, 13.7, 1.035);
+
+      tl.fromTo("#s14-ho", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 119.2);
+      fx.rise("#s14-nm", 119.6, { y: 30 });
+      fx.maskUp("#s14-a1", 120.5);
+      fx.pop("#s14-sub", 123.1, { from: 0.4 });
+      tl.to("#s14-sub", { background: "#2b2a28", color: "#b3ce65", duration: 0.15 }, 123.6);
+      fx.pop("#s14-bell", 123.95, { from: 0.2 });
+      tl.fromTo("#s14-bell", { rotation: 0 }, { rotation: 18, duration: 0.09, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, 124.2);
+      tl.fromTo("#s14-cm", { opacity: 0, x: -300 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 125.0);
+      fx.pop("#s14-q0", 127.5, { from: 0.4 }); fx.pop("#s14-q1", 127.7, { from: 0.4 }); fx.pop("#s14-q2", 127.9, { from: 0.4 });
+      fx.rise("#s14-ql", 128.1, { y: 10, b: 0 });
+      tl.to("#s14-cm", { scale: 1.06, duration: 0.2, yoyo: true, repeat: 1 }, 129.8);
+
+      tl.to("#s14-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 132.36);
+      window.__timelines["s14"] = tl.real;
+    })();
+  </script>
+</template></body></html>

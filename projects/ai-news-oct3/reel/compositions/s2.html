@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s2-template">
+  <style>
+
+    #s2-ph { position: absolute; left: 290px; top: 560px; width: 500px; height: 960px; border-radius: 70px; background: #050505; padding: 18px;
+      box-shadow: 0 50px 100px rgba(0,0,0,.6), 0 0 0 3px rgba(255,255,255,.1); }
+    #s2-scr { position: absolute; inset: 18px; border-radius: 54px; overflow: hidden; background: radial-gradient(circle at 50% 30%, #1b5a4e 0%, #0a2622 70%); }
+    #s2-nm { position: absolute; left: 0; right: 0; top: 470px; text-align: center; font-family: var(--font-en); font-weight: 800; font-size: 46px; color: #fff; }
+    #s2-st { position: absolute; left: 0; right: 0; top: 540px; text-align: center; font-family: var(--font-en); font-weight: 600; font-size: 28px; color: #9fc3b7; letter-spacing: .08em; }
+    #s2-acc { position: absolute; left: 172px; top: 720px; width: 120px; height: 120px; border-radius: 50%; background: #3fbf5a; color: #fff; display: flex; align-items: center; justify-content: center; }
+    #s2-av { position: absolute; left: 132px; top: 150px; width: 200px; height: 200px; }
+    #s2-rings .ring { border-radius: 50%; border-color: var(--yellow); }
+
+  </style>
+  <div data-hf-id="hf-hw7c" id="s2" data-composition-id="s2" data-width="1080" data-height="1920" data-duration="7.55">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-sxgt" id="s2-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-aoeh" id="s2-bgp" class="dots"></div>
+    <div data-hf-id="hf-uzmy" id="s2-cam" class="cam">
+
+      <div data-hf-id="hf-7a5m" class="row" style="top:250px"><span data-hf-id="hf-5wm4" id="s2-oa" class="co" style="position:relative; display:inline-flex"><span data-hf-id="hf-z7o7">OPENAI</span></span></div>
+      <div data-hf-id="hf-2w6k" class="row t-h1" style="top:345px;font-size:120px" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-6fzl" class="in" id="s2-h1">مساعد ذكي</span></span></div>
+      <div data-hf-id="hf-wxnr" id="s2-ph"><div data-hf-id="hf-xzld" id="s2-scr">
+        <div data-hf-id="hf-4wsf" id="s2-rings" class="abs" style="left:132px; top:150px; width:200px; height:200px"><div data-hf-id="hf-2txr" class="ring" id="s2-r1"></div><div data-hf-id="hf-u61w" class="ring" id="s2-r2"></div></div>
+        <div data-hf-id="hf-zb0x" id="s2-av" class="blobby" style="left:132px; top:150px; width:200px; height:200px"><i data-hf-id="hf-784d" class="a"></i><i data-hf-id="hf-b68e" class="b"></i><b data-hf-id="hf-xujp"></b></div>
+        <div data-hf-id="hf-8lyw" id="s2-nm">your dot</div><div data-hf-id="hf-tdeg" id="s2-st">INCOMING CALL…</div>
+        <div data-hf-id="hf-9die" id="s2-acc"><svg data-hf-id="hf-t19b" style="width:60px; height:60px; color:currentColor;"><use data-hf-id="hf-vnzy" href="#i-phone" /></svg></div>
+      </div></div>
+      <div data-hf-id="hf-yef0" class="row t-h2" style="top:1580px;color:var(--yellow)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-7kgt" class="in" id="s2-h2">بتتصل عليه</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(2.95);
+      const { tl } = fx;
+      fx.drift("#s2-bgp", 2.95, 7.55, 60, -40);
+      fx.drift("#s2-blob", 2.95, 7.55, -110, 60);
+      fx.pushIn("#s2-cam", 2.95, 7.55, 1.035);
+
+      fx.pop("#s2-oa", 4.0, { from: 0.4 });
+      fx.maskUp("#s2-h1", 5.3);
+      tl.fromTo("#s2-ph", { opacity: 0, y: 260, rotation: -6 }, { opacity: 1, y: 0, rotation: 0, duration: 0.7, ease: "power3.out" }, 5.6);
+      fx.pop("#s2-av", 6.2, { from: 0.3 });
+      fx.rise("#s2-nm, #s2-st", 6.5, { y: 20, st: 0.1 });
+      fx.ringPulse("#s2-r1, #s2-r2", 7.75, { scale: 2.0, st: 0.25 });
+      fx.ringPulse("#s2-r1, #s2-r2", 8.9, { scale: 2.0, st: 0.25 });
+      fx.shake("#s2-ph", 7.8, 10, 8);
+      fx.pop("#s2-acc", 7.9, { from: 0.3 });
+      fx.click("#s2-acc", 9.3, "#s2-acc");
+      tl.to("#s2-st", { color: "#b3ce65", duration: 0.1 }, 9.35);
+      fx.maskUp("#s2-h2", 9.25);
+
+      tl.to("#s2-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 10.06);
+      window.__timelines["s2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

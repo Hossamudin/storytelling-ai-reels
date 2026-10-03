@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s13-template">
+  <style>
+
+    #s13-ph { left: 300px; top: 470px; width: 480px; height: 860px; }
+    #s13-v { position: absolute; left: -1673px; top: -195px; width: 3858px; height: 1822px; }
+    #s13-v1 { left: 250px; top: 470px; }
+    .s13-m { position: absolute; width: 120px; height: 120px; border-radius: 50%; border: 7px solid var(--orange); box-shadow: 0 0 24px rgba(255,90,51,.6); }
+    #s13-m1 { left: 360px; top: 600px; } #s13-m2 { left: 610px; top: 860px; } #s13-m3 { left: 400px; top: 1120px; }
+    #s13-w { left: 640px; top: 1180px; }
+
+  </style>
+  <div data-hf-id="hf-oqp2" id="s13" data-composition-id="s13" data-width="1080" data-height="1920" data-duration="6.65">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-w9qg" id="s13-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-3of9" id="s13-bgp" class="dots"></div>
+    <div data-hf-id="hf-auhs" id="s13-cam" class="cam">
+
+      <div data-hf-id="hf-uurh" id="s13-lab" class="row" style="top:250px"><span data-hf-id="hf-jw5i" class="t-label" style="color:var(--lime)">MY EXAMPLE · THESE VIDEOS</span></div>
+      <div data-hf-id="hf-zfmq" class="row t-h3" style="top:300px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-mixh" class="in" id="s13-h1">أول نتيجة ماكانتش وحشة</span></span></div>
+      <div data-hf-id="hf-bxdo" id="s13-ph" class="op-phone"><div data-hf-id="hf-zn7g" class="scr"><video data-hf-id="hf-5jhh" id="s13-v" src="assets/videos/hf_studio.mp4" data-start="0" data-duration="6.65" data-media-start="1.6" muted playsinline></video></div></div>
+      <div data-hf-id="hf-leu9" id="s13-v1" class="tag" style="position:absolute; background:#0b2f29; color:var(--lime); font-family:var(--font-en); font-weight:900; font-size:26px; letter-spacing:.2em; direction:ltr">V1</div>
+      <div data-hf-id="hf-2te9" class="s13-m" id="s13-m1"></div><div data-hf-id="hf-8z42" class="s13-m" id="s13-m2"></div><div data-hf-id="hf-cx83" class="s13-m" id="s13-m3"></div>
+      <div data-hf-id="hf-k2sh" id="s13-w" class="op-chip o" style="left:600px; top:1180px"><span data-hf-id="hf-9fjc" class="ic">!</span><span data-hf-id="hf-9kws">مش دقيقة</span></div>
+      <div data-hf-id="hf-mbme" class="row t-h2 op-o" style="top:1400px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-pbni" class="in" id="s13-k1">لكن فيها أخطاء</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(61.15);
+      const { tl } = fx;
+      fx.drift("#s13-bgp", 61.15, 6.65, 60, -40);
+      fx.drift("#s13-blob", 61.15, 6.65, -110, 60);
+      fx.pushIn("#s13-cam", 61.15, 6.65, 1.035);
+
+      fx.rise("#s13-lab", 61.3, { y: 12 }); fx.maskUp("#s13-h1", 62.4);
+      tl.fromTo("#s13-ph", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.3)" }, 61.4);
+      fx.pop("#s13-v1", 63.9);
+      fx.maskUp("#s13-k1", 65.4);
+      fx.pop("#s13-m1", 65.6, { from: 1.8, e: "power3.out" }); fx.pop("#s13-m2", 65.9, { from: 1.8, e: "power3.out" }); fx.pop("#s13-m3", 66.2, { from: 1.8, e: "power3.out" });
+      fx.pop("#s13-w", 66.6, { from: 0.3 });
+
+      tl.to("#s13-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 67.36);
+      window.__timelines["s13"] = tl.real;
+    })();
+  </script>
+</template></body></html>

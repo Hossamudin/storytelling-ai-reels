@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s12-template">
+  <style>
+
+    #s12-ch { left: 110px; top: 520px; width: 860px; height: 780px; }
+    #s12-src { top: 1330px; }
+
+  </style>
+  <div data-hf-id="hf-acuo" id="s12" data-composition-id="s12" data-width="1080" data-height="1920" data-duration="3.35">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-9dqa" id="s12-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-fgts" id="s12-bgp" class="dots"></div>
+    <div data-hf-id="hf-4ja1" id="s12-cam" class="cam">
+
+      <div data-hf-id="hf-eudu" class="row t-h2" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-zzx1" class="in" id="s12-h1">كل ما يكون أعقد</span></span></div>
+      <svg data-hf-id="hf-6foo" id="s12-ch" class="abs" viewBox="0 0 860 780" style="direction:ltr">
+        <path data-hf-id="hf-b0dw" d="M80 40V700H830" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="4" />
+        <path data-hf-id="hf-98zy" id="s12-ln" d="M90 690C300 670 520 560 820 70" fill="none" stroke="#b3ce65" stroke-width="12" stroke-linecap="round" pathLength="1" />
+        <circle data-hf-id="hf-3edk" id="s12-dot" cx="820" cy="70" r="22" fill="#ffec5c" />
+        <text data-hf-id="hf-hwio" x="830" y="750" text-anchor="end" font-family="Montserrat" font-weight="800" font-size="26" letter-spacing="5" fill="#8cb2a6">COMPLEXITY</text>
+        <text data-hf-id="hf-n8bj" x="40" y="40" transform="rotate(-90 40 40)" text-anchor="end" font-family="Montserrat" font-weight="800" font-size="26" letter-spacing="5" fill="#8cb2a6">VALUE</text>
+      </svg>
+      <div data-hf-id="hf-3iyv" id="s12-src" class="op-src">ILLUSTRATION</div>
+      <div data-hf-id="hf-ndz8" class="row t-h1 op-l" style="top:1400px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-z0nk" class="in" id="s12-k1">هتفيدك أكتر</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(58.0);
+      const { tl } = fx;
+      fx.drift("#s12-bgp", 58.0, 3.35, 60, -40);
+      fx.drift("#s12-blob", 58.0, 3.35, -110, 60);
+      fx.pushIn("#s12-cam", 58.0, 3.35, 1.035);
+
+      fx.maskUp("#s12-h1", 58.15);
+      tl.fromTo("#s12-ch", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 58.3);
+      fx.draw("#s12-ln", 59.0, 1.6, "power2.in");
+      fx.pop("#s12-dot", 60.6, { from: 0 });
+      fx.maskUp("#s12-k1", 60.4);
+      fx.rise("#s12-src", 58.5, { y: 8, b: 0 });
+
+      tl.to("#s12-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 60.91);
+      window.__timelines["s12"] = tl.real;
+    })();
+  </script>
+</template></body></html>

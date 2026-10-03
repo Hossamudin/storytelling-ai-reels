@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s15-template">
+  <style>
+
+    #s15-term { left: 70px; top: 1000px; width: 940px; height: 120px; border-radius: 22px; background: #050a09; border: 2px solid rgba(179,206,101,.45);
+      font-family: "Courier New", monospace; font-weight: 700; font-size: 32px; color: var(--lime); direction: ltr; display: flex; align-items: center; padding: 0 30px; white-space: nowrap; overflow: hidden; }
+    #s15-ok { left: 480px; top: 1180px; width: 120px; height: 120px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+    #s15-src { top: 1150px; }
+
+  </style>
+  <div data-hf-id="hf-0yoc" id="s15" data-composition-id="s15" data-width="1080" data-height="1920" data-duration="6.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-d88i" id="s15-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-xk8z" id="s15-bgp" class="dots"></div>
+    <div data-hf-id="hf-p4zy" id="s15-cam" class="cam">
+
+      <div data-hf-id="hf-bh5h" class="row t-h3" style="top:260px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-kcee" class="in" id="s15-h1">مجرد إنك تعرف الـــ<span data-hf-id="hf-gryf" class="lat">library</span></span></span></div>
+      <div data-hf-id="hf-5vo0" class="row t-h3 muted" style="top:350px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-5886" class="in" id="s15-h2">وتقول لـــ<span data-hf-id="hf-7mff" class="lat">Claude Opus 5.5</span></span></span></div>
+      <div data-hf-id="hf-7xbb" id="s15-in" class="op-input" style="left:70px; top:560px; width:940px; height:250px"><div data-hf-id="hf-g4jq" class="txt" id="s15-in-t"><span data-hf-id="hf-m905" class="ph"></span></div><div data-hf-id="hf-mlgk" class="foot"><span data-hf-id="hf-955y" class="plus">+</span><span data-hf-id="hf-yk90" class="mdl" id="s15-in-m">Opus 5.5 <em data-hf-id="hf-7i9k">Medium</em><span data-hf-id="hf-zsae" class="send" id="s15-in-s"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-kkf4" href="#i-send" /></svg></span></span></div></div>
+      <div data-hf-id="hf-33lm" id="s15-term" class="abs"><span data-hf-id="hf-my1r">$&#160;</span><span data-hf-id="hf-rlwk" id="s15-tt"></span></div>
+      <div data-hf-id="hf-mnoq" id="s15-ok" class="abs"><svg data-hf-id="hf-23od" style="width:70px; height:70px; color:currentColor;"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div>
+      <div data-hf-id="hf-n9x2" id="s15-src" class="op-src">REAL INSTALL COMMAND · HYPERFRAMES.HEYGEN.COM</div>
+      <div data-hf-id="hf-siwu" class="row t-h2 op-l" style="top:1360px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-wx6y" class="in" id="s15-k1">يحمّلها ويستخدمها</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(70.4);
+      const { tl } = fx;
+      fx.drift("#s15-bgp", 70.4, 6.5, 60, -40);
+      fx.drift("#s15-blob", 70.4, 6.5, -110, 60);
+      fx.pushIn("#s15-cam", 70.4, 6.5, 1.035);
+
+      fx.maskUp("#s15-h1", 70.6); fx.maskUp("#s15-h2", 73.0);
+      tl.fromTo("#s15-in", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 70.5);
+      fx.typeText("#s15-in-t", 73.55, "حمّل HyperFrames واستخدمها", 20);
+      tl.fromTo("#s15-term", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 75.3);
+      fx.typeText("#s15-tt", 75.45, "npx skills add heygen-com/hyperframes", 50);
+      fx.maskUp("#s15-k1", 75.5);
+      fx.pop("#s15-ok", 76.2, { from: 0 });
+      fx.rise("#s15-src", 75.6, { y: 8, b: 0 });
+
+      tl.to("#s15-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 76.46);
+      window.__timelines["s15"] = tl.real;
+    })();
+  </script>
+</template></body></html>

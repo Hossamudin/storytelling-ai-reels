@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s3-template">
+  <style>
+
+    #s3-lab { top: 210px; } #s3-h { top: 250px; }
+    #s3-p { left: 110px; top: 560px; width: 860px; height: 150px; }
+    #s3-pt { position: absolute; right: 34px; top: 40px; font-size: 46px; font-weight: 700; white-space: nowrap; direction: rtl; }
+    #s3-arr { left: 520px; top: 720px; width: 40px; height: 150px; }
+    #s3-code { left: 170px; top: 1330px; width: 740px; height: 330px; }
+    #s3-ot { left: 0; right: 0; top: 1690px; text-align: center; }
+
+  </style>
+  <div data-hf-id="hf-zk2f" id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="7.65">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-nc06" id="s3-blob" class="blob" style="left:160px; top:650px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-rsys" id="s3-bgp" class="dots"></div>
+    <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+
+      <div data-hf-id="hf-kosu" id="s3-lab" class="row"><span data-hf-id="hf-scrk" class="t-label">THE AI MODEL</span></div>
+      <div data-hf-id="hf-yx61" id="s3-h" class="row t-h1" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-fx3a" class="in" id="s3-h1">الموديل = <span data-hf-id="hf-l9hl" class="hl"><span data-hf-id="hf-vk6w" class="band" id="s3-band"></span><span data-hf-id="hf-m96t" class="txt" id="s3-txt" style="color:var(--yellow)">الآلة</span></span></span></span></div>
+      <div data-hf-id="hf-bnhf" id="s3-p" class="window"><div data-hf-id="hf-430k" id="s3-pt"><span data-hf-id="hf-lyq2" id="s3-pt1"></span><span data-hf-id="hf-zl9j" class="caret" id="s3-car"></span></div></div>
+      <svg data-hf-id="hf-yymm" id="s3-arr" class="abs" viewBox="0 0 40 150"><path data-hf-id="hf-6hf4" id="s3-ap" pathLength="1" d="M20 0 V135 M6 120 L20 140 L34 120" fill="none" stroke="#b3ce65" stroke-width="6" stroke-linecap="round" /></svg>
+      <div data-hf-id="hf-lqu3" id="s3-core" class="abs" style="left:400px; top:890px; width:280px; height:280px"><div data-hf-id="hf-ukfq" class="ah-bloom" id="s3-core-bl" style="left:-60%; top:-60%; width:220%; height:220%"></div><svg data-hf-id="hf-9wom" class="ah-gear" id="s3-core-g"><use data-hf-id="hf-6cs7" href="#i-gear" /></svg><div data-hf-id="hf-umrc" class="ah-core" style="inset:0"></div><div data-hf-id="hf-3x8b" class="ring" id="s3-core-r1" style="border-radius:50%"></div><div data-hf-id="hf-s3m0" class="ring" id="s3-core-r2" style="border-radius:50%"></div></div>
+      <div data-hf-id="hf-1v0f" id="s3-code" class="ah-code"><span data-hf-id="hf-vxw9" class="ah-ln" id="s3-l1" style="width:70%; background:var(--lime)"></span><span data-hf-id="hf-dpi0" class="ah-ln" id="s3-l2" style="width:52%; background:rgba(246,248,240,.55)"></span><span data-hf-id="hf-jhpt" class="ah-ln" id="s3-l3" style="width:88%; background:var(--yellow)"></span><span data-hf-id="hf-od95" class="ah-ln" id="s3-l4" style="width:44%; background:rgba(246,248,240,.55)"></span><span data-hf-id="hf-2dlj" class="ah-ln" id="s3-l5" style="width:66%; background:#2c8a76"></span></div>
+      <div data-hf-id="hf-jxc5" id="s3-ot" class="ah-tag">OUTPUT · CODE</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(8.85);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 8.85, 7.65, 70, -40);
+      fx.drift("#s3-blob", 8.85, 7.65, -120, 60);
+      fx.pushIn("#s3-cam", 8.85, 7.65, 1.035);
+
+      fx.rise("#s3-lab", 8.9, { y: 16 });
+      fx.maskUp("#s3-h1", 9.0);
+      fx.band("#s3-band", 10.3);
+      tl.to("#s3-txt", { color: "#0d0d0d", duration: 0.15 }, 10.4);
+      fx.pop("#s3-core", 9.4, { from: 0.3, d: 0.6, e: "expo.out" });
+      tl.fromTo("#s3-core-g", { rotation: 0 }, { rotation: 300, duration: 7.6, ease: "power1.in" }, 8.85);
+      fx.breathe("#s3-core-bl", 9.6, 6.4, 0.1, 0.9);
+      fx.ringPulse("#s3-core-r1, #s3-core-r2", 11.5);
+      fx.pop("#s3-p", 13.35, { from: 0.85, e: "power3.out" });
+      fx.typeText("#s3-pt1", 13.55, "اكتب لي كود يعمل…", 22);
+      tl.fromTo("#s3-car", { opacity: 1 }, { opacity: 0.15, duration: 0.2, ease: "steps(1)", yoyo: true, repeat: 7 }, 13.4);
+      fx.draw("#s3-ap", 14.4, 0.35);
+      fx.ringPulse("#s3-core-r1, #s3-core-r2", 14.7);
+      fx.pop("#s3-code", 14.85, { from: 0.7, e: "power3.out" });
+      tl.fromTo("#s3-code .ah-ln", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.25, ease: "power2.out", stagger: 0.12 }, 15.0);
+      fx.rise("#s3-ot", 15.3, { y: 14 });
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 16.18);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

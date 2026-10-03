@@ -1,0 +1,47 @@
+{
+ "enabled": true,
+ "series": "AI NEWS WEEKLY",
+ "grain": false,
+ "sections": [
+  {
+   "t": 0,
+   "label": "THIS WEEK"
+  },
+  {
+   "t": 26.35,
+   "label": "STORY 01 · DOTS"
+  },
+  {
+   "t": 56.85,
+   "label": "STORY 02 · GPT-6.1 SOL"
+  },
+  {
+   "t": 82.6,
+   "label": "STORY 03 · GEMINI 4 ARGON"
+  },
+  {
+   "t": 118.45,
+   "label": "STORY 04 · ANTHROPIC"
+  },
+  {
+   "t": 136.6,
+   "label": "STORY 05 · META"
+  },
+  {
+   "t": 156.05,
+   "label": "STORY 06 · WHITE HOUSE"
+  },
+  {
+   "t": 181.95,
+   "label": "YOUR TURN"
+  }
+ ],
+ "wipes": [
+  26.270000000000003,
+  56.77,
+  82.52,
+  118.37,
+  136.51999999999998,
+  155.97
+ ]
+}

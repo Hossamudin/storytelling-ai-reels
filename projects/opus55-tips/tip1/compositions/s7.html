@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s7-template">
+  <style>
+
+    #s7-lock { left: 440px; top: 470px; width: 200px; height: 200px; }
+    #s7-box { left: 230px; top: 720px; width: 620px; height: 620px; }
+    #s7-glow { left: 140px; top: 620px; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(255,160,70,.35), transparent 65%); }
+    #s7-en { top: 1380px; font-size: 128px; color: var(--lime); text-shadow: 0 0 60px rgba(179,206,101,.5); }
+
+  </style>
+  <div data-hf-id="hf-1i1n" id="s7" data-composition-id="s7" data-width="1080" data-height="1920" data-duration="5.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-is0r" id="s7-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-7b8w" id="s7-bgp" class="dots"></div>
+    <div data-hf-id="hf-crhj" id="s7-cam" class="cam">
+
+      <div data-hf-id="hf-3gei" class="row t-h3" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-7psd" class="in" id="s7-h1">يعني إيه؟ ما تقفلش على</span></span></div>
+      <div data-hf-id="hf-3ig2" id="s7-glow" class="abs"></div>
+      <div data-hf-id="hf-c1o3" id="s7-lock" class="abs" style="color:var(--yellow)"><svg data-hf-id="hf-tijj" id="s7-l1" style="position:absolute; inset:0; width:100%; height:100%"><use data-hf-id="hf-i53r" href="#i-lock" /></svg><svg data-hf-id="hf-auyd" id="s7-l2" style="position:absolute; inset:0; width:100%; height:100%; color:var(--lime)"><use data-hf-id="hf-nndm" href="#i-unlock" /></svg></div>
+      <img data-hf-id="hf-ttuk" id="s7-box" class="abs" src="assets/images/open_box_cut.png">
+      <div data-hf-id="hf-mspw" id="s7-sp" class="cl-spark" style="left:470px; top:830px; width:140px; height:140px;"><svg data-hf-id="hf-gd00" id="s7-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-eu6s" id="s7-en" class="op-big"><span data-hf-id="hf-pamr" id="s7-en1">CREATIVITY</span></div>
+      <div data-hf-id="hf-fox7" class="row t-h3" style="top:1560px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-s03f" class="in" id="s7-k1">الإبداع بتاعه</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(21.7);
+      const { tl } = fx;
+      fx.drift("#s7-bgp", 21.7, 5.5, 60, -40);
+      fx.drift("#s7-blob", 21.7, 5.5, -110, 60);
+      fx.pushIn("#s7-cam", 21.7, 5.5, 1.035);
+
+      fx.maskUp("#s7-h1", 21.85);
+      fx.pop("#s7-lock", 22.7, { from: 0.3 });
+      fx.hide("#s7-l2");
+      fx.shake("#s7-lock", 23.4, 12, 6);
+      tl.to("#s7-l1", { opacity: 0, duration: 0.12 }, 23.95);
+      tl.to("#s7-l2", { opacity: 1, duration: 0.12 }, 23.95);
+      tl.to("#s7-lock", { y: -40, duration: 0.3, ease: "back.out(2)" }, 23.95);
+      tl.fromTo("#s7-box", { opacity: 0, y: 200, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.5)" }, 23.95);
+      tl.fromTo("#s7-glow", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 24.1);
+      tl.fromTo("#s7-sp", { opacity: 0, y: 120, scale: 0.3 }, { opacity: 1, y: -150, scale: 1, duration: 0.9, ease: "power3.out" }, 24.25);
+      tl.fromTo("#s7-sp-svg", { rotation: 0 }, { rotation: 200, duration: 2.8, ease: "none" }, 24.25);
+      fx.letterDrop("#s7-en1", 24.1, { st: 0.04 });
+      fx.maskUp("#s7-k1", 26.8);
+      fx.breathe("#s7-glow", 25.0, 2.0, 0.06, 1.0);
+
+      tl.to("#s7-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 26.76);
+      window.__timelines["s7"] = tl.real;
+    })();
+  </script>
+</template></body></html>

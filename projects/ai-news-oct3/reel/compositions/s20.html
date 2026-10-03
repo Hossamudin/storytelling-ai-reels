@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s20-template">
+  <style>
+
+    .s20-r { position: absolute; left: 110px; width: 860px; direction: ltr; }
+    .s20-r .nm { position: absolute; left: 0; top: 0; font-family: var(--font-en); font-weight: 900; font-size: 40px; }
+    .s20-r .bar2 { left: 0; right: 0; top: 64px; height: 70px; border-radius: 35px; }
+    .s20-r .bar2 > i { left: 0; right: auto; transform-origin: 0 50%; border-radius: 35px; }
+    #s20-n { position: absolute; left: 0; right: 0; top: 520px; text-align: center; font-size: 170px; line-height: 1.1; }
+
+  </style>
+  <div data-hf-id="hf-l80p" id="s20" data-composition-id="s20" data-width="1080" data-height="1920" data-duration="8.2">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-i1j3" id="s20-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-8m8j" id="s20-bgp" class="dots"></div>
+    <div data-hf-id="hf-eirm" id="s20-cam" class="cam">
+
+      <div data-hf-id="hf-rxg4" class="row t-h2" style="top:250px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-m9x7" class="in" id="s20-h1">والـــ<span data-hf-id="hf-sv8x" class="lat">Output</span> بيوصل</span></span></div>
+      <div data-hf-id="hf-h9ua" id="s20-n" class="en y"><span data-hf-id="hf-3r68" id="s20-nn">0</span></div>
+      <div data-hf-id="hf-cc1w" class="src" style="top:730px">OUTPUT TOKENS · ONE RESPONSE</div>
+      <div data-hf-id="hf-hfpn" class="s20-r" id="s20-r0" style="top:860px"><span data-hf-id="hf-n6kp" class="nm m">64K · USUAL</span><div data-hf-id="hf-swmv" class="bar2"><i data-hf-id="hf-hyp2" id="s20-f0" style="background:rgba(255,255,255,.4)"></i></div></div>
+      <div data-hf-id="hf-m7oy" class="s20-r" id="s20-r1" style="top:1030px"><span data-hf-id="hf-etes" class="nm m">132K</span><div data-hf-id="hf-88jb" class="bar2"><i data-hf-id="hf-doo1" id="s20-f1" style="background:rgba(255,255,255,.55)"></i></div></div>
+      <div data-hf-id="hf-hho8" class="s20-r" id="s20-r2" style="top:1200px"><span data-hf-id="hf-eum6" class="nm y">GEMINI 4 ARGON · 1M</span><div data-hf-id="hf-7u8a" class="bar2"><i data-hf-id="hf-5utj" id="s20-f2" style="background:var(--yellow)"></i></div></div>
+      <div data-hf-id="hf-mdyb" class="row t-h1" style="top:1400px;font-size:120px" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-eg99" class="in" id="s20-h2">مليون <span data-hf-id="hf-amqh" class="lat">token</span></span></span></div>
+      <div data-hf-id="hf-3og2" id="s20-src" class="src" style="top:1580px"><b data-hf-id="hf-i20u">BLOG.GOOGLE</b> · 1M, UP FROM 64K · 132K = NARRATOR'S EXAMPLE</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(110.45);
+      const { tl } = fx;
+      fx.drift("#s20-bgp", 110.45, 8.2, 60, -40);
+      fx.drift("#s20-blob", 110.45, 8.2, -110, 60);
+      fx.pushIn("#s20-cam", 110.45, 8.2, 1.035);
+
+      fx.maskUp("#s20-h1", 110.7);
+      fx.counter("#s20-nn", 111.5, 113.2, 0, 1000000, { ar: false, e: "power3.in" });
+      fx.rise("#s20-r0, #s20-r1, #s20-r2", 112.0, { y: 30, st: 0.12 });
+      fx.meter("#s20-f2", 112.3, 0.9, 1, { e: "power3.out" });
+      fx.meter("#s20-f0", 114.4, 0.3, 0.064, { e: "power3.out" });
+      fx.meter("#s20-f1", 115.25, 0.3, 0.132, { e: "power3.out" });
+      fx.shake("#s20-r2", 113.25, 12, 6);
+      fx.maskUp("#s20-h2", 113.25);
+      fx.rise("#s20-src", 114.0, { y: 10, b: 0 });
+
+      tl.to("#s20-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 118.21);
+      window.__timelines["s20"] = tl.real;
+    })();
+  </script>
+</template></body></html>

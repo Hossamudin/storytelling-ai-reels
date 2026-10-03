@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s5-template">
+  <style>
+
+    #s5-st { left: 300px; top: 560px; color: var(--yellow); border-color: var(--yellow); font-size: 96px; }
+    .s5-b { position: absolute; top: 880px; width: 400px; height: 400px; border-radius: 40px; text-align: center; }
+    #s5-a { left: 580px; } #s5-b { left: 100px; }
+    .s5-b .i { margin: 60px auto 20px; width: 170px; height: 170px; }
+
+  </style>
+  <div data-hf-id="hf-05k8" id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="6.3">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-649a" id="s5-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-6aiy" id="s5-bgp" class="dots"></div>
+    <div data-hf-id="hf-kq71" id="s5-cam" class="cam">
+
+      <div data-hf-id="hf-iipn" class="row t-h3" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-osma" class="in" id="s5-h1">والتيب اللي معانا النهارده</span></span></div>
+      <div data-hf-id="hf-cq3m" id="s5-st" class="stamp">مهمة جدًا</div>
+      <div data-hf-id="hf-ew9c" class="row t-h3 muted" style="top:790px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-5sj4" class="in" id="s5-k1">لأنها هتوفّر عليك</span></span></div>
+      <div data-hf-id="hf-022p" id="s5-a" class="op-card s5-b"><div data-hf-id="hf-8x5z" class="i" style="color:var(--lime)"><svg data-hf-id="hf-ycez" style="width:170px; height:170px; color:currentColor;"><use data-hf-id="hf-p1gd" href="#i-token" /></svg></div><div data-hf-id="hf-jmg3" class="t-h3 lat">tokens</div></div>
+      <div data-hf-id="hf-zcho" id="s5-b" class="op-card s5-b" style="border-color:var(--yellow)"><div data-hf-id="hf-xf6a" class="i" style="color:var(--yellow)"><svg data-hf-id="hf-3xjv" style="width:170px; height:170px; color:currentColor;"><use data-hf-id="hf-8qr0" href="#i-clock" /></svg></div><div data-hf-id="hf-ejhy" class="t-h3">ووقت</div></div>
+      <div data-hf-id="hf-3ael" class="row t-h3" style="top:1360px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-5u6r" class="in" id="s5-k2">مع الـــ<span data-hf-id="hf-ex0q" class="lat">AI</span></span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(18.4);
+      const { tl } = fx;
+      fx.drift("#s5-bgp", 18.4, 6.3, 60, -40);
+      fx.drift("#s5-blob", 18.4, 6.3, -110, 60);
+      fx.pushIn("#s5-cam", 18.4, 6.3, 1.035);
+
+      fx.maskUp("#s5-h1", 18.6);
+      fx.stamp("#s5-st", 20.0, "#s5-cam");
+      fx.maskUp("#s5-k1", 21.1);
+      fx.pop("#s5-a", 22.45, { from: 0.4 }); fx.pop("#s5-b", 23.2, { from: 0.4 });
+      fx.maskUp("#s5-k2", 23.7);
+
+      tl.to("#s5-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 24.26);
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>

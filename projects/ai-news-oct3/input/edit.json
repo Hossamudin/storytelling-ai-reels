@@ -1,0 +1,29 @@
+{
+ "parts": [
+  {"name": "reel", "from": 0, "to": 286.4}
+ ],
+ "cuts": [
+  [0.0, 1.70, "lead-in silence"],
+  [4.85, 10.62, "retake: first 'وتعالوا نبدأ مع OpenAI… تقدر تتصل معاه' (kept the later take with the phone detail)"],
+  [35.70, 63.75, "dead air / non-speech (gpt-4o-transcribe: '.')"],
+  [208.85, 211.18, "stumble: 'ودي في فيتشر الجديدة دي' (kept 'ويديله features جديدة')"],
+  [236.76, 241.10, "retake: 'وأخيراً الـAI leaders اللي في الوطن' (kept the later take)"],
+  [251.18, 258.38, "aside 'خلينا نقول أو… الذكاء السوبر' + noise"]
+ ],
+ "fix": [
+  {"from": "ميوز سبارك", "to": "Muse Spark"},
+  {"from": "ميوز شارم", "to": "Muse Charm"},
+  {"from": "ميوسيس باركة", "to": "Muse Spark"},
+  {"from": "Music Charm", "to": "Muse Charm"},
+  {"from": "Music Spark", "to": "Muse Spark"},
+  {"from": "شات جي بي تي", "to": "ChatGPT"},
+  {"from": "الصونت 5 5", "to": "Sonnet 5.5"},
+  {"from": "الإي آي", "to": "الـAI"},
+  {"from": "للإي آي", "to": "للـAI"},
+  {"from": "الاي اي", "to": "الـAI"},
+  {"from": "سوبر انتليجنس", "to": "Superintelligence"},
+  {"from": "كلود كود", "to": "Claude Code"},
+  {"from": "Cloud Code", "to": "Claude Code"}
+ ],
+ "max_pause": 0.38, "keep_pause": 0.24, "silence_db": -38
+}

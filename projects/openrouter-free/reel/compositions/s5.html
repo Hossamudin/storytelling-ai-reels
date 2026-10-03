@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s5-template">
+  <style>
+
+    #s5-ph { left: 300px; top: 560px; width: 480px; height: 860px; }
+    #s5-win { left: 60px; top: 760px; width: 960px; height: 590px; }
+    #s5-v { left: 0; top: 0; width: 960px; height: 540px; }
+    #s5-src { top: 1460px; }
+
+  </style>
+  <div id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="9.05">
+    <div class="bg"></div>
+    <div id="s5-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s5-bgp" class="dots"></div>
+    <div id="s5-cam" class="cam">
+
+      <div id="s5-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">02 · SURETHING AI · I USE IT DAILY</span></div>
+      <div class="row op-en" style="top:350px; font-size:120px"><span class="mask"><span class="in" id="s5-a1">SureThing <span class="op-l">AI</span></span></span></div>
+      <div id="s5-n" class="abs" style="left:860px; top:520px; width:150px; height:150px; border-radius:50%; background:var(--yellow); color:var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--font-en); font-weight:900; font-size:72px">02</div>
+      <div id="s5-ph" class="op-phone"><div class="scr"><img src="assets/images/surething_hero.png" /></div></div>
+      <div id="s5-win" class="op-win"><div class="bar"><i></i><i></i><i></i><b>MY VIBE AUTOMATION INTRO</b></div>
+        <div class="body"><video id="s5-v" src="assets/videos/vibe_intro.mp4" data-start="6.4" data-duration="2.65" data-media-start="40" data-hf-media-start-basis="local" muted playsinline></video></div></div>
+      <div id="s5-src" class="op-src" style="top:1460px">REAL · SURETHING.IO</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(31.55);
+      const { tl } = fx;
+      fx.drift("#s5-bgp", 31.55, 9.05, 60, -40);
+      fx.drift("#s5-blob", 31.55, 9.05, -110, 60);
+      fx.pushIn("#s5-cam", 31.55, 9.05, 1.035);
+
+      fx.rise("#s5-lab", 31.6, { y: 16 });
+      fx.maskUp("#s5-a1", 34.6);
+      fx.pop("#s5-n", 31.75, { from: 2, e: "expo.out", d: 0.3 });
+      tl.fromTo("#s5-ph", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 34.7);
+      fx.rise("#s5-src", 35.0, { y: 10, b: 0 });
+      tl.to("#s5-ph", { x: 0, y: 80, scale: 0.6, opacity: 0, duration: 0.4, ease: "power3.in" }, 37.9);
+      tl.fromTo("#s5-win", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 38.0);
+
+      tl.to("#s5-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 40.16);
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>

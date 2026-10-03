@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s10-template">
+  <style>
+
+    #s10-ring { left: 290px; top: 630px; width: 500px; height: 500px; }
+    #s10-g { left: 700px; top: 470px; } #s10-i1 { left: 60px; top: 520px; } #s10-i2 { left: 70px; top: 1220px; } #s10-i3 { left: 680px; top: 1240px; }
+    #s10-wk { top: 1420px; }
+
+  </style>
+  <div data-hf-id="hf-riq3" id="s10" data-composition-id="s10" data-width="1080" data-height="1920" data-duration="4.0">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-mzwd" id="s10-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-86iy" id="s10-bgp" class="dots"></div>
+    <div data-hf-id="hf-hpoj" id="s10-cam" class="cam">
+
+      <div data-hf-id="hf-hik1" class="row t-h2" style="top:250px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-po6x" class="in" id="s10-h1">ادّيته هدف + أفكار</span></span></div>
+      <svg data-hf-id="hf-k2yf" id="s10-ring" class="abs" viewBox="0 0 500 500"><circle data-hf-id="hf-0dmi" cx="250" cy="250" r="230" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="14" />
+        <circle data-hf-id="hf-em3x" id="s10-arc" cx="250" cy="250" r="230" fill="none" stroke="#b3ce65" stroke-width="14" stroke-linecap="round" pathLength="1" transform="rotate(-90 250 250)" /></svg>
+      <div data-hf-id="hf-y3m4" id="s10-sp" class="cl-spark" style="left:390px; top:730px; width:300px; height:300px;"><div data-hf-id="hf-8c0k" class="cl-bloom" id="s10-sp-bl"></div><svg data-hf-id="hf-3j4e" id="s10-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-1iid" id="s10-g" class="op-chip" style="left:700px; top:470px"><span data-hf-id="hf-8dw9" class="ic"><svg data-hf-id="hf-y0jp" style="width:34px; height:34px; color:currentColor;"><use data-hf-id="hf-770x" href="#i-target" /></svg></span><span data-hf-id="hf-7b8y">هدف</span></div>
+      <div data-hf-id="hf-9ztc" id="s10-i1" class="op-chip y" style="left:60px; top:520px"><span data-hf-id="hf-hovh" class="ic"><svg data-hf-id="hf-29ax" style="width:34px; height:34px; color:currentColor;"><use data-hf-id="hf-q8bv" href="#i-bulb" /></svg></span><span data-hf-id="hf-783n">فكرة</span></div>
+      <div data-hf-id="hf-1nfu" id="s10-i2" class="op-chip y" style="left:70px; top:1220px"><span data-hf-id="hf-ivsk" class="ic"><svg data-hf-id="hf-3g80" style="width:34px; height:34px; color:currentColor;"><use data-hf-id="hf-3z4b" href="#i-bulb" /></svg></span><span data-hf-id="hf-l2yr">فكرة</span></div>
+      <div data-hf-id="hf-p4js" id="s10-i3" class="op-chip y" style="left:680px; top:1240px"><span data-hf-id="hf-ihhj" class="ic"><svg data-hf-id="hf-31wz" style="width:34px; height:34px; color:currentColor;"><use data-hf-id="hf-3kta" href="#i-bulb" /></svg></span><span data-hf-id="hf-konq">فكرة</span></div>
+      <div data-hf-id="hf-jwqf" id="s10-wk" class="row t-h1 op-l"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-bjig" class="in" id="s10-wk1">وهو اشتغل</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(40.4);
+      const { tl } = fx;
+      fx.drift("#s10-bgp", 40.4, 4.0, 60, -40);
+      fx.drift("#s10-blob", 40.4, 4.0, -110, 60);
+      fx.pushIn("#s10-cam", 40.4, 4.0, 1.035);
+
+      fx.maskUp("#s10-h1", 40.5);
+      fx.pop("#s10-sp", 40.45, { from: 0.5, e: "expo.out", d: 0.5 });
+      fx.pop("#s10-g", 40.85);
+      tl.to("#s10-g", { x: -260, y: 330, scale: 0.2, opacity: 0, duration: 0.4, ease: "power3.in" }, 41.6);
+      fx.pop("#s10-i1", 42.55); fx.pop("#s10-i2", 42.65); fx.pop("#s10-i3", 42.75);
+      tl.to("#s10-i1", { x: 380, y: 300, scale: 0.2, opacity: 0, duration: 0.4, ease: "power3.in" }, 42.95);
+      tl.to("#s10-i2", { x: 380, y: -320, scale: 0.2, opacity: 0, duration: 0.4, ease: "power3.in" }, 43.0);
+      tl.to("#s10-i3", { x: -200, y: -330, scale: 0.2, opacity: 0, duration: 0.4, ease: "power3.in" }, 43.05);
+      tl.fromTo("#s10-sp-svg", { rotation: 0 }, { rotation: 720, duration: 3.6, ease: "power2.in" }, 40.6);
+      fx.draw("#s10-arc", 43.25, 0.9, "power2.inOut");
+      fx.maskUp("#s10-wk1", 43.2);
+      fx.breathe("#s10-sp-bl", 43.3, 1.0, 0.12, 0.5);
+
+      tl.to("#s10-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 43.96);
+      window.__timelines["s10"] = tl.real;
+    })();
+  </script>
+</template></body></html>

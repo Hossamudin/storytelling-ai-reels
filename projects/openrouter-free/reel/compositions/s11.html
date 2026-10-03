@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s11-template">
+  <style>
+
+    #s11-term { left: 90px; top: 560px; width: 900px; height: 560px; border-radius: 30px; background: #0a0f0e; border: 3px solid rgba(179,206,101,.4); overflow: hidden; }
+    #s11-term .ln { position: absolute; left: 40px; right: 40px; font-family: "Courier New", monospace; font-weight: 700; font-size: 34px; color: #cfe08f; direction: ltr; white-space: nowrap; }
+    #s11-slot { position: absolute; left: 40px; top: 300px; width: 820px; height: 100px; border-radius: 22px; border: 4px solid var(--lime); overflow: hidden; }
+    .s11-m { position: absolute; left: 0; right: 0; top: 0; height: 100px; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-weight: 900; font-size: 40px; color: var(--fg); direction: ltr; white-space: nowrap; }
+
+  </style>
+  <div id="s11" data-composition-id="s11" data-width="1080" data-height="1920" data-duration="8.8">
+    <div class="bg"></div>
+    <div id="s11-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s11-bgp" class="dots"></div>
+    <div id="s11-cam" class="cam">
+
+      <div id="s11-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">PLUG IT INTO OPENCODE</span></div>
+      <div class="row t-h2" style="top:350px"><span class="mask"><span class="in" id="s11-a1"><span class="lat">coding agent</span> ببلاش</span></span></div>
+      <div id="s11-term" class="abs"><div class="ln" style="top:40px; color:#8cb2a6">$ opencode</div>
+        <div class="ln" id="s11-t2" style="top:120px">● provider: OpenRouter</div><div class="ln" id="s11-t3" style="top:190px">● model:</div>
+        <div id="s11-slot"><div id="s11-m0" class="s11-m">Nemotron 3 Ultra (free)</div><div id="s11-m1" class="s11-m">Laguna S 2.1 (free)</div><div id="s11-m2" class="s11-m">Ling 3.0 Flash Sante (free)</div></div></div>
+      <div class="row t-h3" style="top:1220px"><span class="mask"><span class="in" id="s11-b1">وتبدّل بين الموديلز زي ما إنت حابب</span></span></div>
+      <div id="s11-src" class="op-src" style="top:1330px">REAL FREE MODELS · SETUP ILLUSTRATED</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(98.9);
+      const { tl } = fx;
+      fx.drift("#s11-bgp", 98.9, 8.8, 60, -40);
+      fx.drift("#s11-blob", 98.9, 8.8, -110, 60);
+      fx.pushIn("#s11-cam", 98.9, 8.8, 1.035);
+
+      fx.rise("#s11-lab", 99.0, { y: 16 });
+      tl.fromTo("#s11-term", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 101.3);
+      fx.rise("#s11-t2", 101.9, { y: 10, b: 0 }); fx.rise("#s11-t3", 102.3, { y: 10, b: 0 });
+      fx.maskUp("#s11-a1", 103.6);
+      fx.hide("#s11-m1"); fx.hide("#s11-m2");
+      fx.rise("#s11-m0", 103.9, { y: 60, b: 0 });
+      tl.to("#s11-m0", { y: -100, opacity: 0, duration: 0.25, ease: "power2.in" }, 105.95);
+      tl.fromTo("#s11-m1", { opacity: 1, y: 100 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out", immediateRender: false }, 106.0);
+      tl.to("#s11-m1", { y: -100, opacity: 0, duration: 0.25, ease: "power2.in" }, 106.75);
+      tl.fromTo("#s11-m2", { opacity: 1, y: 100 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out", immediateRender: false }, 106.8);
+      fx.maskUp("#s11-b1", 106.0);
+      fx.rise("#s11-src", 102.0, { y: 10, b: 0 });
+
+      tl.to("#s11-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 107.26);
+      window.__timelines["s11"] = tl.real;
+    })();
+  </script>
+</template></body></html>

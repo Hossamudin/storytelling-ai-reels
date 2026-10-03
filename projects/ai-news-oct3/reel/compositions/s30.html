@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s30-template">
+  <style>
+
+    .s30-d { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: var(--lime); }
+    #s30-g1, #s30-g2 { position: absolute; top: 560px; width: 30px; height: 520px; border-radius: 15px; background: #f6f8f0; }
+    #s30-g1 { left: 380px; } #s30-g2 { left: 670px; }
+    #s30-bar { position: absolute; left: 395px; top: 720px; width: 290px; height: 30px; border-radius: 15px; background: var(--orange); transform-origin: 0 50%; }
+    .s30-big { position: absolute; left: 430px; width: 220px; height: 120px; border-radius: 26px; background: var(--yellow); color: var(--ink); font-family: var(--font-ar);
+      font-weight: 900; font-size: 34px; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+
+  </style>
+  <div data-hf-id="hf-8nvd" id="s30" data-composition-id="s30" data-width="1080" data-height="1920" data-duration="9.65">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-gakm" id="s30-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#3a2a22; opacity:.55"></div>
+    <div data-hf-id="hf-6o78" id="s30-bgp" class="dots"></div>
+    <div data-hf-id="hf-2vup" id="s30-cam" class="cam">
+
+      <div data-hf-id="hf-rxg4" class="row t-h2" style="top:250px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-u7b0" class="in" id="s30-h1">ده هيحجّم ناس كتير</span></span></div>
+      <div data-hf-id="hf-2m9e" id="s30-g1"></div><div data-hf-id="hf-yo5d" id="s30-g2"></div><div data-hf-id="hf-pm5p" id="s30-bar"></div>
+      <div data-hf-id="hf-rgu6" class="s30-d" id="s30-d0" style="left:140px; top:1180px"></div><div data-hf-id="hf-3175" class="s30-d" id="s30-d1" style="left:290px; top:1180px"></div><div data-hf-id="hf-56ml" class="s30-d" id="s30-d2" style="left:440px; top:1180px"></div><div data-hf-id="hf-lnm8" class="s30-d" id="s30-d3" style="left:590px; top:1180px"></div><div data-hf-id="hf-8tks" class="s30-d" id="s30-d4" style="left:740px; top:1180px"></div><div data-hf-id="hf-x4i3" class="s30-d" id="s30-d5" style="left:890px; top:1180px"></div><div data-hf-id="hf-tctk" class="s30-d" id="s30-d6" style="left:140px; top:1290px"></div><div data-hf-id="hf-bvpr" class="s30-d" id="s30-d7" style="left:290px; top:1290px"></div><div data-hf-id="hf-n7qn" class="s30-d" id="s30-d8" style="left:440px; top:1290px"></div><div data-hf-id="hf-n7ba" class="s30-d" id="s30-d9" style="left:590px; top:1290px"></div><div data-hf-id="hf-ukpd" class="s30-d" id="s30-d10" style="left:740px; top:1290px"></div><div data-hf-id="hf-zetq" class="s30-d" id="s30-d11" style="left:890px; top:1290px"></div>
+      <div data-hf-id="hf-eha8" class="s30-big" id="s30-b1" style="top:820px">شركات كبيرة</div>
+      <div data-hf-id="hf-ykf4" class="s30-big" id="s30-b2" style="top:960px">حكومات</div>
+      <div data-hf-id="hf-90x2" class="row t-h1" style="top:1440px;font-size:116px; color:var(--orange)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-23oc" class="in" id="s30-h2">وتبقى حكر عليهم</span></span></div>
+      <div data-hf-id="hf-201j" class="row t-h3" style="top:1600px;color:var(--fg-muted)" data-layout-allow-overlap=""><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-dtgj" class="in" id="s30-h3">للأسف</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(172.5);
+      const { tl } = fx;
+      fx.drift("#s30-bgp", 172.5, 9.65, 60, -40);
+      fx.drift("#s30-blob", 172.5, 9.65, -110, 60);
+      fx.pushIn("#s30-cam", 172.5, 9.65, 1.035);
+      fx.maskUp("#s30-h1", 172.7);
+      fx.rise("#s30-g1, #s30-g2", 172.8, { y: 60 });
+      fx.rise("#s30-d0, #s30-d1, #s30-d2, #s30-d3, #s30-d4, #s30-d5, #s30-d6, #s30-d7, #s30-d8, #s30-d9, #s30-d10, #s30-d11", 173.2, { y: 40, st: 0.05 });
+      tl.fromTo("#s30-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "expo.out" }, 174.6);
+      fx.shake("#s30-cam", 174.9, 10, 6);
+      tl.to("#s30-d0, #s30-d1, #s30-d2, #s30-d3, #s30-d4, #s30-d5, #s30-d6, #s30-d7, #s30-d8, #s30-d9, #s30-d10, #s30-d11", { y: -120, duration: 0.6, ease: "power2.inOut", stagger: 0.04 }, 175.4);
+      tl.to("#s30-d0, #s30-d1, #s30-d2, #s30-d3, #s30-d4, #s30-d5, #s30-d6, #s30-d7, #s30-d8, #s30-d9, #s30-d10, #s30-d11", { y: 0, background: "#4a5d57", duration: 0.5, ease: "back.out(2)", stagger: 0.04 }, 176.2);
+      fx.pop("#s30-b1", 178.6, { from: 0.4 }); fx.pop("#s30-b2", 179.6, { from: 0.4 });
+      fx.maskUp("#s30-h2", 177.9);
+      fx.maskUp("#s30-h3", 180.9);
+      tl.to("#s30-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 181.71);
+      window.__timelines["s30"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="c4-template">
+  <style>
+    #c4-lab { right: 150px; top: 200px; }
+    #c4-h1 { right: 150px; top: 250px; width: 820px; text-align: right; }
+    #c4-h2 { right: 150px; top: 420px; width: 820px; text-align: right; }
+    #c4-h3 { right: 150px; top: 560px; width: 820px; text-align: right; }
+    #c4-clock { left: 180px; top: 230px; width: 300px; height: 300px; }
+    #c4-cal { left: 520px; top: 270px; width: 300px; height: 220px; }
+    #c4-cal .hd { position: absolute; left: 0; right: 0; top: 0; height: 60px; border-radius: 22px 22px 0 0; background: var(--teal); }
+    #c4-cal .d { position: absolute; left: 0; right: 0; top: 76px; text-align: center; font-size: 66px; font-weight: 900; color: var(--yellow); }
+    #c4-cal .en { position: absolute; left: 0; right: 0; top: 168px; text-align: center; }
+    #c4-beam { left: 330px; top: 520px; width: 40px; height: 170px; }
+    #c4-node { left: 270px; top: 690px; width: 120px; height: 120px; }
+    #c4-task { left: 450px; top: 690px; width: 400px; height: 120px; }
+    #c4-task .ar { position: absolute; right: 30px; top: 30px; font-size: 40px; font-weight: 800; }
+    #c4-task .ck { position: absolute; left: 26px; top: 30px; width: 60px; height: 60px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; color: #fff; }
+    #c4-msg { right: 150px; top: 690px; width: 560px; height: 120px; }
+    #c4-msg .ar { position: absolute; right: 30px; top: 30px; font-size: 40px; font-weight: 700; color: var(--fg-muted); }
+    #c4-msk { position: absolute; left: 20px; top: 40px; width: 520px; height: 40px; overflow: visible; }
+    #c4-mx { right: 120px; top: 660px; }
+    #c4-t1 { bottom: 150px; }
+  </style>
+  <div data-hf-id="hf-24a4" id="c4" data-composition-id="c4" data-width="1920" data-height="1080" data-duration="12.08">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-974w" id="c4-dots" class="dots"></div>
+    <div data-hf-id="hf-ux78" id="c4-cam" class="cam">
+      <div data-hf-id="hf-t2wl" id="c4-lab" class="abs"><span data-hf-id="hf-y3c6" class="t-label" data-layout-allow-overlap="">04 · ROUTINES</span></div>
+      <div data-hf-id="hf-8gep" id="c4-h1" class="abs t-h1 head" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-4cmv" class="in" id="c4-h1i">الروتينات</span></span></div>
+      <div data-hf-id="hf-kzgu" id="c4-h2" class="abs t-h3" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-h553" class="in" id="c4-h2i">جدول مواعيد لوكلائك</span></span></div>
+      <div data-hf-id="hf-oxkv" id="c4-h3" class="abs t-h3" data-layout-allow-overlap=""><span data-hf-id="hf-ogof" class="hl" id="c4-h3w"><span data-hf-id="hf-41qr" class="band" id="c4-h3b"></span><span data-hf-id="hf-edah" class="txt">بدون تدخل منك</span></span></div>
+      <svg data-hf-id="hf-f33k" id="c4-clock" class="abs" viewBox="0 0 300 300">
+        <circle data-hf-id="hf-uwu6" cx="150" cy="150" r="130" fill="rgba(255,255,255,0.05)" stroke="#B4CF66" stroke-width="10" />
+        <g data-hf-id="hf-mq07" stroke="#8CB2A6" stroke-width="6" stroke-linecap="round"><path data-hf-id="hf-52c4" d="M150 32v22M150 246v22M32 150h22M246 150h22" /></g>
+        <line data-hf-id="hf-49m6" id="c4-hr" x1="150" y1="150" x2="150" y2="85" stroke="#F6F8F0" stroke-width="12" stroke-linecap="round" />
+        <line data-hf-id="hf-28ul" id="c4-mn" x1="150" y1="150" x2="150" y2="50" stroke="#FFEC5C" stroke-width="7" stroke-linecap="round" />
+        <circle data-hf-id="hf-n43w" cx="150" cy="150" r="12" fill="#FFEC5C" />
+      </svg>
+      <div data-hf-id="hf-knqm" id="c4-cal" class="card"><div data-hf-id="hf-0hws" class="hd"></div><div data-hf-id="hf-ke0i" class="d lat">09:00</div><div data-hf-id="hf-si2k" class="en t-label" data-layout-allow-overlap="">EVERY DAY 1</div></div>
+      <svg data-hf-id="hf-ioan" id="c4-beam" class="abs" viewBox="0 0 40 170"><path data-hf-id="hf-s6o4" id="c4-bp" d="M20 4 V166" pathLength="1" stroke="#FFEC5C" stroke-width="10" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" /></svg>
+      <div data-hf-id="hf-3k9k" id="c4-node" class="node"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-iqr9" href="#i-spark" /></svg><div data-hf-id="hf-5jbt" class="ring" id="c4-r1"></div><div data-hf-id="hf-9hfu" class="ring" id="c4-r2"></div></div>
+      <div data-hf-id="hf-qv5d" id="c4-task" class="card"><div data-hf-id="hf-hv22" class="ck"><svg data-hf-id="hf-x177" width="30" height="30"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div><div data-hf-id="hf-jieu" class="ar">المهمة اتنفذت</div></div>
+      <div data-hf-id="hf-th7t" id="c4-msg" class="card"><div data-hf-id="hf-uzld" class="ar">"اعمل كذا دلوقتي…"</div>
+        <svg data-hf-id="hf-pqq9" id="c4-msk" viewBox="0 0 520 40" preserveAspectRatio="none"><path data-hf-id="hf-vx7i" id="c4-mskp" d="M8 22 C 160 12, 360 30, 512 16" pathLength="1" fill="none" stroke="#FF5A33" stroke-width="10" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" /></svg></div>
+      <div data-hf-id="hf-dfec" id="c4-mx" class="xbadge"><svg data-hf-id="hf-tvq3" width="34" height="34" style="color: #fff"><use data-hf-id="hf-r08i" href="#i-x" /></svg></div>
+      <div data-hf-id="hf-35fe" class="toast" id="c4-t1"><div data-hf-id="hf-w92w" class="ic"><svg data-hf-id="hf-comj" width="30" height="30" style="color: #fff"><use data-hf-id="hf-8nki" href="#i-check" /></svg></div><div data-hf-id="hf-yeow"><div data-hf-id="hf-0mno" class="en">ROUTINE EXECUTED</div><div data-hf-id="hf-j5u6" class="ar">اتنفذ تلقائياً في ميعاده</div></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(130.17);
+      const { tl } = fx;
+      fx.drift("#c4-dots", 130.17, 12.08, 50, 40);
+      fx.pushIn("#c4-cam", 130.17, 12.08, 1.03);
+      fx.rise("#c4-lab", 130.2, { y: 20 });
+      fx.maskUp("#c4-h1i", 130.25);
+      fx.pop("#c4-clock", 130.75, { from: 0.5 });
+      fx.maskUp("#c4-h2i", 130.85);
+      fx.pop("#c4-cal", 131.4, { from: 0.5 });
+      // "يشتغل في توقيت معين": hands sweep to the hour, beam fires the agent
+      tl.fromTo("#c4-mn", { rotation: 0, svgOrigin: "150 150" }, { rotation: 720, svgOrigin: "150 150", duration: 1.6, ease: "power2.inOut" }, 133.1);
+      tl.fromTo("#c4-hr", { rotation: -60, svgOrigin: "150 150" }, { rotation: 0, svgOrigin: "150 150", duration: 1.6, ease: "power2.inOut" }, 133.1);
+      fx.draw("#c4-bp", 134.65, 0.3, "power2.in");
+      fx.pop("#c4-node", 134.9, { from: 0 });
+      fx.ringPulse("#c4-r1, #c4-r2", 135.0);
+      fx.rise("#c4-task", 135.9, { y: 30 });
+      fx.rise("#c4-h3w", 137.35, { y: 30, s: 1.1 });
+      fx.band("#c4-h3b", 137.5, 0.4);
+      fx.pop("#c4-msg", 138.3, { from: 0.7 });
+      fx.strike("#c4-mskp", 138.9, "#c4-mx");
+      fx.toasts([{ sel: "#c4-t1", t: 139.5 }], { bottom: 150 });
+      window.__timelines["c4"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

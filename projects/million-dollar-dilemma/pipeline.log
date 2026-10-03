@@ -1,0 +1,58 @@
+[2026-09-11 15:23:15] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\million-dollar-dilemma
+[2026-09-11 15:23:16] Audio cleanup: voiceover.m4a
+[2026-09-11 15:23:32] Transcribing (gemini_api) voiceover_clean.wav (300.6s)
+[2026-09-11 15:34:16] Transcribing (gemini_api) voiceover_clean.wav (300.6s, upload 1.23MB)
+[2026-09-11 15:35:22] Transcribing (gemini_api) voiceover_clean.wav (300.6s, upload 1.23MB)
+[2026-09-11 15:36:29] Transcribing (gemini_api) voiceover_clean.wav (300.6s, upload 1.23MB)
+[2026-09-11 15:39:25] Transcribing (gemini_api) voiceover_clean.wav (300.6s, upload 1.23MB)
+[2026-09-11 15:45:24] Planning scenes (gemini_api) for 300.56s @9:16
+[2026-09-11 15:47:05] Planning scenes (gemini_api) for 300.56s @9:16
+[2026-09-11 15:47:22] planner gemini-3.1-pro-preview unavailable -> fallback gemini-3.8-flash
+[2026-09-11 15:50:12] Planning scenes (gemini_api) for 300.56s @9:16
+[2026-09-11 15:53:14] director pass: brand-fixed prompts, S13->code recap, est $4.8
+[2026-09-11 18:23:06] STORYBOARD APPROVED — 31 scenes, est $4.8
+[2026-09-11 18:23:14] S02: generating image -> S02_first.png
+[2026-09-11 18:23:40] S02: IMAGE FAILED: image S02_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:23:40] S06: generating image -> S06_first.png
+[2026-09-11 18:24:06] S06: IMAGE FAILED: image S06_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:24:06] S10: generating image -> S10_first.png
+[2026-09-11 18:24:32] S10: IMAGE FAILED: image S10_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:24:32] S12: generating image -> S12_first.png
+[2026-09-11 18:24:57] S12: IMAGE FAILED: image S12_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:24:57] S17: generating image -> S17_first.png
+[2026-09-11 18:25:22] S17: IMAGE FAILED: image S17_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:25:22] S18: generating image -> S18_first.png
+[2026-09-11 18:25:48] S18: IMAGE FAILED: image S18_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:25:48] S19: generating image -> S19_first.png
+[2026-09-11 18:26:13] S19: IMAGE FAILED: image S19_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:26:13] S25: generating image -> S25_first.png
+[2026-09-11 18:26:40] S25: IMAGE FAILED: image S25_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:26:40] S27: generating image -> S27_first.png
+[2026-09-11 18:27:05] S27: IMAGE FAILED: image S27_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:27:05] S28: generating image -> S28_first.png
+[2026-09-11 18:27:31] S28: IMAGE FAILED: image S28_first.png failed after 3 attempts: OpenAI image error 400: {'error': {'message': "The model 'gpt-image-2.5' does not exist.", 'type': 'image_generation_user_error', 'param': 'model', 'code': 'invalid_value'}}
+[2026-09-11 18:27:31] generation done: 0 assets, $0 total, failures: ['S02:image', 'S06:image', 'S10:image', 'S12:image', 'S17:image', 'S18:image', 'S19:image', 'S25:image', 'S27:image', 'S28:image']
+[2026-09-11 18:28:27] S02: generating image -> S02_first.png
+[2026-09-11 18:28:48] S06: generating image -> S06_first.png
+[2026-09-11 18:29:06] S10: generating image -> S10_first.png
+[2026-09-11 18:29:21] S12: generating image -> S12_first.png
+[2026-09-11 18:29:36] S17: generating image -> S17_first.png
+[2026-09-11 18:29:51] S18: generating image -> S18_first.png
+[2026-09-11 18:30:06] S19: generating image -> S19_first.png
+[2026-09-11 18:30:22] S25: generating image -> S25_first.png
+[2026-09-11 18:30:37] S27: generating image -> S27_first.png
+[2026-09-11 18:30:52] S28: generating image -> S28_first.png
+[2026-09-11 18:31:06] generation done: 10 assets, $0.4 total, failures: none
+[2026-09-11 18:36:28] free assets registered: 6 screenshots + 3 Hossam photos
+[2026-09-11 18:36:28] Captions: 140 chunks, 34 keywords styled (punch)
+[2026-09-11 18:46:58] session 1 complete: 10 images + 6 screenshots + 3 hossam photos + 4 crafted scenes, check passed
+[2026-09-12 01:44:26] STORYBOARD APPROVED — 31 scenes, est $4.8
+[2026-09-12 03:44:37] DELIVERED v1 -> renders/million-dollar-dilemma-v1.mp4 (pending: 6 Higgsfield clips for v2)
+[2026-09-12 07:06:28] RECUT: removed 35.1s (46 cuts) -> 265.4s; RE-TRANSCRIBE now
+[2026-09-12 07:07:23] Transcribing (gemini_api) voiceover_clean.wav (265.4s, upload 1.09MB)
+[2026-09-12 07:09:19] retiming: 46 cuts, 35.133s removed, new duration 265.43s
+[2026-09-12 07:09:20] Captions: 164 chunks, 27 keywords styled (punch)
+[2026-09-12 07:09:46] retiming: 46 cuts, 35.133s removed, new duration 265.43s
+[2026-09-12 07:09:46] retimed to 265.43s — now re-run captions + assemble
+[2026-09-12 07:23:19] DELIVERED v2 -> renders/million-dollar-dilemma-v2.mp4
+[2026-09-12 09:32:24] DELIVERED v3: stale hardlink bug fixed, cut audio + resynced captions verified in render

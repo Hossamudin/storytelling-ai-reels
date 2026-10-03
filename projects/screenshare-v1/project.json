@@ -1,0 +1,31 @@
+{
+  "name": "screenshare-v1",
+  "title": "Surething UI — screenshare v1",
+  "stage": "transcribe",
+  "created": "2026-10-01T09:09:35",
+  "updated": "2026-10-01T09:10:16",
+  "aspect": null,
+  "duration_s": 310.14,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-01T09:09:35",
+      "note": "project created",
+      "from": null
+    },
+    {
+      "stage": "audio_clean",
+      "at": "2026-10-01T09:09:47",
+      "note": "cleaned voiceover, 310.1s",
+      "from": "ingest"
+    },
+    {
+      "stage": "transcribe",
+      "at": "2026-10-01T09:10:16",
+      "note": "openai_whisper: 52 segments",
+      "from": "audio_clean"
+    }
+  ]
+}

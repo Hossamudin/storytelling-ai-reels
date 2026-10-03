@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template id="s7-template">
+      <style>
+        #s7 { position: absolute; inset: 0; overflow: hidden; direction: rtl; }
+      #s7-av {
+        left: 190px;
+        top: 250px;
+        width: 420px;
+        height: 420px;
+      }
+      #s7-avc {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle at 50% 40%, #fffbe0, var(--lime) 120%);
+        border: 8px solid var(--teal);
+        overflow: hidden;
+      }
+      #s7-avc img {
+        position: absolute;
+        left: -10px;
+        top: 26px;
+        width: 424px;
+        height: 424px;
+      }
+      #s7-orbit {
+        position: absolute;
+        left: -50px;
+        top: -50px;
+        width: 520px;
+        height: 520px;
+      }
+      #s7-avglow {
+        left: 90px;
+        top: 150px;
+        width: 620px;
+        height: 620px;
+        background: radial-gradient(circle, rgba(255, 236, 92, 0.6), rgba(179, 206, 101, 0.25) 45%, transparent 70%);
+      }
+      #s7-kick {
+        right: 150px;
+        top: 210px;
+        line-height: 1.3;
+        width: 900px;
+        font-size: 52px;
+        font-weight: 700;
+        color: var(--teal);
+      }
+      #s7-name {
+        right: 150px;
+        top: 300px;
+        width: 1060px;
+        white-space: nowrap;
+        font-size: 110px;
+        font-weight: 900;
+        color: var(--ink);
+        line-height: 1.3;
+      }
+      #s7-under {
+        right: 150px;
+        top: 460px;
+        width: 780px;
+        height: 30px;
+      }
+      #s7-topic {
+        right: 150px;
+        top: 510px;
+        width: 1000px;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+      #s7-sub {
+        right: 150px;
+        top: 745px;
+        width: 700px;
+        height: 120px;
+      }
+      #s7-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 400px;
+        height: 120px;
+        border-radius: 60px;
+        background: var(--red);
+        box-shadow: 0 16px 34px rgba(217, 58, 43, 0.3);
+      }
+      #s7-btn2 {
+        position: absolute;
+        inset: 0;
+        border-radius: 60px;
+        background: #e4e2d6;
+      }
+      .btnt {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        font-size: 54px;
+        font-weight: 900;
+      }
+      #s7-bell {
+        position: absolute;
+        right: 440px;
+        top: 0;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 5px solid var(--teal);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #s7-bellbg {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: var(--yellow);
+      }
+      #s7-belli {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        transform-origin: 50% 12%;
+      }
+      #s7-cursor {
+        left: 1100px;
+        top: 1000px;
+        width: 70px;
+        height: 90px;
+      }
+      .bub {
+        position: absolute;
+        height: 90px;
+        padding: 0 38px;
+        border-radius: 45px;
+        background: #fff;
+        border: 4px solid var(--teal);
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--teal);
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+      #s7-ask {
+        left: 200px;
+        top: 760px;
+        height: 100px;
+        padding: 0 44px;
+        border-radius: 50px;
+        background: var(--teal);
+        color: #fff;
+        font-size: 46px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+      }
+      #s7-yalla {
+        top: 300px;
+        font-size: 230px;
+        font-weight: 900;
+        line-height: 1.2;
+        color: var(--teal);
+      }
+      #s7-bism {
+        top: 640px;
+        font-size: 80px;
+        font-weight: 800;
+        color: var(--green);
+      }
+      </style>
+      <div data-hf-id="hf-asoq" id="s7" data-composition-id="s7" data-width="1920" data-height="1080" data-duration="12.35">
+        <div data-hf-id="hf-e34g" id="s7-wrap" class="fill">
+          <div data-hf-id="hf-hbf9" class="fill paper"></div>
+          <div data-hf-id="hf-7b8w" id="s7-bgp" class="dots"></div>
+          <div data-hf-id="hf-crhj" id="s7-cam" class="cam">
+            <div data-hf-id="hf-tq2z" id="s7-main" class="fill">
+              <div data-hf-id="hf-rtxu" id="s7-avglow" class="glow"></div>
+              <div data-hf-id="hf-apgo" id="s7-av" class="abs">
+                <svg data-hf-id="hf-trgy" id="s7-orbit" viewBox="0 0 520 520">
+                  <circle data-hf-id="hf-k5j2" cx="260" cy="260" r="248" fill="none" stroke="#B3CE65" stroke-width="6" stroke-dasharray="18 26" />
+                  <circle data-hf-id="hf-45rv" cx="260" cy="12" r="16" fill="#FF5A33" />
+                  <circle data-hf-id="hf-2e88" cx="508" cy="260" r="11" fill="#FFEC5C" />
+                </svg>
+                <div data-hf-id="hf-sk1s" id="s7-avc"><img data-hf-id="hf-nv21" src="assets/images/hossam.png" alt=""></div>
+              </div>
+              <div data-hf-id="hf-eltd" id="s7-kick" class="abs">أول مرة ليك هنا؟</div>
+              <div data-hf-id="hf-f42o" id="s7-name" class="abs"><span data-hf-id="hf-6oga" class="w" id="s7-n1">حسام</span> <span data-hf-id="hf-g2br" class="w" id="s7-n2">الدين</span> <span data-hf-id="hf-0yru" class="w" id="s7-n3">حسن</span></div>
+              <svg data-hf-id="hf-enox" id="s7-under" class="abs" viewBox="0 0 780 30" preserveAspectRatio="none">
+                <path data-hf-id="hf-rpww" id="s7-u" d="M770 16 C 520 6, 260 26, 10 12" pathLength="1" fill="none" stroke="#FF5A33" stroke-width="12" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" />
+              </svg>
+              <div data-hf-id="hf-hsvu" id="s7-topic" class="abs">
+                <span data-hf-id="hf-vpma" class="w" id="s7-t1" data-layout-allow-overlap="">بكلّمك عن الـــ<span data-hf-id="hf-ex0q" class="lat">AI</span></span>
+                <span data-hf-id="hf-tv44" class="w" id="s7-t2">وكل جديد في هذا المجال</span>
+                <span data-hf-id="hf-avry" class="hl w" id="s7-t3" data-layout-allow-overlap=""><span data-hf-id="hf-rb0y" class="band" id="s7-t3b" style="background: var(--yellow)"></span><span data-hf-id="hf-g0tb" class="txt">المجنون</span></span>
+              </div>
+              <div data-hf-id="hf-xdkt" id="s7-sub" class="abs">
+                <div data-hf-id="hf-ac7o" id="s7-btn">
+                  <div data-hf-id="hf-xl5v" class="btnt" id="s7-btn1t" style="color: #fff">اشترك</div>
+                  <div data-hf-id="hf-kzvi" id="s7-btn2">
+                    <div data-hf-id="hf-uzd2" class="btnt" style="color: var(--ink)">
+                      مشترك
+                      <svg data-hf-id="hf-pwtd" class="ic" width="46" height="46" style="color: var(--teal)"><use data-hf-id="hf-yk3y" href="#i-check" /></svg>
+                    </div>
+                  </div>
+                </div>
+                <div data-hf-id="hf-84uv" id="s7-bell">
+                  <div data-hf-id="hf-g4f6" id="s7-bellbg"></div>
+                  <svg data-hf-id="hf-gysq" id="s7-belli" style="color: var(--teal)"><use data-hf-id="hf-th4l" href="#i-bell" /></svg>
+                </div>
+              </div>
+            </div>
+            <div data-hf-id="hf-tpud" id="s7-ask" class="abs">قولنا من أي بلد؟</div>
+            <div data-hf-id="hf-hnqe" id="s7-bubs"></div>
+            <div data-hf-id="hf-qkj6" id="s7-yalla" class="row" data-layout-allow-overlap="">يلا بينا</div>
+            <div data-hf-id="hf-miwq" id="s7-bism" class="row" data-layout-allow-overlap="">بسم الله</div>
+            <svg data-hf-id="hf-hk6q" id="s7-cursor" class="abs"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const { tl, Q, QA, rise, pop, out, draw, band, shake, breathe, drift } = window.HF_SCENE(54.85);
+        tl.fromTo("#s7-wrap", { x: -1920 }, { x: 0, duration: 0.55, ease: "power3.out" }, 54.85);
+        drift("#s7-bgp", 54.85, 12.35, -90, -30);
+        rise("#s7-kick", 55.0, { y: 30 });
+        tl.fromTo("#s7-av", { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 56.25);
+        tl.fromTo("#s7-avglow", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 56.25);
+        breathe("#s7-avglow", 57.05, 8.0, 0.06, 1.6);
+        tl.fromTo("#s7-orbit", { rotation: 0 }, { rotation: 140, duration: 10.5, ease: "none" }, 56.3);
+        rise("#s7-n1", 56.43, { y: 70, s: 1.15, d: 0.4 });
+        rise("#s7-n2", 56.65, { y: 70, s: 1.15, d: 0.4 });
+        rise("#s7-n3", 56.8, { y: 70, s: 1.15, d: 0.4 });
+        draw("#s7-u", 57.05, 0.5, "power2.out");
+        rise("#s7-t1", 57.1, { y: 30 });
+        rise("#s7-t2", 58.1, { y: 30 });
+        rise("#s7-t3", 59.72, { y: 30, s: 1.2 });
+        band("#s7-t3b", 59.8, 0.35);
+        tl.fromTo("#s7-t3", { rotation: 0 }, { rotation: 4, duration: 0.08, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, 60.05);
+        // subscribe + bell
+        tl.fromTo("#s7-sub", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.8)" }, 60.45);
+        tl.fromTo("#s7-btn2", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 60.4);
+        tl.fromTo("#s7-bellbg", { opacity: 0, scale: 0 }, { opacity: 0, scale: 0, duration: 0.01 }, 60.4);
+        tl.fromTo("#s7-cursor", { x: 0, y: 0, opacity: 0 }, { x: 370, y: -165, opacity: 1, duration: 0.75, ease: "power3.out" }, 60.7);
+        tl.to("#s7-cursor", { scale: 0.85, duration: 0.08, yoyo: true, repeat: 1 }, 61.48);
+        tl.to("#s7-btn", { scale: 0.93, duration: 0.08, yoyo: true, repeat: 1 }, 61.48);
+        tl.to("#s7-btn2", { opacity: 1, duration: 0.15 }, 61.54);
+        tl.to("#s7-btn1t", { opacity: 0, duration: 0.1 }, 61.54);
+        tl.to("#s7-cursor", { x: 195, y: -175, duration: 0.28, ease: "power2.inOut" }, 61.6);
+        tl.to("#s7-cursor", { scale: 0.85, duration: 0.08, yoyo: true, repeat: 1 }, 61.87);
+        tl.to("#s7-bellbg", { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.5)" }, 61.9);
+        tl.fromTo("#s7-belli", { rotation: 0 }, { rotation: 22, duration: 0.07, yoyo: true, repeat: 9, ease: "sine.inOut", immediateRender: false }, 61.92);
+        tl.to("#s7-cursor", { x: 520, y: 80, opacity: 0, duration: 0.5, ease: "power2.in" }, 62.35);
+        // countries
+        rise("#s7-ask", 63.85, { y: 30, s: 1.1 });
+        const C = [
+          ["مصر", 1560, 70],
+          ["السعودية", 1130, 60],
+          ["المغرب", 730, 80],
+          ["الجزائر", 330, 70],
+          ["الأردن", 1560, 930],
+          ["الإمارات", 1120, 950],
+          ["العراق", 250, 950],
+          ["تونس", 700, 950],
+        ];
+        const bubs = Q("#s7-bubs");
+        C.forEach(([t, x, y], i) => {
+          const b = document.createElement("div");
+          b.className = "bub";
+          b.id = `bb${i}`;
+          b.style.cssText = `left:${x}px;top:${y}px`;
+          b.textContent = t;
+          bubs.appendChild(b);
+        });
+        tl.fromTo(".bub", { opacity: 0, scale: 0.3, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(2.4)", stagger: 0.07 }, 64.18);
+        // "ويلا بينا بسم الله"
+        tl.to("#s7-main", { opacity: 0, scale: 0.9, filter: "blur(10px)", duration: 0.35, ease: "power2.in" }, 64.72);
+        tl.to(".bub", { opacity: 0, scale: 1.4, duration: 0.3, ease: "power2.in", stagger: 0.02 }, 64.72);
+        out("#s7-ask", 64.72, { d: 0.3 });
+        tl.fromTo("#s7-yalla", { opacity: 0, scale: 2.2, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 64.8);
+        rise("#s7-bism", 65.25, { y: 40 });
+        tl.to("#s7-cam", { scale: 4.5, filter: "blur(18px)", duration: 0.75, ease: "power3.in" }, 65.75);
+
+        
+          window.__timelines["s7"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+{
+ "parts": [
+  {
+   "name": "voice",
+   "from": 0,
+   "to": 289.28
+  }
+ ],
+ "cuts": [
+  [
+   1.703,
+   8.072,
+   "retake: First attempt at the OpenAI intro; repeated more completely in chunks 2-3. (located 0.64)"
+  ],
+  [
+   8.178,
+   10.581,
+   "retake: Abandoned first take; later repeated with the phone detail."
+  ],
+  [
+   209.166,
+   211.162,
+   "retake: Starts to describe the feature, then immediately says it again more clearly."
+  ],
+  [
+   236.756,
+   241.201,
+   "retake: Abandoned intro to the final news item; restarted in the next chunk."
+  ],
+  [
+   253.945,
+   255.521,
+   "noise: no speech in verbatim transcript / Empty/non-speech chunk."
+  ]
+ ],
+ "fix": {},
+ "max_pause": 0.38,
+ "keep_pause": 0.24,
+ "silence_db": -38,
+ "proposals": [
+  {
+   "cut": [
+    1.703,
+    8.072
+   ],
+   "kind": "retake",
+   "reason": "First attempt at the OpenAI intro; repeated more completely in chunks 2-3. (located 0.64)",
+   "confidence": 0.96,
+   "source": "gpt-5.5+refine",
+   "text": "ده ملخص اللي حصل الأسبوع ده في عالم الذكاء الاصطناعي، وتعالوا نبدأ مع OpenAI اللي عملت لك. | مساعد ذكي."
+  },
+  {
+   "from": 1,
+   "to": 1,
+   "kind": "retake",
+   "reason": "Abandoned first take; later repeated with the phone detail.",
+   "confidence": 0.96,
+   "source": "gpt-5.5",
+   "cut": [
+    8.178,
+    10.581
+   ],
+   "text": "تقدر تتواصل معاه."
+  },
+  {
+   "from": 34,
+   "to": 34,
+   "kind": "retake",
+   "reason": "Starts to describe the feature, then immediately says it again more clearly.",
+   "confidence": 0.82,
+   "source": "gpt-5.5",
+   "cut": [
+    209.166,
+    211.162
+   ],
+   "text": "ودي الفيتشر الجديدة دي."
+  },
+  {
+   "from": 40,
+   "to": 40,
+   "kind": "retake",
+   "reason": "Abandoned intro to the final news item; restarted in the next chunk.",
+   "confidence": 0.95,
+   "source": "gpt-5.5",
+   "cut": [
+    236.756,
+    241.201
+   ],
+   "text": "وأخيراً الـ AI leaders اللي في الوطن."
+  },
+  {
+   "from": 45,
+   "to": 45,
+   "kind": "noise",
+   "reason": "no speech in verbatim transcript / Empty/non-speech chunk.",
+   "confidence": 0.98,
+   "source": "rules + gpt-5.5",
+   "cut": [
+    253.945,
+    255.521
+   ],
+   "text": ""
+  },
+  {
+   "cut": null,
+   "kind": "review",
+   "reason": "could not locate 'ناس' inside chunk 50 — cut by hand",
+   "confidence": 0.0,
+   "source": "gpt-5.5",
+   "text": "شركة كتير وناس كتير ناس تستخدم أحدث الموديل.",
+   "chunk": 50
+  }
+ ]
+}

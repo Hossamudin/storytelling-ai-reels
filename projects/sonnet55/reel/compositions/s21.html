@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s21-template">
+  <style>
+
+    #s21-k1 { left: 640px; top: 640px; } #s21-k2 { left: 360px; top: 560px; } #s21-k3 { left: 80px; top: 640px; }
+    #s21-btn { left: 290px; top: 1690px; }
+    #s21-cur { left: 640px; top: 1760px; color: #fff; }
+    #s21-nm { top: 1530px; }
+
+  </style>
+  <div data-hf-id="hf-qbm4" id="s21" data-composition-id="s21" data-width="1080" data-height="1920" data-duration="8.78">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-dwa6" id="s21-blob" class="blob" style="left:160px; top:720px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-atha" id="s21-bgp" class="dots"></div>
+    <div data-hf-id="hf-jyfv" id="s21-cam" class="cam">
+
+      <div data-hf-id="hf-65m7" class="row t-h3" style="top:330px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-v6lj" class="in" id="s21-a1">كل موديل جديد وإزاي تستفيد منه</span></span></div>
+      <div data-hf-id="hf-z8xs" id="s21-k1" class="abs" style="left:640px; top:640px; height:64px; padding:0 28px; border-radius:32px; display:flex; align-items:center; border:3px solid var(--lime); color:var(--lime); background:rgba(4,22,20,.75); font-family:var(--font-en); font-weight:900; font-size:30px; letter-spacing:.08em; white-space:nowrap; direction:ltr">NEW MODELS</div>
+      <div data-hf-id="hf-fbrd" id="s21-k2" class="abs" style="left:360px; top:560px; height:64px; padding:0 28px; border-radius:32px; display:flex; align-items:center; border:3px solid var(--yellow); color:var(--yellow); background:rgba(4,22,20,.75); font-family:var(--font-en); font-weight:900; font-size:30px; letter-spacing:.08em; white-space:nowrap; direction:ltr">HOW TO USE</div>
+      <div data-hf-id="hf-vtwb" id="s21-k3" class="abs" style="left:80px; top:640px; height:64px; padding:0 28px; border-radius:32px; display:flex; align-items:center; border:3px solid #e8977c; color:#e8977c; background:rgba(4,22,20,.75); font-family:var(--font-en); font-weight:900; font-size:30px; letter-spacing:.08em; white-space:nowrap; direction:ltr">REAL VALUE</div>
+      <div data-hf-id="hf-o3np" id="s21-ho" class="op-hossam" style="left:240px; top:760px; width:600px; height:1066px"><img data-hf-id="hf-kgdx" src="assets/images/hossam_suit.png"></div>
+      <div data-hf-id="hf-mwg6" id="s21-nm" class="op-name t-h2" style="top:1530px">حسام الدين حسن</div>
+      <div data-hf-id="hf-ge0r" id="s21-btn" class="op-btn"><svg data-hf-id="hf-6r7a" style="width:44px; height:44px; color:#fff;"><use data-hf-id="hf-4h79" href="#i-person" /></svg> تابعني</div>
+      <div data-hf-id="hf-fxf1" id="s21-ok" class="abs" style="left:770px; top:1704px; width:76px; height:76px; border-radius:50%; background:var(--lime); display:flex; align-items:center; justify-content:center"><svg data-hf-id="hf-qsmd" style="width:46px; height:46px; color:var(--ink);"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div>
+      <svg data-hf-id="hf-o9na" id="s21-cur" class="cursor"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(147.55);
+      const { tl } = fx;
+      fx.drift("#s21-bgp", 147.55, 8.78, 60, -40);
+      fx.drift("#s21-blob", 147.55, 8.78, -110, 60);
+      fx.pushIn("#s21-cam", 147.55, 8.78, 1.035);
+
+      fx.maskUp("#s21-a1", 148.8);
+      fx.pop("#s21-k1", 149.0); fx.pop("#s21-k2", 150.6); fx.pop("#s21-k3", 151.9);
+      tl.fromTo("#s21-ho", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 147.7);
+      fx.rise("#s21-nm", 153.7, { y: 30 });
+      fx.pop("#s21-btn", 152.4, { from: 0.4 });
+      fx.cursorTo("#s21-cur", 152.7, -150, -40, 0.4);
+      fx.click("#s21-cur", 153.15, "#s21-btn", null);
+      tl.to("#s21-btn", { background: "#2b2a28", color: "#b3ce65", duration: 0.15 }, 153.2);
+      fx.pop("#s21-ok", 153.25, { from: 0.2 });
+
+      
+      window.__timelines["s21"] = tl.real;
+    })();
+  </script>
+</template></body></html>

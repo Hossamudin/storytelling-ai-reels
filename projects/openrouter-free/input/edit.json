@@ -1,0 +1,70 @@
+{
+ "parts": [
+  {
+   "name": "voice",
+   "from": 0,
+   "to": 162.517
+  }
+ ],
+ "cuts": [
+  [
+   -0.04,
+   7.605,
+   "retake: no speech in verbatim transcript / Blank non-speech chunks before the intro / no speech in verbatim transcript / no speech in verbatim transcript / chunk 4 restarts chunk 3 (similarity 0.75); keep the later take / Abandoned opening; later complete version starts in chunk 5"
+  ],
+  [
+   145.204,
+   148.238,
+   "retake: chunk 33 restarts chunk 32 (similarity 0.64); keep the later take / Abandoned outro/name line; redone more completely in chunk 33"
+  ]
+ ],
+ "max_pause": 0.38,
+ "keep_pause": 0.24,
+ "silence_db": -38,
+ "fix": [
+  {
+   "from": "Wokka App.",
+   "to": "Whacka."
+  },
+  {
+   "from": "Wokka App",
+   "to": "Whacka"
+  },
+  {
+   "from": "WokaApp.",
+   "to": "Whacka."
+  },
+  {
+   "from": "WokeApp.",
+   "to": "Whacka."
+  },
+  {
+   "from": "Short Thing AI",
+   "to": "SureThing AI"
+  },
+  {
+   "from": "Shorting AI",
+   "to": "SureThing AI"
+  },
+  {
+   "from": "Shorten AI",
+   "to": "SureThing AI"
+  },
+  {
+   "from": "حسن الدين حسن",
+   "to": "حسام الدين حسن"
+  },
+  {
+   "from": "حسن الدين حسن،",
+   "to": "حسام الدين حسن،"
+  },
+  {
+   "from": "الكيور كود",
+   "to": "الـQR code"
+  },
+  {
+   "from": "بيدفع",
+   "to": "بندفع"
+  }
+ ]
+}

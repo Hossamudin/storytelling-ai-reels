@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s12-template">
+  <style>
+
+    .s12-r { position: absolute; left: 110px; width: 860px; }
+    .s12-r .nm { position: absolute; right: 0; top: 0; font-family: var(--font-en); font-weight: 900; font-size: 44px; direction: ltr; }
+    .s12-r .pr { position: absolute; left: 0; top: 0; font-family: var(--font-en); font-weight: 800; font-size: 40px; direction: ltr; color: var(--fg-muted); }
+    .s12-r .bar2 { top: 76px; left: 0; right: 0; }
+    #s12-big { position: absolute; left: 0; right: 0; top: 1180px; text-align: center; font-size: 260px; line-height: 1.1; }
+
+  </style>
+  <div data-hf-id="hf-8rkb" id="s12" data-composition-id="s12" data-width="1080" data-height="1920" data-duration="5.05">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-9dqa" id="s12-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-fgts" id="s12-bgp" class="dots"></div>
+    <div data-hf-id="hf-4ja1" id="s12-cam" class="cam">
+
+      <div data-hf-id="hf-nqz3" class="row t-h2" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-5sy2" class="in" id="s12-h1">تقريبًا نفس ذكاء <span data-hf-id="hf-cqr1" class="lat">Astra</span></span></span></div>
+      <div data-hf-id="hf-g2v3" class="s12-r" id="s12-a" style="top:520px"><span data-hf-id="hf-2ltd" class="nm">GPT-6 Astra</span><span data-hf-id="hf-364s" class="pr">$10 / $50</span><div data-hf-id="hf-swmv" class="bar2"><i data-hf-id="hf-3fmd" id="s12-af" style="background:var(--orange)"></i></div></div>
+      <div data-hf-id="hf-dga9" class="s12-r" id="s12-s" style="top:740px"><span data-hf-id="hf-a26w" class="nm y">GPT-6.1 Sol</span><span data-hf-id="hf-2ttl" class="pr">$2 / $10</span><div data-hf-id="hf-88jb" class="bar2"><i data-hf-id="hf-dd5c" id="s12-sf" style="background:var(--lime)"></i></div></div>
+      <div data-hf-id="hf-x1ky" class="src" style="top:900px">PRICE PER 1M TOKENS · INPUT / OUTPUT · <b data-hf-id="hf-6auk">OPENAI.COM</b></div>
+      <div data-hf-id="hf-bstr" class="row t-h2" style="top:1010px;color:var(--fg-muted)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-gkcu" class="in" id="s12-h2">بس بـــ</span></span></div>
+      <div data-hf-id="hf-ojc9" id="s12-big" class="en y"><span data-hf-id="hf-2po0" id="s12-b">1/5</span></div>
+      <div data-hf-id="hf-cyp2" class="row t-h1" style="top:1500px;font-size:120px" data-layout-allow-overlap=""><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-qrij" class="in" id="s12-h3">خُمس السعر</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(62.0);
+      const { tl } = fx;
+      fx.drift("#s12-bgp", 62.0, 5.05, 60, -40);
+      fx.drift("#s12-blob", 62.0, 5.05, -110, 60);
+      fx.pushIn("#s12-cam", 62.0, 5.05, 1.035);
+
+      fx.maskUp("#s12-h1", 62.2);
+      fx.rise("#s12-a", 62.4, { y: 30 }); fx.meter("#s12-af", 62.6, 0.6, 1, { e: "power3.out" });
+      fx.rise("#s12-s", 63.6, { y: 30 }); fx.meter("#s12-sf", 63.8, 0.6, 1, { e: "power3.out" });
+      tl.to("#s12-sf", { scaleX: 0.2, duration: 0.7, ease: "power3.inOut" }, 65.3);
+      fx.maskUp("#s12-h2", 65.1);
+      tl.fromTo("#s12-b", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 65.75);
+      fx.shake("#s12-cam", 65.85, 14, 6);
+      fx.maskUp("#s12-h3", 66.1);
+
+      tl.to("#s12-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 66.61);
+      window.__timelines["s12"] = tl.real;
+    })();
+  </script>
+</template></body></html>

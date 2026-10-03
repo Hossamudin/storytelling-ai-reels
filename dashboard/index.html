@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hossam Video Factory</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header>
+  <div class="logo">H</div>
+  <div>
+    <h1>Hossam Video Factory</h1>
+    <div class="sub">script + voice &rarr; storyboard &rarr; approval &rarr; generation &rarr; render</div>
+  </div>
+  <nav>
+    <button data-view="projects" class="active">Projects</button>
+    <button data-view="config">Config</button>
+    <button data-view="keys">Keys</button>
+  </nav>
+</header>
+<main>
+  <section id="view-projects"></section>
+  <section id="view-project" style="display:none"></section>
+  <section id="view-config" style="display:none"></section>
+  <section id="view-keys" style="display:none"></section>
+</main>
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

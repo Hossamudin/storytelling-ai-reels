@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s1-template">
+  <style>
+
+    #s1-lab { top: 300px; }
+    #s1-vs { left: 470px; top: 640px; width: 140px; height: 140px; border-radius: 50%; background: var(--yellow); color: var(--ink);
+      font-family: var(--font-en); font-weight: 900; font-size: 54px; display: flex; align-items: center; justify-content: center; }
+    #s1-cd { left: 380px; top: 1000px; }
+    #s1-tag { left: 300px; top: 1500px; font-size: 92px; padding: 14px 54px; border-color: var(--yellow); color: var(--yellow); white-space: nowrap; }
+
+  </style>
+  <div data-hf-id="hf-tbc1" id="s1" data-composition-id="s1" data-width="1080" data-height="1920" data-duration="5.7">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-dzqw" id="s1-blob" class="blob" style="left:160px; top:320px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-xdf2" id="s1-bgp" class="dots"></div>
+    <div data-hf-id="hf-q35l" id="s1-cam" class="cam">
+
+      <div data-hf-id="hf-nihc" id="s1-lab" class="row" style="top:300px"><span data-hf-id="hf-atzm" class="t-label" style="color:var(--lime)">ANTHROPIC · NEW MODEL</span></div>
+      <div data-hf-id="hf-xw4r" id="s1-op" class="cl-spark" style="left:600px; top:470px; width:400px; height:400px;"><div data-hf-id="hf-zyr2" class="cl-bloom" id="s1-op-bl"></div><svg data-hf-id="hf-56a6" id="s1-op-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-4ttk" id="s1-opp" class="abs" style="left:690px; top:900px; height:64px; padding:0 28px; border-radius:32px; display:flex; align-items:center; border:3px solid #e8977c; color:#e8977c; background:rgba(4,22,20,.75); font-family:var(--font-en); font-weight:900; font-size:30px; letter-spacing:.08em; white-space:nowrap; direction:ltr">OPUS 5.5</div>
+      <div data-hf-id="hf-svyv" id="s1-so" class="cl-spark" style="left:140px; top:560px; width:250px; height:250px;"><div data-hf-id="hf-r7kr" class="cl-bloom" id="s1-so-bl"></div><svg data-hf-id="hf-ulnl" id="s1-so-svg" viewBox="0 0 100 100"><use data-hf-id="hf-7e43" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-tg9o" id="s1-sop" class="abs" style="left:150px; top:860px; height:64px; padding:0 28px; border-radius:32px; display:flex; align-items:center; border:3px solid var(--lime); color:var(--lime); background:rgba(4,22,20,.75); font-family:var(--font-en); font-weight:900; font-size:30px; letter-spacing:.08em; white-space:nowrap; direction:ltr">NEW · ???</div>
+      <div data-hf-id="hf-or89" id="s1-vs" class="abs">VS</div>
+      <div data-hf-id="hf-oe0r" id="s1-cd" class="op-chip" style="left:380px; top:1000px"><span data-hf-id="hf-hznu" class="ic">&lt;/&gt;</span><span data-hf-id="hf-2dx9">في الكودينج</span></div>
+      <div data-hf-id="hf-tv04" class="row t-h2" style="top:1150px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-ypsb" class="in" id="s1-a1">موديل جديد بيكسب</span></span></div>
+      <div data-hf-id="hf-xqsw" class="row t-h1 op-en" style="top:1270px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-qkqe" class="in op-c" id="s1-b1">Opus 5.5</span></span></div>
+      <div data-hf-id="hf-kbkg" id="s1-tag" class="stamp" data-layout-allow-overlap="">بنُص السعر</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0);
+      const { tl } = fx;
+      fx.drift("#s1-bgp", 0, 5.7, 60, -40);
+      fx.drift("#s1-blob", 0, 5.7, -110, 60);
+      fx.pushIn("#s1-cam", 0, 5.7, 1.035);
+
+      fx.punch("#s1-cam", 0, 1.18);
+      fx.rise("#s1-lab", 0.05, { y: 16 });
+      fx.pop("#s1-op", 0.0, { from: 0.3, e: "expo.out", d: 0.8 });
+      tl.fromTo("#s1-op-svg", { rotation: -60 }, { rotation: 30, duration: 5.4, ease: "power1.out" }, 0);
+      fx.breathe("#s1-op-bl", 0.6, 4.4, 0.06, 1.4);
+      fx.rise("#s1-opp", 0.4, { y: 20 });
+      fx.pop("#s1-so", 1.1, { from: 0.2 });
+      tl.fromTo("#s1-so-svg", { rotation: 0 }, { rotation: -160, duration: 4.3, ease: "power1.out" }, 1.1);
+      fx.rise("#s1-sop", 1.3, { y: 20 });
+      fx.maskUp("#s1-a1", 1.1);
+      fx.pop("#s1-vs", 1.8, { from: 2.2, e: "expo.out", d: 0.3 });
+      // the small spark wins: it grows, Opus recoils and greys
+      tl.to("#s1-so", { scale: 1.3, x: 40, duration: 0.5, ease: "back.out(2)" }, 2.6);
+      tl.to("#s1-op", { scale: 0.82, x: 40, filter: "grayscale(0.85) brightness(0.7)", duration: 0.5, ease: "power3.out" }, 2.6);
+      fx.shake("#s1-op", 2.65, 10, 6);
+      fx.maskUp("#s1-b1", 2.6);
+      fx.pop("#s1-cd", 3.65, { from: 0.4 });
+      fx.stamp("#s1-tag", 4.42, "#s1-cam");
+
+      tl.to("#s1-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 5.26);
+      window.__timelines["s1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

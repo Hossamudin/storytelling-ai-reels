@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s9-template">
+  <style>
+
+    #s9-win { left: 150px; top: 470px; width: 780px; height: 580px; }
+    #s9-v { left: -60px; top: -260px; width: 900px; height: 1062px; }
+    #s9-ses { left: 110px; top: 470px; width: 860px; height: 200px; }
+    #s9-st { position: absolute; right: 34px; top: 26px; direction: rtl; text-align: right; font-size: 46px; white-space: nowrap; }
+    #s9-sl { position: absolute; right: 34px; top: 138px; font-family: var(--font-en); font-weight: 800; font-size: 22px; letter-spacing: .18em; color: var(--lime); direction: ltr; }
+    #s9-ok { position: absolute; left: 34px; top: 60px; width: 80px; height: 80px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; }
+    #s9-cur { left: 860px; top: 1000px; }
+
+  </style>
+  <div data-hf-id="hf-5vvv" id="s9" data-composition-id="s9" data-width="1080" data-height="1920" data-duration="5.9">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-e37f" id="s9-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-ogp2" id="s9-bgp" class="dots"></div>
+    <div data-hf-id="hf-do3l" id="s9-cam" class="cam">
+
+      <div data-hf-id="hf-08vc" class="row t-h2" style="top:260px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-d6tv" class="in" id="s9-h1">افتح <span data-hf-id="hf-yhhi" class="lat">Claude</span></span></span></div>
+      <div data-hf-id="hf-5eev" id="s9-win" class="op-win"><div data-hf-id="hf-ufsv" class="bar"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><b data-hf-id="hf-w5xz">Claude</b></div>
+        <div data-hf-id="hf-2t3w" class="body"><video data-hf-id="hf-m5a2" id="s9-v" src="assets/videos/claude_app.mp4" data-start="0" data-duration="1.7" data-media-start="0.1" muted playsinline></video></div></div>
+      <div data-hf-id="hf-s43y" id="s9-ses" class="op-card"><div data-hf-id="hf-fnkg" id="s9-st" class="t-h3">السيشن اللي طلّعت النتيجة</div><div data-hf-id="hf-mxvq" id="s9-sl">SESSION · GOOD RESULT</div><div data-hf-id="hf-lctk" id="s9-ok"><svg data-hf-id="hf-pcl9" style="width:50px; height:50px; color:currentColor;"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div></div>
+      <div data-hf-id="hf-ax0m" id="s9-in" class="op-input" style="left:70px; top:760px; width:940px; height:250px"><div data-hf-id="hf-d7dd" class="txt" id="s9-in-t"><span data-hf-id="hf-m905" class="ph"></span></div><div data-hf-id="hf-mlgk" class="foot"><span data-hf-id="hf-955y" class="plus">+</span><span data-hf-id="hf-2ds7" class="mdl" id="s9-in-m">Opus 5.5 <em data-hf-id="hf-7i9k">Medium</em><span data-hf-id="hf-vehz" class="send" id="s9-in-s"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-kkf4" href="#i-send" /></svg></span></span></div></div>
+      <div data-hf-id="hf-oji9" class="row t-h3 muted" style="top:1110px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-lpxa" class="in" id="s9-k1">وقوله</span></span></div>
+      <svg data-hf-id="hf-yvi8" id="s9-cur" class="cursor"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(41.55);
+      const { tl } = fx;
+      fx.drift("#s9-bgp", 41.55, 5.9, 60, -40);
+      fx.drift("#s9-blob", 41.55, 5.9, -110, 60);
+      fx.pushIn("#s9-cam", 41.55, 5.9, 1.025);
+
+      fx.maskUp("#s9-h1", 41.7);
+      tl.fromTo("#s9-win", { opacity: 0, y: 140, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, 41.6);
+      tl.to("#s9-win", { opacity: 0, scale: 0.9, y: -80, duration: 0.3, ease: "power2.in" }, 42.95);
+      tl.to("#s9-h1", { yPercent: -115, duration: 0.25 }, 43.0);
+      tl.fromTo("#s9-ses", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.5)" }, 43.15);
+      fx.pop("#s9-ok", 44.1, { from: 0 });
+      tl.fromTo("#s9-in", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 44.5);
+      fx.maskUp("#s9-k1", 44.75);
+      fx.typeText("#s9-in-t", 45.2, "عايزك تطلّعلي skill أو prompt", 18);
+      tl.fromTo("#s9-cur", { opacity: 0, x: 80, y: 140 }, { opacity: 1, x: 0, y: 0, duration: 0.45, ease: "power3.out" }, 46.4);
+      fx.click("#s9-cur", 47.0, "#s9-in-s");
+
+      tl.to("#s9-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 47.01);
+      window.__timelines["s9"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s7-template">
+  <style>
+
+    .tg { position: absolute; }
+    .tg .str { position: absolute; left: 50%; top: -90px; width: 4px; height: 100px; margin-left: -2px; background: rgba(246,248,240,.5); }
+    .tg .lay { position: absolute; inset: 0; border-radius: 28px 28px 28px 28px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: var(--font-en); font-weight: 900; direction: ltr; white-space: nowrap; }
+    .tg .lay::before { content: ""; position: absolute; left: 50%; top: 22px; width: 30px; height: 30px; margin-left: -15px; border-radius: 50%; background: var(--bg); }
+    .tg .under { background: var(--lime); color: var(--ink); }
+    .tg .top { background: #f3efe2; color: #8c3a22; box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+    .tg .ta { clip-path: polygon(0 0, 52% 0, 46% 18%, 55% 34%, 45% 52%, 54% 70%, 47% 86%, 52% 100%, 0 100%); }
+    .tg .tb { clip-path: polygon(52% 0, 100% 0, 100% 100%, 52% 100%, 47% 86%, 54% 70%, 45% 52%, 55% 34%, 46% 18%); }
+
+    .qr { position: absolute; background: #fff; border-radius: 22px; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+    .qr img { display: block; width: 100%; height: 100%; }
+    .qr-l { position: absolute; left: -40px; right: -40px; bottom: -46px; text-align: center; font-family: var(--font-en); font-weight: 900; font-size: 22px;
+      letter-spacing: .14em; color: var(--fg); direction: ltr; white-space: nowrap; }
+
+    #s7-code { left: 120px; top: 500px; width: 840px; height: 340px; border-radius: 34px; background: #f6f4ea; color: var(--ink); }
+    #s7-qr { left: 30px; top: 30px; width: 280px; height: 280px; }
+    #s7-cv { position: absolute; right: 50px; top: 60px; font-family: var(--font-en); font-weight: 900; font-size: 120px; color: #437F3E; direction: ltr; }
+    #s7-cl { position: absolute; right: 50px; top: 210px; font-family: var(--font-en); font-weight: 800; font-size: 30px; letter-spacing: .1em; color: #6d6a5d; direction: ltr; }
+    #s7-sh { left: 190px; top: 880px; width: 700px; height: 150px; border-radius: 22px; overflow: hidden; border: 3px solid var(--lime); }
+    #s7-sh img { width: 700px; height: 150px; }
+    #s7-shl { top: 1045px; }
+
+  </style>
+  <div id="s7" data-composition-id="s7" data-width="1080" data-height="1920" data-duration="14.2">
+    <div class="bg"></div>
+    <div id="s7-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div id="s7-bgp" class="dots"></div>
+    <div id="s7-cam" class="cam">
+
+      <div id="s7-lab" class="row" style="top:300px"><span class="t-label" style="color:var(--lime)">02 · SURETHING AI · FREE CREDITS</span></div>
+      <div class="row t-h2" style="top:340px;" data-layout-allow-overlap><span class="mask"><span class="in" id="s7-a1">استخدم الكود ده</span></span></div>
+      <div id="s7-code" class="abs"><div id="s7-qr" class="qr" style="position:absolute"><img src="assets/images/qr_surething.png" /></div>
+        <div id="s7-cv">+<span id="s7-cn">500</span></div><div id="s7-cl">CREDITS · SURETHING</div></div>
+      <div id="s7-sh" class="abs"><img src="assets/images/sure_share.png" /></div>
+      <div id="s7-shl" class="op-src" style="top:1045px">REAL · SURETHING APP · INVITE BONUS</div>
+      <div id="s7-tg" class="tg" style="left:340px; top:1130px; width:400px; height:290px; transform-origin:50% -90px" data-layout-allow-overlap><div class="str"></div><div class="lay under" data-layout-allow-overlap style="font-size:96px">ببلاش</div><div id="s7-tg-a" class="lay top ta" data-layout-allow-overlap style="font-size:72px">PAID PLAN<span data-layout-allow-overlap style="font-size:30px">$ / MONTH</span></div><div id="s7-tg-b" class="lay top tb" data-layout-allow-overlap style="font-size:72px">PAID PLAN<span data-layout-allow-overlap style="font-size:30px">$ / MONTH</span></div></div>
+      <div class="row t-h3" style="top:1530px"><span class="mask"><span class="in" id="s7-b1">وكل ما تدخل أكتر</span></span></div>
+      <div class="row t-h2 op-y" style="top:1620px"><span class="mask"><span class="in" id="s7-c1"><span class="lat">credits</span> زيادة</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(53.4);
+      const { tl } = fx;
+      fx.drift("#s7-bgp", 53.4, 14.2, 60, -40);
+      fx.drift("#s7-blob", 53.4, 14.2, -110, 60);
+      fx.pushIn("#s7-cam", 53.4, 14.2, 1.035);
+
+      fx.rise("#s7-lab", 53.45, { y: 16 });
+      fx.maskUp("#s7-a1", 54.0);
+      tl.fromTo("#s7-code", { opacity: 0, y: 200, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.5, ease: "back.out(1.5)" }, 54.3);
+      fx.counter("#s7-cn", 54.9, 55.45, 0, 500, { ar: false });
+      tl.fromTo("#s7-sh", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 55.7);
+      fx.rise("#s7-shl", 56.0, { y: 10, b: 0 });
+      tl.fromTo("#s7-tg", { opacity: 0, y: -500, rotation: 30 }, { opacity: 1, y: 0, rotation: 4, duration: 0.6, ease: "elastic.out(1, 0.5)" }, 60.6);
+      tl.to("#s7-tg-a", { x: -260, y: 520, rotation: -38, opacity: 0, duration: 0.7, ease: "power2.in" }, 62.65);
+      tl.to("#s7-tg-b", { x: 260, y: 560, rotation: 42, opacity: 0, duration: 0.7, ease: "power2.in" }, 62.65);
+      tl.fromTo("#s7-tg", { scale: 1 }, { scale: 1.12, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 62.70);
+      fx.shake("#s7-cam", 62.70, 10, 6);
+      fx.maskUp("#s7-b1", 63.95);
+      fx.maskUp("#s7-c1", 66.3);
+
+      tl.to("#s7-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 67.16);
+      window.__timelines["s7"] = tl.real;
+    })();
+  </script>
+</template></body></html>

@@ -1,0 +1,110 @@
+[
+ {
+  "id": "s1",
+  "start": 0,
+  "duration": 3.0,
+  "beat": "hook: Opus 5.5 is amazing"
+ },
+ {
+  "id": "s2",
+  "start": 2.8,
+  "duration": 5.2,
+  "beat": "videos, pro files, almost anything"
+ },
+ {
+  "id": "s3",
+  "start": 7.8,
+  "duration": 3.4,
+  "beat": "best results: this tip"
+ },
+ {
+  "id": "s4",
+  "start": 11.0,
+  "duration": 7.5,
+  "beat": "series deck: part 3"
+ },
+ {
+  "id": "s5",
+  "start": 18.4,
+  "duration": 6.3,
+  "beat": "saves tokens + time"
+ },
+ {
+  "id": "s6",
+  "start": 24.6,
+  "duration": 3.55,
+  "beat": "videos like this one"
+ },
+ {
+  "id": "s7",
+  "start": 28.0,
+  "duration": 4.5,
+  "beat": "road from zero vs shortcut: learn from others"
+ },
+ {
+  "id": "s8",
+  "start": 32.4,
+  "duration": 6.15,
+  "beat": "same AI + same purpose"
+ },
+ {
+  "id": "s9",
+  "start": 38.4,
+  "duration": 5.15,
+  "beat": "someone made videos with Claude Opus, good results"
+ },
+ {
+  "id": "s10",
+  "start": 43.4,
+  "duration": 4.55,
+  "beat": "learn from their prompt; free = great"
+ },
+ {
+  "id": "s11",
+  "start": 47.8,
+  "duration": 4.65,
+  "beat": "take parts, edit; saves time + effort"
+ },
+ {
+  "id": "s12",
+  "start": 52.3,
+  "duration": 5.75,
+  "beat": "sometimes not the prompt: the libraries"
+ },
+ {
+  "id": "s13",
+  "start": 57.9,
+  "duration": 6.8,
+  "beat": "libraries matter most; two famous ones"
+ },
+ {
+  "id": "s14",
+  "start": 64.6,
+  "duration": 5.9,
+  "beat": "Remotion vs HyperFrames (real); my pick"
+ },
+ {
+  "id": "s15",
+  "start": 70.4,
+  "duration": 6.5,
+  "beat": "tell Claude Opus to load + use it"
+ },
+ {
+  "id": "s16",
+  "start": 76.8,
+  "duration": 6.2,
+  "beat": "95% of the journey (signature payoff)"
+ },
+ {
+  "id": "s17",
+  "start": 82.9,
+  "duration": 5.4,
+  "beat": "big difference; series complete"
+ },
+ {
+  "id": "s18",
+  "start": 88.2,
+  "duration": 8.42,
+  "beat": "CTA: subscribe + bell"
+ }
+]

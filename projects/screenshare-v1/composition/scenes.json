@@ -1,0 +1,44 @@
+[
+ {
+  "id": "screen",
+  "start": 0,
+  "duration": 170.03,
+  "beat": "screen recording + annotations"
+ },
+ {
+  "id": "c0",
+  "start": 0,
+  "duration": 2.35,
+  "beat": "opening title"
+ },
+ {
+  "id": "c1",
+  "start": 48.6,
+  "duration": 4.55,
+  "beat": "5 sections map"
+ },
+ {
+  "id": "c2",
+  "start": 90.913,
+  "duration": 10.037,
+  "beat": "two systems -> one umbrella"
+ },
+ {
+  "id": "c3",
+  "start": 103.5,
+  "duration": 4.25,
+  "beat": "AI team lives here"
+ },
+ {
+  "id": "c4",
+  "start": 130.167,
+  "duration": 12.083,
+  "beat": "routines = schedule, no message needed"
+ },
+ {
+  "id": "c5",
+  "start": 164.307,
+  "duration": 5.723,
+  "beat": "recap"
+ }
+]

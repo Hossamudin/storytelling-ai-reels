@@ -1,0 +1,110 @@
+[
+ {
+  "id": "s1",
+  "start": 0,
+  "duration": 3.1,
+  "beat": "hook: Claude Opus 5.5 made this video (real studio)"
+ },
+ {
+  "id": "s2",
+  "start": 2.9,
+  "duration": 4.1,
+  "beat": "series deck: part 2 flips"
+ },
+ {
+  "id": "s3",
+  "start": 6.8,
+  "duration": 7.8,
+  "beat": "recap tip 01, tip 02 maybe more important"
+ },
+ {
+  "id": "s4",
+  "start": 14.4,
+  "duration": 6.2,
+  "beat": "good result -> package it"
+ },
+ {
+  "id": "s5",
+  "start": 20.4,
+  "duration": 7.2,
+  "beat": "similar thing every time = burn tokens again"
+ },
+ {
+  "id": "s6",
+  "start": 27.4,
+  "duration": 4.8,
+  "beat": "simple: once you're happy with the result"
+ },
+ {
+  "id": "s7",
+  "start": 32.0,
+  "duration": 6.35,
+  "beat": "don't continue same chat / don't restart from zero"
+ },
+ {
+  "id": "s8",
+  "start": 38.15,
+  "duration": 3.6,
+  "beat": "SLAM: ask Claude Opus for a SKILL"
+ },
+ {
+  "id": "s9",
+  "start": 41.55,
+  "duration": 5.9,
+  "beat": "open Claude, open the good session, ask for skill or prompt"
+ },
+ {
+  "id": "s10",
+  "start": 47.25,
+  "duration": 5.25,
+  "beat": "new session + skill = reliable result every time"
+ },
+ {
+  "id": "s11",
+  "start": 52.3,
+  "duration": 5.9,
+  "beat": "learnings + mistakes + fixes into the package, taped"
+ },
+ {
+  "id": "s12",
+  "start": 58.0,
+  "duration": 3.35,
+  "beat": "more complex -> more value"
+ },
+ {
+  "id": "s13",
+  "start": 61.15,
+  "duration": 6.65,
+  "beat": "my example: first result, mistakes"
+ },
+ {
+  "id": "s14",
+  "start": 67.6,
+  "duration": 4.75,
+  "beat": "feedback loop, burned many tokens"
+ },
+ {
+  "id": "s15",
+  "start": 72.15,
+  "duration": 2.75,
+  "beat": "then made the skill"
+ },
+ {
+  "id": "s16",
+  "start": 74.7,
+  "duration": 9.8,
+  "beat": "payoff: tokens 100% -> 25-30%, saves tokens + time"
+ },
+ {
+  "id": "s17",
+  "start": 84.3,
+  "duration": 6.5,
+  "beat": "next: part 3"
+ },
+ {
+  "id": "s18",
+  "start": 90.6,
+  "duration": 5.36,
+  "beat": "CTA follow"
+ }
+]

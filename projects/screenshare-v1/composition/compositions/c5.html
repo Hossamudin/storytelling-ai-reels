@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="c5-template">
+  <style>
+    #c5-lab { top: 180px; }
+    #c5-head { top: 230px; }
+    #c5-chips { position: absolute; left: 0; right: 0; top: 480px; display: flex; justify-content: center; gap: 22px; direction: rtl; }
+    #c5-brand { top: 700px; font-size: 120px; font-weight: 800; letter-spacing: -2px; }
+    #c5-glow { left: 460px; top: 560px; width: 1000px; height: 440px; background: radial-gradient(ellipse, rgba(180, 207, 102, 0.3), transparent 68%); }
+  </style>
+  <div data-hf-id="hf-5rxd" id="c5" data-composition-id="c5" data-width="1920" data-height="1080" data-duration="5.72">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-axv3" id="c5-dots" class="dots"></div>
+    <div data-hf-id="hf-z8q5" id="c5-cam" class="cam">
+      <div data-hf-id="hf-70f9" id="c5-glow" class="glow"></div>
+      <div data-hf-id="hf-oua8" id="c5-lab" class="row"><span data-hf-id="hf-cdhb" class="t-label" data-layout-allow-overlap="">RECAP</span></div>
+      <div data-hf-id="hf-a478" id="c5-head" class="row t-h2" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-lfj4" class="in" id="c5-h">هتفهمها أكتر واحنا شغالين</span></span></div>
+      <div data-hf-id="hf-dahv" id="c5-chips">
+        <span data-hf-id="hf-t0wt" class="pill" id="c5-p1">المحادثة</span>
+        <span data-hf-id="hf-888y" class="pill" id="c5-p2">الصفحات</span>
+        <span data-hf-id="hf-0dxa" class="pill" id="c5-p3">الوكلاء</span>
+        <span data-hf-id="hf-zdhk" class="pill" id="c5-p4">الروتينات</span>
+        <span data-hf-id="hf-zgdw" class="pill" id="c5-p5">معلومات المشروع</span>
+      </div>
+      <div data-hf-id="hf-vz3p" id="c5-brand" class="row lat nowrap">SureThing</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(164.31);
+      const { tl } = fx;
+      fx.drift("#c5-dots", 164.31, 4.92, 40, -30);
+      fx.pushIn("#c5-cam", 164.31, 4.92, 1.04);
+      fx.rise("#c5-lab", 164.35, { y: 20 });
+      fx.maskUp("#c5-h", 164.4);
+      const P = ["#c5-p1", "#c5-p2", "#c5-p3", "#c5-p4", "#c5-p5"];
+      fx.pop(P, 164.9, { from: 0.4, st: 0.12 });
+      P.forEach((p, i) => tl.fromTo(p, { backgroundColor: "rgba(255,255,255,0.05)", color: "#F6F8F0" }, { backgroundColor: "#B4CF66", color: "#0D0D0D", duration: 0.2, immediateRender: false }, 165.6 + i * 0.18));
+      fx.pop("#c5-glow", 166.6, { from: 0.4, d: 0.8, e: "power2.out" });
+      fx.letterDrop("#c5-brand", 166.7, { st: 0.04 });
+      window.__timelines["c5"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

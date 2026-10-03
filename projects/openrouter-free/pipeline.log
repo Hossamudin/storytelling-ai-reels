@@ -1,0 +1,8 @@
+[2026-10-02 05:06:37] Project created at C:\Users\H-Eld\Downloads\Code\Hossam Story telling\projects\openrouter-free
+[2026-10-02 05:06:37] Audio cleanup: voiceover.m4a
+[2026-10-02 05:06:43] Transcribing (openai_whisper) voiceover_clean.wav (162.5s, upload 0.66MB)
+[2026-10-02 05:07:39] find_retakes: 37 chunks, 2 cuts proposed, 0 manual
+[2026-10-02 05:10:17] find_retakes: 37 chunks, 2 cuts proposed, 0 manual
+[2026-10-02 05:11:04] voice_edit: 1 part(s), 2 manual cuts
+[2026-10-02 05:14:08] find_retakes: 37 chunks, 2 cuts proposed, 0 manual
+[2026-10-02 05:14:28] voice_edit: 1 part(s), 2 manual cuts

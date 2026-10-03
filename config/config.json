@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "brand": {
+    "name": "Hossam El-Din Hassan",
+    "handle": "حسام الدين حسن",
+    "palette": {
+      "punch1": "#136052",
+      "punch2": "#437F3E",
+      "punch3": "#B3CE65",
+      "punch4": "#FFEC5C",
+      "punch5": "#FF5A33",
+      "white": "#FFFFFF",
+      "black": "#0D0D0D",
+      "red": "#D93A2B"
+    },
+    "fonts": {
+      "arabic": "Noto Kufi Arabic",
+      "latin": "Manrope"
+    }
+  },
+  "video_defaults": {
+    "aspect": "9:16",
+    "resolution": "1080x1920",
+    "fps": 30,
+    "tail_padding_s": 0.6
+  },
+  "hook": {
+    "max_duration_s": 15,
+    "min_cuts": 3,
+    "max_scene_len_s": 4,
+    "strategy": "high visual change: rapid cuts, mixed methods, punchy typography, pattern interrupts"
+  },
+  "transcription": {
+    "provider": "openai_whisper",
+    "provider_note": "openai_whisper = real word timestamps (paid key). gemini_api needs a PAID-tier key: free tier returns 503/429 and truncated JSON with fake 0.5s word timings.",
+    "openai": {
+      "model": "whisper-1",
+      "language": "ar",
+      "api_url": "https://api.openai.com/v1/audio/transcriptions"
+    },
+    "prompt_file": "prompts/transcription_prompt.txt",
+    "gemini": {
+      "model": "gemini-3.5-flash",
+      "model_note": "Must be a general multimodal model (JSON mode + timestamps). Dedicated transcribe models (gemini-3.5-transcribe) return plain text with no timestamps.",
+      "api_base": "https://generativelanguage.googleapis.com",
+      "temperature": 0
+    },
+    "n8n": {
+      "webhook_url": "http://localhost:5678/webhook/Audio-Transcribe-gemini",
+      "webhook_test_url": "http://localhost:5678/webhook-test/Audio-Transcribe-gemini",
+      "payload_format": "json_base64",
+      "note": "n8n runs in docker: use http://host.docker.internal:5678/... from inside containers, localhost from Windows host."
+    }
+  },
+  "audio_cleanup": {
+    "highpass_hz": 70,
+    "lowpass_hz": 14000,
+    "denoise_nf_db": -28,
+    "deesser": true,
+    "compressor": "threshold=-18dB:ratio=2.5:attack=8:release=120:makeup=2",
+    "loudnorm": "I=-16:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "remove_silence": true,
+    "silence_threshold_db": -35,
+    "silence_min_s": 0.5,
+    "keep_silence_s": 0.3,
+    "manual_cuts_file": "input/cuts.txt"
+  },
+  "planning": {
+    "provider": "gemini_api",
+    "model": "gemini-3.5-flash",
+    "fallback_model": "gemini-3.5-flash-lite",
+    "api_base": "https://generativelanguage.googleapis.com",
+    "temperature": 0.4,
+    "system_prompt_file": "prompts/scene_planner_system.md"
+  },
+  "image": {
+    "provider": "openai",
+    "openai": {
+      "model": "gpt-image-2.5-flare",
+      "model_alternatives": [
+        "gpt-image-2.5-sunburst",
+        "gpt-image-2"
+      ],
+      "api_base": "https://api.openai.com/v1",
+      "quality": "medium",
+      "size_map": {
+        "9:16": "1024x1536",
+        "16:9": "1536x1024",
+        "1:1": "1024x1024"
+      },
+      "note": "If your account supports 2k sizes (e.g. 1536x2048 / 2048x2048), edit size_map here or in the dashboard.",
+      "model_note": "User preference (2026-09-30): GPT Image 2.5 is the best image model; quality 'medium'; pick the aspect per asset (see asset_aspects)."
+    },
+    "gemini": {
+      "model": "gemini-3.5-image",
+      "api_base": "https://generativelanguage.googleapis.com"
+    },
+    "asset_aspects": {
+      "full_frame_16x9": "1536x1024",
+      "full_frame_9x16": "1024x1536",
+      "icon_object_square": "1024x1024",
+      "portrait_card": "1024x1536",
+      "wide_banner": "1536x1024",
+      "texture_tile": "1024x1024"
+    }
+  },
+  "video": {
+    "provider": "gemini_video",
+    "gemini_video": {
+      "model": "gemini-omni-flash-1.1",
+      "api_base": "https://generativelanguage.googleapis.com",
+      "method": "predictLongRunning",
+      "max_clip_duration_s": 10,
+      "resolution": "720p",
+      "aspect_ratios": [
+        "9:16",
+        "16:9"
+      ],
+      "poll_interval_s": 10,
+      "timeout_s": 600,
+      "negative_prompt": "text overlays, watermark, logo, subtitles, music, distorted faces, extra fingers, morphing artifacts"
+    }
+  },
+  "captions": {
+    "enabled": true,
+    "style": "punch",
+    "styles_available": [
+      "minimal",
+      "punch",
+      "karaoke"
+    ],
+    "keyword_colors": [
+      "#FF5A33",
+      "#FFEC5C",
+      "#B3CE65"
+    ],
+    "max_words_per_chunk": 3,
+    "break_gap_s": 0.55,
+    "position": "bottom",
+    "keyword_detection": "latin-script tokens plus storyboard caption_keywords"
+  },
+  "costs": {
+    "per_image_usd": 0.04,
+    "per_video_second_usd": 0.1,
+    "planning_call_usd": 0.05,
+    "transcription_call_usd": 0.02,
+    "currency": "USD"
+  },
+  "paths": {
+    "projects_dir": "projects",
+    "hossam_images": "Hossam Images"
+  },
+  "dashboard": {
+    "host": "127.0.0.1",
+    "port": 8788
+  },
+  "motion": {
+    "default_preset": "light",
+    "presets": {
+      "light": "Editorial Light — paper #F6F4EA, Noto Kufi Arabic + Manrope, teal idea scenes (approved Vibe Automation look)",
+      "dark": "Editorial Dark — teal gradient #07221E→#041614, lime dot grid, Cairo + Montserrat, editorial chrome"
+    },
+    "series": "VIBE AUTOMATION",
+    "chrome_on_light": false,
+    "tail_s": 0.8,
+    "sfx_target_lufs": -27,
+    "sfx_peak_target_dbfs": -12,
+    "master_lufs": -14,
+    "master_true_peak": -1.2,
+    "hyperframes_version": "0.8.97",
+    "master_prompt": "prompts/motion_director_prompt.md",
+    "kit": "kit/motion"
+  },
+  "higgsfield": {
+    "via": "mcp",
+    "note": "Generate through the Higgsfield MCP (batch tools + jobs_wait). Paid: storyboard/treatment approval gate applies; log every job in assets/ledger.json. Playbook: prompts/higgsfield_playbook.md",
+    "image_model_preference": "GPT Image 2.5 (medium) when offered; otherwise the best image model the catalog lists",
+    "sfx_model": "mirelo_text_to_audio",
+    "tts_models": [
+      "inworld_text_to_speech",
+      "seed_audio",
+      "text2speech_v2"
+    ],
+    "music": "never (brand rule: no music)",
+    "project_per_video": true,
+    "download_dir": "assets/higgsfield"
+  },
+  "retakes": {
+    "model": "gpt-transcribe",
+    "llm_model": "gpt-5.5",
+    "language": "ar",
+    "silence_db": -38,
+    "min_pause": 0.15,
+    "note": "find_retakes.py: verbatim chunk transcription (gpt-transcribe keeps repeats/false starts; whisper-1 hides them) + LLM editor pass. gpt-transcribe has no timestamps (verbose_json -> 400), so timings come from silence-split chunks and whisper-1 words."
+  },
+  "library": {
+    "root": "library",
+    "describe_model": "gpt-5.4-mini",
+    "note": "pipeline/lib.py: find before any paid generation, add/harvest after. INDEX.md is the agent's entry point."
+  }
+}

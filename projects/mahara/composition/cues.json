@@ -1,0 +1,21 @@
+[
+ {"id": "vo", "t": 0, "src": "assets/voice/edited.wav", "dur": 101.333, "vol": 1.0, "voice": true},
+ {"t": 0.15, "sfx": "library/sparkle", "accent": 0.7},
+ {"t": 2.05, "sfx": "library/whoosh", "accent": 0.8},
+ {"t": 6.7, "sfx": "library/whoosh", "accent": 0.8},
+ {"t": 9.45, "sfx": "library/pop", "accent": 0.5},
+ {"t": 9.75, "sfx": "library/pop", "accent": 0.45},
+ {"t": 10.05, "sfx": "library/pop", "accent": 0.4},
+ {"t": 13.65, "sfx": "library/click-soft", "accent": 0.6},
+ {"t": 18.4, "sfx": "library/chime", "accent": 0.55},
+ {"t": 19.3, "sfx": "library/whoosh", "accent": 0.8},
+ {"t": 21.9, "sfx": "library/click-soft", "accent": 0.5},
+ {"t": 24.5, "sfx": "library/whoosh-short", "accent": 0.45},
+ {"t": 31.85, "sfx": "library/whoosh-short", "accent": 0.45},
+ {"t": 45.1, "sfx": "library/click", "accent": 0.7},
+ {"t": 49.6, "sfx": "library/whoosh-short", "accent": 0.45},
+ {"t": 76.95, "sfx": "library/whoosh-short", "accent": 0.45},
+ {"t": 85.65, "sfx": "library/whoosh-short", "accent": 0.45},
+ {"t": 96.45, "sfx": "library/whoosh", "accent": 0.8},
+ {"t": 98.6, "sfx": "library/chime", "accent": 0.5}
+]

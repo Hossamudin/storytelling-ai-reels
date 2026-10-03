@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s5-template">
+  <style>
+
+    #s5-k { left: 90px; top: 560px; width: 900px; height: 508px; }
+    #s5-k img { width: 900px; }
+    #s5-lock { position: absolute; left: 430px; top: 700px; width: 220px; height: 220px; border-radius: 50%; background: rgba(4,22,20,.85); border: 6px solid var(--orange);
+      color: var(--orange); display: flex; align-items: center; justify-content: center; }
+    #s5-st { left: 300px; top: 1110px; }
+
+  </style>
+  <div data-hf-id="hf-fdpj" id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="4.15">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-pl0n" id="s5-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-6aiy" id="s5-bgp" class="dots"></div>
+    <div data-hf-id="hf-kq71" id="s5-cam" class="cam">
+
+      <div data-hf-id="hf-5y3q" class="row t-h1" style="top:260px;font-size:120px" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-fwf9" class="in" id="s5-h1">وجوجل ردّت</span></span></div>
+      <div data-hf-id="hf-tbxc" id="s5-k" class="shot" style="left:90px; top:560px; width:900px; height:508px"><img data-hf-id="hf-00yn" id="s5-img" src="assets/images/argon_key.png"></div>
+      <div data-hf-id="hf-n5qf" id="s5-lock"><svg data-hf-id="hf-ngq7" style="width:110px; height:110px; color:currentColor;"><use data-hf-id="hf-zarj" href="#i-lock2" /></svg></div>
+      <div data-hf-id="hf-vr1a" id="s5-st" class="stamp en" style="font-size:58px">LOCKED</div>
+      <div data-hf-id="hf-fggm" class="row t-h2" style="top:1290px;color:var(--orange)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-dfw4" class="in" id="s5-h2">محدش يقدر يستخدمه</span></span></div>
+      <div data-hf-id="hf-ynvf" class="row t-h3" style="top:1420px;color:var(--fg-muted)" data-layout-allow-overlap=""><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-bqdh" class="in" id="s5-h3">لحد دلوقتي</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(22.4);
+      const { tl } = fx;
+      fx.drift("#s5-bgp", 22.4, 4.15, 60, -40);
+      fx.drift("#s5-blob", 22.4, 4.15, -110, 60);
+      fx.pushIn("#s5-cam", 22.4, 4.15, 1.035);
+
+      fx.maskUp("#s5-h1", 22.55);
+      tl.fromTo("#s5-k", { opacity: 0, y: 160, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 23.0);
+      tl.fromTo("#s5-img", { scale: 1.12 }, { scale: 1, duration: 3.5, ease: "power1.out" }, 23.0);
+      tl.to("#s5-k", { filter: "blur(10px) grayscale(.7)", duration: 0.4 }, 24.3);
+      fx.pop("#s5-lock", 24.35, { from: 1.8, e: "expo.out", d: 0.35 });
+      fx.stamp("#s5-st", 24.75, "#s5-cam");
+      fx.maskUp("#s5-h2", 24.4);
+      fx.maskUp("#s5-h3", 25.5);
+
+      tl.to("#s5-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 26.11);
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>

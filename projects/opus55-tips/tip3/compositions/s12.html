@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s12-template">
+  <style>
+
+    #s12-doc { left: 340px; top: 480px; width: 400px; height: 440px; }
+    #s12-x { left: 470px; top: 610px; }
+    .s12-bk { position: absolute; left: 290px; width: 500px; height: 90px; border-radius: 18px; display: flex; align-items: center; justify-content: center; gap: 20px;
+      font-family: var(--font-en); font-weight: 900; font-size: 38px; color: var(--ink); direction: ltr; }
+    #s12-b1 { top: 1320px; background: var(--lime); } #s12-b2 { top: 1215px; background: var(--yellow); left: 320px; width: 440px; } #s12-b3 { top: 1110px; background: #e8977c; left: 350px; width: 380px; }
+
+  </style>
+  <div data-hf-id="hf-g8ym" id="s12" data-composition-id="s12" data-width="1080" data-height="1920" data-duration="5.75">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-al65" id="s12-blob" class="blob" style="left:160px; top:620px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-fgts" id="s12-bgp" class="dots"></div>
+    <div data-hf-id="hf-4ja1" id="s12-cam" class="cam">
+
+      <div data-hf-id="hf-iipn" class="row t-h3" style="top:280px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-2e6w" class="in" id="s12-h1">ساعات الـــ<span data-hf-id="hf-g06i" class="lat">prompt</span> نفسه</span></span></div>
+      <div data-hf-id="hf-1xy1" class="row t-h2 op-o" style="top:370px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-xd1v" class="in" id="s12-h2">مش هو المهم</span></span></div>
+      <div data-hf-id="hf-qy7h" id="s12-doc" class="op-doc"><i data-hf-id="hf-yhhx" class="ln" style="top:60px; width:300px"></i><i data-hf-id="hf-gls5" class="ln" style="top:104px; width:260px"></i><i data-hf-id="hf-ujxh" class="ln" style="top:148px; width:310px"></i><i data-hf-id="hf-bqus" class="ln" style="top:192px; width:240px"></i><i data-hf-id="hf-b0g4" class="ln" style="top:236px; width:290px"></i><i data-hf-id="hf-0qov" class="ln" style="top:280px; width:270px"></i><i data-hf-id="hf-7x9x" class="ln" style="top:324px; width:220px"></i><i data-hf-id="hf-iyqm" class="ln" style="top:368px; width:300px"></i></div>
+      <div data-hf-id="hf-tfk3" id="s12-x" class="xbadge" style="width:140px; height:140px; color:#fff"><svg data-hf-id="hf-skot" style="width:90px; height:90px; color:currentColor;"><use data-hf-id="hf-r08i" href="#i-x" /></svg></div>
+      <div data-hf-id="hf-obd8" class="s12-bk" id="s12-b3">&lt;/&gt; LIBRARY</div><div data-hf-id="hf-qb9n" class="s12-bk" id="s12-b2">&lt;/&gt; LIBRARY</div><div data-hf-id="hf-40ii" class="s12-bk" id="s12-b1">&lt;/&gt; LIBRARY</div>
+      <div data-hf-id="hf-n9sz" class="row t-h2 op-l" style="top:1480px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-xw8r" class="in" id="s12-k1">المكتبات البرمجية</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(52.3);
+      const { tl } = fx;
+      fx.drift("#s12-bgp", 52.3, 5.75, 60, -40);
+      fx.drift("#s12-blob", 52.3, 5.75, -110, 60);
+      fx.pushIn("#s12-cam", 52.3, 5.75, 1.035);
+
+      fx.maskUp("#s12-h1", 52.45); fx.maskUp("#s12-h2", 54.55);
+      tl.fromTo("#s12-doc", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 53.5);
+      fx.pop("#s12-x", 54.6, { from: 0.2 });
+      tl.to("#s12-doc", { scale: 0.8, opacity: 0.35, filter: "grayscale(1)", duration: 0.5 }, 55.2);
+      tl.fromTo("#s12-b1", { opacity: 0, y: -400 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 57.25);
+      tl.fromTo("#s12-b2", { opacity: 0, y: -400 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 57.55);
+      tl.fromTo("#s12-b3", { opacity: 0, y: -400 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 57.85);
+      fx.maskUp("#s12-k1", 57.3);
+
+      tl.to("#s12-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 57.95);
+      window.__timelines["s12"] = tl.real;
+    })();
+  </script>
+</template></body></html>

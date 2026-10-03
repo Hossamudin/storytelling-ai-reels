@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s11-template">
+  <style>
+
+    .s11-slot { position: absolute; left: 110px; width: 860px; height: 110px; border-radius: 26px; border: 3px dashed rgba(179,206,101,.35); }
+    #s11-cur { left: 920px; top: 860px; }
+
+  </style>
+  <div data-hf-id="hf-uihj" id="s11" data-composition-id="s11" data-width="1080" data-height="1920" data-duration="4.4">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-hl1a" id="s11-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-d5y7" id="s11-bgp" class="dots"></div>
+    <div data-hf-id="hf-z18q" id="s11-cam" class="cam">
+
+      <div data-hf-id="hf-q0p9" id="s11-lab" class="row" style="top:300px"><span data-hf-id="hf-42h3" class="t-label" style="color:var(--lime)">THE BRIEF</span></div>
+      <div data-hf-id="hf-i1sk" class="row t-h2" style="top:350px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-bsp0" class="in" id="s11-h1">قلتله:</span></span></div>
+      <div data-hf-id="hf-skvo" id="s11-in" class="op-input" style="left:70px; top:600px; width:940px; height:250px"><div data-hf-id="hf-ns2a" class="txt" id="s11-in-t"><span data-hf-id="hf-44lm" class="ph">How can I help you today?</span></div><div data-hf-id="hf-mlgk" class="foot"><span data-hf-id="hf-955y" class="plus">+</span><span data-hf-id="hf-13hc" class="mdl" id="s11-in-m">Opus 5.5 <em data-hf-id="hf-7i9k">Medium</em><span data-hf-id="hf-fy2i" class="send" id="s11-in-s"><svg data-hf-id="hf-vwu9"><use data-hf-id="hf-kkf4" href="#i-send" /></svg></span></span></div></div>
+      <div data-hf-id="hf-l9w4" class="s11-slot" id="s11-q1" style="top:960px"></div><div data-hf-id="hf-fpa6" class="s11-slot" id="s11-q2" style="top:1100px"></div><div data-hf-id="hf-n9si" class="s11-slot" id="s11-q3" style="top:1240px"></div>
+      <svg data-hf-id="hf-pga3" id="s11-cur" class="cursor"><use data-hf-id="hf-bmxk" href="#i-cursor" /></svg>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(44.2);
+      const { tl } = fx;
+      fx.drift("#s11-bgp", 44.2, 4.4, 60, -40);
+      fx.drift("#s11-blob", 44.2, 4.4, -110, 60);
+      fx.pushIn("#s11-cam", 44.2, 4.4, 1.025);
+
+      fx.rise("#s11-lab", 44.3, { y: 12 });
+      fx.maskUp("#s11-h1", 44.35);
+      tl.fromTo("#s11-in", { opacity: 0, y: 120, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 44.3);
+      fx.typeText("#s11-in-t", 45.06, "عايز أعمل فيديو موشن جرافيكس احترافي", 21);
+      fx.rise("#s11-q1, #s11-q2, #s11-q3", 47.3, { y: 30, st: 0.12 });
+      tl.fromTo("#s11-cur", { opacity: 0, x: 80, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.5, ease: "power3.out" }, 47.0);
+
+      tl.to("#s11-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 48.16);
+      window.__timelines["s11"] = tl.real;
+    })();
+  </script>
+</template></body></html>

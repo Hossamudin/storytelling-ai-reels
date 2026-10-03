@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s6-template">
+  <style>
+
+    .s6-w { position: absolute; background: var(--lime); border-radius: 12px; box-shadow: 0 0 30px rgba(180,207,102,.6); }
+    #s6-wt { left: 350px; top: 610px; width: 380px; height: 24px; } #s6-wb { left: 350px; top: 966px; width: 380px; height: 24px; }
+    #s6-wl { left: 350px; top: 610px; width: 24px; height: 380px; } #s6-wr { left: 706px; top: 610px; width: 24px; height: 380px; }
+    .s6-ring { position: absolute; left: 340px; top: 600px; width: 400px; height: 400px; border-radius: 50%; border: 6px solid #e8977c; opacity: 0; }
+
+  </style>
+  <div data-hf-id="hf-tsne" id="s6" data-composition-id="s6" data-width="1080" data-height="1920" data-duration="3.35">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-3dtf" id="s6-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-84yt" id="s6-bgp" class="dots"></div>
+    <div data-hf-id="hf-o7se" id="s6-cam" class="cam">
+
+      <div data-hf-id="hf-kics" class="row t-h3" style="top:280px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-00jx" class="in" id="s6-h1">ولما يكون ذكي بالشكل ده</span></span></div>
+      <div data-hf-id="hf-i3kd" id="s6-sp" class="cl-spark" style="left:400px; top:660px; width:280px; height:280px;"><div data-hf-id="hf-pba1" class="cl-bloom" id="s6-sp-bl"></div><svg data-hf-id="hf-0d8r" id="s6-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+      <div data-hf-id="hf-tmwz" class="s6-ring" id="s6-r1"></div><div data-hf-id="hf-kz14" class="s6-ring" id="s6-r2"></div>
+      <div data-hf-id="hf-lf4q" id="s6-wt" class="s6-w"></div><div data-hf-id="hf-gsyc" id="s6-wb" class="s6-w"></div><div data-hf-id="hf-rrxe" id="s6-wl" class="s6-w"></div><div data-hf-id="hf-1vr8" id="s6-wr" class="s6-w"></div>
+      <div data-hf-id="hf-69io" class="row t-h1 op-o" style="top:1180px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-offu" class="in" id="s6-a1">ما تحجّمهوش</span></span></div>
+      <div data-hf-id="hf-uhls" class="row t-h1" style="top:1370px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-ukvp" class="in" id="s6-b1">وما تحدّهوش</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(18.55);
+      const { tl } = fx;
+      fx.drift("#s6-bgp", 18.55, 3.35, 60, -40);
+      fx.drift("#s6-blob", 18.55, 3.35, -110, 60);
+      
+
+      fx.maskUp("#s6-h1", 18.7);
+      fx.pop("#s6-sp", 18.6, { from: 0.4, e: "expo.out", d: 0.6 });
+      tl.fromTo("#s6-sp-svg", { rotation: 0 }, { rotation: 90, duration: 3.3, ease: "none" }, 18.6);
+      // walls close in around the spark
+      tl.fromTo("#s6-wt", { opacity: 0, y: -300 }, { opacity: 1, y: 0, duration: 1.4, ease: "power2.in" }, 18.9);
+      tl.fromTo("#s6-wb", { opacity: 0, y: 300 }, { opacity: 1, y: 0, duration: 1.4, ease: "power2.in" }, 18.9);
+      tl.fromTo("#s6-wl", { opacity: 0, x: -300 }, { opacity: 1, x: 0, duration: 1.4, ease: "power2.in" }, 18.9);
+      tl.fromTo("#s6-wr", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 1.4, ease: "power2.in" }, 18.9);
+      tl.to("#s6-sp", { scale: 0.72, duration: 1.0, ease: "power2.in" }, 19.4);
+      tl.to("#s6-sp-bl", { opacity: 0.25, duration: 1.0 }, 19.4);
+      fx.maskUp("#s6-a1", 20.45);
+      fx.shake("#s6-wt, #s6-wb, #s6-wl, #s6-wr", 20.5, 8, 6);
+      fx.maskUp("#s6-b1", 21.2);
+      // BURST
+      tl.to("#s6-wt", { y: -1300, rotation: -25, opacity: 0, filter: "blur(10px)", duration: 0.5, ease: "power3.out" }, 21.42);
+      tl.to("#s6-wb", { y: 1300, rotation: 20, opacity: 0, filter: "blur(10px)", duration: 0.5, ease: "power3.out" }, 21.42);
+      tl.to("#s6-wl", { x: -900, rotation: 30, opacity: 0, filter: "blur(10px)", duration: 0.5, ease: "power3.out" }, 21.42);
+      tl.to("#s6-wr", { x: 900, rotation: -30, opacity: 0, filter: "blur(10px)", duration: 0.5, ease: "power3.out" }, 21.42);
+      tl.to("#s6-sp", { scale: 1.7, duration: 0.45, ease: "expo.out" }, 21.42);
+      tl.to("#s6-sp-bl", { opacity: 1, scale: 1.4, duration: 0.45, ease: "expo.out" }, 21.42);
+      fx.ringPulse("#s6-r1, #s6-r2", 21.45, { scale: 2.6 });
+      fx.shake("#s6-cam", 21.45, 18, 7);
+
+      tl.to("#s6-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 21.5);
+      window.__timelines["s6"] = tl.real;
+    })();
+  </script>
+</template></body></html>

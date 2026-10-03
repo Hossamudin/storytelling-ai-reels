@@ -1,0 +1,600 @@
+[
+ {
+  "id": "vo",
+  "t": 0,
+  "src": "assets/voice/reel.wav",
+  "dur": 189.93,
+  "vol": 1.0,
+  "voice": true
+ },
+ {
+  "t": 0.0,
+  "sfx": "library/typing",
+  "accent": 0.6
+ },
+ {
+  "t": 0.55,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.8
+ },
+ {
+  "t": 1.7,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 4.0,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 5.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.6
+ },
+ {
+  "t": 7.75,
+  "sfx": "library/notification",
+  "accent": 0.6
+ },
+ {
+  "t": 9.3,
+  "sfx": "library/click",
+  "accent": 0.7
+ },
+ {
+  "t": 10.35,
+  "sfx": "library/whoosh-short",
+  "accent": 0.6
+ },
+ {
+  "t": 12.3,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 12.9,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 13.8,
+  "sfx": "library/chime",
+  "accent": 0.5
+ },
+ {
+  "t": 15.0,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 17.9,
+  "sfx": "library/error",
+  "accent": 0.5
+ },
+ {
+  "t": 18.9,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 19.5,
+  "sfx": "library/notification",
+  "accent": 0.45
+ },
+ {
+  "t": 22.55,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 24.35,
+  "sfx": "library/error",
+  "accent": 0.6
+ },
+ {
+  "t": 24.75,
+  "sfx": "library/impact-bass-2",
+  "accent": 0.7
+ },
+ {
+  "t": 26.35,
+  "sfx": "library/whoosh",
+  "accent": 0.8
+ },
+ {
+  "t": 29.7,
+  "sfx": "library/typing",
+  "accent": 0.55
+ },
+ {
+  "t": 30.15,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 32.3,
+  "sfx": "library/pop",
+  "accent": 0.55
+ },
+ {
+  "t": 35.7,
+  "sfx": "library/pop",
+  "accent": 0.55
+ },
+ {
+  "t": 39.3,
+  "sfx": "library/whoosh-short",
+  "accent": 0.6
+ },
+ {
+  "t": 40.4,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 40.88,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 41.8,
+  "sfx": "library/chime",
+  "accent": 0.5
+ },
+ {
+  "t": 43.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 44.3,
+  "sfx": "library/error",
+  "accent": 0.55
+ },
+ {
+  "t": 45.7,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 47.5,
+  "sfx": "library/chime",
+  "accent": 0.45
+ },
+ {
+  "t": 51.85,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 52.35,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 53.35,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 55.3,
+  "sfx": "library/error",
+  "accent": 0.6
+ },
+ {
+  "t": 56.85,
+  "sfx": "library/whoosh",
+  "accent": 0.8
+ },
+ {
+  "t": 59.2,
+  "sfx": "library/typing",
+  "accent": 0.55
+ },
+ {
+  "t": 59.65,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 62.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 63.8,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 65.75,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 68.2,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 70.0,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 72.25,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 75.1,
+  "sfx": "library/whoosh",
+  "accent": 0.5
+ },
+ {
+  "t": 76.4,
+  "sfx": "library/impact-bass-2",
+  "accent": 0.7
+ },
+ {
+  "t": 78.1,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 79.3,
+  "sfx": "library/chime",
+  "accent": 0.45
+ },
+ {
+  "t": 80.9,
+  "sfx": "library/pop",
+  "accent": 0.55
+ },
+ {
+  "t": 82.6,
+  "sfx": "library/whoosh",
+  "accent": 0.8
+ },
+ {
+  "t": 84.65,
+  "sfx": "library/typing",
+  "accent": 0.55
+ },
+ {
+  "t": 85.1,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 85.9,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 86.7,
+  "sfx": "library/click",
+  "accent": 0.6
+ },
+ {
+  "t": 88.95,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 90.1,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 92.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 95.4,
+  "sfx": "library/impact-bass-2",
+  "accent": 0.75
+ },
+ {
+  "t": 100.6,
+  "sfx": "library/sparkle",
+  "accent": 0.5
+ },
+ {
+  "t": 101.3,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 101.7,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 102.3,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 104.4,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 105.2,
+  "sfx": "library/sparkle",
+  "accent": 0.45
+ },
+ {
+  "t": 106.6,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 107.6,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 111.5,
+  "sfx": "library/riser",
+  "accent": 0.35
+ },
+ {
+  "t": 113.25,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 114.4,
+  "sfx": "library/click",
+  "accent": 0.5
+ },
+ {
+  "t": 115.25,
+  "sfx": "library/click",
+  "accent": 0.5
+ },
+ {
+  "t": 118.45,
+  "sfx": "library/whoosh",
+  "accent": 0.8
+ },
+ {
+  "t": 120.1,
+  "sfx": "library/typing",
+  "accent": 0.55
+ },
+ {
+  "t": 120.55,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 122.7,
+  "sfx": "library/pop",
+  "accent": 0.6
+ },
+ {
+  "t": 124.1,
+  "sfx": "library/whoosh-short",
+  "accent": 0.55
+ },
+ {
+  "t": 125.4,
+  "sfx": "library/pop",
+  "accent": 0.55
+ },
+ {
+  "t": 128.2,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 130.2,
+  "sfx": "library/typing",
+  "accent": 0.5
+ },
+ {
+  "t": 131.2,
+  "sfx": "library/typing",
+  "accent": 0.5
+ },
+ {
+  "t": 132.4,
+  "sfx": "library/chime",
+  "accent": 0.55
+ },
+ {
+  "t": 133.6,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 134.0,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 134.5,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 136.6,
+  "sfx": "library/whoosh",
+  "accent": 0.8
+ },
+ {
+  "t": 138.7,
+  "sfx": "library/typing",
+  "accent": 0.55
+ },
+ {
+  "t": 139.15,
+  "sfx": "library/impact-bass-1",
+  "accent": 0.9
+ },
+ {
+  "t": 139.55,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 145.6,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 146.3,
+  "sfx": "library/pop",
+  "accent": 0.45
+ },
+ {
+  "t": 147.25,
+  "sfx": "library/error",
+  "accent": 0.5
+ },
+ {
+  "t": 148.6,
+  "sfx": "library/sparkle",
+  "accent": 0.45
+ },
+ {
+  "t": 150.9,
+  "sfx": "library/pop",
+  "accent": 0.55
+ },
+ {
+  "t": 152.6,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 153.0,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 154.6,
+  "sfx": "library/chime",
+  "accent": 0.55
+ },
+ {
+  "t": 156.05,
+  "sfx": "library/whoosh",
+  "accent": 0.8
+ },
+ {
+  "t": 158.7,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 160.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 162.7,
+  "sfx": "library/typing",
+  "accent": 0.55
+ },
+ {
+  "t": 163.4,
+  "sfx": "library/typing",
+  "accent": 0.6
+ },
+ {
+  "t": 163.7,
+  "sfx": "library/impact-bass-1",
+  "accent": 1.0
+ },
+ {
+  "t": 166.9,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 169.0,
+  "sfx": "library/click",
+  "accent": 0.5
+ },
+ {
+  "t": 169.7,
+  "sfx": "library/click",
+  "accent": 0.5
+ },
+ {
+  "t": 170.85,
+  "sfx": "library/chime",
+  "accent": 0.45
+ },
+ {
+  "t": 173.2,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 174.6,
+  "sfx": "library/impact-bass-2",
+  "accent": 0.7
+ },
+ {
+  "t": 176.2,
+  "sfx": "library/error",
+  "accent": 0.45
+ },
+ {
+  "t": 178.6,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 179.6,
+  "sfx": "library/pop",
+  "accent": 0.5
+ },
+ {
+  "t": 182.9,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 183.3,
+  "sfx": "library/pop",
+  "accent": 0.4
+ },
+ {
+  "t": 183.7,
+  "sfx": "library/typing",
+  "accent": 0.45
+ },
+ {
+  "t": 184.2,
+  "sfx": "library/click",
+  "accent": 0.55
+ },
+ {
+  "t": 185.9,
+  "sfx": "library/typing",
+  "accent": 0.5
+ },
+ {
+  "t": 186.6,
+  "sfx": "library/whoosh-short",
+  "accent": 0.5
+ },
+ {
+  "t": 189.4,
+  "sfx": "library/pop",
+  "accent": 0.55
+ },
+ {
+  "t": 190.6,
+  "sfx": "library/click",
+  "accent": 0.7
+ }
+]

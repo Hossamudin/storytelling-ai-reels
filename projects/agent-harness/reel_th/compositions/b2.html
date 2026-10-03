@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="b2-template">
+  <style>
+
+    #b2-v { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #b2-sh { position: absolute; left: 0; right: 0; bottom: 0; height: 760px; background: linear-gradient(0deg, rgba(4,22,20,.95), rgba(4,22,20,0)); }
+    #b2-lab { top: 1380px; } #b2-h { top: 1420px; }
+
+  </style>
+  <div data-hf-id="hf-ss43" id="b2" data-composition-id="b2" data-width="1080" data-height="1920" data-duration="2.35">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-mimm" id="b2-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-2gni" id="b2-bgp" class="dots"></div>
+    <div data-hf-id="hf-av5h" id="b2-cam" class="cam">
+
+      <video data-hf-id="hf-1502" id="b2-v" src="assets/higgsfield/broll_harness_lock.mp4" data-start="0" data-duration="2.35" data-media-start="2.5" muted playsinline></video>
+      <div data-hf-id="hf-21kv" id="b2-sh"></div>
+      <div data-hf-id="hf-uvfo" id="b2-lab" class="row"><span data-hf-id="hf-36ub" class="t-label" style="color:var(--lime)">THE HARNESS</span></div>
+      <div data-hf-id="hf-cc1m" id="b2-h" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-rl0g" class="in" id="b2-h1">لازم يبقى جوّه برنامج</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(37.3);
+      const { tl } = fx;
+      fx.drift("#b2-bgp", 37.3, 2.35, 70, -40);
+      fx.drift("#b2-blob", 37.3, 2.35, -120, 60);
+      fx.pushIn("#b2-cam", 37.3, 2.35, 1.05);
+
+      fx.rise("#b2-lab", 37.35, { y: 16 });
+      fx.maskUp("#b2-h1", 37.4);
+
+      tl.to("#b2-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 39.45);
+      window.__timelines["b2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

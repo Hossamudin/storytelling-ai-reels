@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s19-template">
+  <style>
+
+    #s19-v { left: 90px; top: 470px; width: 450px; height: 615px; }
+    #s19-v img, #s19-v video { width: 450px; }
+    #s19-ic { position: absolute; left: 680px; top: 470px; width: 220px; height: 220px; color: var(--yellow); }
+    .s19-f { position: absolute; left: 580px; width: 420px; text-align: center; }
+    .s19-f .n { font-family: var(--font-en); font-weight: 900; font-size: 84px; white-space: nowrap; color: var(--yellow); line-height: 1.1; direction: ltr; }
+    .s19-f .t { font-family: var(--font-ar); font-weight: 800; font-size: 32px; color: var(--fg); line-height: 1.35; }
+
+  </style>
+  <div data-hf-id="hf-p613" id="s19" data-composition-id="s19" data-width="1080" data-height="1920" data-duration="6.6">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-ekx3" id="s19-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-41rr" id="s19-bgp" class="dots"></div>
+    <div data-hf-id="hf-rx9u" id="s19-cam" class="cam">
+
+      <div data-hf-id="hf-yjg9" class="row t-h2" style="top:250px;font-size:80px; direction:ltr" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-yz1h" class="in" id="s19-h1"><span data-hf-id="hf-mapu" class="lat">Scientific Research</span></span></span></div>
+      <div data-hf-id="hf-3pbx" id="s19-v" class="shot" style="left:90px; top:470px; width:450px; height:615px"><img data-hf-id="hf-ghs0" src="assets/images/argon_ocean.png"><video data-hf-id="hf-4xa3" id="s19-vid" src="assets/videos/argon_ocean.mp4" data-start="0" data-duration="6.6" data-media-start="0" data-hf-media-start-basis="local" muted playsinline></video></div>
+      <div data-hf-id="hf-r9pl" class="src" style="top:1100px; left:90px; right:auto; width:450px; font-size:18px">3D SIM · ARGON VS CLAUDE · <b data-hf-id="hf-aq42">@AI_SCREENING</b></div>
+      <svg data-hf-id="hf-rczd" id="s19-ic" viewBox="0 0 64 64"><use data-hf-id="hf-d59v" href="#i-flask" /></svg>
+      <div data-hf-id="hf-hqkt" class="s19-f" id="s19-f1" style="top:720px"><div data-hf-id="hf-yohv" class="n" data-layout-allow-overlap="">40%</div><div data-hf-id="hf-nv6m" class="t" data-layout-allow-overlap="">أحسن من الـــ<span data-hf-id="hf-61ub" class="lat">baseline</span> في الكوانتم</div></div>
+      <div data-hf-id="hf-fp4s" class="s19-f" id="s19-f2" style="top:920px"><div data-hf-id="hf-hogi" class="n" data-layout-allow-overlap="">300 TiB</div><div data-hf-id="hf-lqhm" class="t" data-layout-allow-overlap="">ذاكرة اتوفرت في جوجل</div></div>
+      <div data-hf-id="hf-gu9c" class="row t-h2" style="top:1240px;" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-jwyl" class="in" id="s19-h2">ليه مساهمات فعلًا</span></span></div>
+      <div data-hf-id="hf-l2ig" class="row t-h1" style="top:1370px;font-size:110px; color:var(--yellow)" data-layout-allow-overlap=""><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-9ci2" class="in" id="s19-h3">في البحث العلمي</span></span></div>
+      <div data-hf-id="hf-8i58" id="s19-src" class="src" style="top:1560px">REAL · <b data-hf-id="hf-i20u">BLOG.GOOGLE</b> · INTERNAL RESULTS</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(104.05);
+      const { tl } = fx;
+      fx.drift("#s19-bgp", 104.05, 6.6, 60, -40);
+      fx.drift("#s19-blob", 104.05, 6.6, -110, 60);
+      fx.pushIn("#s19-cam", 104.05, 6.6, 1.035);
+
+      fx.maskUp("#s19-h1", 104.2);
+      tl.fromTo("#s19-v", { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 104.4);
+      fx.pop("#s19-ic", 105.2, { from: 0.3 });
+      fx.rise("#s19-f1", 106.6, { y: 40 }); fx.rise("#s19-f2", 107.6, { y: 40 });
+      fx.maskUp("#s19-h2", 107.1);
+      fx.maskUp("#s19-h3", 109.4);
+      fx.rise("#s19-src", 106.8, { y: 10, b: 0 });
+
+      tl.to("#s19-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 110.21);
+      window.__timelines["s19"] = tl.real;
+    })();
+  </script>
+</template></body></html>

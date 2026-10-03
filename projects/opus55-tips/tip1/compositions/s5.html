@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s5-template">
+  <style>
+
+    #s5-shot { left: 160px; top: 430px; width: 760px; height: 880px; }
+    #s5-col { left: 40px; top: 50px; width: 150px; height: 830px; border-radius: 14px; border: 6px solid var(--lime); box-shadow: 0 0 34px rgba(180,207,102,.55); }
+    #s5-card { left: 110px; top: 1350px; width: 860px; height: 300px; }
+    #s5-num { position: absolute; left: 40px; top: 30px; width: 380px; text-align: center; font-family: var(--font-ar); font-weight: 900; font-size: 170px; line-height: 1.3; color: var(--yellow); }
+    #s5-t1 { position: absolute; right: 44px; top: 60px; width: 470px; text-align: right; white-space: nowrap; font-size: 52px; }
+    #s5-t2 { position: absolute; right: 44px; top: 200px; width: 420px; text-align: right; }
+    #s5-src { top: 1690px; }
+
+  </style>
+  <div data-hf-id="hf-mota" id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="6.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-649a" id="s5-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-6aiy" id="s5-bgp" class="dots"></div>
+    <div data-hf-id="hf-kq71" id="s5-cam" class="cam">
+
+      <div data-hf-id="hf-6xck" class="row t-h2" style="top:250px; font-size:76px"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-gybm" class="in" id="s5-h1">حتى في الـــ<span data-hf-id="hf-3u6g" class="lat">Benchmarks</span></span></span></div>
+      <div data-hf-id="hf-r415" id="s5-shot" class="op-shot"><img data-hf-id="hf-hra3" id="s5-img" src="assets/images/opus_bench.png" style="width:760px"><div data-hf-id="hf-mf4z" id="s5-col" class="abs"></div></div>
+      <div data-hf-id="hf-mh5t" id="s5-card" class="op-card">
+        <div data-hf-id="hf-7aul" id="s5-num" class="num">٤٠٪</div>
+        <div data-hf-id="hf-frki" id="s5-t1" class="t-h3">تكلفة تشغيل أقل</div>
+        <div data-hf-id="hf-x6hz" id="s5-t2" class="t-label" style="color:var(--lime); font-size:26px">VS CLAUDE OPUS 5</div>
+      </div>
+      <div data-hf-id="hf-zhes" id="s5-src" class="op-src">REAL DATA · ANTHROPIC.COM · SEP 22, 2026</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(12.25);
+      const { tl } = fx;
+      fx.drift("#s5-bgp", 12.25, 6.5, 60, -40);
+      fx.drift("#s5-blob", 12.25, 6.5, -110, 60);
+      fx.pushIn("#s5-cam", 12.25, 6.5, 1.02);
+
+      fx.maskUp("#s5-h1", 12.35);
+      tl.fromTo("#s5-shot", { opacity: 0, y: 160, rotation: 3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.55, ease: "power3.out" }, 12.4);
+      tl.fromTo("#s5-col", { opacity: 0, scaleY: 0.2 }, { opacity: 1, scaleY: 1, duration: 0.45, ease: "power3.out" }, 13.15);
+      tl.fromTo("#s5-img", { y: 0 }, { y: -40, duration: 5, ease: "none" }, 13.6);
+      tl.to("#s5-shot", { scale: 0.94, y: -30, duration: 0.5, ease: "power2.inOut" }, 15.2);
+      tl.fromTo("#s5-card", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 15.45);
+      fx.counter("#s5-num", 15.6, 17.6, 0, 40, { suffix: "٪" });
+      fx.rise("#s5-t1", 16.2, { y: 20 }); fx.rise("#s5-t2", 16.5, { y: 14, b: 0 });
+      fx.rise("#s5-src", 12.8, { y: 10, b: 0 });
+
+      tl.to("#s5-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 18.31);
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>

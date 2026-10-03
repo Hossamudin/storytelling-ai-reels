@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template id="s3-template">
+      <style>
+        #s3 { position: absolute; inset: 0; overflow: hidden; direction: rtl; }
+      #s3-q {
+        left: -80px;
+        top: -140px;
+        font-size: 1100px;
+        font-weight: 900;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.07);
+      }
+      #s3-kick {
+        top: 250px;
+        font-size: 50px;
+        font-weight: 700;
+        color: var(--yellow);
+      }
+      #s3-l1 {
+        top: 370px;
+        font-size: 100px;
+        font-weight: 800;
+        color: #fff;
+      }
+      #s3-l2 {
+        top: 510px;
+        font-size: 140px;
+        font-weight: 900;
+        color: var(--yellow);
+        text-shadow: 0 0 24px rgba(255, 236, 92, 0.55), 0 0 70px rgba(255, 90, 51, 0.35);
+      }
+      #s3-l3 {
+        top: 720px;
+        font-size: 100px;
+        font-weight: 800;
+        color: #fff;
+      }
+      #s3-glow {
+        left: 360px;
+        top: 380px;
+        width: 1200px;
+        height: 520px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse, rgba(255, 236, 92, 0.42), rgba(255, 90, 51, 0.12) 45%, transparent 70%);
+      }
+      </style>
+      <div data-hf-id="hf-ak65" id="s3" data-composition-id="s3" data-width="1920" data-height="1080" data-duration="4.35">
+        <div data-hf-id="hf-di2k" id="s3-wrap" class="fill">
+          <div data-hf-id="hf-2foy" class="fill tealbg"></div>
+          <div data-hf-id="hf-cm34" id="s3-bgp" class="dots lite"></div>
+          <div data-hf-id="hf-07ob" id="s3-q" class="abs">؟</div>
+          <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+            <div data-hf-id="hf-2wxn" id="s3-glow" class="glow"></div>
+            <div data-hf-id="hf-no7v" id="s3-kick" class="row"><span data-hf-id="hf-4bre" class="w" id="s3-k1">علشان كده</span> <span data-hf-id="hf-pkoi" class="w" id="s3-k2">سألت نفسي</span></div>
+            <div data-hf-id="hf-61ta" id="s3-l1" class="row" data-layout-allow-overlap=""><span data-hf-id="hf-khe6" class="w" id="s3-a1" data-layout-allow-overlap="">هل</span> <span data-hf-id="hf-y7dt" class="w" id="s3-a2" data-layout-allow-overlap="">ممكن</span> <span data-hf-id="hf-hi85" class="w" id="s3-a3" data-layout-allow-overlap="">أخلّي</span></div>
+            <div data-hf-id="hf-23p9" id="s3-l2" class="row" data-layout-allow-overlap=""><span data-hf-id="hf-3f1z" class="w" id="s3-ai" data-layout-allow-overlap="">الذكاء الاصطناعي</span></div>
+            <div data-hf-id="hf-5e0k" id="s3-l3" class="row" data-layout-allow-overlap=""><span data-hf-id="hf-dkfv" class="w" id="s3-help" data-layout-allow-overlap="">يساعدني؟</span></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const { tl, Q, QA, rise, pop, out, draw, band, shake, breathe, drift } = window.HF_SCENE(11.7);
+        tl.fromTo("#s3-wrap", { clipPath: "circle(0% at 50% 72%)" }, { clipPath: "circle(125% at 50% 72%)", duration: 0.6, ease: "power3.inOut" }, 11.7);
+        drift("#s3-bgp", 11.7, 4.35, 50, -30);
+        tl.fromTo("#s3-q", { x: -60, rotation: -8, opacity: 0 }, { x: 60, rotation: 5, opacity: 1, duration: 4.3, ease: "none" }, 11.7);
+        tl.fromTo("#s3-cam", { scale: 1.0 }, { scale: 1.09, duration: 4.0, ease: "power1.inOut" }, 11.7);
+        rise("#s3-k1", 11.8, { y: 30 });
+        rise("#s3-k2", 12.26, { y: 30 });
+        rise("#s3-a1", 13.02, { y: 60, s: 1.2, d: 0.4 });
+        rise("#s3-a2", 13.2, { y: 60, s: 1.2, d: 0.4 });
+        rise("#s3-a3", 13.58, { y: 60, s: 1.2, d: 0.4 });
+        tl.fromTo("#s3-ai", { opacity: 0, scale: 0.6, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, 13.95);
+        tl.fromTo("#s3-glow", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 13.95);
+        breathe("#s3-glow", 14.75, 1.3, 0.07, 1.2);
+        rise("#s3-help", 14.87, { y: 60, s: 1.2, d: 0.45 });
+        // zoom-through exit
+        tl.to("#s3-cam", { scale: 1.9, opacity: 0, filter: "blur(16px)", duration: 0.35, ease: "power3.in" }, 15.72);
+          window.__timelines["s3"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

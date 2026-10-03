@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="aa2-template">
+  <style>
+
+    #aa2-lab { top: 210px; } #aa2-h { top: 250px; } #aa2-h2 { top: 250px; }
+    .aa2-card { position: absolute; left: 90px; top: 440px; width: 900px; height: 968px; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+    .aa2-card img { position: absolute; left: 0; top: 0; width: 900px; height: 968px; }
+    .aa2-ring { position: absolute; border-radius: 22px; border: 7px solid var(--orange); }
+    #aa2-src { top: 1460px; }
+    .aa2-tg { position: absolute; padding: 6px 22px; border-radius: 22px; font-weight: 800; font-size: 36px; }
+
+  </style>
+  <div data-hf-id="hf-3le5" id="aa2" data-composition-id="aa2" data-width="1080" data-height="1920" data-duration="6.15">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-owrg" id="aa2-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-zuyu" id="aa2-bgp" class="dots"></div>
+    <div data-hf-id="hf-9bw7" id="aa2-cam" class="cam">
+
+      <div data-hf-id="hf-tbuk" id="aa2-lab" class="row"><span data-hf-id="hf-722p" class="t-label">ARTIFICIAL ANALYSIS · REAL DATA</span></div>
+      <div data-hf-id="hf-91nj" id="aa2-h" class="row t-h3"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-v6k1" class="in" id="aa2-h1">مين بياخد وقت أكتر؟</span></span></div>
+      <div data-hf-id="hf-5crb" id="aa2-h2" class="row t-h3"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-mjdy" class="in" id="aa2-h21">ومين بيكلّف أكتر… أو أقل؟</span></span></div>
+      <div data-hf-id="hf-7kp0" class="aa2-card" id="aa2-t"><img data-hf-id="hf-qvud" src="assets/images/aa/time_card.png" alt="">
+        <div data-hf-id="hf-ap1e" class="aa2-ring" id="aa2-r1" style="left:768px; top:300px; width:90px; height:390px"></div></div>
+      <div data-hf-id="hf-9zdn" class="aa2-card" id="aa2-c"><img data-hf-id="hf-y2ad" src="assets/images/aa/cost_card.png" alt="">
+        <div data-hf-id="hf-q0g4" class="aa2-ring" id="aa2-r2" style="left:765px; top:300px; width:92px; height:390px"></div>
+        <div data-hf-id="hf-6snf" class="aa2-ring" id="aa2-r3" style="left:92px; top:620px; width:90px; height:60px; border-color:#437f3e"></div></div>
+      <div data-hf-id="hf-ncqv" class="aa2-tg" id="aa2-g1" style="left:640px; top:1430px; background:var(--orange); color:#fff">أغلى · <span data-hf-id="hf-bkzl" class="lat">$14.2</span></div>
+      <div data-hf-id="hf-8u8s" class="aa2-tg" id="aa2-g2" style="left:110px; top:1430px; background:var(--lime); color:#0d0d0d">أرخص · <span data-hf-id="hf-aw8r" class="lat">$1.04</span></div>
+      <div data-hf-id="hf-s0s0" id="aa2-src" class="row" style="top:1560px"><span data-hf-id="hf-fnpm" class="t-label">COST PER TASK · USD · LOWER IS BETTER</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(66.6);
+      const { tl } = fx;
+      fx.drift("#aa2-bgp", 66.6, 6.15, 70, -40);
+      fx.drift("#aa2-blob", 66.6, 6.15, -120, 60);
+      fx.pushIn("#aa2-cam", 66.6, 6.15, 1.035);
+
+      fx.rise("#aa2-lab", 66.65, { y: 16 });
+      fx.maskUp("#aa2-h1", 66.7);
+      tl.fromTo("#aa2-t", { opacity: 0, y: 300, rotation: -3 }, { opacity: 1, y: 0, rotation: 0, duration: 0.55, ease: "expo.out" }, 66.75);
+      tl.fromTo("#aa2-r1", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 68.7);
+      // flip to cost
+      tl.to("#aa2-h1", { yPercent: -115, duration: 0.3, ease: "power3.in" }, 69.4);
+      tl.to("#aa2-h", { opacity: 0, duration: 0.01 }, 69.7);
+      tl.fromTo("#aa2-h2", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 69.72);
+      tl.to("#aa2-t", { rotationY: 90, opacity: 0, duration: 0.28, ease: "power2.in" }, 69.4);
+      tl.fromTo("#aa2-c", { rotationY: -90, opacity: 0 }, { rotationY: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, 69.68);
+      fx.maskUp("#aa2-h21", 69.75);
+      tl.fromTo("#aa2-r2", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 70.95);
+      fx.pop("#aa2-g1", 71.0, { from: 0.4 });
+      tl.fromTo("#aa2-r3", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 71.55);
+      fx.pop("#aa2-g2", 71.6, { from: 0.4 });
+      fx.rise("#aa2-src", 70.0, { y: 10 });
+
+      tl.to("#aa2-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 72.45);
+      window.__timelines["aa2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

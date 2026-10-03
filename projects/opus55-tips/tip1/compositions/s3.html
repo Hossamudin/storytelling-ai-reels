@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s3-template">
+  <style>
+
+    #s3-c2b, #s3-c3b { transform-origin: 50% 100%; }
+    .s3-lk { position: absolute; left: 50%; top: 50%; width: 90px; height: 90px; margin: -45px 0 0 -45px; color: rgba(179,206,101,.55); }
+    .s3-n { position: absolute; left: 0; right: 0; text-align: center; }
+    #s3-lab { top: 330px; }
+
+  </style>
+  <div data-hf-id="hf-e5af" id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="4.4">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-p03k" id="s3-blob" class="blob" style="left:160px; top:380px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-rsys" id="s3-bgp" class="dots"></div>
+    <div data-hf-id="hf-zov7" id="s3-cam" class="cam">
+
+      <div data-hf-id="hf-wh8n" id="s3-lab" class="row" style="top:330px"><span data-hf-id="hf-fp92" class="t-label" style="color:var(--lime)">THE SERIES · 3 TIPS</span></div>
+      <div data-hf-id="hf-jocw" id="s3-c3b" class="op-card back" style="left:110px; top:520px; width:330px; height:470px"><svg data-hf-id="hf-7d5b" class="s3-lk"><use data-hf-id="hf-i53r" href="#i-lock" /></svg></div>
+      <div data-hf-id="hf-sjxp" id="s3-c2b" class="op-card back" style="left:640px; top:520px; width:330px; height:470px"><svg data-hf-id="hf-048f" class="s3-lk"><use data-hf-id="hf-j0pj" href="#i-lock" /></svg></div>
+      <div data-hf-id="hf-t6ws" id="s3-c1b" class="op-card back" style="left:330px; top:440px; width:420px; height:600px"></div>
+      <div data-hf-id="hf-iknr" id="s3-c1" class="op-card" style="left:330px; top:440px; width:420px; height:600px">
+        <div data-hf-id="hf-r3k3" id="s3-sp" class="cl-spark" style="left:150px; top:50px; width:120px; height:120px;"><svg data-hf-id="hf-v75g" id="s3-sp-svg" viewBox="0 0 100 100"><use data-hf-id="hf-rk5v" href="#i-claude" width="100" height="100" /></svg></div>
+        <div data-hf-id="hf-xnlo" class="s3-n op-en" data-layout-allow-overlap="" style="top:186px; font-size:40px; letter-spacing:.3em; color:var(--lime)">TIP</div>
+        <div data-hf-id="hf-gfk5" class="s3-n op-en op-y" data-layout-allow-overlap="" style="top:250px; font-size:210px; line-height:1">01</div>
+        <div data-hf-id="hf-zwdj" class="s3-n op-en" data-layout-allow-overlap="" style="top:480px; font-size:34px; color:var(--fg-muted)">OF 03</div>
+      </div>
+      <div data-hf-id="hf-o7n3" class="row t-h3" style="top:1150px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-gs9s" class="in" id="s3-h1">في الفيديو ده هقولك على تيب</span></span></div>
+      <div data-hf-id="hf-qd3a" class="row t-h1" style="top:1260px"><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-sfmw" class="in" id="s3-k1">هتفرق معاك</span></span></div>
+      <div data-hf-id="hf-b6b2" class="row t-h1 op-y" style="top:1430px"><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-hgr2" class="in" id="s3-k2">كتير</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(5.55);
+      const { tl } = fx;
+      fx.drift("#s3-bgp", 5.55, 4.4, 60, -40);
+      fx.drift("#s3-blob", 5.55, 4.4, -110, 60);
+      fx.pushIn("#s3-cam", 5.55, 4.4, 1.035);
+
+      fx.rise("#s3-lab", 5.6, { y: 16 });
+      fx.rise("#s3-c3b", 5.6, { y: 120 }); fx.rise("#s3-c2b", 5.68, { y: 120 }); fx.rise("#s3-c1b", 5.76, { y: 160 });
+      tl.fromTo("#s3-c3b", { rotation: 0 }, { rotation: -8, duration: 0.5, ease: "power3.out" }, 5.9);
+      tl.fromTo("#s3-c2b", { rotation: 0 }, { rotation: 8, duration: 0.5, ease: "power3.out" }, 5.9);
+      fx.hide("#s3-c1");
+      tl.to("#s3-c1b", { scaleX: 0, duration: 0.16, ease: "power2.in" }, 6.25);
+      tl.fromTo("#s3-c1", { opacity: 1, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.22, ease: "power2.out", immediateRender: false }, 6.41);
+      tl.fromTo("#s3-sp-svg", { rotation: 0 }, { rotation: 180, duration: 3.5, ease: "power1.out" }, 6.4);
+      fx.maskUp("#s3-h1", 6.6);
+      fx.maskUp("#s3-k1", 8.1);
+      tl.fromTo("#s3-k2", { yPercent: 115, scale: 1 }, { yPercent: 0, duration: 0.45, ease: "back.out(2)" }, 9.0);
+
+      tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 9.51);
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

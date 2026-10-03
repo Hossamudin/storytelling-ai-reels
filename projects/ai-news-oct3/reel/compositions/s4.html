@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s4-template">
+  <style>
+
+    #s4-app { position: absolute; left: 560px; top: 560px; width: 400px; height: 560px; border-radius: 40px; background: #f4f4f1; color: #0d0d0d; }
+    #s4-app .b1 { position: absolute; right: 30px; top: 70px; width: 250px; height: 70px; border-radius: 35px; background: #e3e3df; }
+    #s4-app .b2 { position: absolute; left: 30px; top: 170px; width: 300px; height: 110px; border-radius: 30px; background: #ececea; }
+    #s4-app .b3 { position: absolute; right: 30px; top: 310px; width: 200px; height: 70px; border-radius: 35px; background: #e3e3df; }
+    #s4-app .in { position: absolute; left: 24px; right: 24px; bottom: 26px; height: 80px; border-radius: 40px; border: 2px solid #d4d4cf; }
+    #s4-x { position: absolute; left: 545px; top: 800px; width: 430px; height: 20px; }
+    #s4-call { position: absolute; left: 120px; top: 640px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle at 45% 40%, #2c8a4a, #13602f);
+      display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 0 80px rgba(63,191,90,.4); }
+    #s4-call .ring { border-radius: 50%; border-color: #3fbf5a; }
+    #s4-al { position: absolute; left: 560px; width: 400px; top: 1150px; text-align: center; }
+    #s4-cl { position: absolute; left: 120px; width: 400px; top: 1150px; text-align: center; }
+
+  </style>
+  <div data-hf-id="hf-ybyg" id="s4" data-composition-id="s4" data-width="1080" data-height="1920" data-duration="7.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-0kp8" id="s4-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#0f4f44; opacity:.55"></div>
+    <div data-hf-id="hf-k55r" id="s4-bgp" class="dots"></div>
+    <div data-hf-id="hf-94n8" id="s4-cam" class="cam">
+
+      <div data-hf-id="hf-7zud" class="row t-h1" style="top:260px;font-size:116px" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-kkh1" class="in" id="s4-h1">زي <span data-hf-id="hf-ma5f" class="lat">ChatGPT</span></span></span></div>
+      <div data-hf-id="hf-wsqy" class="row t-h3" style="top:420px;color:var(--fg-muted)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-tb39" class="in" id="s4-h2">بس من غير التطبيق</span></span></div>
+      <div data-hf-id="hf-6oku" id="s4-app"><i data-hf-id="hf-k03v" class="b1"></i><i data-hf-id="hf-bc80" class="b2"></i><i data-hf-id="hf-c3vt" class="b3"></i><i data-hf-id="hf-97qx" class="in"></i></div>
+      <svg data-hf-id="hf-4964" id="s4-x" viewBox="0 0 430 20" style="overflow:visible"><path data-hf-id="hf-ub94" id="s4-xp" d="M0 10 L430 10" stroke="#ff5a33" stroke-width="16" stroke-linecap="round" pathLength="1" /></svg>
+      <div data-hf-id="hf-1bmw" id="s4-al" class="t-label" style="font-size:26px">APP CHAT</div>
+      <div data-hf-id="hf-pkul" id="s4-call"><svg data-hf-id="hf-ycez" style="width:170px; height:170px; color:currentColor;"><use data-hf-id="hf-vnzy" href="#i-phone" /></svg><div data-hf-id="hf-nrft" class="ring" id="s4-r1"></div><div data-hf-id="hf-rpju" class="ring" id="s4-r2"></div></div>
+      <div data-hf-id="hf-u49s" id="s4-cl" class="t-label" style="font-size:26px; color:var(--lime)">VOICE CALL</div>
+      <div data-hf-id="hf-z13e" class="row t-h1" style="top:1330px;font-size:112px; color:var(--yellow)" data-layout-allow-overlap=""><span data-hf-id="hf-452s" class="mask"><span data-hf-id="hf-yufs" class="in" id="s4-h3">بتكلّمه بمكالمة</span></span></div>
+      <div data-hf-id="hf-seso" id="s4-src" class="src" style="top:1520px"><b data-hf-id="hf-6auk">OPENAI.COM</b> · CALL YOUR DOT IN CHATGPT · TEXTING COMING SOON</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(14.8);
+      const { tl } = fx;
+      fx.drift("#s4-bgp", 14.8, 7.8, 60, -40);
+      fx.drift("#s4-blob", 14.8, 7.8, -110, 60);
+      fx.pushIn("#s4-cam", 14.8, 7.8, 1.035);
+
+      fx.maskUp("#s4-h1", 15.9);
+      fx.rise("#s4-app", 15.0, { y: 80 }); fx.rise("#s4-al", 15.3, { y: 10, b: 0 });
+      fx.maskUp("#s4-h2", 16.6);
+      fx.strike("#s4-xp", 17.9);
+      tl.to("#s4-app", { opacity: 0.35, filter: "grayscale(1)", duration: 0.3 }, 18.1);
+      fx.pop("#s4-call", 18.9, { from: 0.2, e: "back.out(1.8)" });
+      fx.rise("#s4-cl", 19.1, { y: 10, b: 0 });
+      fx.ringPulse("#s4-r1, #s4-r2", 19.5, { scale: 1.5, st: 0.3 });
+      fx.ringPulse("#s4-r1, #s4-r2", 20.7, { scale: 1.5, st: 0.3 });
+      fx.maskUp("#s4-h3", 20.4);
+      fx.rise("#s4-src", 20.9, { y: 10, b: 0 });
+
+      tl.to("#s4-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 22.16);
+      window.__timelines["s4"] = tl.real;
+    })();
+  </script>
+</template></body></html>

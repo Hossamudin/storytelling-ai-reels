@@ -1,0 +1,194 @@
+[
+ {
+  "id": "s1",
+  "start": 0.0,
+  "duration": 3.15,
+  "beat": "hook: AI NEWS board, this week"
+ },
+ {
+  "id": "s2",
+  "start": 2.95,
+  "duration": 7.55,
+  "beat": "OpenAI made an assistant you can call"
+ },
+ {
+  "id": "s3",
+  "start": 10.3,
+  "duration": 4.7,
+  "beat": "24 hours, does tasks in the background"
+ },
+ {
+  "id": "s4",
+  "start": 14.8,
+  "duration": 7.8,
+  "beat": "like ChatGPT, but a call instead of the app"
+ },
+ {
+  "id": "s5",
+  "start": 22.4,
+  "duration": 4.15,
+  "beat": "Google answered with a model nobody can use yet"
+ },
+ {
+  "id": "s6",
+  "start": 26.35,
+  "duration": 4.0,
+  "beat": "STORY 01 board: OpenAI Dots"
+ },
+ {
+  "id": "s7",
+  "start": 30.15,
+  "duration": 6.55,
+  "beat": "like Muse Spark, like Grok"
+ },
+ {
+  "id": "s8",
+  "start": 36.5,
+  "duration": 6.95,
+  "beat": "agent in the background, own computer, connects your apps"
+ },
+ {
+  "id": "s9",
+  "start": 43.25,
+  "duration": 6.95,
+  "beat": "no model picking: it chooses per task"
+ },
+ {
+  "id": "s10",
+  "start": 50.0,
+  "duration": 7.05,
+  "beat": "only Pro / Business Premium / Enterprise, not free"
+ },
+ {
+  "id": "s11",
+  "start": 56.85,
+  "duration": 5.35,
+  "beat": "STORY 02 board: GPT-6.1 Sol"
+ },
+ {
+  "id": "s12",
+  "start": 62.0,
+  "duration": 5.05,
+  "beat": "near Astra, a fifth of the price (real prices)"
+ },
+ {
+  "id": "s13",
+  "start": 66.85,
+  "duration": 10.85,
+  "beat": "price war: Claude cut prices first"
+ },
+ {
+  "id": "s14",
+  "start": 77.5,
+  "duration": 5.3,
+  "beat": "DevDay: 20+ more launches, full episode"
+ },
+ {
+  "id": "s15",
+  "start": 82.6,
+  "duration": 3.1,
+  "beat": "STORY 03 board: Gemini 4 Argon"
+ },
+ {
+  "id": "s16",
+  "start": 85.5,
+  "duration": 6.05,
+  "beat": "Google's own benchmarks: beats Opus 5.5 + Astra"
+ },
+ {
+  "id": "s17",
+  "start": 91.35,
+  "duration": 6.05,
+  "beat": "Artificial Analysis: not #1 (real index)"
+ },
+ {
+  "id": "s18",
+  "start": 97.2,
+  "duration": 7.05,
+  "beat": "focus 1: cybersecurity (Fairwind)"
+ },
+ {
+  "id": "s19",
+  "start": 104.05,
+  "duration": 6.6,
+  "beat": "focus 2: scientific research"
+ },
+ {
+  "id": "s20",
+  "start": 110.45,
+  "duration": 8.2,
+  "beat": "output up to 1M tokens vs 64K"
+ },
+ {
+  "id": "s21",
+  "start": 118.45,
+  "duration": 5.75,
+  "beat": "STORY 04 board: Sonnet 5.5 at half the Opus price"
+ },
+ {
+  "id": "s22",
+  "start": 124.0,
+  "duration": 3.5,
+  "beat": "my Sonnet 5.5 reel"
+ },
+ {
+  "id": "s23",
+  "start": 127.3,
+  "duration": 9.5,
+  "beat": "Claude Code mods: Claude edits Claude Code"
+ },
+ {
+  "id": "s24",
+  "start": 136.6,
+  "duration": 4.0,
+  "beat": "STORY 05 board: Meta Muse Charm"
+ },
+ {
+  "id": "s25",
+  "start": 140.4,
+  "duration": 10.05,
+  "beat": "Muse Spark in a small device, not phone/computer"
+ },
+ {
+  "id": "s26",
+  "start": 150.25,
+  "duration": 6.0,
+  "beat": "Muse Spark: easiest to connect to your tools"
+ },
+ {
+  "id": "s27",
+  "start": 156.05,
+  "duration": 6.8,
+  "beat": "STORY 06 board: White House meeting"
+ },
+ {
+  "id": "s28",
+  "start": 162.65,
+  "duration": 3.65,
+  "beat": "the new name: ARTIFICIAL -> SUPER intelligence"
+ },
+ {
+  "id": "s29",
+  "start": 166.1,
+  "duration": 6.6,
+  "beat": "safety commitments"
+ },
+ {
+  "id": "s30",
+  "start": 172.5,
+  "duration": 9.65,
+  "beat": "the gate: only big companies / governments"
+ },
+ {
+  "id": "s31",
+  "start": 181.95,
+  "duration": 4.05,
+  "beat": "your turn: which story did you like"
+ },
+ {
+  "id": "s32",
+  "start": 185.8,
+  "duration": 6.8,
+  "beat": "series card + follow"
+ }
+]

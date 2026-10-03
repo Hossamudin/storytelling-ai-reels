@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template id="s1-template">
+      <style>
+        #s1 { position: absolute; inset: 0; overflow: hidden; direction: rtl; }
+      #s1-glow {
+        left: 150px;
+        top: 150px;
+        width: 760px;
+        height: 760px;
+        background: radial-gradient(circle, rgba(255, 236, 92, 0.75) 0%, rgba(179, 206, 101, 0.35) 38%, rgba(246, 244, 234, 0) 70%);
+      }
+      #s1-mic {
+        left: 340px;
+        top: 250px;
+        width: 380px;
+        height: 520px;
+        transform-origin: 50% 100%;
+      }
+      #s1-rec {
+        left: 400px;
+        top: 170px;
+        width: 260px;
+        height: 64px;
+        border-radius: 32px;
+        background: #fff;
+        border: 3px solid var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        font-size: 30px;
+        font-weight: 800;
+      }
+      #s1-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--red);
+        display: block;
+      }
+      #s1-head {
+        right: 150px;
+        top: 120px;
+        width: 1060px;
+        font-size: 118px;
+        font-weight: 900;
+        line-height: 1.2;
+        color: var(--teal);
+      }
+      #s1-sub {
+        right: 150px;
+        top: 440px;
+        line-height: 1.4;
+        width: 1000px;
+        font-size: 56px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      #s1-eps {
+        right: 150px;
+        top: 590px;
+        width: 1000px;
+        height: 150px;
+        display: flex;
+        gap: 22px;
+      }
+      .ep {
+        width: 180px;
+        height: 150px;
+        border-radius: 22px;
+        background: #fff;
+        border: 4px solid var(--teal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 30px;
+        font-weight: 800;
+        color: var(--teal);
+        position: relative;
+      }
+      .ep .ck {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--lime);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ep.ghost {
+        background: transparent;
+        border: 4px dashed rgba(19, 96, 82, 0.35);
+        color: rgba(19, 96, 82, 0.55);
+      }
+      .ep.ghost .q {
+        font-size: 44px;
+        font-weight: 900;
+      }
+      #s1-shelf {
+        left: 150px;
+        top: 912px;
+        width: 1620px;
+        height: 16px;
+        border-radius: 8px;
+        background: var(--teal);
+        transform-origin: 100% 50%;
+      }
+      #s1-dust {
+        left: 150px;
+        top: 850px;
+        width: 1620px;
+        height: 80px;
+        background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(13, 13, 13, 0.14), transparent 70%);
+      }
+      </style>
+      <div data-hf-id="hf-g8eo" id="s1" data-composition-id="s1" data-width="1920" data-height="1080" data-duration="5.35">
+        <div data-hf-id="hf-hbf9" class="fill paper"></div>
+        <div data-hf-id="hf-xdf2" id="s1-bgp" class="dots"></div>
+        <div data-hf-id="hf-q35l" id="s1-cam" class="cam">
+          <div data-hf-id="hf-fssp" id="s1-glow" class="glow"></div>
+          <svg data-hf-id="hf-xjys" id="s1-mic" class="abs ic" viewBox="0 0 380 520">
+            <defs data-hf-id="hf-mh0t">
+              <lineargradient data-hf-id="hf-v4pr" id="micg" x1="0" x2="1">
+                <stop data-hf-id="hf-ioko" offset="0" stop-color="#1a7564" />
+                <stop data-hf-id="hf-qezj" offset="1" stop-color="#0f4f44" />
+              </lineargradient>
+            </defs>
+            <rect data-hf-id="hf-2xhx" x="110" y="20" width="160" height="260" rx="80" fill="url(#micg)" />
+            <path data-hf-id="hf-ozfz" d="M130 90h120M130 130h120M130 170h120M130 210h120" stroke="#b3ce65" stroke-width="10" stroke-linecap="round" opacity=".55" />
+            <path data-hf-id="hf-w47d" d="M60 200c0 80 58 140 130 140s130-60 130-140" fill="none" stroke="#0d0d0d" stroke-width="22" stroke-linecap="round" />
+            <path data-hf-id="hf-i3m0" d="M190 340v110" stroke="#0d0d0d" stroke-width="22" stroke-linecap="round" />
+            <rect data-hf-id="hf-lg7p" x="100" y="455" width="180" height="30" rx="15" fill="#0d0d0d" />
+            <circle data-hf-id="hf-cggh" cx="215" cy="70" r="16" fill="#fff" opacity=".35" />
+          </svg>
+          <div data-hf-id="hf-eebj" id="s1-rec" class="abs"><span data-hf-id="hf-bfbw" id="s1-dot"></span><span data-hf-id="hf-ca7c">تسجيل</span></div>
+          <div data-hf-id="hf-9pkj" id="s1-head" class="abs" data-layout-allow-overlap="">
+            <div data-hf-id="hf-yeow"><span data-hf-id="hf-herz" class="w" id="s1-w1" data-layout-allow-overlap="">قررت</span> <span data-hf-id="hf-sfen" class="w" id="s1-w2" data-layout-allow-overlap="">أبدأ</span></div>
+            <span data-hf-id="hf-cr6h" class="hl w" id="s1-w3" data-layout-allow-overlap=""><span data-hf-id="hf-918c" class="band" id="s1-band" style="background: var(--yellow)"></span><span data-hf-id="hf-g9xv" class="txt">بودكاست</span></span>
+          </div>
+          <div data-hf-id="hf-nfxx" id="s1-sub" class="abs" data-layout-allow-overlap=""><span data-hf-id="hf-ecsy" class="w" id="s1-s1">ولكن زي أغلبنا…</span> <span data-hf-id="hf-ov1l" class="w" id="s1-s2">عملت حلقتين</span></div>
+          <div data-hf-id="hf-ld31" id="s1-shelf" class="abs"></div>
+          <div data-hf-id="hf-vl3f" id="s1-dust" class="abs"></div>
+          <div data-hf-id="hf-flzj" id="s1-eps" class="abs">
+            <div data-hf-id="hf-sydo" class="ep" id="s1-e1"><div data-hf-id="hf-hv22" class="ck"><svg data-hf-id="hf-5tle" class="ic" width="34" height="34" style="color: #0d0d0d"><use data-hf-id="hf-yk3y" href="#i-check" /></svg></div>الحلقة ١</div>
+            <div data-hf-id="hf-7fv6" class="ep" id="s1-e2"><div data-hf-id="hf-9a8u" class="ck"><svg data-hf-id="hf-pd92" class="ic" width="34" height="34" style="color: #0d0d0d"><use data-hf-id="hf-8nki" href="#i-check" /></svg></div>الحلقة ٢</div>
+            <div data-hf-id="hf-dve3" class="ep ghost" id="s1-e3"><span data-hf-id="hf-xbor" class="q">؟</span>الحلقة ٣</div>
+            <div data-hf-id="hf-y265" class="ep ghost" id="s1-e4"><span data-hf-id="hf-3arv" class="q">؟</span>الحلقة ٤</div>
+            <div data-hf-id="hf-br03" class="ep ghost" id="s1-e5"><span data-hf-id="hf-2wgu" class="q">؟</span>الحلقة ٥</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const { tl, Q, QA, rise, pop, out, draw, band, shake, breathe, drift } = window.HF_SCENE(0);
+        drift("#s1-bgp", 0, 5.35, 60, -20);
+        tl.set("#s1-cam", { filter: "grayscale(0)" }, 0);
+        tl.fromTo("#s1-cam", { scale: 1.22 }, { scale: 1, duration: 1.1, ease: "expo.out" }, 0);
+        tl.fromTo("#s1-glow", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 0.05);
+        breathe("#s1-glow", 0.95, 3.2, 0.06, 1.4);
+        tl.fromTo("#s1-mic", { opacity: 0, y: 90, rotation: -8 }, { opacity: 1, y: 0, rotation: 0, duration: 0.8, ease: "back.out(1.6)" }, 0.05);
+        pop("#s1-rec", 0.35, { from: 0.6 });
+        tl.fromTo("#s1-dot", { opacity: 1 }, { opacity: 0.2, duration: 0.35, ease: "steps(1)", yoyo: true, repeat: 7 }, 0.6);
+        rise("#s1-w1", 0.41, { y: 70, s: 1.15 });
+        rise("#s1-w2", 0.87, { y: 70, s: 1.15 });
+        rise("#s1-w3", 1.27, { y: 70, s: 1.15 });
+        band("#s1-band", 1.45, 0.45);
+        rise("#s1-s1", 1.83, { y: 30 });
+        rise("#s1-s2", 3.11, { y: 30 });
+        pop("#s1-e1", 3.55, { from: 0.4 });
+        pop("#s1-e2", 3.72, { from: 0.4 });
+        tl.fromTo(["#s1-e3", "#s1-e4", "#s1-e5"], { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out", stagger: 0.08 }, 3.9);
+        // "وركنت الموضوع" — everything drops to the shelf and goes grey
+        tl.fromTo("#s1-shelf", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, 4.05);
+        tl.fromTo("#s1-dust", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 4.45);
+        const eDrops = [
+          ["#s1-e1", 172, -7],
+          ["#s1-e2", 172, 5],
+          ["#s1-e3", 172, -3],
+          ["#s1-e4", 172, 9],
+          ["#s1-e5", 172, -5],
+        ];
+        eDrops.forEach(([s, y, r], i) => tl.to(s, { y, rotation: r, duration: 0.32, ease: "bounce.out" }, 4.23 + i * 0.03));
+        tl.to("#s1-mic", { rotation: -78, x: -40, y: 120, duration: 0.5, ease: "power2.in" }, 4.2);
+        tl.to("#s1-rec", { opacity: 0, y: 30, duration: 0.25 }, 4.25);
+        tl.to("#s1-glow", { opacity: 0, duration: 0.4 }, 4.3);
+        tl.to(["#s1-head", "#s1-sub"], { opacity: 0.3, duration: 0.4 }, 4.35);
+        tl.fromTo("#s1-cam", { filter: "grayscale(0)" }, { filter: "grayscale(0.9)", duration: 0.5, ease: "power1.out", immediateRender: false }, 4.35);
+        shake("#s1-cam", 4.42, 14, 6);
+        tl.to("#s1-cam", { scale: 0.94, duration: 0.8, ease: "power2.out" }, 4.7);
+          window.__timelines["s1"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

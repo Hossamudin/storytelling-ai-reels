@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s22-template">
+  <style>
+
+    #s22-ph { position: absolute; left: 300px; top: 470px; width: 480px; height: 854px; border-radius: 60px; background: #050505; padding: 16px;
+      box-shadow: 0 50px 100px rgba(0,0,0,.6), 0 0 0 3px rgba(255,255,255,.1); }
+    #s22-scr { position: absolute; inset: 16px; border-radius: 46px; overflow: hidden; background: #111; }
+    #s22-scr img, #s22-scr video { position: absolute; left: 0; top: 0; width: 448px; }
+    #s22-p { position: absolute; left: 0; right: 0; top: 1400px; display: flex; justify-content: center; }
+    #s22-p span { height: 110px; padding: 0 46px; border-radius: 55px; background: var(--lime); color: var(--ink); font-family: var(--font-ar); font-weight: 900; font-size: 50px;
+      display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+
+  </style>
+  <div data-hf-id="hf-a8hd" id="s22" data-composition-id="s22" data-width="1080" data-height="1920" data-duration="3.5">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-vqv5" id="s22-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#3a2a22; opacity:.55"></div>
+    <div data-hf-id="hf-pl3t" id="s22-bgp" class="dots"></div>
+    <div data-hf-id="hf-k6go" id="s22-cam" class="cam">
+
+      <div data-hf-id="hf-nqz3" class="row t-h2" style="top:260px;" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-dj74" class="in" id="s22-h1">عملتلكم ريل عنه</span></span></div>
+      <div data-hf-id="hf-cxdp" id="s22-ph"><div data-hf-id="hf-awg7" id="s22-scr"><img data-hf-id="hf-2gdc" src="assets/images/sonnet_reel.png"><video data-hf-id="hf-jttu" id="s22-v" src="assets/videos/sonnet_reel.mp4" data-start="0" data-duration="3.7" data-media-start="0" data-hf-media-start-basis="local" muted playsinline></video></div></div>
+      <div data-hf-id="hf-99zj" id="s22-p"><span data-hf-id="hf-4ipw">شوف الريل ←</span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(124.0);
+      const { tl } = fx;
+      fx.drift("#s22-bgp", 124.0, 3.5, 60, -40);
+      fx.drift("#s22-blob", 124.0, 3.5, -110, 60);
+      fx.pushIn("#s22-cam", 124.0, 3.5, 1.035);
+
+      fx.maskUp("#s22-h1", 124.15);
+      tl.fromTo("#s22-ph", { opacity: 0, y: 260, rotation: 5 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "power3.out" }, 124.1);
+      fx.pop("#s22-p", 125.4, { from: 0.4 });
+      tl.to("#s22-p", { x: -24, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 3 }, 125.9);
+
+      tl.to("#s22-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 127.06);
+      window.__timelines["s22"] = tl.real;
+    })();
+  </script>
+</template></body></html>

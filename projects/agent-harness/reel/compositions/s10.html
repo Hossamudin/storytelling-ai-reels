@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s10-template">
+  <style>
+
+    #s10-lab { top: 210px; } #s10-h { top: 250px; font-size: 120px; }
+    #s10-board { left: 90px; top: 500px; width: 900px; height: 820px; perspective: 1600px; }
+    .s10-face { position: absolute; inset: 0; border-radius: 30px; background: rgba(255,255,255,.05); border: 2px solid var(--edge); backface-visibility: hidden; }
+    .s10-hd { position: absolute; left: 40px; right: 40px; top: 46px; display: flex; justify-content: space-between; direction: ltr; font-family: var(--font-en); font-weight: 900; font-size: 30px; letter-spacing: .16em; }
+    .s10-row { position: absolute; left: 40px; right: 40px; height: 80px; display: flex; align-items: center; gap: 22px; direction: ltr; }
+    .s10-rk { font-family: var(--font-en); font-weight: 900; font-size: 34px; color: var(--fg-muted); width: 56px; }
+    .s10-ic { width: 54px; height: 54px; border-radius: 50%; color: var(--ink); display: flex; align-items: center; justify-content: center; flex: none; }
+    .s10-ft { position: absolute; left: 40px; bottom: 30px; font-size: 18px; }
+    #s10-k { top: 1420px; }
+
+  </style>
+  <div data-hf-id="hf-0fgl" id="s10" data-composition-id="s10" data-width="1080" data-height="1920" data-duration="6.8">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-jx6o" id="s10-blob" class="blob" style="left:160px; top:520px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-86iy" id="s10-bgp" class="dots"></div>
+    <div data-hf-id="hf-hpoj" id="s10-cam" class="cam">
+
+      <div data-hf-id="hf-amc0" id="s10-lab" class="row"><span data-hf-id="hf-l5eq" class="t-label">THE LEADERBOARD</span></div>
+      <div data-hf-id="hf-h8l2" id="s10-h" class="row ah-en"><span data-hf-id="hf-3m7u" id="s10-h1">Benchmarks</span></div>
+      <div data-hf-id="hf-fss1" id="s10-board" class="abs">
+        <div data-hf-id="hf-xywy" class="s10-face" id="s10-fa"><div data-hf-id="hf-95jt" class="s10-hd"><span data-hf-id="hf-u1c9" style="color:var(--yellow)">AI MODELS</span><span data-hf-id="hf-0f8g" class="muted">SCORE</span></div>
+          <div data-hf-id="hf-i3mi" class="s10-row" style="top:150px"><span data-hf-id="hf-7t5m" class="s10-rk">01</span><span data-hf-id="hf-smvi" class="s10-ic" style="background:var(--yellow)"><svg data-hf-id="hf-4xbp" width="26" height="26"><use data-hf-id="hf-g53b" href="#i-bolt" /></svg></span><div data-hf-id="hf-x7ua" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-boel" class="ah-fill s10a-bar" style="background:var(--yellow); width:92%"></div></div></div><div data-hf-id="hf-eytv" class="s10-row" style="top:270px"><span data-hf-id="hf-87gn" class="s10-rk">02</span><span data-hf-id="hf-63te" class="s10-ic" style="background:var(--yellow)"><svg data-hf-id="hf-463t" width="26" height="26"><use data-hf-id="hf-81yf" href="#i-bolt" /></svg></span><div data-hf-id="hf-pqra" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-1kfa" class="ah-fill s10a-bar" style="background:var(--yellow); width:84%"></div></div></div><div data-hf-id="hf-l294" class="s10-row" style="top:390px"><span data-hf-id="hf-8lro" class="s10-rk">03</span><span data-hf-id="hf-6i4f" class="s10-ic" style="background:var(--yellow)"><svg data-hf-id="hf-5d0w" width="26" height="26"><use data-hf-id="hf-7nne" href="#i-bolt" /></svg></span><div data-hf-id="hf-q52b" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-e6fy" class="ah-fill s10a-bar" style="background:var(--yellow); width:71%"></div></div></div><div data-hf-id="hf-fug2" class="s10-row" style="top:510px"><span data-hf-id="hf-902p" class="s10-rk">04</span><span data-hf-id="hf-6wfg" class="s10-ic" style="background:var(--yellow)"><svg data-hf-id="hf-4ypv" width="26" height="26"><use data-hf-id="hf-79cd" href="#i-bolt" /></svg></span><div data-hf-id="hf-qjdc" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-t1f1" class="ah-fill s10a-bar" style="background:var(--yellow); width:63%"></div></div></div><div data-hf-id="hf-hg77" class="s10-row" style="top:630px"><span data-hf-id="hf-9edq" class="s10-rk">05</span><span data-hf-id="hf-7aqh" class="s10-ic" style="background:var(--yellow)"><svg data-hf-id="hf-2z6q" width="26" height="26"><use data-hf-id="hf-a1hk" href="#i-bolt" /></svg></span><div data-hf-id="hf-jp91" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-svqn" class="ah-fill s10a-bar" style="background:var(--yellow); width:50%"></div></div></div><div data-hf-id="hf-nd8k" class="s10-ft t-label">ILLUSTRATION</div></div>
+        <div data-hf-id="hf-u0sx" class="s10-face" id="s10-fb"><div data-hf-id="hf-lnal" class="s10-hd"><span data-hf-id="hf-bzec" style="color:var(--lime)">CODING HARNESSES</span><span data-hf-id="hf-rxnc" class="muted">SCORE</span></div>
+          <div data-hf-id="hf-e4fy" class="s10-row" style="top:150px"><span data-hf-id="hf-pldq" class="s10-rk">01</span><span data-hf-id="hf-xhn7" class="s10-ic" style="background:var(--lime)"><svg data-hf-id="hf-2kvp" width="26" height="26"><use data-hf-id="hf-qc79" href="#i-code" /></svg></span><div data-hf-id="hf-k3k2" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-nr62" class="ah-fill s10b-bar" style="background:var(--lime); width:88%"></div></div></div><div data-hf-id="hf-73ub" class="s10-row" style="top:270px"><span data-hf-id="hf-p3hj" class="s10-rk">02</span><span data-hf-id="hf-gxyr" class="s10-ic" style="background:var(--lime)"><svg data-hf-id="hf-3rss" width="26" height="26"><use data-hf-id="hf-bvrt" href="#i-code" /></svg></span><div data-hf-id="hf-khv3" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-jzea" class="ah-fill s10b-bar" style="background:var(--lime); width:80%"></div></div></div><div data-hf-id="hf-oko0" class="s10-row" style="top:390px"><span data-hf-id="hf-183w" class="s10-rk">03</span><span data-hf-id="hf-gjnq" class="s10-ic" style="background:var(--lime)"><svg data-hf-id="hf-3dhr" width="26" height="26"><use data-hf-id="hf-d2ow" href="#i-code" /></svg></span><div data-hf-id="hf-oy58" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-a0mx" class="ah-fill s10b-bar" style="background:var(--lime); width:74%"></div></div></div><div data-hf-id="hf-exfq" class="s10-row" style="top:510px"><span data-hf-id="hf-4s6t" class="s10-rk">04</span><span data-hf-id="hf-g5cp" class="s10-ic" style="background:var(--lime)"><svg data-hf-id="hf-1dym" width="26" height="26"><use data-hf-id="hf-codv" href="#i-code" /></svg></span><div data-hf-id="hf-i40x" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-g6pw" class="ah-fill s10b-bar" style="background:var(--lime); width:60%"></div></div></div><div data-hf-id="hf-s0qr" class="s10-row" style="top:630px"><span data-hf-id="hf-wope" class="s10-rk">05</span><span data-hf-id="hf-fr1o" class="s10-ic" style="background:var(--lime)"><svg data-hf-id="hf-0znl" width="26" height="26"><use data-hf-id="hf-aouq" href="#i-code" /></svg></span><div data-hf-id="hf-iiby" class="ah-track" style="position:relative; flex:1; height:30px"><div data-hf-id="hf-8kyf" class="ah-fill s10b-bar" style="background:var(--lime); width:47%"></div></div></div><div data-hf-id="hf-uhoc" class="s10-ft t-label">ILLUSTRATION</div></div>
+      </div>
+      <div data-hf-id="hf-k3y7" id="s10-k" class="row t-h2"><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-0b1f" class="in" id="s10-k1">والـ<span data-hf-id="hf-nsmw" class="lat ah-l">Harness</span> كمان ليه ترتيب</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(49.3);
+      const { tl } = fx;
+      fx.drift("#s10-bgp", 49.3, 6.8, 70, -40);
+      fx.drift("#s10-blob", 49.3, 6.8, -120, 60);
+      fx.pushIn("#s10-cam", 49.3, 6.8, 1.035);
+
+      fx.rise("#s10-lab", 49.35, { y: 16 });
+      fx.letterDrop("#s10-h1", 49.9, { st: 0.035 });
+      fx.pop("#s10-board", 50.3, { from: 0.85, e: "power3.out" });
+      tl.fromTo("#s10-fb", { rotationX: -90, opacity: 0 }, { rotationX: -90, opacity: 0, duration: 0.01 }, 49.3);
+      tl.fromTo(".s10a-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out", stagger: 0.12 }, 50.6);
+      tl.to("#s10-fa", { rotationX: 90, opacity: 0, duration: 0.28, ease: "power2.in" }, 52.95);
+      tl.to("#s10-fb", { rotationX: 0, opacity: 1, duration: 0.35, ease: "back.out(1.6)" }, 53.22);
+      tl.fromTo(".s10b-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out", stagger: 0.12, immediateRender: false }, 53.4);
+      fx.maskUp("#s10-k1", 53.3);
+
+      tl.to("#s10-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 55.8);
+      window.__timelines["s10"] = tl.real;
+    })();
+  </script>
+</template></body></html>

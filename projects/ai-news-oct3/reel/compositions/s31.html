@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar"><head><meta charset="UTF-8"></head><body>
+<template id="s31-template">
+  <style>
+
+    .s31-p { position: absolute; height: 84px; padding: 0 30px; border-radius: 42px; background: #0b2f29; border: 3px solid rgba(179,206,101,.6); color: var(--fg);
+      font-family: var(--font-en); font-weight: 900; font-size: 32px; letter-spacing: .06em; display: flex; align-items: center; direction: ltr; white-space: nowrap; }
+    #s31-in { position: absolute; left: 90px; top: 1160px; width: 900px; height: 130px; border-radius: 65px; background: #f4f4f1; color: #0d0d0d; }
+    #s31-ty { position: absolute; right: 50px; top: 30px; font-family: var(--font-ar); font-weight: 800; font-size: 44px; direction: rtl; white-space: nowrap; }
+
+  </style>
+  <div data-hf-id="hf-d7lm" id="s31" data-composition-id="s31" data-width="1080" data-height="1920" data-duration="4.05">
+    <div data-hf-id="hf-m7dd" class="bg"></div>
+    <div data-hf-id="hf-vu7s" id="s31-blob" class="blob" style="left:160px; top:420px; width:760px; height:760px; background:#136052; opacity:.55"></div>
+    <div data-hf-id="hf-aeuh" id="s31-bgp" class="dots"></div>
+    <div data-hf-id="hf-6szs" id="s31-cam" class="cam">
+
+      <div data-hf-id="hf-9en7" class="row t-h2" style="top:250px;font-size:84px" data-layout-allow-overlap=""><span data-hf-id="hf-vdsp" class="mask"><span data-hf-id="hf-2umf" class="in" id="s31-h1">قولّي إيه أكتر خبر عجبك؟</span></span></div>
+      <div data-hf-id="hf-775c" class="s31-p" id="s31-p0" style="left:120px; top:560px">01 DOTS</div><div data-hf-id="hf-g6fx" class="s31-p" id="s31-p1" style="left:620px; top:610px">02 SOL</div><div data-hf-id="hf-hpg7" class="s31-p" id="s31-p2" style="left:160px; top:720px">03 ARGON</div><div data-hf-id="hf-sbir" class="s31-p" id="s31-p3" style="left:560px; top:780px">04 SONNET</div><div data-hf-id="hf-e7yh" class="s31-p" id="s31-p4" style="left:180px; top:880px">05 MUSE</div><div data-hf-id="hf-fsla" class="s31-p" id="s31-p5" style="left:540px; top:950px">06 SUPER AI</div>
+      <div data-hf-id="hf-5fiw" id="s31-in"><span data-hf-id="hf-ii8r" id="s31-ty"></span></div>
+      <div data-hf-id="hf-t4yo" class="row t-h2" style="top:1360px;color:var(--yellow)" data-layout-allow-overlap=""><span data-hf-id="hf-2y5p" class="mask"><span data-hf-id="hf-rlzl" class="in" id="s31-h2">ورأيك في السلسلة دي</span></span></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(181.95);
+      const { tl } = fx;
+      fx.drift("#s31-bgp", 181.95, 4.05, 60, -40);
+      fx.drift("#s31-blob", 181.95, 4.05, -110, 60);
+      fx.pushIn("#s31-cam", 181.95, 4.05, 1.035);
+      fx.maskUp("#s31-h1", 182.3);
+      fx.pop("#s31-p0", 182.9, { from: 0.4 });
+      fx.pop("#s31-p1", 183.02, { from: 0.4 });
+      fx.pop("#s31-p2", 183.14000000000001, { from: 0.4 });
+      fx.pop("#s31-p3", 183.26000000000002, { from: 0.4 });
+      fx.pop("#s31-p4", 183.38, { from: 0.4 });
+      fx.pop("#s31-p5", 183.5, { from: 0.4 });
+      fx.rise("#s31-in", 183.4, { y: 40 });
+      fx.typeText("#s31-ty", 183.7, "أكتر خبر عجبني: ...", 14);
+      tl.to("#s31-p2", { scale: 1.15, background: "#b3ce65", color: "#0d0d0d", duration: 0.25, ease: "back.out(2)" }, 184.2);
+      fx.maskUp("#s31-h2", 184.6);
+      tl.to("#s31-cam", { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 185.56);
+      window.__timelines["s31"] = tl.real;
+    })();
+  </script>
+</template></body></html>
