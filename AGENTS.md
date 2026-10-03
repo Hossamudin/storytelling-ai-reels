@@ -15,7 +15,8 @@ This repo is a **video production factory** run by you (the agent). The full wor
   `web_capture.py` → `th_layer.py` + kit `th.css`). Faceless motion stays the default for voice-only input.
 - Cuts (retakes / false starts / fillers): `find_retakes.py` → review `review/cuts.html` → `input/edit.json` →
   `voice_edit.py --verify`. Never look for retakes in the whisper transcript (it hides them).
-- Reusable assets: `library/INDEX.md` + `pipeline/lib.py` (find before generating, add/harvest after).
+- Reusable assets: `library/INDEX.md` + `pipeline/lib.py` (find before generating, add/harvest after); rules: `docs/LIBRARY.md`.
+- New-video prompt template for Hossam: `prompts/NEW_VIDEO_TEMPLATE.md`.
 - Read `docs/LESSONS_LEARNED.md` before building; add new issues + fixes to it.
 - Final renders: `python pipeline/render_final.py <name>` (runs `preflight.py`; never final-render from Studio). Compositions must not load anything from the internet (GSAP is vendored in `assets/js/`).
 - Generated SFX / images (GPT Image 2.5, medium) / clips via Higgsfield MCP: `prompts/higgsfield_playbook.md` (paid → approval gate).
