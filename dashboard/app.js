@@ -154,14 +154,14 @@ async function renderProject() {
 
   $("#btn-approve").onclick = async () => {
     try {
-      await api(`/api/project/${CURRENT}/approve`, { method: "POST" });
+      await api(`/api/project/${CURRENT}/approve`, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
       toast("Storyboard approved — generation unblocked");
       renderProject();
     } catch (e) { toast(e.message, true); }
   };
   $("#btn-reject").onclick = async () => {
     try {
-      await api(`/api/project/${CURRENT}/reject`, { method: "POST" });
+      await api(`/api/project/${CURRENT}/reject`, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
       toast("Rejected — back to draft");
       renderProject();
     } catch (e) { toast(e.message, true); }

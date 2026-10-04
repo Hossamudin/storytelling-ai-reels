@@ -2,7 +2,10 @@
 
 Usage: python pipeline/clean_audio.py <name> [--input <file>] [--no-loudnorm]
 
-Timing is ALWAYS preserved (no silence removal) so transcript timestamps stay valid.
+Pass 3 tightens long silences when audio_cleanup.remove_silence is true (config default) and
+--no-silence-cut is not given. Use --no-silence-cut whenever the audio must stay in sync with a
+video (screen recordings, talking head, voice_edit.py / find_retakes.py flows). Transcribe AFTER
+this step so timestamps match voiceover_clean.wav; voice_analysis.json records timing_preserved.
 Output: projects/<name>/assets/voice/voiceover_clean.wav + voice_analysis.json
 """
 import argparse
@@ -184,7 +187,7 @@ def main():
         work.unlink(missing_ok=True)
 
     # Pass 3: tighten silences (+ manual wrong-take cuts from input/cuts.txt)
-    recut_note = ""
+    timing_preserved = True
     if not args.no_silence_cut and a.get("remove_silence", True):
         manual = parse_cuts_file(pp)
         dur = C.ffprobe_duration(clean)
@@ -203,7 +206,7 @@ def main():
                 "cuts": [[round(s, 3), round(e, 3)] for s, e in cuts],
                 "kept": [[round(s, 3), round(e, 3)] for s, e in kept],
             }, indent=2), encoding="utf-8")
-            recut_note = f", tightened {removed:.1f}s ({len(cuts)} cuts)"
+            timing_preserved = False
             C.log(args.name, f"silence/manual cuts removed {removed:.1f}s")
 
     duration = C.ffprobe_duration(clean)
@@ -221,7 +224,7 @@ def main():
         "mean_volume_db": float(mean_m.group(1)) if mean_m else None,
         "max_volume_db": float(max_m.group(1)) if max_m else None,
         "loudnorm": a.get("loudnorm", ""),
-        "timing_preserved": True,
+        "timing_preserved": timing_preserved,
     }
     (out_dir / "voice_analysis.json").write_text(
         json.dumps(analysis, indent=2, ensure_ascii=False), encoding="utf-8")

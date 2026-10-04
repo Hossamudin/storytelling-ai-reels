@@ -39,7 +39,10 @@ def main():
     stamp = time.strftime("%Y%m%d-%H%M")
     raw = part / "renders" / f"{a.name}-{a.part}-{stamp}.mp4"
     raw.parent.mkdir(parents=True, exist_ok=True)
-    r = C.run(["npx", "hyperframes", "render", "--quality", a.quality, "--strict", "-o", str(raw)], cwd=str(part), timeout=6 * 3600)
+    cmd = ["npx", "hyperframes", "render", "--quality", a.quality, "--strict", "-o", str(raw)]
+    if (part / "compositions/screen.html").exists():
+        cmd += ["--video-frame-format", "png"]  # lossless frame extraction keeps UI text crisp in screen recordings
+    r = C.run(cmd, cwd=str(part), timeout=6 * 3600)
     log = (r.stdout or "") + (r.stderr or "")
     (part / "renders" / f"render-{stamp}.log").write_text(log, encoding="utf-8")
     if r.returncode or not raw.exists():

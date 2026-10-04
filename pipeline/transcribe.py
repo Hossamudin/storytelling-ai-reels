@@ -144,19 +144,19 @@ def call_openai_whisper(cfg, audio_path: Path, key: str):
     decisions + caption sync). NO `prompt` hint on purpose: a hint that matches the opening
     words makes Whisper skip that speech. Spelling (Egyptian dialect, Latin keywords) is fixed
     afterwards by the agent against a text-only pass if needed."""
-    import subprocess
+    import requests  # key goes in a header, never on a command line (visible in the process list)
     o = cfg["transcription"].get("openai", {})
-    cmd = ["curl", "-s", o.get("api_url", "https://api.openai.com/v1/audio/transcriptions"),
-           "-H", f"Authorization: Bearer {key}",
-           "-F", f"file=@{audio_path}", "-F", f"model={o.get('model', 'whisper-1')}",
-           "-F", f"language={o.get('language', 'ar')}", "-F", "response_format=verbose_json",
-           "-F", "timestamp_granularities[]=word", "-F", "timestamp_granularities[]=segment",
-           "-F", "temperature=0"]
-    r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8")
+    fields = [("model", o.get("model", "whisper-1")), ("language", o.get("language", "ar")),
+              ("response_format", "verbose_json"), ("timestamp_granularities[]", "word"),
+              ("timestamp_granularities[]", "segment"), ("temperature", "0")]
+    with open(audio_path, "rb") as fh:
+        r = requests.post(o.get("api_url", "https://api.openai.com/v1/audio/transcriptions"),
+                          headers={"Authorization": f"Bearer {key}"}, data=fields,
+                          files={"file": (audio_path.name, fh, C.mime_for(audio_path))}, timeout=900)
     try:
-        d = json.loads(r.stdout)
+        d = r.json()
     except Exception:
-        raise RuntimeError(f"OpenAI transcription: non-JSON response: {r.stdout[:300]} {r.stderr[:300]}")
+        raise RuntimeError(f"OpenAI transcription: non-JSON response ({r.status_code}): {r.text[:300]}")
     if "error" in d:
         raise RuntimeError(f"OpenAI transcription error: {d['error'].get('message')}")
     words = d.get("words") or []

@@ -27,6 +27,7 @@ import common as C  # noqa: E402
 
 DASH = Path(__file__).resolve().parent
 NAME_RE = re.compile(r"^[a-zA-Z0-9_\-.]+$")
+LOCAL_HOSTS = {"localhost", "127.0.0.1", "[::1]"}
 
 
 def project_overview(name):
@@ -50,7 +51,7 @@ def project_overview(name):
         "created": p.get("created"),
         "aspect": p.get("aspect"),
         "duration_s": p.get("duration_s"),
-        "approved": sb.get("status") == "approved" or p.get("approved", False),
+        "approved": sb.get("status") == "approved",  # same rule generate_assets.py enforces
         "storyboard_status": sb.get("status", "none"),
         "scene_count": len(sb.get("scenes", [])),
         "estimated_cost_usd": sb.get("estimated_cost_usd", 0),
@@ -85,6 +86,25 @@ class Handler(BaseHTTPRequestHandler):
         except json.JSONDecodeError:
             return {"_raw": raw}
 
+    def _host_ok(self):
+        """DNS-rebinding guard: only answer requests addressed to this machine by a local name."""
+        host = (self.headers.get("Host") or "").rsplit(":", 1)[0].lower()
+        bound = self.server.server_address[0]
+        return host in LOCAL_HOSTS or host == bound
+
+    def _post_ok(self):
+        """CSRF guard for state-changing calls (approve = spend money, config = where keys are sent).
+        A cross-site page can't send Content-Type: application/json without a CORS preflight (which this
+        server never answers), and a browser always sends Origin on cross-site POSTs."""
+        if not self._host_ok():
+            return False
+        if not (self.headers.get("Content-Type") or "").lower().startswith("application/json"):
+            return False
+        origin = self.headers.get("Origin")
+        if origin and urlparse(origin).hostname not in {"localhost", "127.0.0.1", "::1", self.server.server_address[0]}:
+            return False
+        return True
+
     def _static(self, name, ctype):
         p = DASH / name
         if not p.exists():
@@ -95,6 +115,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         url = urlparse(self.path)
         parts = [unquote(x) for x in url.path.strip("/").split("/") if x]
+        if not self._host_ok():
+            return self._send(403, {"error": "forbidden host"})
         try:
             if url.path in ("/", "/index.html"):
                 return self._static("index.html", "text/html")
@@ -143,6 +165,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         url = urlparse(self.path)
         parts = [unquote(x) for x in url.path.strip("/").split("/") if x]
+        if not self._post_ok():
+            return self._send(403, {"error": "forbidden: local JSON requests only"})
         try:
             if url.path == "/api/config":
                 body = self._body()
@@ -186,7 +210,10 @@ class Handler(BaseHTTPRequestHandler):
                     sb["status"] = "edited"
                     (pp / "storyboard.json").write_text(
                         json.dumps(sb, indent=2, ensure_ascii=False), encoding="utf-8")
-                    C.log(name, "storyboard edited via dashboard")
+                    proj = C.load_project(name)
+                    proj["approved"] = False  # an edit after approval needs a fresh approval
+                    C.save_project(name, proj)
+                    C.log(name, "storyboard edited via dashboard (approval reset)")
                     return self._send(200, {"ok": True, "status": "edited"})
                 if action == "approve":
                     sb_path = pp / "storyboard.json"

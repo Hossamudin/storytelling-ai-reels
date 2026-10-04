@@ -305,12 +305,21 @@ def cost(cfg, key, default=0.0):
     return float(cfg.get("costs", {}).get(key, default))
 
 
+def clip_seconds(scene):
+    """AI clip length for a scene: explicit video_clip_seconds, else the scene length capped at 8 s.
+    Used by both the estimate (scene_cost) and generate_assets.py so the approved cost matches the spend."""
+    secs = float(scene.get("video_clip_seconds") or 0)
+    if not secs:
+        secs = min(8.0, float(scene.get("end", 0)) - float(scene.get("start", 0)))
+    return max(1.0, round(secs, 1))
+
+
 def scene_cost(scene, cfg):
     """Estimate USD cost of a storyboard scene."""
     img = cost(cfg, "per_image_usd")
     vids = cost(cfg, "per_video_second_usd")
     m = scene.get("method")
-    secs = float(scene.get("video_clip_seconds") or 0) or min(8.0, (scene.get("end", 0) - scene.get("start", 0)))
+    secs = clip_seconds(scene)
     if m in ("direct_image", "image_animate"):
         c = img
     elif m == "first_last_frame":

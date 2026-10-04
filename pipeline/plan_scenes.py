@@ -3,7 +3,7 @@
 Usage: python pipeline/plan_scenes.py <name> [--provider gemini_api|mock] [--aspect 9:16|16:9]
 
 Output: storyboard.json + storyboard.md (status=draft). GENERATION REFUSES TO RUN
-until the storyboard is approved via dashboard or approve_storyboard.py.
+until the storyboard is approved via the dashboard (or explicit chat approval + --force).
 """
 import argparse
 import json

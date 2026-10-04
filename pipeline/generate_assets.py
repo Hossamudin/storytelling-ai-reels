@@ -59,7 +59,8 @@ def gen_image_openai(prompt, aspect, dest: Path, cfg):
     status, resp = C.http_json(url, headers={"Authorization": f"Bearer {key}"},
                                body=body, timeout=300)
     if status != 200:
-        raise RuntimeError(f"OpenAI image error {status}: {str(resp)[:400]}")
+        err = f"OpenAI image error {status}: {str(resp)[:400]}"
+        raise C.PermanentError(err) if 400 <= status < 500 and status != 429 else RuntimeError(err)
     item = resp["data"][0]
     b64 = item.get("b64_json") or ""
     if not b64 and item.get("url"):
@@ -83,7 +84,8 @@ def gen_image_gemini(prompt, aspect, dest: Path, cfg):
             "generationConfig": {"responseModalities": ["TEXT", "IMAGE"]}}
     status, resp = C.http_json(url, headers={"x-goog-api-key": key}, body=body, timeout=300)
     if status != 200:
-        raise RuntimeError(f"Gemini image error {status}: {str(resp)[:400]}")
+        err = f"Gemini image error {status}: {str(resp)[:400]}"
+        raise C.PermanentError(err) if 400 <= status < 500 and status != 429 else RuntimeError(err)
     for part in resp.get("candidates", [{}])[0].get("content", {}).get("parts", []):
         d = part.get("inlineData") or part.get("inline_data")
         if d:
@@ -184,6 +186,8 @@ def main():
     args = ap.parse_args()
 
     MOCK_IMAGES["_mode"] = args.mock
+    if args.mock:
+        args.no_video = True  # mock mode must never reach a paid video API
 
     cfg = C.load_config()
     pp = C.project_path(args.name)
@@ -205,7 +209,7 @@ def main():
 
     C.update_stage(args.name, "generation", "asset generation started")
     generated, failed = 0, []
-    per_img = C.cost(cfg, "per_image_usd")
+    per_img = 0.0 if args.mock else C.cost(cfg, "per_image_usd")
     per_vid_s = C.cost(cfg, "per_video_second_usd")
 
     for s in sb["scenes"]:
@@ -251,7 +255,7 @@ def main():
         if m in C.AI_VIDEO_METHODS and not args.no_video:
             vpath = vid_dir / f"{sid}.mp4"
             if not vpath.exists():
-                secs = float(s.get("video_clip_seconds") or 0) or 8.0
+                secs = C.clip_seconds(s)  # same rule as the approved estimate
                 vp = (s["video_prompt"] +
                       f" Duration: about {secs:.0f} seconds. Aspect ratio {aspect}.")
                 C.log(args.name, f"{sid}: generating video ({m}, {secs:.0f}s) -> {vpath.name}")

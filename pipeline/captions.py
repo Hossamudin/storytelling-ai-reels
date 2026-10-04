@@ -20,7 +20,7 @@ PUNCT_BREAK = re.compile(r"[،,.!?؟:;]$")
 
 def is_keyword(word, extra):
     w = word.strip("«»\"'()[]{}،,.!?؟:;")
-    if w in extra:
+    if w.lower() in extra:  # extra holds lowercased storyboard caption_keywords
         return True
     return bool(LATIN_TOKEN.match(w)) and len(w) >= 2 and not w.isdigit()
 

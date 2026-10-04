@@ -163,3 +163,20 @@ Running log from real production runs (Vibe Automation intro/outro, kit test, Su
 | `check` fetched "EB Garamond" from Google Fonts | `font-family: Georgia, serif` in a quote card | Only the vendored fonts (Cairo/Montserrat/Kufi/Manrope) in compositions |
 | "و" + Latin span rendered as a stray glyph after the English word | bidi: a lone Arabic letter before an LTR span | Don't glue a single Arabic letter to an English span; drop it or use a full Arabic word |
 | Narrated fact differs from the source (Dots "phone number" vs "call your dot in ChatGPT") | narrator memory | On screen use wording true to both ("VOICE CALL"), flag it in the handoff |
+
+## 11. Project review — Oct 2026 (bugs found by reading the code, fixed)
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| `selftest.py` failed at `hyperframes check` (`request_failed … css2`) | `assemble.py` loaded Noto Kufi / Manrope from Google Fonts — a render that depends on the network | Fonts vendored: `@font-face` → `assets/fonts/*.ttf` copied from `kit/motion/fonts` |
+| `assemble.py --captions on` crashed when `captions.json` was missing | `capbg`/`kwc`/`pos` were only defined inside the captions branch | Defaults set before the branch |
+| Storyboard `caption_keywords` with capitals (e.g. "ChatGPT") never styled | keywords stored lowercased, compared case-sensitively | `is_keyword` compares `w.lower()` |
+| Any website open in the browser could approve a storyboard (= spend credits) or rewrite `config.json` (e.g. `api_base` → keys sent elsewhere) via the dashboard | no CSRF / DNS-rebinding protection on `localhost:8788` | Host must be local; POSTs must be `application/json` with a local (or no) `Origin` |
+| Dashboard still showed "approved" after the storyboard was edited | `project.json approved` was never reset on edit | Edit resets it; overview uses the storyboard status (the same rule as `generate_assets.py`) |
+| `generate_assets.py --mock` booked $0.04/image and would call the paid video API without `--no-video` | mock only covered images | Mock implies `--no-video` and books $0 |
+| Approved estimate ≠ spend for AI clips | estimate used min(8, scene length), the generator used 8 s | One rule: `common.clip_seconds()` |
+| A 4xx image error was retried 3× | generic `RuntimeError` | 4xx (not 429) → `PermanentError` (no retry) |
+| OpenAI key visible in the process list during transcription | key passed to `curl` on the command line | `requests` with a header + 15 min timeout |
+| `voice_analysis.json` said `timing_preserved: true` after silences were cut | hard-coded | Real value recorded; docs say: `--no-silence-cut` for anything synced to video |
+| Timed privacy `blur` without `t1` added a tween at an undefined position | missing guard in `screen.js` | No `t1` = stays to the end |
+| Screen recordings rendered with lossy frame extraction | `render_final.py` didn't pass `--video-frame-format png` | Passed automatically when `compositions/screen.html` exists |

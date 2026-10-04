@@ -17,9 +17,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import common as C
 
 
-def ts(t):
+def ts(t, long_form=False):
     t = int(t)
-    return f"{t // 3600}:{t % 3600 // 60:02d}:{t % 60:02d}" if t >= 3600 else f"{t // 60:02d}:{t % 60:02d}"
+    return f"{t // 3600}:{t % 3600 // 60:02d}:{t % 60:02d}" if long_form else f"{t // 60:02d}:{t % 60:02d}"
 
 
 def main():
@@ -46,7 +46,7 @@ def main():
             merged[-1] = s | {"t": merged[-1]["t"]}
             continue
         merged.append(s)
-    lines = [f"{ts(s['t'])} {s.get('title') or s['label']}" for s in merged]
+    lines = [f"{ts(s['t'], total >= 3600)} {s.get('title') or s['label']}" for s in merged]
     if len(lines) < 3:
         print("! fewer than 3 chapters — YouTube will ignore them")
     dest = C.project_path(a.name) / "deliverables" / f"{a.part}_youtube_chapters.txt"

@@ -18,6 +18,7 @@ This repo is a **video production factory** run by you (the agent). The full wor
 - Reusable assets: `library/INDEX.md` + `pipeline/lib.py` (find before generating, add/harvest after); rules: `docs/LIBRARY.md`.
 - New-video prompt template for Hossam: `prompts/NEW_VIDEO_TEMPLATE.md`.
 - Read `docs/LESSONS_LEARNED.md` before building; add new issues + fixes to it.
+- Planned modules (redaction, reviewer handoff, 2D cartoon, B-roll, speed-ups): `docs/ROADMAP.md`.
 - Final renders: `python pipeline/render_final.py <name>` (runs `preflight.py`; never final-render from Studio). Compositions must not load anything from the internet (GSAP is vendored in `assets/js/`).
 - Generated SFX / images (GPT Image 2.5, medium) / clips via Higgsfield MCP: `prompts/higgsfield_playbook.md` (paid → approval gate).
 - Brand (palette/fonts/RTL/avoids): `prompts/brand.md`. Style catalog + method matrix: `prompts/style_catalog.md`.

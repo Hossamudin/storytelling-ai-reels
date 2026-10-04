@@ -36,7 +36,7 @@ generation, capture or recording worth keeping: `lib.py add …` (or `lib.py har
 ```
 python pipeline/new_project.py <name> --title "..."     # scaffold
 # copy user's voiceover (+ script.md if any) into projects/<name>/input/
-python pipeline/clean_audio.py <name>                   # ffmpeg cleanup, timing preserved
+python pipeline/clean_audio.py <name>                   # ffmpeg cleanup (+ silence tightening; --no-silence-cut keeps timing)
 python pipeline/transcribe.py <name>                    # openai_whisper word timestamps (default); gemini_api needs a PAID key
 python pipeline/plan_scenes.py <name> [--aspect 9:16]   # storyboard.json + storyboard.md
 # >>> APPROVAL GATE: user reviews (dashboard) <<<
@@ -56,7 +56,9 @@ npx hyperframes render                                  # only after user approv
 - If user provides screen recordings of AI tools: extract frames/segments with ffmpeg into `assets/videos/` and use them as scene footage (`screenshot` method).
 
 ### 1–2. Audio + transcript
-- `clean_audio.py` preserves timing (no silence cuts) — transcript timestamps stay valid.
+- `clean_audio.py` tightens long silences by default (`audio_cleanup.remove_silence`). Transcribe after it, so
+  timestamps match. Any flow that must stay in sync with video (screen / talking head / voice_edit) uses
+  `--no-silence-cut`; `voice_analysis.json` records `timing_preserved`.
 - Default provider `openai_whisper` (whisper-1 verbose_json) = real word timings. Never add a
   `prompt` hint (it makes Whisper skip matching speech). A free-tier Gemini key returns 503/429,
   truncated JSON and fake 0.5 s timings — only use `gemini_api` with a paid key.

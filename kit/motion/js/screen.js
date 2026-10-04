@@ -47,7 +47,8 @@
       n++;
       if (a.type === "blur") {
         const e = mk("scr-blur", box(a.rect));
-        if (a.t0 !== undefined) { fx.hide(e); tl.fromTo(e, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, a.t0); tl.to(e, { opacity: 0, duration: 0.2 }, a.t1); }
+        // timed blur: in at t0, out at t1 (no t1 = stays to the end; never tween at an undefined position)
+        if (a.t0 !== undefined) { fx.hide(e); tl.fromTo(e, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, a.t0); if (a.t1 !== undefined) tl.to(e, { opacity: 0, duration: 0.2 }, a.t1); }
       }
       if (a.type === "spot") {
         const r = a.rect, pad = a.pad ?? 10;

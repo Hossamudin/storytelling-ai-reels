@@ -75,9 +75,10 @@ HTML = """<!doctype html>
 <meta name="viewport" content="width=__W__, height=__H__" />
 <title>__TITLE__</title>
 <script src="assets/js/gsap.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
+  /* fonts are vendored (kit/motion/fonts): a render must never depend on Google Fonts */
+  @font-face { font-family:"Noto Kufi Arabic"; src:url("assets/fonts/NotoKufiArabic.ttf") format("truetype"); font-weight:100 900; }
+  @font-face { font-family:"Manrope"; src:url("assets/fonts/Manrope.ttf") format("truetype"); font-weight:200 800; }
   :root {
     --punch1:#136052; --punch2:#437F3E; --punch3:#B3CE65; --punch4:#FFEC5C;
     --punch5:#FF5A33; --ink:#0D0D0D; --paper:#FAF7F0;
@@ -221,12 +222,12 @@ def main():
                 f'{{y:0, opacity:0.95, duration:0.5, ease:"power2.out"}}, {s["start"] + 0.35});')
         track = 3 if track >= 4 else track + 1  # keep visual tracks low, alternate
 
-    # captions
+    # captions (defaults apply when captions are off or captions.json is missing)
     captions_html = []
     cap_path = pp / "transcript" / "captions.json"
+    kwc, pos, capbg = palette.get("punch5", "#FF5A33"), "bottom:14%", "0.42"
     if args.captions == "on" and cap_path.exists():
         caps = json.loads(cap_path.read_text(encoding="utf-8"))
-        kwc = palette.get("punch5", "#FF5A33")
         pos = "bottom:5.5%" if caps.get("position") != "top" else "top:10%"
         capbg = "0.62"
         for ch in caps["chunks"]:
@@ -257,19 +258,22 @@ def main():
     html = (HTML.replace("__W__", str(w)).replace("__H__", str(h))
             .replace("__DUR__", str(dur)).replace("__FPS__", str(fps))
             .replace("__TITLE__", esc(sb.get("title", "Composition")))
-            .replace("__CAPPOS__", pos if args.captions == "on" and cap_path.exists() else "bottom:14%")
-            .replace("__CAPBG__", capbg if args.captions == "on" else "0.42")
-            .replace("__KWCOLOR__", kwc if args.captions == "on" else "#FF5A33")
+            .replace("__CAPPOS__", pos)
+            .replace("__CAPBG__", capbg)
+            .replace("__KWCOLOR__", kwc)
             .replace("__SCENES__", "\n".join(scenes_html))
             .replace("__CAPTIONS__", "")
             .replace("__AUDIO__", audio_html)
             .replace("__TWEENS__", "\n".join(tweens) or "  // no tweens"))
 
-    comp = pp / "composition"
-    (comp / "assets/js").mkdir(parents=True, exist_ok=True)  # GSAP ships locally: renders never depend on a CDN
+    # GSAP + fonts ship locally: renders never depend on a CDN
     import shutil as _sh
-    _sh.copy2(Path(__file__).resolve().parent.parent / "kit/motion/js/gsap.min.js", comp / "assets/js/gsap.min.js")
-    comp.mkdir(parents=True, exist_ok=True)
+    kit = C.ROOT / "kit" / "motion"
+    (comp / "assets/js").mkdir(parents=True, exist_ok=True)
+    (comp / "assets/fonts").mkdir(parents=True, exist_ok=True)
+    _sh.copy2(kit / "js/gsap.min.js", comp / "assets/js/gsap.min.js")
+    for font in ("NotoKufiArabic.ttf", "Manrope.ttf"):
+        _sh.copy2(kit / "fonts" / font, comp / "assets/fonts" / font)
     (comp / "index.html").write_text(html, encoding="utf-8")
 
     # QC gate: audio placed in the composition must match the storyboard timing
