@@ -1,0 +1,12 @@
+{
+ "enabled": false,
+ "series": "",
+ "sections": [],
+ "wipes": [
+  15.85,
+  29.85,
+  41.85,
+  66.85
+ ],
+ "grain": true
+}

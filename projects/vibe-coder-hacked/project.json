@@ -1,0 +1,19 @@
+{
+  "name": "vibe-coder-hacked",
+  "title": "قصة Vibe Coder اتخترق في ليلة",
+  "stage": "ingest",
+  "created": "2026-10-04T12:17:56",
+  "updated": "2026-10-04T12:17:56",
+  "aspect": null,
+  "duration_s": null,
+  "approved": false,
+  "total_cost_usd": 0.0,
+  "stage_history": [
+    {
+      "stage": "ingest",
+      "at": "2026-10-04T12:17:56",
+      "note": "project created",
+      "from": null
+    }
+  ]
+}

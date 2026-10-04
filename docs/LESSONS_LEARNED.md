@@ -180,3 +180,16 @@ Running log from real production runs (Vibe Automation intro/outro, kit test, Su
 | `voice_analysis.json` said `timing_preserved: true` after silences were cut | hard-coded | Real value recorded; docs say: `--no-silence-cut` for anything synced to video |
 | Timed privacy `blur` without `t1` added a tween at an undefined position | missing guard in `screen.js` | No `t1` = stays to the end |
 | Screen recordings rendered with lossy frame extraction | `render_final.py` didn't pass `--video-frame-format png` | Passed automatically when `compositions/screen.html` exists |
+
+## 12. First 2D cartoon story (kit/cartoon) — Vibe Coder demo, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| `composition script error … reading 'setAttribute'` in one scene | `k.cape()` called on a character built without `{ cape: true }` | `cape()` warns and returns; pass `cape: true` when the story needs it |
+| Sitting character floated above the floor | the floor pose rotated the legs but kept the hips at standing height | poses carry `by` (body drop); `sitFloor` uses `by: 90` |
+| Two eye transforms fought (blinks undid the shock-size eyes) | two joints wrote `transform` on the same `<g>` | one joint per element (`ey: {s, k}`) |
+| Character tiny, half the frame empty desk | framed like a wide shot on a 9:16 canvas | 9:16 story frames: the character fills ~45 % of the height, headline top, subtitles bottom |
+| Subtitles collided with CTA cards / ALERT band | layout ignored the caption zone | keep the bottom ~320 px free while captions run |
+| White text on an orange/red pill failed contrast only in the light skin | the checker measured against the paper behind the pill | light skin: ink text on a yellow pill with an ink border |
+| A sub-composition overlay (subtitles) needs to sit over alternating scene tracks | `motion_sync.py` alternated every host on tracks 1/2 | `scenes.json` items may set `"track": 3` |
+| "(… GitHub)" brackets rendered reversed | bidi: a Latin run at the end of an Arabic parenthesis | avoid brackets around a trailing Latin run; use "·" |

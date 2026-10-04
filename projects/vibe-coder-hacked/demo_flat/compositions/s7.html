@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s7-template">
+  <style>
+
+    .cv-abs { position: absolute; }
+    .cv-head { position: absolute; left: 50px; right: 50px; text-align: center; font-weight: 900; line-height: 1.25; white-space: nowrap; }
+    .cv-chip { position: absolute; display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 40px; border-radius: 48px;
+      font-size: 46px; font-weight: 900; white-space: nowrap; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+    .cv-lat { font-family: var(--font-en); direction: ltr; unicode-bidi: isolate; }
+    .cv-tag { position: absolute; font-family: var(--font-en); font-weight: 900; letter-spacing: .18em; font-size: 30px; direction: ltr; white-space: nowrap; }
+    .cv-card { position: absolute; border-radius: 30px; background: #fbfbf7; color: #0d0d0d; box-shadow: 0 24px 50px rgba(0,0,0,.4); overflow: hidden; }
+    .cv-floor { position: absolute; left: 0; right: 0; bottom: 0; }
+    .cv-mount { position: absolute; }
+
+    #s7-sky { position:absolute; inset:0; background: radial-gradient(ellipse 90% 70% at 50% 45%, #1f8a75 0%, #136052 55%, #0f4f44 100%); }
+    #s7-floor { top:1400px; background: linear-gradient(180deg,#0d2b23,#07221e); }
+    #s7-world { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin: 50% 60%; }
+    #s7-dome { position:absolute; left:250px; top:620px; width:760px; height:760px; border-radius:50%; border:10px solid #b3ce65;
+      background: radial-gradient(circle, rgba(179,206,101,.08) 40%, rgba(179,206,101,.32) 100%); }
+    #s7-house { position:absolute; left:330px; top:700px; width:600px; height:600px; }
+    #s7-k { left:10px; top:940px; width:509px; height:560px; }
+    #s7-h1 { top:180px; font-size:84px; color:#fff; }
+    #s7-h2 { top:340px; font-size:64px; color:#ffec5c; }
+    #s7-cm { left:70px; top:470px; width:940px; padding:30px 36px; display:flex; align-items:center; gap:26px; direction:rtl; }
+    #s7-cm i { width:96px; height:96px; border-radius:50%; background:#136052; display:block; flex:none; }
+    #s7-cm .t { font-size:36px; font-weight:800; color:#5a6b62; }
+    #s7-sec { font-family:var(--font-en); font-weight:900; font-size:96px; color:#136052; letter-spacing:.06em; direction:ltr; }
+    #s7-name { left:0; right:0; top:900px; text-align:center; font-size:72px; font-weight:900; color:#fff; }
+    #s7-av { position:absolute; left:440px; top:740px; width:200px; height:140px; }
+    #s7-url { left:0; right:0; top:1010px; text-align:center; font-size:42px; color:#b3ce65; letter-spacing:.1em; }
+    #s7-fol { left:400px; top:1110px; background:#ff5a33; color:#fff; height:90px; font-size:42px; }
+
+  </style>
+  <div id="s7" data-composition-id="s7" data-width="1080" data-height="1920" data-duration="8.6">
+
+    <div id="s7-sky"></div>
+    <div id="s7-cam" class="cam">
+      <div id="s7-floor" class="cv-floor"></div>
+      <div id="s7-world"><div id="s7-dome"></div><div id="s7-house"></div></div>
+      <div id="s7-k" class="cv-mount"></div>
+    </div>
+    <div id="s7-h1" class="cv-head">افحص قبل ما تنشر</div>
+    <div id="s7-h2" class="cv-head">مش بعد ما تتخترق</div>
+    <div id="s7-cm" class="cv-card"><i></i><div><div class="t">اكتب في الكومنتس</div><div id="s7-sec">SECURITY</div></div></div>
+    <div id="s7-name" class="cv-head" style="position:absolute">حسام الدين حسن</div>
+    <div id="s7-url" class="cv-tag">MAHARAAI.COM</div>
+    <div id="s7-fol" class="cv-chip">+ فولو</div>
+
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(67.0);
+      const { tl, Q } = fx;
+
+      Q("#s7-house").innerHTML = HF_PROP.house("s7h", { lit: true });
+      const k = HF_CHAR(fx, "#s7-k", { id: "s7k", look: "karim", pose: "idle", face: "happy" });
+      k.blinks(67, 75.6, 2.4);
+      tl.fromTo("#s7-dome", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: "back.out(1.4)" }, 67.2);
+      fx.breathe("#s7-dome", 68, 7.4, 0.025, 1.6);
+      fx.rise("#s7-h1", 67.3, { y: 50 });
+      fx.rise("#s7-h2", 68.7, { y: 30 });
+      k.pose(67.4, "wave").face(67.4, "grin");
+      k.pose(68.0, { aR: [-120, -60] }, 0.25, "sine.inOut").pose(68.3, "wave", 0.25, "sine.inOut").pose(68.6, { aR: [-120, -60] }, 0.25, "sine.inOut").pose(68.9, "idle");
+      fx.out("#s7-h1, #s7-h2", 70.4, { y: -30 });
+      tl.to("#s7-world", { y: 160, scale: 0.8, duration: 0.6, ease: "power2.inOut" }, 70.5);
+      fx.rise("#s7-cm", 70.6, { y: 60 });
+      fx.letterDrop("#s7-sec", 71.0, { st: 0.06 });
+      tl.fromTo("#s7-sec", { scale: 1 }, { scale: 1.1, duration: 0.2, yoyo: true, repeat: 3, ease: "sine.inOut" }, 71.8);
+      k.pose(71.0, "pointUp").face(71.0, "smile").talk(71.0, 72.6);
+      fx.out("#s7-world, #s7-k", 72.5, { y: 120, d: 0.35 });
+      fx.rise("#s7-name", 72.8, { y: 40 });
+      fx.rise("#s7-url", 73.1, { y: 20, b: 0 });
+      fx.pop("#s7-fol", 73.6, { from: 0.3 });
+
+      window.__timelines["s7"] = tl.real;
+    })();
+  </script>
+</template></body></html>

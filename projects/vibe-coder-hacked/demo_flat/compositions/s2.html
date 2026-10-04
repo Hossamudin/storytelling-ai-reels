@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s2-template">
+  <style>
+
+    .cv-abs { position: absolute; }
+    .cv-head { position: absolute; left: 50px; right: 50px; text-align: center; font-weight: 900; line-height: 1.25; white-space: nowrap; }
+    .cv-chip { position: absolute; display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 40px; border-radius: 48px;
+      font-size: 46px; font-weight: 900; white-space: nowrap; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+    .cv-lat { font-family: var(--font-en); direction: ltr; unicode-bidi: isolate; }
+    .cv-tag { position: absolute; font-family: var(--font-en); font-weight: 900; letter-spacing: .18em; font-size: 30px; direction: ltr; white-space: nowrap; }
+    .cv-card { position: absolute; border-radius: 30px; background: #fbfbf7; color: #0d0d0d; box-shadow: 0 24px 50px rgba(0,0,0,.4); overflow: hidden; }
+    .cv-floor { position: absolute; left: 0; right: 0; bottom: 0; }
+    .cv-mount { position: absolute; }
+
+    #s2-sky { position:absolute; inset:0; background: radial-gradient(ellipse 90% 70% at 50% 40%, #1a7564 0%, #136052 50%, #0f4f44 100%); }
+    #s2-floor { top:1430px; background: linear-gradient(180deg,#0d2b23,#07221e); }
+    #s2-tag { left:0; right:0; top:200px; text-align:center; color:#ffec5c; font-size:34px; }
+    #s2-h1 { top:260px; font-size:84px; color:#fff; }
+    #s2-k { left:40px; top:750px; width:636px; height:700px; }
+    #s2-doc { left:520px; top:850px; width:545px; height:600px; }
+    #s2-bub { position:absolute; left:330px; top:520px; width:690px; padding:30px 40px; border-radius:40px; background:#fbfbf7; color:#0d0d0d;
+      font-size:42px; font-weight:800; line-height:1.5; box-shadow:0 18px 40px rgba(0,0,0,.35); text-align:right; }
+    #s2-bub:after { content:""; position:absolute; left:60px; bottom:-34px; border:22px solid transparent; border-top:36px solid #fbfbf7; }
+    #s2-house { position:absolute; left:470px; top:840px; width:560px; height:560px; }
+    #s2-pa { left:0; right:0; top:420px; text-align:center; font-size:58px; color:#b3ce65; }
+    #s2-day { left:600px; top:560px; background:#ffec5c; color:#0d0d0d; }
+    #s2-claps i { position:absolute; width:16px; height:16px; border-radius:50%; background:#ffec5c; }
+
+  </style>
+  <div id="s2" data-composition-id="s2" data-width="1080" data-height="1920" data-duration="11.8">
+
+    <div id="s2-sky"></div>
+    <div id="s2-cam" class="cam">
+      <div id="s2-floor" class="cv-floor"></div>
+      <div id="s2-house"></div>
+      <div id="s2-doc" class="cv-mount"></div>
+      <div id="s2-k" class="cv-mount"></div>
+      <div id="s2-bub">«اعملي أبلكيشن حجوزات للعيادة… بتسجيل دخول ودفع»</div>
+      <div id="s2-day" class="cv-chip">يوم <span id="s2-dn" class="cv-lat">1</span></div>
+    </div>
+    <div id="s2-tag" class="cv-tag">VIBE CODER</div>
+    <div id="s2-h1" class="cv-head">كريم مش مبرمج</div>
+    <div id="s2-pa" class="cv-tag" style="letter-spacing:.06em">PROMPT → APP</div>
+
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(4.2);
+      const { tl, Q } = fx;
+
+      Q("#s2-house").innerHTML = HF_PROP.house("s2h");
+      const k = HF_CHAR(fx, "#s2-k", { id: "s2k", look: "karim", pose: "idle", face: "smile", cape: true });
+      const d = HF_CHAR(fx, "#s2-doc", { id: "s2d", look: "doctor", pose: "idle", face: "smile" });
+      fx.hide("#s2-doc"); fx.hide("[id^='s2h-']");
+      k.blinks(4.2, 16, 2.9);
+      fx.rise("#s2-tag", 4.35, { y: 20, b: 0 });
+      fx.rise("#s2-h1", 4.5, { y: 50 });
+      k.pose(4.6, "shrug").face(4.6, "grin").pose(6.0, "idle");
+      // the prompt: Karim talks, the bubble pops
+      k.pose(7.0, "point").face(7.0, "smile").talk(7.0, 9.4);
+      fx.pop("#s2-bub", 7.05, { from: 0.4 });
+      fx.out("#s2-tag, #s2-h1", 9.45, { y: -30 });
+      // words -> blocks: the bubble collapses into the house site, blocks drop in row by row
+      tl.to("#s2-bub", { scale: 0.1, x: 260, y: 520, opacity: 0, duration: 0.45, ease: "power3.in" }, 9.6);
+      fx.rise("#s2-pa", 9.8, { y: 20 });
+      tl.fromTo(["#s2h-b0","#s2h-b1","#s2h-b2","#s2h-b3","#s2h-b4","#s2h-b5","#s2h-b6","#s2h-b7","#s2h-b8","#s2h-b9","#s2h-b10","#s2h-b11"], { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.42, ease: "bounce.out", stagger: 0.14 }, 10.0);
+      tl.fromTo(["#s2h-roof", "#s2h-chim"], { opacity: 0, y: -300 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)", stagger: 0.1 }, 11.8);
+      tl.fromTo(["#s2h-door", "#s2h-win", "#s2h-bwin", "#s2h-sash"], { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.08 }, 12.3);
+      fx.hide("#s2h-blocks"); tl.fromTo("#s2h-blocks", { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, 10.0);
+      k.pose(10.0, "think").face(10.0, "happy");
+      // day counter
+      fx.pop("#s2-day", 10.5, { from: 0.3 });
+      tl.set("#s2-dn", { textContent: "2" }, 11.9);
+      fx.pop("#s2-day", 11.9, { from: 0.8, d: 0.25 });
+      fx.out("#s2-day, #s2-pa", 12.6);
+      // the doctor friend arrives, claps; Karim becomes superman
+      tl.fromTo("#s2-doc", { opacity: 0, x: 420 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 12.7);
+      d.walk(12.7, 13.3);
+      d.face(13.3, "grin").clap(13.4, 15.6);
+      tl.to("#s2-house", { x: 130, y: -120, scale: 0.72, duration: 0.6, ease: "power2.inOut" }, 12.7);
+      k.cape(14.0, 15.9).pose(14.0, "hero", 0.3).face(14.0, "grin").hop(14.0, 46);
+      tl.fromTo("#s2-k", { x: 0 }, { x: 30, duration: 0.5, ease: "power2.out" }, 12.7);
+
+      window.__timelines["s2"] = tl.real;
+    })();
+  </script>
+</template></body></html>

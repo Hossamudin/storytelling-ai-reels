@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s6-template">
+  <style>
+
+    .cv-abs { position: absolute; }
+    .cv-head { position: absolute; left: 50px; right: 50px; text-align: center; font-weight: 900; line-height: 1.25; white-space: nowrap; }
+    .cv-chip { position: absolute; display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 40px; border-radius: 48px;
+      font-size: 46px; font-weight: 900; white-space: nowrap; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+    .cv-lat { font-family: var(--font-en); direction: ltr; unicode-bidi: isolate; }
+    .cv-tag { position: absolute; font-family: var(--font-en); font-weight: 900; letter-spacing: .18em; font-size: 30px; direction: ltr; white-space: nowrap; }
+    .cv-card { position: absolute; border-radius: 30px; background: #fbfbf7; color: #0d0d0d; box-shadow: 0 24px 50px rgba(0,0,0,.4); overflow: hidden; }
+    .cv-floor { position: absolute; left: 0; right: 0; bottom: 0; }
+    .cv-mount { position: absolute; }
+
+    #s6-sky { position:absolute; inset:0; background: radial-gradient(ellipse 90% 70% at 50% 40%, #1a7564 0%, #136052 55%, #0f4f44 100%); }
+    #s6-floor { top:1400px; background: linear-gradient(180deg,#0d2b23,#07221e); }
+    #s6-rw { position:absolute; inset:0; overflow:hidden; opacity:0; }
+    #s6-rw i { position:absolute; left:-200px; height:10px; width:1500px; background:rgba(255,255,255,.18); display:block; }
+    #s6-rwi { position:absolute; left:380px; top:330px; width:320px; height:200px; }
+    #s6-rwt { left:0; right:0; top:560px; text-align:center; color:#fff; font-size:44px; letter-spacing:.4em; }
+    #s6-world { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin: 60% 70%; }
+    #s6-house { position:absolute; left:120px; top:720px; width:680px; height:680px; }
+    #s6-crack { position:absolute; left:120px; top:720px; width:680px; height:680px; }
+    #s6-key { position:absolute; left:470px; top:1120px; width:150px; height:66px; transform-origin: 20px 50%; }
+    #s6-safe { position:absolute; left:820px; top:1210px; width:200px; height:200px; }
+    #s6-cctv { position:absolute; left:110px; top:910px; width:190px; height:114px; }
+    #s6-shield { position:absolute; left:400px; top:640px; width:120px; height:138px; }
+    #s6-bot { position:absolute; left:700px; top:1060px; width:280px; height:336px; }
+    #s6-h1 { top:190px; font-size:58px; color:#fff; }
+    #s6-h2 { top:280px; font-size:110px; color:#b3ce65; letter-spacing:.04em; }
+    #s6-list { left:70px; top:380px; width:940px; padding:26px 36px; }
+    #s6-list .r { display:flex; align-items:center; gap:24px; height:82px; font-size:38px; font-weight:800; }
+    #s6-list .b { width:52px; height:52px; border-radius:12px; border:5px solid #136052; flex:none; position:relative; }
+    #s6-list svg { position:absolute; left:-4px; top:-10px; width:60px; height:60px; overflow:visible; }
+    #s6-pipe { position:absolute; left:40px; right:40px; top:400px; display:flex; justify-content:center; gap:12px; direction:ltr; }
+    #s6-pipe .s { height:88px; padding:0 26px; border-radius:44px; display:flex; align-items:center; font-family:var(--font-en); font-weight:900; font-size:32px;
+      letter-spacing:.06em; background:rgba(255,255,255,.12); color:#cfe3a0; }
+    #s6-pipe .a { color:#b3ce65; font-family:var(--font-en); font-weight:900; font-size:34px; display:flex; align-items:center; }
+    #s6-k { left:-20px; top:930px; width:509px; height:560px; }
+    #s6-rep { position:absolute; left:170px; top:1190px; width:130px; height:162px; }
+    #s6-chip { right:50px; top:560px; background:#ffec5c; color:#0d0d0d; }
+
+  </style>
+  <div id="s6" data-composition-id="s6" data-width="1080" data-height="1920" data-duration="15.0">
+
+    <div id="s6-sky"></div>
+    <div id="s6-cam" class="cam">
+      <div id="s6-floor" class="cv-floor"></div>
+      <div id="s6-world">
+        <div id="s6-house"></div><div id="s6-crack"></div>
+        <div id="s6-key"></div><div id="s6-safe"></div><div id="s6-cctv"></div><div id="s6-shield"></div>
+        <div id="s6-bot"></div>
+      </div>
+      <div id="s6-k" class="cv-mount"></div>
+      <div id="s6-rep"></div>
+    </div>
+    <div id="s6-rw"><i style="top:120px"></i><i style="top:270px"></i><i style="top:420px"></i><i style="top:570px"></i><i style="top:720px"></i><i style="top:870px"></i><i style="top:1020px"></i><i style="top:1170px"></i><i style="top:1320px"></i><i style="top:1470px"></i><i style="top:1620px"></i><i style="top:1770px"></i><div id="s6-rwi"></div><div id="s6-rwt" class="cv-tag">REWIND</div></div>
+    <div id="s6-h1" class="cv-head">عشان كده عملت <span class="cv-lat">Skill</span> اسمها</div>
+    <div id="s6-h2" class="cv-head cv-lat">SECURITY AUDIT</div>
+    <div id="s6-list" class="cv-card"><div class="r"><div class="b"><svg viewBox="0 0 60 60"><path id="s6-ck0" d="M8 32 L24 48 L54 10" fill="none" stroke="#ff5a33" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg></div>المفاتيح المكشوفة · حتى في تاريخ <span class="cv-lat">GitHub</span></div><div class="r"><div class="b"><svg viewBox="0 0 60 60"><path id="s6-ck1" d="M8 32 L24 48 L54 10" fill="none" stroke="#ff5a33" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg></div>المكتبات اللي فيها ثغرات</div><div class="r"><div class="b"><svg viewBox="0 0 60 60"><path id="s6-ck2" d="M8 32 L24 48 L54 10" fill="none" stroke="#ff5a33" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg></div>الكود</div><div class="r"><div class="b"><svg viewBox="0 0 60 60"><path id="s6-ck3" d="M8 32 L24 48 L54 10" fill="none" stroke="#ff5a33" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg></div>إعدادات الأمان</div></div>
+    <div id="s6-pipe"><div id="s6-p0" class="s">SCAN</div><div class="a">→</div><div id="s6-p1" class="s">FIX</div><div class="a">→</div><div id="s6-p2" class="s">VERIFY</div><div class="a">→</div><div id="s6-p3" class="s">REPORT</div></div>
+    <div id="s6-chip" class="cv-chip">تقرير بلغتك · في دقيقتين</div>
+
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(52.0);
+      const { tl, Q } = fx;
+
+      Q("#s6-house").innerHTML = HF_PROP.house("s6h", { open: true });
+      Q("#s6-crack").innerHTML = HF_PROP.crack("s6x");
+      Q("#s6-key").innerHTML = HF_PROP.key("s6kk");
+      Q("#s6-safe").innerHTML = HF_PROP.safe("s6s");
+      Q("#s6-cctv").innerHTML = HF_PROP.cctv("s6c");
+      Q("#s6-shield").innerHTML = HF_PROP.shield("s6sh");
+      Q("#s6-bot").innerHTML = HF_PROP.bot("s6b", { variant: "guard" });
+      Q("#s6-rep").innerHTML = HF_PROP.paper("s6r", { badge: true, accent: "#b3ce65" });
+      Q("#s6-rwi").innerHTML = '<svg viewBox="0 0 320 200" width="100%" height="100%"><path d="M150 20 L20 100 L150 180 Z" fill="#fff"/><path d="M300 20 L170 100 L300 180 Z" fill="#fff"/></svg>';
+      const k = HF_CHAR(fx, "#s6-k", { id: "s6k", look: "karim", pose: "idle", face: "neutral" });
+      fx.hide("#s6-bot"); fx.hide("#s6-safe"); fx.hide("#s6-cctv"); fx.hide("#s6-shield"); fx.hide("#s6-k"); fx.hide("#s6-rep");
+      // REWIND: stripes + the cracks un-draw
+      tl.fromTo("#s6-rw", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 52.0);
+      tl.fromTo("#s6-rw i", { x: 0 }, { x: 900, duration: 1.2, ease: "none", stagger: 0.03 }, 52.0);
+      tl.fromTo("#s6-rwi", { scale: 0.6 }, { scale: 1.1, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 52.0);
+      tl.fromTo(["#s6x-c1", "#s6x-c2"], { strokeDasharray: 1, strokeDashoffset: 0 }, { strokeDashoffset: 1, duration: 1.0, ease: "power2.in" }, 52.1);
+      tl.fromTo("#s6-cam", { filter: "blur(6px) saturate(.4)" }, { filter: "blur(0px) saturate(1)", duration: 1.2, ease: "power2.out" }, 52.0);
+      tl.to("#s6-rw", { opacity: 0, duration: 0.2 }, 53.3);
+      tl.fromTo("#s6-key", { rotation: 90 }, { rotation: 74, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 5 }, 52.0);
+      fx.rise("#s6-h1", 53.4, { y: 30 });
+      fx.letterDrop("#s6-h2", 53.6, { st: 0.03 });
+      // the guard (the Skill) walks in
+      tl.fromTo("#s6-bot", { opacity: 0, x: 420 }, { opacity: 1, x: 0, duration: 0.8, ease: "power2.out", immediateRender: false }, 53.8);
+      tl.fromTo("#s6-bot", { y: 0 }, { y: -12, duration: 0.16, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, 53.8);
+      fx.out("#s6-h1, #s6-h2", 55.4, { y: -40 });
+      // checklist synced with the narration
+      fx.rise("#s6-list", 55.6, { y: -40 });
+      [57.0, 58.0, 59.0, 60.0].forEach((t, i) => fx.draw("#s6-ck" + i, t, 0.35, "power2.out"));
+      // the guard's actions: key -> safe, close the window, camera, shield
+      fx.pop("#s6-safe", 56.6, { from: 0.3 });
+      tl.to("#s6-bot", { x: -200, duration: 0.4, ease: "power2.inOut" }, 56.6);
+      tl.to("#s6-key", { x: 400, y: 150, rotation: 0, scale: 0.6, duration: 0.5, ease: "power3.inOut" }, 57.0);
+      tl.to("#s6-key", { opacity: 0, duration: 0.1 }, 57.5);
+      tl.fromTo("#s6s-door", { scaleX: 0.15, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, 57.5);
+      tl.fromTo("#s6s-dial", { rotation: 0, svgOrigin: "100 100" }, { rotation: 270, svgOrigin: "100 100", duration: 0.5, ease: "power2.out" }, 57.75);
+      tl.fromTo("#s6h-sash", { scaleX: 0.18, transformOrigin: "100% 50%" }, { scaleX: 1, duration: 0.35, ease: "power3.out" }, 58.0);
+      fx.pop("#s6-cctv", 59.0, { from: 0.3 });
+      tl.fromTo("#s6c-led", { opacity: 1 }, { opacity: 0.2, duration: 0.3, yoyo: true, repeat: 7, ease: "none" }, 59.3);
+      fx.pop("#s6-shield", 60.0, { from: 0.2 }); fx.draw("#s6sh-ck", 60.2, 0.35);
+      tl.to("#s6-bot", { x: 0, duration: 0.4, ease: "power2.inOut" }, 59.6);
+      // order of work: scan -> fix -> verify -> report; Karim gets the report
+      fx.out("#s6-list", 60.75, { y: -40 });
+      tl.to("#s6-world", { x: 160, scale: 0.84, duration: 0.6, ease: "power2.inOut" }, 60.8);
+      [60.9, 61.9, 62.9, 64.2].forEach((t, i) => {
+        fx.pop("#s6-p" + i, t, { from: 0.5 });
+        tl.fromTo("#s6-p" + i, { backgroundColor: "rgba(255,255,255,0.12)", color: "#cfe3a0" }, { backgroundColor: "#b3ce65", color: "#0d0d0d", duration: 0.2, immediateRender: false }, t + 0.15);
+      });
+      fx.hide("#s6-pipe .a"); tl.fromTo("#s6-pipe .a", { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 1.0, immediateRender: false }, 61.6);
+      tl.fromTo("#s6-k", { opacity: 0, x: -300 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, 63.6);
+      k.walk(63.6, 64.1).pose(64.6, "hold").face(64.9, "happy");
+      tl.fromTo("#s6-rep", { opacity: 0, x: 520, y: -40, rotation: 40 }, { opacity: 1, x: 0, y: 0, rotation: -6, duration: 0.55, ease: "back.out(1.6)", immediateRender: false }, 64.4);
+      fx.pop("#s6-chip", 65.0, { from: 0.4 });
+      k.hop(65.6, 24);
+
+      window.__timelines["s6"] = tl.real;
+    })();
+  </script>
+</template></body></html>

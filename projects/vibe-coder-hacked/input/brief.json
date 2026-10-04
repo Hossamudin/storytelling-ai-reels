@@ -1,0 +1,12 @@
+{
+  "title": "قصة Vibe Coder اتخترق في ليلة",
+  "format": "reel 9:16",
+  "style": "story / 2D animation",
+  "cta": "اكتب SECURITY في الكومنتس",
+  "links": [
+    {"label": "الشرح كامل على يوتيوب", "url": "https://www.youtube.com/watch?v=LwZ8xyQI1h0"},
+    {"label": "Facebook", "url": "https://www.facebook.com/Hossamudin7/videos/29781537331435631/"}
+  ],
+  "names": ["Vibe Coder", "Security Audit", "Skill", "Coding Agent", "GitHub", "API", "حسام الدين حسن", "maharaai.com"],
+  "teleprompter": {"font_size": 34, "scroll_speed": 30, "show_screen_notes": true}
+}

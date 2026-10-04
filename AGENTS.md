@@ -10,6 +10,8 @@ This repo is a **video production factory** run by you (the agent). The full wor
 - Config: `config/config.json` — model names are plain fields so upgrading (e.g. new Gemini or GPT Image model) is a one-line change (dashboard Config tab or direct edit).
 - Motion-graphics videos from voice (house style): `prompts/motion_director_prompt.md` + `prompts/style_presets.md`,
   code kit `kit/motion/`, scripts `new_motion_video.py` → `motion_sync.py` → `master_audio.py`.
+- 2D cartoon / story explainers: `kit/cartoon/README.md` (`new_motion_video.py --kit cartoon`, rig `HF_CHAR` + props `HF_PROP`);
+  reference `projects/vibe-coder-hacked/build_demo.py`. Pick the style that fits the content.
 - Screen-share tutorials: `prompts/screenshare_playbook.md` (`screen_edit.py` → `screen_annot.py` → kit `screen.js`).
 - Talking-head hybrids (Hossam on camera + graphics): `prompts/talking_head_director.md` (`th_cut.py` → matte →
   `web_capture.py` → `th_layer.py` + kit `th.css`). Faceless motion stays the default for voice-only input.

@@ -16,7 +16,8 @@ chrome.json  {"enabled": true, "series": "VIBE AUTOMATION",
               "wipes": [20.4, 44.5], "grain": false,      # grain off: required for screen recordings
               "steps": [{"t0": 30, "t1": 60, "items": [{"t": 30, "label": "اعمل حساب"}, {"t": 42, "label": "مشروع جديد"}]}]}
              sections may carry "title" (Arabic chapter title) and "chapter": false (pipeline/chapters.py)
-scenes.json items may set "template": "quiz" | "recap" + "data": {...} (kit/motion/templates).
+scenes.json items may set "template": "quiz" | "recap" + "data": {...} (kit/motion/templates), and "track": N
+to pin a host to its own track (e.g. a full-length subtitle/overlay layer on track 3 over alternating scenes).
 Root duration = max(scene ends, voice end + motion.tail_s).
 """
 import argparse
@@ -64,7 +65,7 @@ def main():
     for i, s in enumerate(scenes):
         sid, st, du = s["id"], float(s["start"]), float(s["duration"])
         hosts.append(f'      <div id="{sid}-host" data-composition-id="{sid}" data-composition-src="compositions/{sid}.html" '
-                     f'data-start="{st}" data-duration="{du}" data-track-index="{1 + i % 2}" data-width="{W}" data-height="{H}"></div>')
+                     f'data-start="{st}" data-duration="{du}" data-track-index="{s.get("track", 1 + i % 2)}" data-width="{W}" data-height="{H}"></div>')
         f = out / "compositions" / f"{sid}.html"
         if not f.exists():
             body = tpl

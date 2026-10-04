@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s1-template">
+  <style>
+
+    .cv-abs { position: absolute; }
+    .cv-head { position: absolute; left: 50px; right: 50px; text-align: center; font-weight: 900; line-height: 1.25; white-space: nowrap; }
+    .cv-chip { position: absolute; display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 40px; border-radius: 48px;
+      font-size: 46px; font-weight: 900; white-space: nowrap; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+    .cv-lat { font-family: var(--font-en); direction: ltr; unicode-bidi: isolate; }
+    .cv-tag { position: absolute; font-family: var(--font-en); font-weight: 900; letter-spacing: .18em; font-size: 30px; direction: ltr; white-space: nowrap; }
+    .cv-card { position: absolute; border-radius: 30px; background: #fbfbf7; color: #0d0d0d; box-shadow: 0 24px 50px rgba(0,0,0,.4); overflow: hidden; }
+    .cv-floor { position: absolute; left: 0; right: 0; bottom: 0; }
+    .cv-mount { position: absolute; }
+
+    #s1-wall { position:absolute; inset:0; background:linear-gradient(180deg,#f6f4ea 0%,#eceee0 100%); }
+    #s1-win { position:absolute; left:90px; top:520px; width:260px; height:330px; border-radius:24px; background:#cfe3a0;
+      border:10px solid #0d0d0d; overflow:hidden; }
+    #s1-moon { position:absolute; left:100px; top:40px; width:130px; height:130px; }
+    #s1-shelf { position:absolute; right:90px; top:620px; width:230px; height:16px; border-radius:8px; background:#0d0d0d; }
+    #s1-glow { position:absolute; left:140px; top:560px; width:800px; height:800px; border-radius:50%;
+      background: radial-gradient(circle, rgba(255,236,92,.45) 0%, rgba(255,236,92,.14) 40%, transparent 70%); }
+    #s1-redg { position:absolute; left:40px; top:460px; width:1000px; height:1000px; border-radius:50%;
+      background: radial-gradient(circle, rgba(217,58,43,.75) 0%, rgba(217,58,43,.25) 45%, transparent 72%); opacity:0; }
+    #s1-k { left:160px; top:730px; width:755px; height:830px; }
+    #s1-desk { position:absolute; left:0; right:0; top:1300px; bottom:0; background:#136052;
+      border-top:10px solid #0d0d0d; }
+    #s1-lid { position:absolute; left:250px; top:1060px; width:580px; height:300px; border-radius:24px 24px 8px 8px;
+      background:#fbfbf7; border:8px solid #0d0d0d; }
+    #s1-logo { position:absolute; left:255px; top:115px; width:70px; height:70px; border-radius:50%; background:#b3ce65; opacity:.85; }
+    #s1-mug { position:absolute; left:110px; top:1250px; width:110px; height:120px; border-radius:12px 12px 26px 26px; background:#ff5a33;
+      border:8px solid #0d0d0d; }
+    #s1-note { position:absolute; left:880px; top:1270px; width:120px; height:110px; background:#ffec5c; transform:rotate(-8deg); border-radius:6px; }
+    #s1-warn { position:absolute; left:760px; top:640px; width:220px; height:200px; }
+    #s1-red { position:absolute; inset:0; background:#d93a2b; opacity:0; mix-blend-mode:multiply; }
+    #s1-t1 { top:170px; font-size:92px; color:#136052; }
+    #s1-t2 { top:330px; font-size:84px; }
+    #s1-band { position:absolute; left:0; right:0; top:1390px; height:150px; background:#d93a2b; display:flex; align-items:center; justify-content:center;
+      color:#fff; font-size:64px; letter-spacing:.32em; opacity:0; }
+    #s1-frame { position:absolute; inset:26px; border:12px solid #fbfbf7; border-radius:30px; opacity:0; }
+    #s1-stars i { position:absolute; width:8px; height:8px; border-radius:50%; background:#fff6b8; }
+
+  </style>
+  <div id="s1" data-composition-id="s1" data-width="1080" data-height="1920" data-duration="6.0">
+
+    <div id="s1-wall"></div>
+    <div id="s1-cam" class="cam">
+      <div id="s1-win"><div id="s1-stars"><i style="left:30px;top:210px;opacity:0.8"></i><i style="left:190px;top:230px;opacity:0.6"></i><i style="left:80px;top:270px;opacity:0.5"></i><i style="left:200px;top:120px;opacity:0.7"></i><i style="left:24px;top:50px;opacity:0.5"></i></div><div id="s1-moon"></div></div>
+      <div id="s1-shelf"></div>
+      <div id="s1-glow"></div>
+      <div id="s1-redg"></div>
+      <div id="s1-k" class="cv-mount"></div>
+      <div id="s1-desk"></div>
+      <div id="s1-lid"><div id="s1-logo"></div></div>
+      <div id="s1-mug"></div><div id="s1-note"></div>
+      <div id="s1-warn" class="cv-abs"></div>
+    </div>
+    <div id="s1-red"></div>
+    <div id="s1-band" class="cv-lat" style="font-weight:900">ALERT</div>
+    <div id="s1-frame"></div>
+    <div id="s1-t1" class="cv-head">بُني في <span class="cv-lat">48</span> ساعة</div>
+    <div id="s1-t2" class="cv-head"><span id="s1-t2in" style="display:inline-block;background:#ffec5c;color:#0d0d0d;border:8px solid #0d0d0d;border-radius:26px;padding:14px 40px 18px;line-height:1.3">اتخترق في <span class="cv-lat">3</span> دقايق</span></div>
+
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0.0);
+      const { tl, Q } = fx;
+
+      Q("#s1-moon").innerHTML = HF_PROP.moon("s1m");
+      Q("#s1-warn").innerHTML = '<svg viewBox="0 0 200 180" width="100%" height="100%"><path d="M100 8 L192 170 L8 170 Z" fill="#ffec5c" stroke="#0d0d0d" stroke-width="10" stroke-linejoin="round"/><rect x="90" y="58" width="20" height="62" rx="9" fill="#0d0d0d"/><circle cx="100" cy="142" r="12" fill="#0d0d0d"/></svg>';
+      const k = HF_CHAR(fx, "#s1-k", { id: "s1k", look: "karim", skin: "line", pose: "type", face: "smile" });
+      for (let i = 0; i < 8; i++) k.pose(0.15 + i * 0.2, i % 2 ? { aL: [24, -70], aR: [-24, 86], hd: 4 } : { aL: [24, -86], aR: [-24, 70], hd: 4 }, 0.18, "sine.inOut");
+      k.blink(0.9);
+      fx.breathe("#s1-glow", 0.0, 1.8, 0.04, 0.9);
+      fx.rise("#s1-t1", 0.2, { y: 40 });
+      // the light turns red
+      k.face(1.9, "shock").pose(1.95, "shock", 0.25, "back.out(2.4)").hop(1.95, 26, 0.36);
+      tl.fromTo("#s1-glow", { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, 1.9);
+      tl.fromTo("#s1-redg", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 1.9);
+      for (let i = 0; i < 4; i++) tl.fromTo("#s1-red", { opacity: 0 }, { opacity: 0.3, duration: 0.14, yoyo: true, repeat: 1, immediateRender: false }, 1.9 + i * 0.36);
+      fx.pop("#s1-warn", 1.95, { from: 0.2, e: "back.out(3)" });
+      fx.shake("#s1-cam", 1.95, 16, 8);
+      tl.fromTo("#s1-band", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.2, ease: "power3.out" }, 2.05);
+      fx.stamp("#s1-t2in", 2.45, "#s1-cam");
+      // freeze-frame on the shocked face
+      tl.fromTo("#s1-cam", { scale: 1, transformOrigin: "50% 42%" }, { scale: 1.5, duration: 0.18, ease: "expo.out", immediateRender: false }, 3.05);
+      tl.fromTo("#s1-cam", { filter: "grayscale(0) contrast(1)" }, { filter: "grayscale(0.75) contrast(1.15)", duration: 0.12, immediateRender: false }, 3.05);
+      tl.fromTo("#s1-frame", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.16 }, 3.05);
+
+      window.__timelines["s1"] = tl.real;
+    })();
+  </script>
+</template></body></html>

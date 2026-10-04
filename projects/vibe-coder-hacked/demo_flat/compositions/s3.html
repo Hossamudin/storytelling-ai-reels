@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s3-template">
+  <style>
+
+    .cv-abs { position: absolute; }
+    .cv-head { position: absolute; left: 50px; right: 50px; text-align: center; font-weight: 900; line-height: 1.25; white-space: nowrap; }
+    .cv-chip { position: absolute; display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 40px; border-radius: 48px;
+      font-size: 46px; font-weight: 900; white-space: nowrap; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+    .cv-lat { font-family: var(--font-en); direction: ltr; unicode-bidi: isolate; }
+    .cv-tag { position: absolute; font-family: var(--font-en); font-weight: 900; letter-spacing: .18em; font-size: 30px; direction: ltr; white-space: nowrap; }
+    .cv-card { position: absolute; border-radius: 30px; background: #fbfbf7; color: #0d0d0d; box-shadow: 0 24px 50px rgba(0,0,0,.4); overflow: hidden; }
+    .cv-floor { position: absolute; left: 0; right: 0; bottom: 0; }
+    .cv-mount { position: absolute; }
+
+    #s3-sky { position:absolute; inset:0; background: radial-gradient(ellipse 90% 70% at 50% 40%, #10352f 0%, #07221e 60%, #041614 100%); }
+    #s3-floor { top:1340px; background: linear-gradient(180deg,#0d2b23,#041614); }
+    #s3-h1 { top:170px; font-size:84px; color:#ffec5c; }
+    #s3-world { position:absolute; left:0; top:0; width:1080px; height:1920px; transform-origin: 50% 60%; }
+    #s3-house { position:absolute; left:190px; top:640px; width:700px; height:700px; }
+    #s3-key { position:absolute; left:546px; top:1040px; width:150px; height:66px; transform-origin: 20px 50%; }
+    #s3-code { left:70px; top:400px; width:940px; padding:34px 40px; direction:ltr; font-family:var(--font-en); font-size:34px; line-height:1.6; }
+    #s3-code .k { background:#ff5a33; color:#fff; border-radius:10px; padding:2px 10px; }
+    #s3-gh { left:0; right:0; top:690px; text-align:center; color:#ffec5c; font-size:30px; }
+    #s3-url { left:90px; top:400px; width:900px; height:300px; direction:ltr; }
+    #s3-url .bar { height:84px; background:#eceee0; display:flex; align-items:center; padding:0 30px; font-family:var(--font-en); font-weight:800; font-size:36px; color:#2f4741; }
+    #s3-url .row { display:flex; align-items:center; gap:30px; padding:30px 36px; }
+    #s3-url .av { width:110px; height:110px; border-radius:50%; flex:none; }
+    #s3-url .ln { height:22px; border-radius:11px; background:#c9cfc0; margin:14px 0; }
+    #s3-id { color:#ff5a33; }
+    #s3-k { left:-10px; top:980px; width:473px; height:520px; }
+    #s3-flash { position:absolute; left:200px; top:1010px; width:120px; height:120px; border-radius:50%; background:#fff; opacity:0; filter:blur(8px); }
+    #s3-c1 { right:60px; top:410px; background:#ffec5c; color:#0d0d0d; }
+    #s3-c2 { right:60px; top:530px; background:#ff5a33; color:#fff; }
+    .s3-ic { width:58px; height:58px; display:block; }
+
+  </style>
+  <div id="s3" data-composition-id="s3" data-width="1080" data-height="1920" data-duration="14.0">
+
+    <div id="s3-sky"></div>
+    <div id="s3-cam" class="cam">
+      <div id="s3-floor" class="cv-floor"></div>
+      <div id="s3-world">
+        <div id="s3-house"></div>
+        <div id="s3-key"></div>
+      </div>
+      <div id="s3-k" class="cv-mount"></div>
+      <div id="s3-flash"></div>
+    </div>
+    <div id="s3-h1" class="cv-head">بس اللي كريم ماشافوش…</div>
+    <div id="s3-code" class="cv-card"><span style="color:#5a6b62">// payments.js · written by AI</span><br/>const PAY_KEY = <span id="s3-kv" class="k">"sk_live_8f2…Q9x"</span>;</div>
+    <div id="s3-gh" class="cv-tag">↑ PUSHED TO GITHUB · PUBLIC</div>
+    <div id="s3-url" class="cv-card"><div class="bar">clinic-app.com/patient?id=<span id="s3-id">41</span></div>
+      <div class="row"><div id="s3-av" class="av" style="background:#b3ce65"></div><div style="flex:1"><div class="ln" style="width:70%"></div><div class="ln" style="width:92%"></div><div class="ln" style="width:55%"></div></div></div></div>
+    <div id="s3-c1" class="cv-chip"><svg class="s3-ic" viewBox="0 0 160 70"><circle cx="36" cy="35" r="24" fill="none" stroke="#0d0d0d" stroke-width="12"/><path d="M60 29 L150 29 L150 41 L136 41 L136 53 L124 53 L124 41 L60 41 Z" fill="#0d0d0d"/></svg>مفتاح مكشوف</div>
+    <div id="s3-c2" class="cv-chip"><svg class="s3-ic" viewBox="0 0 64 64"><rect x="14" y="6" width="36" height="54" rx="4" fill="none" stroke="#fff" stroke-width="6"/><path d="M14 6 L40 14 L40 60 L14 60 Z" fill="#fff"/></svg>باب مفتوح</div>
+
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(16.0);
+      const { tl, Q } = fx;
+
+      Q("#s3-house").innerHTML = HF_PROP.house("s3h");
+      Q("#s3-key").innerHTML = HF_PROP.key("s3kk");
+      const k = HF_CHAR(fx, "#s3-k", { id: "s3k", look: "karim", pose: "selfie", face: "grin", prop: "phone" });
+      fx.hide("#s3-k"); fx.hide("#s3-key");
+      fx.rise("#s3-h1", 16.15, { y: 40 });
+      fx.pushIn("#s3-world", 16.0, 3.0, 1.06);
+      // the key in the code -> pushed to GitHub -> hangs on the front door
+      fx.rise("#s3-code", 17.9, { y: 60 });
+      tl.fromTo("#s3-kv", { scale: 1 }, { scale: 1.12, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 18.6);
+      fx.rise("#s3-gh", 19.6, { y: 20, b: 0 });
+      fx.out("#s3-code, #s3-gh", 21.2, { y: -40 });
+      tl.fromTo("#s3-key", { opacity: 0, x: -200, y: -560, rotation: -200, scale: 1.6 }, { opacity: 1, x: 0, y: 0, rotation: 90, scale: 1, duration: 0.7, ease: "power3.out" }, 21.3);
+      tl.fromTo("#s3-key", { rotation: 90 }, { rotation: 72, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 7, immediateRender: false }, 22.0);
+      // the data page: change one number, see another patient
+      fx.rise("#s3-url", 22.5, { y: 60 });
+      tl.fromTo("#s3h-sash", { scaleX: 1, transformOrigin: "100% 50%" }, { scaleX: 0.18, duration: 0.5, ease: "back.out(1.5)" }, 22.6);
+      tl.set("#s3-id", { textContent: "42" }, 24.2);
+      tl.fromTo("#s3-id", { scale: 1.6 }, { scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 24.2);
+      tl.fromTo("#s3-av", { backgroundColor: "#b3ce65" }, { backgroundColor: "#ff5a33", duration: 0.2, immediateRender: false }, 24.25);
+      tl.set("#s3-id", { textContent: "43" }, 25.2);
+      tl.fromTo("#s3-av", { backgroundColor: "#ff5a33" }, { backgroundColor: "#ffec5c", duration: 0.2, immediateRender: false }, 25.25);
+      fx.out("#s3-url, #s3-h1", 26.1, { y: -40 });
+      // Karim takes a selfie with the house, oblivious
+      tl.to("#s3-world", { x: 150, scale: 0.86, duration: 0.6, ease: "power2.inOut" }, 26.1);
+      tl.fromTo("#s3-k", { opacity: 0, x: -360 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 26.3);
+      k.walk(26.3, 26.85).face(26.9, "grin");
+      tl.fromTo("#s3-flash", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 2.2, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }, 27.4);
+      k.hop(28.6, 20);
+      fx.pop("#s3-c1", 27.2, { from: 0.4 });
+      fx.pop("#s3-c2", 28.0, { from: 0.4 });
+
+      window.__timelines["s3"] = tl.real;
+    })();
+  </script>
+</template></body></html>

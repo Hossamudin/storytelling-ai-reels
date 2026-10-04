@@ -1,6 +1,23 @@
 # Roadmap: review findings + plan (Oct 2026)
 
-Status: **PLAN, not built yet**, apart from the bug fixes in `LESSONS_LEARNED.md` §11. Each module below lists
+Status: **PLAN**, apart from the bug fixes in `LESSONS_LEARNED.md` §11 and the first cartoon kit (§C, built Oct 2026).
+
+## Decisions (Hossam, Oct 2026)
+- **OCR for redaction:** hybrid. Local **PaddleOCR (PP-OCRv5, Arabic + English)** finds every text box, because its
+  detector is language-agnostic, so nothing is missed even when an Arabic word is misread. Regex rules and the
+  always-hide list classify the boxes. **Gemini 2.5+** is the optional second pass on flagged frames only: it returns
+  boxes and reads Arabic well, and it judges faces, avatars and chat sidebars. Paid key only, because free-tier data
+  may be used for training. Not chosen: free online OCR (uploads unredacted secrets to a third party) and OpenAI
+  vision (no reliable pixel boxes).
+- **AI B-roll with Hossam's face: allowed, used smartly.** Library first (real clips, then earlier generations).
+  Generate only for shots that can't be filmed cheaply. Never fake events, places, endorsements or quotes; keep
+  them stylised over photoreal where the claim matters. Use the hi-res photos as references for consistency, flag
+  every clip for the platform's synthetic-content label, and save each one to the library (`hossam-clip`,
+  tag `ai-generated`) for reuse.
+- **Visual style: fits the content.** Story → cartoon kit. Tool/news → editorial motion. Tutorial → screen-share.
+  The treatment names the style and why.
+- **B-roll repo:** Hossam supplies raw B-roll; the agent ingests it with `lib.py add` (type `hossam-clip` /
+  `broll`, tags: action, emotion, place, framing, orientation) and `lib.py describe`. Each module below lists
 the problem, the chosen method, the files it adds or changes, and how we know it works. Build order is at the end.
 
 ---
@@ -74,6 +91,10 @@ the applied file has no readable hit when the scan is run again (added to `selft
 ---
 
 ## C. 2D cartoon / After Effects-style explainer module (note 3)
+
+**Built (v1, Oct 2026):** `kit/cartoon/` (rig + props, see its README) and `new_motion_video.py --kit cartoon`.
+Demo: `projects/vibe-coder-hacked/`. `demo_flat` is the full 75 s story; `style_line` and `style_noir` are style
+alternatives of the hook. Still to do: Hossam avatar, visemes, Lottie, scene templates.
 
 Options weighed:
 

@@ -3,6 +3,7 @@
 Usage:
   python pipeline/new_motion_video.py <name> --part intro --voice projects/<name>/assets/voice/intro.wav \
       [--aspect 16:9|9:16|1:1|4:5] [--preset light|dark] [--series "VIBE AUTOMATION"] [--title "..."] [--no-chrome]
+      [--kit cartoon]   # also copy kit/cartoon (character rig + props: HF_CHAR / HF_PROP) and load it in the root
 
 Creates projects/<name>/<part>/ as its own HyperFrames project (check/preview/render run per
 project, so an intro and an outro are two sibling parts), with:
@@ -39,6 +40,7 @@ def main():
     ap.add_argument("--title", default=None)
     ap.add_argument("--no-chrome", action="store_true")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--kit", action="append", default=[], choices=["cartoon"], help="extra kit(s) to load")
     a = ap.parse_args()
 
     cfg = C.load_config()
@@ -66,6 +68,11 @@ def main():
         cues.append({"id": "vo", "t": 0, "src": f"assets/voice/{v.name}", "dur": vd, "vol": 1.0, "voice": True})
 
     html = (KIT / "templates/root.html").read_text(encoding="utf-8")
+    for extra in a.kit:  # e.g. kit/cartoon/js/cartoon.js -> assets/js/, loaded right after fx.js
+        for f in sorted((ROOT / "kit" / extra / "js").glob("*.js")):
+            shutil.copy2(f, out / "assets/js" / f.name)
+            html = html.replace('<script src="assets/js/fx.js"></script>',
+                                f'<script src="assets/js/fx.js"></script>\n    <script src="assets/js/{f.name}"></script>', 1)
     for k, val in {"W": W, "H": H, "PRESET": preset, "DURATION": dur, "TITLE": a.title or f"{a.name} — {a.part}"}.items():
         html = html.replace("{{" + k + "}}", str(val))
     (out / "index.html").write_text(html, encoding="utf-8")

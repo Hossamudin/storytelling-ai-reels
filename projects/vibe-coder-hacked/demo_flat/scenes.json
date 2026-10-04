@@ -1,0 +1,51 @@
+[
+ {
+  "id": "s1",
+  "start": 0.0,
+  "duration": 4.2,
+  "beat": "hook: built in 48h, hacked in 3 min"
+ },
+ {
+  "id": "s2",
+  "start": 4.2,
+  "duration": 11.8,
+  "beat": "Karim the vibe coder builds the app in 2 days"
+ },
+ {
+  "id": "s3",
+  "start": 16.0,
+  "duration": 14.0,
+  "beat": "exposed key + open door; Karim takes a selfie"
+ },
+ {
+  "id": "s4",
+  "start": 30.0,
+  "duration": 12.0,
+  "beat": "3 AM: a bot finds the key; morning: leak + invoice"
+ },
+ {
+  "id": "s5",
+  "start": 42.0,
+  "duration": 10.0,
+  "beat": "working is not secure"
+ },
+ {
+  "id": "s6",
+  "start": 52.0,
+  "duration": 15.0,
+  "beat": "rewind: the Security Audit skill locks the house"
+ },
+ {
+  "id": "s7",
+  "start": 67.0,
+  "duration": 8.6,
+  "beat": "CTA: comment SECURITY"
+ },
+ {
+  "id": "sub",
+  "start": 0,
+  "duration": 75.6,
+  "beat": "TEMP subtitles from the script (replace with captions from the real voice)",
+  "track": 3
+ }
+]

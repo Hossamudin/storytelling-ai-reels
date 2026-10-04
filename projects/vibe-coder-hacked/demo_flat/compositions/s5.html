@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="UTF-8" /></head><body>
+<template id="s5-template">
+  <style>
+
+    .cv-abs { position: absolute; }
+    .cv-head { position: absolute; left: 50px; right: 50px; text-align: center; font-weight: 900; line-height: 1.25; white-space: nowrap; }
+    .cv-chip { position: absolute; display: inline-flex; align-items: center; gap: 16px; height: 96px; padding: 0 40px; border-radius: 48px;
+      font-size: 46px; font-weight: 900; white-space: nowrap; box-shadow: 0 16px 34px rgba(0,0,0,.35); }
+    .cv-lat { font-family: var(--font-en); direction: ltr; unicode-bidi: isolate; }
+    .cv-tag { position: absolute; font-family: var(--font-en); font-weight: 900; letter-spacing: .18em; font-size: 30px; direction: ltr; white-space: nowrap; }
+    .cv-card { position: absolute; border-radius: 30px; background: #fbfbf7; color: #0d0d0d; box-shadow: 0 24px 50px rgba(0,0,0,.4); overflow: hidden; }
+    .cv-floor { position: absolute; left: 0; right: 0; bottom: 0; }
+    .cv-mount { position: absolute; }
+
+    #s5-sky { position:absolute; inset:0; background: radial-gradient(ellipse 90% 70% at 50% 40%, #2a3c37 0%, #12201d 70%); }
+    #s5-floor { top:1380px; background: linear-gradient(180deg,#1d2a27,#0d1614); }
+    #s5-house { position:absolute; left:240px; top:620px; width:640px; height:640px; filter: saturate(.45) brightness(.85); }
+    #s5-crack { position:absolute; left:240px; top:620px; width:640px; height:640px; }
+    #s5-k { left:60px; top:950px; width:473px; height:520px; }
+    #s5-split { position:absolute; inset:0; }
+    #s5-L, #s5-R { position:absolute; top:380px; width:540px; height:1000px; overflow:hidden; }
+    #s5-L { right:0; background:#136052; }
+    #s5-R { left:0; background:#2a1a17; }
+    #s5-hL, #s5-hR { position:absolute; left:40px; top:240px; width:460px; height:460px; }
+    #s5-lbL, #s5-lbR { position:absolute; left:0; right:0; top:60px; text-align:center; font-size:30px; }
+    #s5-vL, #s5-vR { position:absolute; left:0; right:0; top:760px; text-align:center; font-size:70px; font-weight:900; }
+    #s5-in i { position:absolute; display:block; background:#0d0d0d; }
+    #s5-eq { top:200px; font-size:120px; color:#fff; }
+    #s5-eq .ne { color:#ff5a33; }
+
+  </style>
+  <div id="s5" data-composition-id="s5" data-width="1080" data-height="1920" data-duration="10.0">
+
+    <div id="s5-sky"></div>
+    <div id="s5-cam" class="cam">
+      <div id="s5-floor" class="cv-floor"></div>
+      <div id="s5-house"></div>
+      <div id="s5-crack"></div>
+      <div id="s5-k" class="cv-mount"></div>
+    </div>
+    <div id="s5-split">
+      <div id="s5-L"><div id="s5-lbL" class="cv-tag" style="color:#b3ce65">FROM OUTSIDE</div><div id="s5-hL"></div><div id="s5-vL" style="color:#b3ce65">شغال ✓</div></div>
+      <div id="s5-R"><div id="s5-lbR" class="cv-tag" style="color:#ff5a33">FROM INSIDE</div><div id="s5-hR"></div>
+        <div id="s5-in"><i style="left:210px;top:525px;width:80px;height:130px;background:#ff5a33;opacity:.9"></i><i style="left:340px;top:440px;width:84px;height:70px;background:#ff5a33;opacity:.9"></i></div>
+        <div id="s5-vR" style="color:#ff5a33">آمن؟ ✗</div></div>
+    </div>
+    <div id="s5-eq" class="cv-head">شغال <span class="ne">≠</span> آمن</div>
+
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(42.0);
+      const { tl, Q } = fx;
+
+      Q("#s5-house").innerHTML = HF_PROP.house("s5h", { open: true });
+      Q("#s5-crack").innerHTML = HF_PROP.crack("s5x");
+      Q("#s5-hL").innerHTML = HF_PROP.house("s5hl", { lit: true });
+      Q("#s5-hR").innerHTML = HF_PROP.house("s5hr", { open: true });
+      const k = HF_CHAR(fx, "#s5-k", { id: "s5k", look: "karim", pose: "sitFloor", face: "sad" });
+      k.blinks(42, 45, 1.6);
+      fx.draw("#s5x-c1", 42.3, 0.5); fx.draw("#s5x-c2", 42.6, 0.4);
+      tl.fromTo("#s5h-door", { rotation: 0, svgOrigin: "186 300" }, { rotation: 14, svgOrigin: "186 300", duration: 0.6, ease: "bounce.out" }, 42.7);
+      fx.shake("#s5-cam", 42.35, 10, 6);
+      k.pose(43.6, { aL: [40, -120], aR: [-40, 120], lL: 78, lR: -78, hd: 22, by: 90 }, 0.6, "power2.inOut");
+      // split: the same house from outside vs from inside
+      tl.fromTo("#s5-L", { xPercent: 100 }, { xPercent: 0, duration: 0.5, ease: "power3.out" }, 45.0);
+      tl.fromTo("#s5-R", { xPercent: -100 }, { xPercent: 0, duration: 0.5, ease: "power3.out" }, 45.1);
+      fx.pop("#s5-vL", 45.8, { from: 0.5 });
+      fx.pop("#s5-vR", 46.4, { from: 0.5 });
+      tl.fromTo("#s5-in i", { opacity: 0 }, { opacity: 0.9, duration: 0.2, stagger: 0.15 }, 46.0);
+      fx.rise("#s5-eq", 47.2, { y: -60, s: 1.3 });
+      tl.fromTo("#s5-eq .ne", { scale: 1 }, { scale: 1.35, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 47.8);
+
+      window.__timelines["s5"] = tl.real;
+    })();
+  </script>
+</template></body></html>
