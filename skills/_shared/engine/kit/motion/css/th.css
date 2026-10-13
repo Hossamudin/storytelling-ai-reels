@@ -1,0 +1,15 @@
+/* Talking-head hybrid layer (pipeline/th_layer.py). Linked only by talking-head projects;
+   faceless motion projects never load this file. */
+#thw { position: absolute; inset: 0; z-index: 5; transform-origin: 540px 760px; }
+#thv, #thm, .thm { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#thgrade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,34,30,.35), rgba(7,34,30,0) 30%, rgba(7,34,30,0) 70%, rgba(4,22,20,.55)); mix-blend-mode: multiply; }
+#thvig { position: absolute; inset: 0; background: radial-gradient(ellipse 85% 70% at 50% 42%, transparent 60%, rgba(4,22,20,.55) 100%); }
+#behind { position: absolute; inset: 0; }
+.bt { position: absolute; left: 0; right: 0; text-align: center; line-height: 1; color: #f6f8f0; white-space: nowrap; opacity: 0; }
+#front { position: absolute; inset: 0; z-index: 6; pointer-events: none; }
+.fr-row { position: absolute; left: 0; right: 0; text-align: center; line-height: 1.3; opacity: 0; }
+.fr-sh { text-shadow: 0 4px 24px rgba(0,0,0,.65); }
+.fr-card { position: absolute; left: 70px; top: 200px; width: 940px; height: 330px; border-radius: 30px; background: rgba(4,22,20,.82); border: 2px solid var(--edge); text-align: center; padding-top: 30px; line-height: 1.3; opacity: 0; }
+#fr-ring { border-radius: 50%; border: 8px solid var(--lime); box-shadow: 0 0 40px rgba(179,206,101,.5); opacity: 0; }
+.cap { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; }
+.cap > span { display: inline-block; padding: 10px 34px 18px; border-radius: 26px; background: rgba(4,22,20,.78); font-size: 66px; font-weight: 800; line-height: 1.35; color: #fff; white-space: nowrap; }

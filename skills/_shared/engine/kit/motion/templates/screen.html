@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" /></head><body>
+<template id="screen-template">
+  <style>
+    /* the recording sits in a window at (X, Y) scaled by K; annotations use SOURCE pixels inside #scr-inner */
+    #scr-cam { transform-origin: 0 0; }
+    #scr-win { left: {{X}}px; top: {{Y}}px; width: {{WIN_W}}px; height: {{WIN_H}}px; }
+    #scr-inner { width: {{SRC_W}}px; height: {{SRC_H}}px; transform: scale({{K}}); }
+    #scr-annot { width: {{SRC_W}}px; height: {{SRC_H}}px; }
+    #scr-blob1 { left: -200px; top: 50%; width: 900px; height: 700px; background: var(--glow-b); }
+    #scr-blob2 { right: -300px; top: -300px; width: 800px; height: 700px; background: var(--glow-a); }
+  </style>
+  <div id="screen" data-composition-id="screen" data-width="{{W}}" data-height="{{H}}" data-duration="{{DUR}}">
+    <div class="bg"></div>
+    <div id="scr-dots" class="dots"></div>
+    <div id="scr-blob1" class="blob"></div>
+    <div id="scr-blob2" class="blob"></div>
+    <div id="scr-cam" class="cam">
+      <div id="scr-win" class="scr-win">
+        <div id="scr-inner" class="scr-inner">
+          <img id="scr-still" src="assets/screen/still.jpg" width="{{SRC_W}}" height="{{SRC_H}}" alt="" style="position:absolute;inset:0" />
+          <video id="scr-video" src="assets/screen/edited.mp4" data-start="0" data-duration="{{VDUR}}" width="{{SRC_W}}" height="{{SRC_H}}" muted playsinline></video>
+          <div id="scr-annot" class="scr-annot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const fx = window.HF_SCENE(0);
+      fx.drift("#scr-dots", 0, {{VDUR}}, -120, 60);
+      fx.drift("#scr-blob1", 0, {{VDUR}}, 300, -150);
+      fx.drift("#scr-blob2", 0, {{VDUR}}, -260, 200);
+      window.HF_SCREEN(fx, { cam: "#scr-cam", layer: "#scr-annot" });
+      window.__timelines["screen"] = fx.tl.real;
+    })();
+  </script>
+</template></body></html>

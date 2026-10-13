@@ -9,6 +9,26 @@ agent (`pipeline/screen_edit.py`, `screen_annot.py`). Don't mix the two.
 
 ---
 
+## 0. Hossam's non-negotiables (feedback 2026-10-11, "60 ثانية" reel) — read first
+
+1. **Text behind him is NEVER in front of his face.** "Text behind" exists only when the matte is present and verified:
+   the matte file exists (not a `.tmp-*` from an interrupted job), every behind-window is covered by a matte segment,
+   and a snapshot inside each window shows the face in front. Place behind-text BESIDE the head / behind the shoulders
+   (numbers at y≈560, left side, ~330 px), never centred on the face. No matte → no behind-text (use a front pill).
+2. **Real logos, icons and visuals beat abstract concepts.** Talking about AI / n8n / Claude / Make / Zapier → show their
+   logos (`library/` has them: `lib.py find logo`) and real UI (library screen recordings, earlier projects' screen
+   captures, `web_capture.py`). Conceptual animation only when no real visual exists.
+3. **Stories get 2D people.** "A client came to me…" → a flat 2D character acts it out (enters, asks, worries, smiles).
+   Generator: `person()` in `projects/ai-4years-60s/reel/build_v2.py` (moods neutral/happy/sad/confused).
+4. **Hossam on screen 70–80 % of the time** (full + card + circle). Full-screen cutaways are short (1.5–3.3 s) and
+   carry the jump-cut seams. Cropping him (card / circle) is welcome. Compute the ratio before building.
+5. **Every video has a CTA** (comment question + follow at minimum), on his face, captions off under the CTA card.
+6. **Use b-rolls**: "me" (Higgsfield Element `hossamudin` = `cb88ff02-21e2-46ed-a7f0-f6120ba21999` via
+   `<<<id>>>` in the prompt), "other" (people/situations from the story), "AI" (abstract node/agent footage).
+   Models: video = fastest reliable (Gemini Omni Flash latest when listed; Seedance 2.0 worked), images = GPT Image 2.5
+   medium. Paid → approval gate; log in `assets/ledger.json`. Blocker: this MCP has no local-file upload, so new
+   frames from a shoot can't be sent — use Elements / prior job ids.
+
 ## 1. When to use which mode
 
 | Input | Mode |
@@ -37,7 +57,7 @@ telling you X", "investigate", CTA, outro. Never cover such a line with b-roll.
 
 ## 3. Rhythm rules
 
-- Ratio: **45–55 % face** (full + card + circle) vs **45–55 % full-screen** interludes. Adapt to the transcript.
+- Ratio: **70–80 % face** (full + card + circle) vs **20–30 % full-screen** cutaways (rule 0.4). Reels ≈ 5 cutaways per minute.
 - Interlude length: short 1.8–2.5 s · normal 2.8–4.0 s · list/process ≤ ~4.5 s. Long chart rides (> 8 s) get a
   circle-presenter break in the middle so the face returns.
 - Group adjacent speech into purposeful beats. Reels of 20–35 s: about 4–6 semantic scenes. Long videos: one

@@ -1,0 +1,49 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nanobanana21-studio",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd projects\\nanobanana21\\composition && npx hyperframes preview --port 3012 --no-open"
+      ],
+      "port": 3012
+    },
+    {
+      "name": "news-oct10-01-review",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8790",
+        "--directory",
+        "projects/news-oct10-01-testsprite/review"
+      ],
+      "port": 8790
+    },
+    {
+      "name": "sfx-ab",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "C:/Users/H-Eld/AppData/Local/Temp/claude/C--Users-H-Eld-Downloads-Code-Hossam-Story-telling/8e3a9122-3834-4fe3-b318-b83352a93f1b/scratchpad/range_server.py",
+        "8791",
+        "projects/ai-4years-60s/reel/sound_ab"
+      ],
+      "port": 8791
+    },
+    {
+      "name": "ai-60s-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/ai-4years-60s/reel",
+        "--port",
+        "3014",
+        "--no-open"
+      ],
+      "port": 3014
+    }
+  ]
+}

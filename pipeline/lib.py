@@ -24,6 +24,7 @@ Rules: before any paid generation run `find`; after any generation or capture wo
 (or `harvest` at delivery). Duplicates are detected by sha1.
 """
 import argparse
+import base64
 import datetime as dt
 import hashlib
 import json
@@ -217,13 +218,45 @@ def write_index(recs=None):
     (LIB / "INDEX.md").write_text("\n".join(out), encoding="utf-8")
 
 
+def svg_thumbs(recs, out_dir, size=200):
+    """Rasterise SVGs (headless Chromium, cached by sha1) so logos get contact-sheet thumbnails."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out, todo = {}, []
+    for r in recs:
+        png = out_dir / f"{r['sha1'][:12]}.png"
+        out[r["id"]] = png
+        if not png.exists():
+            todo.append((LIB / r["file"], png))
+    if todo:
+        try:
+            from playwright.sync_api import sync_playwright
+            with sync_playwright() as pw:
+                br = pw.chromium.launch()
+                pg = br.new_page(viewport={"width": size, "height": size})
+                for src, png in todo:
+                    uri = "data:image/svg+xml;base64," + base64.b64encode(src.read_bytes()).decode()
+                    pg.set_content(f"<html><body style='margin:0;background:transparent'><img src='{uri}' "
+                                   f"style='width:{size}px;height:{size}px;object-fit:contain'></body></html>")
+                    pg.wait_for_timeout(50)
+                    pg.screenshot(path=str(png), omit_background=True)
+                br.close()
+        except Exception as ex:
+            print(f"  svg thumbs skipped: {ex}")
+    return {k: v for k, v in out.items() if v.exists()}
+
+
 def sheets(recs=None):
     from PIL import Image, ImageDraw, ImageOps
     recs = load() if recs is None else recs
     sd = LIB / "_sheets"
     sd.mkdir(parents=True, exist_ok=True)
+    svgs = {}
+    svg_recs = [r for r in recs if Path(r["file"]).suffix.lower() == ".svg"]
+    if svg_recs:
+        svgs = svg_thumbs(svg_recs, sd / "_svg")
     for t in TYPES:
-        rs = [r for r in recs if r["type"] == t and Path(r["file"]).suffix.lower() in (IMG | VID) - {".svg"}]
+        rs = [r for r in recs if r["type"] == t and (Path(r["file"]).suffix.lower() in IMG | VID)
+              and (Path(r["file"]).suffix.lower() != ".svg" or r["id"] in svgs)]
         if not rs:
             continue
         cell, cols = 220, 6
@@ -238,6 +271,8 @@ def sheets(recs=None):
                     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str((r.get("dur") or 2) / 2), "-i", str(src),
                                     "-frames:v", "1", str(tmp)], check=True)
                     im = Image.open(tmp)
+                elif r["id"] in svgs:
+                    im = Image.open(svgs[r["id"]])
                 else:
                     im = ImageOps.exif_transpose(Image.open(src))
                 im = im.convert("RGBA")

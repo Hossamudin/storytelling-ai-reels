@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "language": "en",
+  "text_language": "",
+  "brand": {
+    "name": "",
+    "tag": "",
+    "palette": {},
+    "fonts": {}
+  },
+  "video_defaults": { "aspect": "16:9", "fps": 30, "tail_padding_s": 0.6 },
+  "transcription": {
+    "provider": "auto",
+    "provider_note": "auto = openai_whisper when OPENAI_API_KEY is set (best word timings), else local faster-whisper (free, offline). gemini_api only with a PAID key.",
+    "openai": { "model": "whisper-1", "api_url": "https://api.openai.com/v1/audio/transcriptions" },
+    "local": { "model": "small", "device": "auto", "compute_type": "int8" },
+    "gemini": { "model": "gemini-3.5-flash", "api_base": "https://generativelanguage.googleapis.com", "temperature": 0 },
+    "n8n": { "webhook_url": "", "payload_format": "json_base64" },
+    "prompt_file": ""
+  },
+  "audio_cleanup": {
+    "highpass_hz": 70,
+    "lowpass_hz": 14000,
+    "denoise_nf_db": -28,
+    "deesser": true,
+    "compressor": "threshold=-18dB:ratio=2.5:attack=8:release=120:makeup=2",
+    "loudnorm": "I=-16:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "remove_silence": false,
+    "silence_threshold_db": -35,
+    "silence_min_s": 0.5,
+    "keep_silence_s": 0.3,
+    "manual_cuts_file": "input/cuts.txt"
+  },
+  "retakes": {
+    "model": "gpt-4o-transcribe",
+    "llm_model": "gpt-5.5",
+    "silence_db": -38,
+    "min_pause": 0.15,
+    "note": "find_retakes.py: verbatim chunk transcription (keeps repeats/false starts that whisper-1 hides) + LLM editor pass. Model names are plain fields: upgrade here."
+  },
+  "image": {
+    "preferred": "GPT Image 2.5, medium quality, aspect per asset",
+    "asset_aspects": { "full_frame_16x9": "1536x1024", "full_frame_9x16": "1024x1536", "icon_object_square": "1024x1024", "texture_tile": "1024x1024" }
+  },
+  "costs": { "per_image_usd": 0.04, "per_video_second_usd": 0.1, "currency": "USD" },
+  "paths": { "projects_dir": "projects" },
+  "motion": {
+    "default_preset": "light",
+    "series": "",
+    "chrome_on_light": false,
+    "tail_s": 0.8,
+    "sfx_target_lufs": -27,
+    "sfx_peak_target_dbfs": -12,
+    "master_lufs": -14,
+    "master_true_peak": -1.2,
+    "hyperframes_version": "latest"
+  },
+  "library": { "root": "library", "describe_model": "gpt-5.4-mini" }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "tag": "",
+  "language": "",
+  "text_language": "",
+  "colors": {
+    "primary": "",
+    "secondary": "",
+    "accent": "",
+    "highlight": "",
+    "alert": "",
+    "subscribe": "",
+    "background_light": "",
+    "background_dark": "",
+    "text_dark": "",
+    "text_light": ""
+  },
+  "fonts": {
+    "main": "",
+    "latin": "",
+    "main_dark": "",
+    "latin_dark": ""
+  },
+  "logo": "brand/logo/",
+  "voice": "",
+  "avoid": [],
+  "_help": "Empty fields keep the default theme (teal #136052 / green #437F3E / lime #B3CE65 / yellow #FFEC5C / orange #FF5A33, Noto Kufi Arabic + Manrope). Font names must match .ttf files dropped in brand/fonts/. Then run: python setup_studio.py brand"
+}

@@ -43,6 +43,16 @@ The original file is copied (use `--move` to move it). Duplicates are detected b
 8. **Screen recordings**: note private content (names, emails, search history, tabs) in tags + desc so builds crop it.
 9. **Finished videos** go in as `episode` (for "watch the previous reel" / end cards).
 
+## Free stock already in the library (2026-10-11, see `docs/PLAN_STOCK_LIBRARY.md`)
+
+- **Logos** (~300): AI brands from LobeHub (MIT) and tech/social/tool brands from Simple Icons (CC0), in `-color` / `-mono` /
+  `-wordmark` variants. Search them with `find "<brand> logo" --type logo`. They are trademarks, so use them only to
+  name the company, never to imply it endorses the video.
+- **B-roll** (27): Mixkit (free licence, no credit needed) plus NASA (public domain), ≤15 s, H.264, no audio. Tag `stock`.
+- **Editorial photos** (36): AI leaders, HQs, chips, from Wikimedia Commons. Anything tagged `attribution-required` needs a
+  credit line (author + licence, both in `source`) in the video description or on screen. `multi-person` = not a solo portrait.
+- More sources once we have keys: Pexels / Pixabay APIs (free keys) for more footage.
+
 ## Example prompt to give an AI
 
 > Add these files to the asset library in `C:\Users\H-Eld\Downloads\Code\Hossam Story telling` using

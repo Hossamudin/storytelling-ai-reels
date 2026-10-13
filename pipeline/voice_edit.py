@@ -10,6 +10,9 @@ Reads:
   {
     "parts": [{"name": "intro", "from": 0, "to": 78.06}, {"name": "outro", "from": 78.06, "to": 99.42}],
     "cuts": [[12.40, 15.72, "repeated 'علشان كده'"], [45.75, 49.72, "false start"]],
+    (a part may carry its own "cuts" too — added to the global ones. Two recorded hooks -> two parts over the
+     same range: {"name": "voice", "from": 0, "to": 233, "cuts": [[hook2]]} = MAIN, and
+     {"name": "voice_h2", "from": 0, "to": 233, "cuts": [[hook1]]} = 2nd version; see prompts/two_hooks.md)
     "retime": [{"window": [14.3, 16.6], "words": [["علشان", 15.84, 16.10], ["كده", 16.10, 16.35]]}],
     "fix": {"كررت": "قررت", "الفايب": "vibe", "أوتوميشن": "automation"},
     "max_pause": 0.38, "keep_pause": 0.24, "silence_db": -38
@@ -222,14 +225,16 @@ def main():
     sil = silences(src, spec.get("silence_db", -38))
     for part in parts:
         lo, hi = part["from"], min(part["to"], dur)
-        keep = on_grid(keep_ranges(lo, hi, manual, sil, spec.get("max_pause", 0.38), spec.get("keep_pause", 0.24)), fps)
+        pcuts = [[snap(c[0], strip, sw), snap(c[1], strip, sw), *c[2:]] for c in part.get("cuts", [])] if sw else part.get("cuts", [])
+        pm = sorted(manual + pcuts, key=lambda c: c[0])
+        keep = on_grid(keep_ranges(lo, hi, pm, sil, spec.get("max_pause", 0.38), spec.get("keep_pause", 0.24)), fps)
         fc = ";".join(f"[0:a]atrim={s:.3f}:{e:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
                       f"afade=t=out:st={max(0, e - s - 0.012):.3f}:d=0.012[a{i}]" for i, (s, e) in enumerate(keep))
         fc += ";" + "".join(f"[a{i}]" for i in range(len(keep))) + f"concat=n={len(keep)}:v=0:a=1[out]"
         dest = pp / f"assets/voice/{part['name']}.wav"
         C.ffmpeg(["-i", str(src), "-filter_complex", fc, "-map", "[out]", "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(dest)])
         ws = [{"w": w["w"], "s": round(remap(w["s"], keep), 3), "e": round(remap(w["e"], keep), 3)}
-              for w in words if lo <= w["s"] < hi and not any(s <= (w["s"] + w["e"]) / 2 <= e for s, e, *_ in manual)
+              for w in words if lo <= w["s"] < hi and not any(s <= (w["s"] + w["e"]) / 2 <= e for s, e, *_ in pm)
               and any(s - 0.05 <= (w["s"] + w["e"]) / 2 <= e + 0.05 for s, e in keep)]
         total = sum(e - s for s, e in keep)
         if args.verify:

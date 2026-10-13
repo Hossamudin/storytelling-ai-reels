@@ -52,3 +52,7 @@ projects/**/*.jpeg
 projects/**/*.webp
 projects/**/*.pre-retime.json
 **/.waveform-cache/
+
+# ---- skill build outputs / eval runs (regenerable, heavy)
+skills/dist/
+skills/eval-workspace/

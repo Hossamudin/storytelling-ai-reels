@@ -16,6 +16,8 @@ API keys: `config/api_keys.json` or env (`GEMINI_API_KEY`, `OPENAI_API_KEY`). Ch
 
 ## Before every run
 Read `docs/LESSONS_LEARNED.md` (issues → fixes → prevention). When you hit a new problem, add it there.
+Audio law: never process a clean voice (clean_audio.py passes it through automatically) and never cut voice
+from a re-encoded/joined video track — cut from `assets/voice/voiceover_raw.wav`. Preflight enforces it.
 
 ## Asset library (check it before generating anything)
 `library/INDEX.md` lists every reusable asset (Hossam photos/cutouts, logos, generated images, b-roll, SFX, real
@@ -67,6 +69,9 @@ npx hyperframes render                                  # only after user approv
   names) → `python pipeline/voice_edit.py <name> --verify` (edges snapped to the quietest 10 ms, frame-grid keep
   ranges, caption words re-timed on the EDITED audio with verbatim spelling, diff of planned vs heard).
 
+- **Two hooks in one recording** (`find_retakes` prints `!! TWO HOOKS?`): deliver MAIN (hook 1) + 2nd version (hook 2) — per-part
+  cuts in `edit.json`, one authored body, `hooks.json` + `make_versions.py`. See `prompts/two_hooks.md`.
+
 ### 3. Planning review (you are the director)
 Read `storyboard.md` and sanity-check before showing the user:
 - Hook: 3–5 rapid cuts inside first `hook.max_duration_s` (15s), mixed methods. If the LLM output is weak, edit `storyboard.json` yourself (you have taste) — fix weak image prompts, upgrade screenshot opportunities, add the closing quote card per `prompts/quote_design.md`.
@@ -116,6 +121,7 @@ Read `storyboard.md` and sanity-check before showing the user:
   python pipeline/clean_audio.py <name> --no-silence-cut
   python pipeline/transcribe.py <name>           # openai_whisper words
   python pipeline/find_retakes.py <name>        # -> input/edit.proposed.json + review/cuts.html (retakes, false starts)
+  python pipeline/find_stutters.py <name>       # -> input/stutters.proposed.json (stutters inside/across chunks)
   # review, copy to input/edit.json (cuts / fix phrases / parts)
   python pipeline/voice_edit.py <name> --verify  # <part>.wav, <part>_words.json, <part>_phrases.txt
   # master prompt Step 1-2 -> Creative Treatment (2-3 concepts + Higgsfield generation plan) -> APPROVAL
@@ -129,7 +135,9 @@ Read `storyboard.md` and sanity-check before showing the user:
   Each deliverable (intro, outro, reel) is its own part/project. References:
   `projects/vibe-automation/` (light, 16:9) and `projects/kit-test/demo/` (dark, 9:16, UI/chrome/wipes).
 - **Screen-share videos (tutorials, tool tours)** — `prompts/screenshare_playbook.md`. Flow:
-  transcribe → analyse (gaps, screen activity, popups, ruler frames) → `input/screen_edit.json` →
+  [several input files → `join_inputs.py` (lossless voice) → `clean_audio.py --input input/voice_joined.wav`] →
+  transcribe → `find_retakes.py` + `find_stutters.py` (apply every proposal ≥ 0.6) →
+  analyse (gaps, screen activity, popups, ruler frames) → `input/screen_edit.json` (`edge_pad` 0.15) →
   `screen_edit.py` (cuts, best take, J/L cuts, ramps, holds, freeze-and-explain) → `input/annotations.json`
   (SOURCE time/pixels) → `screen_annot.py` → scaffold (`--preset dark`, `"grain": false`) → `motion_sync.py`
   → check + snapshots → preview → APPROVAL → full-quality edit → render → `master_audio.py` → `chapters.py`.

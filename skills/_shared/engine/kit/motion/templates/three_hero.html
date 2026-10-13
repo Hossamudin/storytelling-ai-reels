@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="{{ID}}-template">
+      <style>
+        #{{ID}}-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+        #{{ID}}-title { top: auto; bottom: 8%; } /* keep text off the 3D object: contrast */
+      </style>
+      <div id="{{ID}}" data-composition-id="{{ID}}" data-width="{{W}}" data-height="{{H}}" data-duration="{{DUR}}">
+        <div class="bg"></div>
+        <canvas id="{{ID}}-gl" width="{{W}}" height="{{H}}"></canvas>
+        <div id="{{ID}}-cam" class="cam">
+          <!-- BEAT: {{BEAT}} -->
+          <div id="{{ID}}-title" class="row t-h1 head" data-layout-allow-overlap>
+            <span class="mask"><span class="in" id="{{ID}}-w1">{{PLACEHOLDER}}</span></span>
+          </div>
+        </div>
+      </div>
+      <script type="module">
+        // 3D hero scene (Three.js, vendored: python <skill>/scripts/vendor_lib.py three <part> adds the importmap).
+        // Deterministic: everything is a function of time t; HyperFrames sends the time via "hf-seek".
+        // Brand colors come from the CSS tokens (brand.css), so the object is on-brand automatically.
+        import * as THREE from "three";
+        import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+        import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+
+        const START = {{START}}, DUR = {{DUR}}, W = {{W}}, H = {{H}};
+        const css = getComputedStyle(document.getElementById("root") || document.documentElement);
+        const col = (v, d) => new THREE.Color((css.getPropertyValue(v) || d).trim() || d);
+        const PRIMARY = col("--teal", "#136052"), ACCENT = col("--lime", "#b3ce65"),
+              HIGHLIGHT = col("--yellow", "#ffec5c"), ALERT = col("--orange", "#ff5a33");
+
+        const canvas = document.getElementById("{{ID}}-gl");
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+        renderer.setPixelRatio(1);
+        renderer.setSize(W, H, false);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+        const scene = new THREE.Scene();
+        scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+        const camera = new THREE.PerspectiveCamera(32, W / H, 0.1, 100);
+
+        // hero object: a soft "clay" tile + an orbiting ring + seeded satellites
+        const clay = (c, r = 0.55, m = 0.0) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: m });
+        const hero = new THREE.Group();
+        const tile = new THREE.Mesh(new RoundedBoxGeometry(1.6, 1.6, 0.42, 6, 0.22), clay(PRIMARY, 0.45));
+        const dot = new THREE.Mesh(new THREE.SphereGeometry(0.34, 48, 32), clay(HIGHLIGHT, 0.3));
+        dot.position.z = 0.32;
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(1.45, 0.07, 24, 160), clay(ACCENT, 0.35, 0.1));
+        hero.add(tile, dot, ring);
+        scene.add(hero);
+
+        let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647); // seeded, never Math.random
+        const sats = [];
+        for (let i = 0; i < 14; i++) {
+          const m = new THREE.Mesh(new THREE.IcosahedronGeometry(0.06 + rnd() * 0.08, 1), clay(i % 3 ? ACCENT : ALERT, 0.5));
+          m.userData = { r: 2.0 + rnd() * 1.4, a: rnd() * Math.PI * 2, y: (rnd() - 0.5) * 2.2, s: 0.25 + rnd() * 0.35 };
+          sats.push(m); scene.add(m);
+        }
+        const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(3, 4, 5); scene.add(key);
+        scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+
+        const ease = (x) => 1 - Math.pow(1 - Math.min(1, Math.max(0, x)), 3);
+        function renderAt(time) {
+          const t = Math.max(0, time - START);                 // scene-local seconds
+          const intro = ease(t / 0.9);                          // pop-in over 0.9 s
+          hero.scale.setScalar(0.001 + intro);
+          hero.rotation.y = -0.6 + t * 0.45;
+          hero.rotation.x = Math.sin(t * 0.8) * 0.12;
+          ring.rotation.x = Math.PI / 2.4 + Math.sin(t * 0.6) * 0.2;
+          ring.rotation.z = t * 0.9;
+          sats.forEach((m) => {
+            const u = m.userData, a = u.a + t * u.s;
+            m.position.set(Math.cos(a) * u.r * intro, u.y + Math.sin(t + u.a) * 0.15, Math.sin(a) * u.r * intro);
+          });
+          const zoom = 6.4 - ease(t / DUR) * 0.8;               // slow push-in across the scene
+          camera.position.set(Math.sin(t * 0.15) * 0.6, 0.35, zoom);
+          camera.lookAt(0, 0, 0);
+          renderer.render(scene, camera);
+        }
+        window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+        renderAt(window.__hfThreeTime || START);
+      </script>
+      <script>
+        (function () {
+          const fx = window.HF_SCENE({{START}});
+          const { tl } = fx;
+          fx.maskUp("#{{ID}}-w1", {{START}} + 0.5);
+          window.__timelines["{{ID}}"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

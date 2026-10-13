@@ -21,6 +21,7 @@
     const { tl, Q } = fx;
     const layer = Q(opt.layer);
     const k = A.k, ox = A.x, oy = A.y;
+    const FW = A.fw || 1920, FH = A.fh || 1080; // camera viewport (9:16 reels pass the viewport size)
     const mk = (cls, css, html) => { const e = document.createElement("div"); e.className = cls; e.style.cssText = css; if (html) e.innerHTML = html; layer.appendChild(e); return e; };
     const box = (r, pad = 0) => `left:${r[0] - pad}px;top:${r[1] - pad}px;width:${r[2] + 2 * pad}px;height:${r[3] + 2 * pad}px`;
 
@@ -28,10 +29,10 @@
     let cam = { x: 0, y: 0, s: 1 };
     const view = (r, s) => {
       const cx = ox + (r[0] + r[2] / 2) * k, cy = oy + (r[1] + r[3] / 2) * k;
-      let x = 960 - cx * s, y = 540 - cy * s;
+      let x = FW / 2 - cx * s, y = FH / 2 - cy * s;
       // keep the window edges from drifting far into frame
-      const minX = 1920 - (ox + A.w * k) * s - 40, maxX = -ox * s + 40;
-      const minY = 1080 - (oy + A.h * k) * s - 40, maxY = -oy * s + 40;
+      const minX = FW - (ox + A.w * k) * s - 40, maxX = -ox * s + 40;
+      const minY = FH - (oy + A.h * k) * s - 40, maxY = -oy * s + 40;
       if (s > 1) { x = Math.min(maxX, Math.max(minX, x)); y = Math.min(maxY, Math.max(minY, y)); }
       return { x, y, s };
     };

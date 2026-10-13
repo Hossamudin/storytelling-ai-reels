@@ -426,6 +426,12 @@ def main():
         cut = f"{c['cut'][0]:7.2f}-{c['cut'][1]:7.2f}" if c["cut"] else "   (manual)    "
         print(f"  {cut}  {c['kind']:<11} {c['confidence']:.2f}  {c['source']:<22} {c.get('text', '')[:70]}")
     print(f"-> {pp / 'input/edit.proposed.json'}\n-> {page}")
+    hook_marks = [c for c in chunks if re.search(r"(ال)?هوك|\bhook\b", c.get("text", ""), re.I)]
+    if hook_marks:
+        print("  !! TWO HOOKS? the speaker announces hooks at "
+              + ", ".join(f"{c['s']:.1f}s «{c['text'][:40]}»" for c in hook_marks)
+              + "\n     -> deliver MAIN (hook 1) + a 2nd version (hook 2): prompts/two_hooks.md — don't just cut a hook")
+        C.log(a.name, "find_retakes: hook announcement found -> two-hook versions (prompts/two_hooks.md)")
     C.log(a.name, f"find_retakes: {len(chunks)} chunks, {len(merged)} cuts proposed, {len(review)} manual")
 
 

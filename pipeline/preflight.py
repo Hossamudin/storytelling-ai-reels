@@ -32,6 +32,29 @@ def run_check(part_dir):
     return errs, warns, out
 
 
+def hf_excess_db(test, ref, sr=48000):
+    """HF (>12 kHz) share of the loud (speech) frames of `test` minus that of `ref`, in dB."""
+    import subprocess
+    import numpy as np
+
+    def share(f):
+        r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(f), "-map", "0:a:0", "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"],
+                           capture_output=True)
+        x = np.frombuffer(r.stdout, np.float32).astype(np.float64)
+        n = sr // 4
+        fr = x[: len(x) // n * n].reshape(-1, n)
+        e = np.mean(fr ** 2, axis=1)
+        sp = fr[e > np.percentile(e, 60)]  # speech frames only
+        if len(sp) < 20:
+            return None
+        S = np.abs(np.fft.rfft(sp, axis=1)) ** 2
+        f = np.fft.rfftfreq(n, 1 / sr)
+        return 10 * np.log10(S[:, f >= 12000].sum() / S.sum())
+
+    a, b = share(test), share(ref)
+    return None if a is None or b is None else a - b
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("name")
@@ -84,6 +107,19 @@ def main():
     if ends and total + 0.05 < max(ends):
         problems.append(f"root duration {total}s < content end {max(ends):.2f}s -> run motion_sync.py")
     notes.append(f"duration {total}s, {len(ends)} timed hosts/voice")
+
+    # voice integrity: the voice in the composition must not carry more high-frequency energy than its source
+    # (denoise artifacts / sample insertion from a shared video-audio concat graph = "shh" hiss).
+    if vo:
+        vsrc = part / re.search(r'src="([^"]+)"', vo.group(0)).group(1)
+        ref = next((p for p in (pp / "assets/voice/voiceover_raw.wav", pp / "input/voice_joined.wav") if p.exists()), None)
+        if vsrc.exists() and ref is not None:
+            d = hf_excess_db(vsrc, ref)
+            if d is not None and d > 2.0:
+                problems.append(f"voice HF (>12 kHz) is {d:+.1f} dB above its lossless source {ref.name} -> artifacts/hiss; "
+                                "rebuild the voice from the original audio (pipeline/join_inputs.py, clean_audio.py pass-through)")
+            elif d is not None:
+                notes.append(f"voice integrity: HF {d:+.1f} dB vs {ref.name}")
 
     if not a.no_check:
         errs, warns, out = run_check(part)

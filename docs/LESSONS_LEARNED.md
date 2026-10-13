@@ -16,6 +16,8 @@ Running log from real production runs (Vibe Automation intro/outro, kit test, Su
 | A repeated take ("علشان كده ×2") shows up as one long word span | Whisper merges retakes | Map energy (`silencedetect` + 50 ms RMS strip), transcribe ≤ 1.5 s excerpts with `gpt-4o-transcribe`, then add `retime` entries for the kept take |
 | Loud non-speech at the start transcribes as "Thank you" / Japanese | Hallucination on clicks / room noise | If two models disagree on a short span → treat it as non-speech, cut it, and flag it to the user |
 | SFX drown the voice; some effects inaudible | The bundled library spans −4 … −36 LUFS | `python pipeline/sfx_levels.py` → per-file gains (`levels.json`); `motion_sync.py` applies them × accent |
+| UI SFX land late after their visual (error buzz ~0.6 s, ping ~0.3 s, chime/typing ~0.4 s) | Kit files start with silence or a slow attack; cues place the file start, not the attack (whooshes: the peak, ~0.15 s in) | Shift each cue earlier by the file's attack/peak offset. Prototype: `projects/ai-4years-60s/reel/sound_ab/` (A/B vs the real render). Not in `motion_sync.py` yet |
+| "Varied" whooshes/clicks sound identical; stacked cues phase | `whoosh.mp3` = `whoosh-short.mp3` and `click.mp3` = `click-soft.mp3` (byte-identical). Cues 30–80 ms apart double the same sample | Treat each pair as one sound; vary with pitch/speed variants (±1–2 semitones) and round-robin; merge same-family cues < 0.12 s apart |
 | Final loudness inconsistent between videos | No master stage | `python pipeline/master_audio.py <mp4>` → −14 LUFS, −1.2 dBTP (two-pass loudnorm) |
 | Verifying an edit with `transcribe.py --input edited.wav` returned the **original** transcript | `compact_for_api` cached `voice_for_api.m4a` regardless of the source file | Fixed: the upload copy is cached per source file (and rebuilt when the source is newer). Back up `transcript/` before a verify run, since it overwrites `transcript.json` |
 | Cuts click/pop | Hard sample edges | 10–12 ms fades on every seam (`voice_edit.py` / `screen_edit.py` do this) |
@@ -163,3 +165,131 @@ Running log from real production runs (Vibe Automation intro/outro, kit test, Su
 | `check` fetched "EB Garamond" from Google Fonts | `font-family: Georgia, serif` in a quote card | Only the vendored fonts (Cairo/Montserrat/Kufi/Manrope) in compositions |
 | "و" + Latin span rendered as a stray glyph after the English word | bidi: a lone Arabic letter before an LTR span | Don't glue a single Arabic letter to an English span; drop it or use a full Arabic word |
 | Narrated fact differs from the source (Dots "phone number" vs "call your dot in ChatGPT") | narrator memory | On screen use wording true to both ("VOICE CALL"), flag it in the handoff |
+
+## 11. Mixed full-screen + windowed screen recording (game HUD) — n8n AI Agents, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| Browser tabs/bookmarks (private history, banking URLs) + a game HUD bar at the bottom in some stretches only | Presenter switched between full-screen and windowed browser while a game overlay ran | Detect per 0.5 s (bookmark-row + extension-icon variance, brown HUD strip), then render a normalized source: ffmpeg `split` → crop+scale the windowed ranges → `overlay=enable='between(t,a,b)'`. One timeline, no sync risk; `screen_edit.json "source": "input/screen_norm.mp4"` |
+| Captions showed "and Message" / "publicly chat Make" | each English word was its own LTR span inside RTL text, so bidi reversed the word order | Merge consecutive Latin words into ONE `.lat` span (`'</span> <span class="lat">' -> ' '`) |
+| "الـagent" token rendered with the Arabic prefix on the wrong side | whole token wrapped in an LTR span | Split: Arabic prefix outside (`الـــ`), Latin part in the span |
+| Annotation camera wrong in 9:16 | `screen.js` hard-coded 1920×1080 | `screen.js` now reads `A.fw/A.fh` (viewport size); `annotations.json "window": {"fw","fh"}` → `screen_annot.py` passes them |
+| Reel needs a different cut of the same recording | `screen_edit.py` reads one fixed spec | Keep `screen_edit_reel.json`, swap it in, run, move outputs to `assets/screen_reel/`, restore the long spec + outputs |
+
+## 12. Short screen-share tip (2.5 min → 1:43) — n8n Node + Templates trick, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| Windowed browser (tabs, private self-hosted n8n URL, bookmarks) in two stretches only | presenter switched between the full-screen templates site and a windowed editor | When the app's own header colour continues the chrome band, a time-gated ffmpeg `drawbox` (fill = header colour, `enable='between(t,a,b)+…'`) over the top 122 px is enough — no crop/scale, so annotation pixels stay identical across the whole source |
+| Narration explains settings / input / output while the node dialog is still closed (it opens 1 s after the sentence) | presenter talks ahead of the clicks | `freeze` the voice over a frame where the dialog IS open (`"at"` later than the audio) and spotlight its panels one by one |
+| Spotlight on a search-suggestions dropdown pointed at "Searching…" | dropdown closes ~0.5 s after Enter | Check dropdown/close times on 0.2 s frame strips before timing a spot on transient UI |
+| Retake finder cut only the first half of a repeated CTA (left "…في التعليقات" + the clean retake) | its cut ended at a chunk boundary inside the botched take | Read the window words around every proposed cut; extend it to the clean take's first word |
+
+## 13. Sponsored model review: intro VO + 2 narrated screenshares + outro VO — Nano Banana 2.1 × Higgsfield, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| Four separate inputs (intro VO, 2 screen recordings with live narration, outro VO) | Recorded in pieces | Concatenate into ONE source (`input/screen.mp4`: VO over black + screens + VO over black, 1 s gaps, 1920×1080) with `SOURCE_MAP.md`; one transcript, one `screen_edit.json`, cutaways cover the VO-only stretches |
+| Whisper transcript became one phrase repeated 90× after 466 s | long-file whisper-1 loop | Ignore `transcript.json` for long files; use `find_retakes.py` chunks (verbatim) + `window_words.json` (timings). Map words to output with `screen_edit.map_time` |
+| On-screen model names were risky (narrator said "GPT" over which image?) | Comparisons shown one image at a time | Check 1–1.5 s frame strips at every comparison before placing model-name pills; pills only where image + speech agree |
+| Captions would show "GPT-4.5", "حرامبلور" | ASR mangles product names | Skip word captions on screen-share reviews; carry names in model pills, callouts and cutaways |
+| User asked to "use the Media Kit" but none was public | kit lives in the Creator Dashboard | Use the official glyph SVG from the brand's own site (`hf-logo__glyph`) + `/icon.png`; note the swap in the publish checklist |
+| Higgsfield MCP could not upload local files | no upload tool in that connection | Existing account Elements expose `media_input` ids (`manage_reference_elements list`) usable as `medias` references; prior job ids work too |
+| "Broken Arabic" effect re-joined into a word | separate inline spans still shape together | Use isolated presentation forms (U+FE95 ت, U+FEB9 ص, U+FEE1 م, U+FEF1 ي) |
+| Sponsor deliverables forgotten until the end | requirements arrive with the footage | Keep `deliverables/YOUTUBE_PUBLISH.md`: title options, UTM link in line 1, keyword list, pinned comment, checklist |
+
+## 14. Audio integrity, dead air, hidden stutters — Nano Banana 2.1 review fixes, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| "sh" hiss on the voice; the user's original files were clean | (1) the 4 inputs were joined in ONE ffmpeg concat graph with the video: irregular screen-recorder audio timestamps made it insert/drop samples (body drifted 0 → +312 samples) → broadband hiss (>16 kHz band −63 → −35 dB). (2) `clean_audio.py` then ran denoise + de-esser + compressor on an already-clean voice | **`pipeline/join_inputs.py`**: video joined alone; each original's audio decoded straight to PCM and placed at its offset with numpy, verified per file (HF band ±1.5 dB). **`clean_audio.py`**: measures the pause floor; ≤ −65 dB → lossless pass-through (`voiceover_raw.wav`, no filters, no loudnorm); `--force-process` to override. **`screen_edit.py`** cuts from `voiceover_raw.wav`. **`preflight.py`** fails if the composition voice's >12 kHz share is > +2 dB above its lossless source (catches both failure modes: +6.8 and +2.7 dB here) |
+| A fix "didn't work" in Studio | the browser cached the old `edited.wav` (same filename) | When replacing media for a preview, give it a NEW filename (`vo_clean.wav`) |
+| My first null tests said the join was badly damaged | a 1-sample offset makes the >4 kHz residual huge | Align by cross-correlation per window (and look at the lag over time) before judging; compare band-energy SHARES, not residuals, for "is there added hiss?" |
+| Pauses felt long (05:38–05:39, 05:54–05:56, 06:36: 1.5–2.3 s) | `busy_pause_keep` 1.2 s kept long pauses whenever the screen moved, and trailing + leading silence STACKED at every keep-range seam | `screen_edit.py "edge_pad": 0.15` trims silence at both ends of every keep range; narrated screen reviews: `max_pause 0.6 / keep_pause 0.35 / busy_pause_keep 0.7` → no speech pause > 0.8 s left (10:01 → 9:15) |
+| Re-editing shifted every hand-timed intro/outro beat | motion beats authored in OUTPUT seconds | Keep a copy of the old `edit_map` (`edit_map_v1.json`) and remap old output → source → new output (`R()` in the project build.py). Better: author beats in SOURCE seconds from the start |
+| Stutter at 05:43 ("والن…" → "والنانو بانانا 2.1") never proposed | the false start ended one pause-chunk; whole-chunk ASR silently DROPS it (verbatim text "…رائعة جداً." / whisper words end 463.07, resume 464.70) | **`pipeline/find_stutters.py`** (run after `find_retakes.py`): (a) split chunks at ≥ 60 ms micro-pauses, transcribe pieces, flag a short piece the next one restarts — also ACROSS chunk boundaries; (b) "unworded speech": voiced ≥ 0.25 s with < 15 % ASR word coverage → transcribe alone → if it prefixes the following words = stutter (0.9), else review (Latin-script ASR on Arabic = real word missed by whisper, e.g. "Levez dio" = الفيديو) |
+| Acoustic (MFCC + DTW) prefix matching could not separate the stutter from normal speech | false starts are clipped/partial syllables | Don't rely on it; keep `pipeline/acoustic_match.py` only as a helper |
+| find_retakes "noise" proposals (415.5, 449.5) were not applied | screen projects edit keep ranges by hand | After find_retakes + find_stutters, apply EVERY proposal ≥ 0.6 or write down why not |
+| Windowed browser (tabs, bookmarks, taskbar) visible while naming an extension | presenter turned on HaramBlur before going full screen | Brightness of the tab strip (top 40 px) per 0.25 s finds windowed stretches; blur tabs / bookmarks / extension icons / taskbar but keep the thing being explained |
+
+## 15. Long windowed screen review with live API keys — Decisions API vs Jev, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| Real API keys readable on screen (OpenAI `sk-proj-…` pasted into an n8n HTTP header; TypeSafe `apikey_…` in three later stretches) | presenter pasted keys live while recording | Crop one reference frame of the key field, then frame-match that rect over the whole video (mean abs diff < 2 = visible) → exact windows → baked `boxblur` overlays in a normalized source (`prep/make_norm.py`). Tell the presenter to rotate the keys, because the raw file still has them |
+| Personal Gmail headers (own address, real emails) inside an n8n node's INPUT panel | an old execution's data showed in the panel | Signature-match the panel header across the video at 2 fps; blur the whole INPUT panel with timed `blur` annotations |
+| `boxblur=18:3` failed ("chroma_param radius … must be <= 13") on a 370×54 crop | the chroma radius defaults to the luma radius, and the chroma plane is half size | Use named params: `luma_radius=18:luma_power=3:chroma_radius=10:chroma_power=3` |
+| whisper-1 repeated one word for the last 9 minutes (19-min file) | long-file loop (again) | Use `find_retakes` chunks + `window_words.json` for anything over ~8 min; never read `transcript.json` past the first loop |
+| find_stutters flagged spoken "n8n" ("إن إيت إن"), list items ("مبيعات… توظيف") and "مختلفة شوية ×2" as restarts | the restart heuristic matches similar-sounding short pieces | Read the window words around each ≥ 0.6 proposal; reject different content and brand names spelled out letter by letter |
+| A spotlight pointed at an empty area | the n8n log panel flickered closed for 0.5 s inside the spot window | Check the target's visibility at 2 fps across the WHOLE spot window, not just at its start |
+| A 19-min windowed recording (tabs, bookmarks, taskbar visible throughout) | recorded in a normal browser window | One `crop` to the content area (y 122–1030) in the normalized source → no per-stretch masks, and annotation pixels stay constant |
+
+## 16. News episode recorded piece by piece (one session per story) — AI News 10 Oct 2026, STORY 01 TestSprite
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| Pieces made in separate sessions drift apart (canvas, chrome, loudness, edges) and won't concat cleanly | each session decides on its own | One `SERIES.md` next to the recordings locks canvas/preset/chrome/edges/export + status table; one project per piece (`screen_edit.py` handles one recording per project); every session reads it first |
+| Research note said "$3,000 + $1,000"; narration said "$1,500 / $750 … 5th" | both true: $3,000 project pool split 1,500/750/450/150/150 + separate $1,000 CLI bonus | Read the real page in the recording (prize frame) before flagging a mismatch |
+| Zoomed screen pushed the window top under the chrome; chrome text unreadable over a light page (contrast 2.95:1) | `screen.js` clamps zoomed windows to 40 px from the frame edge, so every zoom > 1 reaches the chrome band | Project CSS: dark backing pill on `#chrome .tl, #chrome .tr` (`rgba(4,22,20,.82)`); zoom YouTube players at 1.15 instead of 1.38 |
+| `lib.py use <id> news-…/composition` created a stray folder at the repo root | target is resolved relative to the repo root | Always pass `projects/<name>/…`; `--as` needs the file extension (`series-sting.mp3`) |
+| Dashboard showed the account name + email (bottom-left) and "Hello, <name>" (chat panel) | presenter's logged-in TestSprite workspace | Timed `blur` items over both rects for every dashboard stretch (same rects in the projects and test-case views) |
+| QR link chip (root overlay, z 83) covered the last rows of a cutaway checklist (STORY 02, c4) | chips sit at a fixed bottom-right rect while cutaways lay out freely | Run `hyperframes check` (it flags `content_overlap` inside `#lk*`); park the chip lower (`top:880px`) or keep cutaway content above y ≈ 820 while a chip is up |
+| Speaker said "موديل L" for the third question type | ASR mangled "predicate" in whole-chunk transcription | Re-transcribe `edited.wav` (words.json) and read it; the screen dropdown confirmed it — label with the real UI name |
+| Page-only recording (1904×908 browser, no UI to point at for 40 s) → callouts landed on top of the page text and read as noise | `spot` callout `pos: top/bottom` sits on the neighbouring text of a dense article | Spot the whole text line/block and use `pos: "right"` (empty page margin) with dim on; STORY 07 EmbeddingGemma 2 |
+| ASR wrote "Cohere embedding 8B" / "Gemini 2"; the page chart says Qwen3-Embedding-8B and the model is EmbeddingGemma 2 | whole-chunk ASR guesses brand names | Label from the page (read the chart frame), never from the transcript; non-16:9 recordings: set `SW, SH` + window `k` in build.py and annotations.json `window` (here k 0.9 at 103,130) |
+| Windowed Chrome frame (tab strip, profile avatar) leaked for 0.1 s after cutting 10 s of silent navigation | `screen_edit.py` J/L lead (`l_max` 0.5) shows the picture up to 0.5 s before the kept audio | Check the first frames after every cut into a fullscreen stretch (top-60 px brightness); lower `jl.l_max` (0.38) or move the keep start |
+| Privacy blur missing for the first frames after a cut | annotation times are audio-anchored (`map_time`), the picture starts earlier with an L-cut; the blur also fades in | In build.py pad every `blur` t0/t1 by 0.4 s (0.9 s before a stretch that starts right after a cut) and cap t1 before any overlay that must stay sharp |
+| `render_final` preflight failed on lint warning `nested_media_start_basis_ambiguous` for a second `<video>` inside the screen sub-composition | nonzero `data-start` in a sub-composition | Add `data-hf-media-start-basis="global"` (screen host starts at 0) |
+| 46-s tweet clip (656×822) as a cutaway | no media-in-cutaway precedent | Trim to H.264 (-g 15, no audio) into `assets/videos/`, place as a `class="clip"` video + dark backing inside `#scr-inner` for the last seconds, Arabic metric/source tags either side |
+| `render_final` preflight failed on a layout WARNING (`panel_out_of_canvas #scr-win`, 78 px) after a `zoom` s 1.2 on a form at the window's right side | `screen.js` clamps the zoom to 40 px from the frame edge, but the window itself (k 0.85 at x 145) slides off the canvas when the zoom centre is right of ≈ x 980 | Zoom only when `145·s + (960 − cx·s) ≥ 0` (centre ≤ ~980 src px at s 1.15) or skip the zoom and use spots; STORY 09 n8n Agents (also: browser status-bar hover URLs show the instance name → detect with a 14 px strip brightness scan at 4 fps and blur only those windows) |
+| Highlighted word invisible for 2 s before its band (`check` contrast 1.1:1) | dark preset `.hl > .txt` is ink-coloured, the band starts at scaleX 0 | Give the `.txt` an id and tween `color` off-white → ink when the band sweeps (INTRO s1/s3) |
+| End-screen slot outline came out yellow on both slots | `stroke="var(--lime)"` — CSS variables don't resolve in SVG presentation attributes | Hex colours in SVG attributes (or set `stroke` via a CSS rule) |
+| Stutter finder + whole-chunk ASR said "في في التعليقات"; the cut clipped "رأيكم" | it was "رأيكم فيه في التعليقات" | Always read `voice_edit --verify` "replace:" lines after a cut; if the heard text changes a neighbouring word, drop the cut |
+
+
+## 17. Talking-head reel, round 1 feedback — "سنتين ونص في 60 ثانية", Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| **"Text behind me" covered Hossam's face** | `remove-background` ran as an agent background shell; the session ended at 99.7 %, leaving only `.tmp-*-matte.webm`. With no matte, every `#behind` element draws over the person | Launch the matte **detached** (`Start-Process … remove-background … > matte.log`), confirm the final `.webm` exists, cut segments (`reel/cut_matte.py`), snapshot every behind-window. `check` reports `missing_local_asset` for missing matte segments: treat it as a blocker, never preview without it. Place behind-text beside the head/shoulders, not centred on the face |
+| Graphics felt theoretical | concept animations for things that have real visuals | Real logos (library has n8n/Make/Zapier/Claude/OpenAI), real n8n footage (`projects/n8n-node-templates/input/screen.mp4` 21–25 s first workflow, 64–68 s template canvas; crop out tabs/URL), 2D people for stories |
+| Face on screen only ~55–65 % | full-screen scenes of 4–9 s | 70–80 % face: full-screen cutaways 1.5–3.3 s, the rest in card / circle mode |
+| Lime circle ring stayed visible after circle → card | `th_layer.py` hid the ring only on circle → hide/full | Fixed: circle → card fades `#fr-ring` |
+| `th_layer.py` crashed `'NoneType' … group` | Studio added `data-hf-id` before `id="root"` | Fixed: attribute-order-tolerant root regex |
+| New icon symbols silently missing | patch anchored on `<symbol id="i-cursor"`, which Studio had rewritten | Insert new `<symbol>`s before `</defs>` and assert the count after patching |
+| Higgsfield: a prompt was bounced with "preset recommended" | the batch tool auto-recommends presets | Resubmit with `declined_preset_id` |
+| B-roll of Hossam without uploading photos | MCP has no upload tool | Element `hossamudin` (`cb88ff02-…`) via `<<<id>>>` in a `seedance_2_0` prompt gave a faithful likeness |
+
+## 18. 2D story reel built by parallel sub-agents — "ناس كتير مش عارفة تستخدم الـ AI", Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| Voice note held two alternative hooks + "ده الهوك رقم واحد…"; I merged them into one opening | presenter recorded options | **Hossam's rule: two hooks = two videos** — MAIN (hook 1) + 2nd version (hook 2), same body. Per-part cuts in `edit.json`, `hooks.json` + `make_versions.py` (`prompts/two_hooks.md`); `find_retakes` now prints `!! TWO HOOKS?` |
+| Sub-agents would collide on shared files | one index.html / build_lib for 18 scenes | Director owns `build_lib.py`, `index.html` (`build_root.py`), `scenes.json`, `chrome.json`, `cues.json`; each agent owns `build_<x>.py` + its `compositions/sN.html` + `cues_<x>.json`; `merge_cues.py` merges + thins (≥ 0.75 s between SFX) and runs motion_sync |
+| Shared visuals must look identical across agents | character + signature object reused in many scenes | Phase 1: one agent builds the kit (`char.py` 2D characters, poses, IK reach, idle JS) while UI-only scenes run in parallel; the signature object's owner writes `chain.py`; dependent scenes launch only after the module exists |
+| Step tracker overflowed the 9:16 frame and sat under the reels UI | 5 pills at kit size, bottom placement | Project CSS: `#root .steps { top:150px }` + smaller pills; scenes keep y 140–250 clear |
+| A sub-agent drew banknotes for "before you pay" | brand avoid list (money) not checked | Director reviews every contact sheet; replaced with subscription tickets |
+| Supporting cast drawn smaller than the hero read as children | different `h` per agent | Same standing height for adults in one shot (char.py `h`) |
+| `assets/lib/meta.svg` (library log-af262f) is the **Llama** wordmark | library caption says Meta | Label it Llama on screen, or fetch the Meta mark |
+
+## 19. "The video is code" reel (Claude Code + HyperFrames), two hooks — Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| `font_family_without_font_face: cascadia mono` in two scenes only | the linter checks each sub-composition's own CSS; the root `@font-face` doesn't count for a family named literally in a scene `<style>` | Declare `--font-mono` on `#root` (series CSS) and use `var(--font-mono)` in scenes; vendored Cascadia Mono (OFL) from `C:/Windows/Fonts` for code/terminal text |
+| `content_overlap` between a "code peel" layer and the frame it covers | the peel (opaque, clip-path wipe) leaves the covered text in the DOM | Fade the covered elements to 0 right after the wipe ends |
+| Talking-head example clip opened on a graphic card, not the face | picked the cut window from a 2 s contact sheet | Strip the chosen 5 s window at 1 fps before using it; `-ss` timestamps ≠ the on-video timer |
+| Inline `left:` on chips ignored | a leftover scene-CSS `#id { left }` rule overrode the inline style | Position in one place only (inline OR CSS) |
+
+## 20. Infinite-sheet motion explainer (one zoomable world, 20 scenes) — How LLMs work, Oct 2026
+
+| Symptom | Cause | Fix / prevention |
+|---|---|---|
+| A whole scene went blank for 12 s (`check` passed) | an element was given the id `s15-in`, which `make()` already uses for the scene's inner camera; `tl.fromTo("#s15-in", {opacity:0})` hid the camera | Scene ids `<sid>-cam / -in / -ov` are reserved. Never name content `<sid>-in*`; snapshot every scene |
+| `[id^=s15-c]` faded out the entire scene | the prefix also matched `s15-cam` | Use classes for groups (`.s15-card`), never `[id^=<sid>-c…]` / `-i…` / `-o…` prefixes |
+| Minimap missing → preflight `GSAP target #mm-m not found` | opening Studio added `data-hf-id` to `<div id="wipe">`, so an exact-string insert silently failed | Insert into index.html with attribute-tolerant regexes (as for the root tag) and assert the element exists after patching |
+| `composition_file_too_large` (index.html > ~300 lines) | 150 SFX tags + ~100 lines of root camera tweens | Generate the root camera into `assets/js/sheet.js` (`window.LLM_SHEET(tl)`) and thin SFX to ≥ 0.85 s apart with a priority (impacts/chimes win) |
+| `clip_media_fit` warning | `typing.mp3` is 1.5 s but the cue asked for 1.6–2.0 s | Cap cue `dur` at the file length (`ffprobe`); the riser is 10 s: play its LAST 1.5 s (`media_start` 8.5) |
+| `duplicate_media_discovery_risk` | the same logo `<img>` twice in one scene | One `<img>` per source per scene |
+| Narration said "17 tokens / 4 tokens" | checked, not assumed | `tiktoken` in the scratchpad (`pip install --target`): cl100k_base = GPT-3.5, o200k_base = GPT-4o/GPT-5; show the real token pieces |
+| The narrator credited Attention to DeepMind | memory | Cut the clause, keep the term; put the real source (Google, 2017) on screen |

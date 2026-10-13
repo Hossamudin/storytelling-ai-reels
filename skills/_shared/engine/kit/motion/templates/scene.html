@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="{{ID}}-template">
+      <style>
+        /* scene-local styles: select by element ids (#{{ID}}-…), never "#{{ID}} .x" (root merges into its host) */
+        #{{ID}}-title { top: {{TITLE_TOP}}px; }
+      </style>
+      <div id="{{ID}}" data-composition-id="{{ID}}" data-width="{{W}}" data-height="{{H}}" data-duration="{{DUR}}">
+        <div class="bg"></div>
+        <div id="{{ID}}-bgp" class="dots"></div>
+        <div id="{{ID}}-cam" class="cam">
+          <!-- BEAT: {{BEAT}} -->
+          <div id="{{ID}}-title" class="row t-h1 head" data-layout-allow-overlap>
+            <span class="mask"><span class="in" id="{{ID}}-w1">{{PLACEHOLDER}}</span></span>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          // ALL times are GLOBAL voice seconds; this scene starts at {{START}}
+          const fx = window.HF_SCENE({{START}});
+          const { tl } = fx;
+          fx.drift("#{{ID}}-bgp", {{START}}, {{DUR}}, 60, -20);   // parallax background
+          fx.pushIn("#{{ID}}-cam", {{START}}, {{DUR}});          // slow 1.00 -> 1.04 push
+          fx.maskUp("#{{ID}}-w1", {{START}} + 0.1);
+          window.__timelines["{{ID}}"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

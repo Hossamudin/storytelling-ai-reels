@@ -64,6 +64,9 @@ def main():
             o["t"] = round(v, 3)
         out_items.append(o)
     data = {"k": win["k"], "x": win["x"], "y": win["y"], "w": crop[2], "h": crop[3], "duration": em["duration"], "items": out_items}
+    for k2 in ("fw", "fh"):  # camera viewport size (default 1920x1080; 9:16 reels pass their viewport)
+        if k2 in win:
+            data[k2] = win[k2]
     dest = pp / a.part / "assets/screen"
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "annot.js").write_text("window.HF_ANNOT = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")

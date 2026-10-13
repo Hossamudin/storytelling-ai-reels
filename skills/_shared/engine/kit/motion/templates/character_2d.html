@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="{{ID}}-template">
+      <style>
+        /* 2D puppet rig: every moving part is its own <g>; pivots are set in the script (svgOrigin / pivot discs).
+           Limbs carry data-layout-allow-orbit: they rotate about a joint on purpose (not a dial needle).
+           Restyle freely: swap shapes, keep the ids. Colors come from brand tokens. */
+        #{{ID}}-stage { position: absolute; inset: 0; }
+        /* LTR: character right, text left. RTL (#root data-dir="rtl"): mirrored in the script below. */
+        #{{ID}}-char { position: absolute; width: 40%; height: 88%; bottom: 0; right: 4%; }
+        #{{ID}}-title { position: absolute; top: 36%; left: 6%; width: 50%; text-align: left; }
+        #{{ID}}-shadow { position: absolute; bottom: 2.2%; right: 10%; width: 28%; height: 3%;
+                         border-radius: 50%; background: rgba(0, 0, 0, 0.12); }
+      </style>
+      <div id="{{ID}}" data-composition-id="{{ID}}" data-width="{{W}}" data-height="{{H}}" data-duration="{{DUR}}">
+        <div class="bg"></div>
+        <div id="{{ID}}-bgp" class="dots"></div>
+        <div id="{{ID}}-stage">
+          <div id="{{ID}}-shadow"></div>
+          <svg id="{{ID}}-char" viewBox="0 0 600 900" style="direction: ltr" data-layout-allow-overlap>
+            <g id="{{ID}}-body" data-layout-allow-overflow>
+              <!-- arm (back) -->
+              <g transform="translate(196 470)"><!-- shoulder = local 0,0: the arm rotates about its hub -->
+                <g id="{{ID}}-armB" data-layout-allow-orbit>
+                  <circle cx="0" cy="0" r="250" fill="none" stroke="none" /><!-- pivot disc: bbox center = shoulder -->
+                  <path d="M0 0 Q-46 120 -36 220" stroke="var(--teal2, #0f4f44)" stroke-width="54" stroke-linecap="round" fill="none" />
+                  <circle cx="-36" cy="230" r="32" fill="#E9B98F" />
+                </g>
+              </g>
+              <!-- torso -->
+              <path d="M170 440 Q300 400 430 440 L462 860 L138 860 Z" fill="var(--teal, #136052)" />
+              <path d="M262 432 L300 520 L338 432" fill="none" stroke="var(--lime, #b3ce65)" stroke-width="14" stroke-linejoin="round" />
+              <!-- head -->
+              <g id="{{ID}}-head"><!-- idle sway lives here -->
+                <g id="{{ID}}-headIn"><!-- gestures (nod, shake, tilt) live here, so they never fight the sway -->
+                <rect x="272" y="372" width="56" height="60" rx="20" fill="#DDA77E" />
+                <circle cx="300" cy="270" r="128" fill="#F0C49C" />
+                <path d="M176 250 Q190 132 300 128 Q414 132 428 252 Q392 190 300 186 Q214 190 176 250 Z" fill="var(--ink, #0d0d0d)" />
+                <g id="{{ID}}-eyes">
+                  <ellipse cx="252" cy="270" rx="17" ry="21" fill="#fff" /><circle cx="255" cy="274" r="10" fill="var(--ink, #0d0d0d)" />
+                  <ellipse cx="348" cy="270" rx="17" ry="21" fill="#fff" /><circle cx="351" cy="274" r="10" fill="var(--ink, #0d0d0d)" />
+                  <rect id="{{ID}}-lidL" x="232" y="246" width="40" height="48" rx="12" fill="#F0C49C" />
+                  <rect id="{{ID}}-lidR" x="328" y="246" width="40" height="48" rx="12" fill="#F0C49C" />
+                </g>
+                <path id="{{ID}}-brows" d="M232 232 Q252 222 272 232 M328 232 Q348 222 368 232" stroke="var(--ink, #0d0d0d)" stroke-width="8" stroke-linecap="round" fill="none" />
+                <!-- mouth shapes: X closed · M pressed · A mid · O wide (lipsync.js picks one per frame) -->
+                <g id="{{ID}}-mouth">
+                  <path class="{{ID}}-m" data-shape="X" d="M276 330 Q300 342 324 330" stroke="#7A3B2E" stroke-width="7" stroke-linecap="round" fill="none" />
+                  <path class="{{ID}}-m" data-shape="M" d="M280 334 L320 334" stroke="#7A3B2E" stroke-width="8" stroke-linecap="round" fill="none" />
+                  <path class="{{ID}}-m" data-shape="A" d="M278 326 Q300 324 322 326 Q318 350 300 352 Q282 350 278 326 Z" fill="#7A3B2E" />
+                  <path class="{{ID}}-m" data-shape="O" d="M282 320 Q300 312 318 320 Q324 352 300 364 Q276 352 282 320 Z" fill="#7A3B2E" />
+                </g>
+                </g>
+              </g>
+              <!-- arm (front, the gesturing one) -->
+              <g transform="translate(404 470)">
+                <g id="{{ID}}-armF" data-layout-allow-orbit>
+                  <circle cx="0" cy="0" r="250" fill="none" stroke="none" /><!-- pivot disc: bbox center = shoulder -->
+                  <path d="M0 0 Q46 120 36 220" stroke="var(--teal2, #0f4f44)" stroke-width="54" stroke-linecap="round" fill="none" />
+                  <circle cx="36" cy="230" r="32" fill="#E9B98F" />
+                </g>
+              </g>
+            </g>
+          </svg>
+          <div id="{{ID}}-title" class="t-h1 head" data-layout-allow-overlap>
+            <span class="mask"><span class="in" id="{{ID}}-w1">{{PLACEHOLDER}}</span></span>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          // ALL times are GLOBAL seconds; scene starts at {{START}}, lasts {{DUR}}
+          const S = {{START}}, D = {{DUR}}, E = S + D;
+          const fx = window.HF_SCENE(S);
+          const { tl } = fx;
+          const P = (n) => "#{{ID}}-" + n;
+          // SVG pivots: GSAP ignores CSS transform-origin on SVG -> svgOrigin once, at build time (global viewBox coords)
+          const PIVOT = { body: "300 860", head: "300 410", headIn: "300 410", lidL: "252 246", lidR: "348 246" };
+          Object.entries(PIVOT).forEach(([k, o]) => gsap.set(P(k), { svgOrigin: o }));
+          // arms: the group sits in a translate(shoulder) wrapper and carries a transparent disc centered on 0,0,
+          // so its bounding-box center IS the shoulder -> rotate about 50% 50% (the check sees a clean hub rotation)
+          ["armF", "armB"].forEach((k) => gsap.set(P(k), { transformOrigin: "50% 50%" }));
+          // right-to-left languages: character on the left, mirrored (so gestures point at the text), text on the right
+          // (computed direction: base.css makes #root rtl unless data-dir="ltr")
+          const stage = document.querySelector(P("stage"));
+          if (stage && getComputedStyle(stage).direction === "rtl") {
+            gsap.set(P("char"), { right: "auto", left: "4%", scaleX: -1 });
+            gsap.set(P("shadow"), { right: "auto", left: "10%" });
+            gsap.set(P("title"), { left: "auto", right: "6%", textAlign: "right" });
+          }
+          fx.drift(P("bgp"), S, D, 60, -20);
+          // entrance: character pops up from below, title reveals
+          tl.fromTo(P("char"), { y: 160, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "back.out(1.6)" }, S);
+          tl.fromTo(P("shadow"), { scaleX: 0.3, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.5 }, S + 0.1);
+          fx.maskUp(P("w1"), S + 0.35);
+          // idle: breathing + gentle head sway (finite yoyo repeats, deterministic)
+          const n = Math.max(1, Math.floor(D / 1.6));
+          tl.fromTo(P("body"), { scaleY: 1 }, { scaleY: 1.012, duration: 0.8, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1, immediateRender: false }, S + 0.6);
+          tl.fromTo(P("head"), { rotation: -2 }, { rotation: 2, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: n - 1 }, S + 0.6);
+          // hello wave on entry, then a "presenting the title" gesture (negative = arm swings up and out)
+          tl.fromTo(P("armF"), { rotation: 0 }, { rotation: -150, duration: 0.35, ease: "power2.out" }, S + 0.5);
+          tl.to(P("armF"), { rotation: -120, duration: 0.18, yoyo: true, repeat: 3, ease: "sine.inOut" }, S + 0.85);
+          tl.to(P("armF"), { rotation: 0, duration: 0.4, ease: "power2.inOut" }, S + 1.6);
+          // the back arm presents the text (it is on the text's side)
+          tl.fromTo(P("armB"), { rotation: 0 }, { rotation: 70, duration: 0.45, ease: "back.out(1.4)" }, S + 1.8);
+          tl.to(P("armB"), { rotation: 0, duration: 0.5, ease: "power2.inOut" }, Math.min(E - 0.6, S + 4));
+          // blinks every 3.2-4.4 s (seeded pattern)
+          for (let t = S + 1.2, k = 0; t < E - 0.3; k++, t += 3.2 + ((k * 7) % 5) * 0.3) {
+            ["lidL", "lidR"].forEach((l) => tl.fromTo(P(l), { scaleY: 0 }, { scaleY: 1, duration: 0.07, yoyo: true, repeat: 1, ease: "none", immediateRender: k === 0 }, t));
+          }
+          // lip-sync: window.HF_MOUTH from engine/pipeline/lipsync.py ([[t, "X|M|A|O"], ...] global seconds)
+          const mouths = Array.from(document.querySelectorAll(".{{ID}}-m"));
+          const show = (shape, t) => mouths.forEach((m) => tl.set(m, { opacity: m.dataset.shape === shape ? 1 : 0 }, t));
+          show("X", S);
+          (window.HF_MOUTH || []).forEach(([t, s]) => { if (t >= S && t < E) show(s, t); });
+          window.__timelines["{{ID}}"] = tl.real;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

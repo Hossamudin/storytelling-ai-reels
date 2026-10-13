@@ -108,6 +108,21 @@ def apply_cuts(src: Path, dest: Path, cuts, sample_rate):
     return kept
 
 
+def noise_floor_db(src, sr=48000):
+    """10th-percentile RMS of 50 ms frames (dBFS) = the level of the pauses. <= -65 dB means a clean recording."""
+    import numpy as np
+    import subprocess
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(src), "-map", "0:a:0", "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"],
+                       capture_output=True)
+    x = np.frombuffer(r.stdout, np.float32)
+    if len(x) < sr:
+        return None
+    n = sr // 20
+    fr = x[: len(x) // n * n].reshape(-1, n).astype(np.float64)
+    db = 10 * np.log10(np.mean(fr ** 2, axis=1) + 1e-12)
+    return float(np.percentile(db, 10))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("name")
@@ -116,6 +131,7 @@ def main():
     ap.add_argument("--recut", action="store_true",
                     help="re-run ONLY the silence/manual-cut stage on the existing voiceover_clean.wav")
     ap.add_argument("--no-silence-cut", action="store_true")
+    ap.add_argument("--force-process", action="store_true", help="run denoise/de-ess/compress even on an already-clean source")
     args = ap.parse_args()
 
     cfg = C.load_config()
@@ -169,14 +185,27 @@ def main():
 
     C.log(args.name, f"Audio cleanup: {Path(src).name}")
 
-    # Pass 1: filter chain -> full-quality wav (mono, 48k)
-    filters = build_filter(cfg)
-    C.ffmpeg(["-i", str(src), "-af", ",".join(filters),
-              "-ac", "1", "-ar", str(a["sample_rate"]),
-              "-c:a", "pcm_s16le", str(work)])
+    # Pass 0: is the source already clean? Denoise / de-ess / compress on a clean voice ADDS artifacts
+    # ("shh" hiss heard in Nano Banana 2.1). Clean source -> lossless pass-through (voiceover_raw.wav),
+    # loudness is set once at the end by master_audio.py.
+    floor = noise_floor_db(src, a["sample_rate"])
+    passthrough = (floor is not None and floor <= a.get("clean_floor_db", -65)) and not args.force_process
+    raw = out_dir / "voiceover_raw.wav"
+    if passthrough:
+        C.ffmpeg(["-i", str(src), "-map", "0:a:0", "-ac", "1", "-ar", str(a["sample_rate"]), "-c:a", "pcm_s16le", str(raw)])
+        import shutil
+        shutil.copy2(raw, work)
+        C.log(args.name, f"source noise floor {floor:.1f} dB -> already clean: pass-through, no filters, no loudnorm")
+    else:
+        raw.unlink(missing_ok=True)  # screen_edit prefers voiceover_raw.wav: never leave a stale/noisy one
+        # Pass 1: filter chain -> full-quality wav (mono, 48k)
+        filters = build_filter(cfg)
+        C.ffmpeg(["-i", str(src), "-af", ",".join(filters),
+                  "-ac", "1", "-ar", str(a["sample_rate"]),
+                  "-c:a", "pcm_s16le", str(work)])
 
     # Pass 2: loudness normalization (EBU R128, voiceover standard)
-    if args.no_loudnorm or not a.get("loudnorm"):
+    if passthrough or args.no_loudnorm or not a.get("loudnorm"):
         work.replace(clean)
     else:
         C.ffmpeg(["-i", str(work), "-af", f"loudnorm={a['loudnorm']}",
@@ -222,6 +251,8 @@ def main():
         "max_volume_db": float(max_m.group(1)) if max_m else None,
         "loudnorm": a.get("loudnorm", ""),
         "timing_preserved": True,
+        "noise_floor_db": round(floor, 1) if floor is not None else None,
+        "passthrough": passthrough,
     }
     (out_dir / "voice_analysis.json").write_text(
         json.dumps(analysis, indent=2, ensure_ascii=False), encoding="utf-8")

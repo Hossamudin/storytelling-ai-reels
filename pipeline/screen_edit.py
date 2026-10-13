@@ -16,6 +16,8 @@ Reads projects/<name>/input/screen_edit.json, e.g.
   ],
   "max_pause": 0.9, "keep_pause": 0.4,        # tighten speech pauses longer than max_pause to keep_pause
   "busy_pause_keep": 1.2,                     # ...but keep up to this much when the screen is changing
+  "edge_pad": 0.15,                           # silence kept at each end of a keep range (null = off)
+  "voice": "assets/voice/voiceover_raw.wav",  # optional; lossless voice (default raw, falls back to voiceover_clean)
   "jl": {"l_max": 0.5, "j": 0.2, "busy": 0.6} # L-cut (picture leads) when the gap ends busy, else J-cut
 }
 Writes (projects/<name>/assets/screen/):
@@ -90,19 +92,35 @@ def main():
     spec = json.loads((pp / "input/screen_edit.json").read_text(encoding="utf-8"))
     src = pp / spec["source"]
     crop = spec.get("crop")
-    wav = pp / "assets/voice/voiceover_clean.wav"
+    # voice source: the lossless original (join_inputs.py / clean_audio.py pass-through) when present.
+    # Never cut from a re-encoded or filter-processed copy (Nano Banana 2.1: concat graph + denoise -> "shh" hiss).
+    wav = pp / spec.get("voice", "assets/voice/voiceover_raw.wav")
+    if not wav.exists():
+        wav = pp / "assets/voice/voiceover_clean.wav"
+    print(f"voice source: {wav.relative_to(pp)}")
     out_dir = pp / "assets/screen"
     out_dir.mkdir(parents=True, exist_ok=True)
     sil = silences(wav)
     act, afps = activity(src, crop)
     mp, kp, bk = spec.get("max_pause", 0.9), spec.get("keep_pause", 0.4), spec.get("busy_pause_keep", 1.2)
+    edge = spec.get("edge_pad", 0.15)  # max silence left at each end of a keep range (seams never stack two pauses)
+
+    def trim_edges(s, e):
+        if edge is None:
+            return s, e
+        for x, y in sil:
+            if x <= s + 0.02 < y:          # keep starts inside a silence -> start just before the speech
+                s = max(s, y - edge)
+            if x < e - 0.02 <= y:          # keep ends inside a silence -> end just after the speech
+                e = min(e, x + edge)
+        return s, max(e, s + 0.1)
     jl = spec.get("jl", {"l_max": 0.5, "j": 0.2, "busy": 0.6})
 
     # 1) expand timeline into atomic pieces with boundary types
     pieces = []  # dict(kind, a, b, speed, boundary_before)
     for item in spec["timeline"]:
         if "keep" in item:
-            s, e = item["keep"]
+            s, e = trim_edges(*item["keep"])
             cuts = []
             for x, y in sil:
                 x, y = max(x, s), min(y, e)

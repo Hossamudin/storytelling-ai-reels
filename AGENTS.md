@@ -13,7 +13,12 @@ This repo is a **video production factory** run by you (the agent). The full wor
 - Screen-share tutorials: `prompts/screenshare_playbook.md` (`screen_edit.py` → `screen_annot.py` → kit `screen.js`).
 - Talking-head hybrids (Hossam on camera + graphics): `prompts/talking_head_director.md` (`th_cut.py` → matte →
   `web_capture.py` → `th_layer.py` + kit `th.css`). Faceless motion stays the default for voice-only input.
-- Cuts (retakes / false starts / fillers): `find_retakes.py` → review `review/cuts.html` → `input/edit.json` →
+  Talking-head rules (read §0 of the director): text-behind only with a verified matte, real logos/UI/b-roll over
+  abstract concepts, 2D people for stories, Hossam on screen 70–80 %, a CTA in every video.
+- Several input files: `join_inputs.py` first (lossless voice; never join audio inside a video concat). Clean voices pass
+  through `clean_audio.py` untouched (no denoise on clean audio). Plan + status: `docs/PLAN_EDIT_QUALITY.md`.
+- **Two recorded hooks → two videos**: MAIN (hook 1) + a 2nd version (same video, hook 2). Never merge or drop a hook: `prompts/two_hooks.md` (per-part cuts in `edit.json` → `make_versions.py`).
+- Cuts (retakes / false starts / fillers / stutters): `find_retakes.py` + `find_stutters.py` → review `review/cuts.html` → `input/edit.json` →
   `voice_edit.py --verify`. Never look for retakes in the whisper transcript (it hides them).
 - Reusable assets: `library/INDEX.md` + `pipeline/lib.py` (find before generating, add/harvest after); rules: `docs/LIBRARY.md`.
 - New-video prompt template for Hossam: `prompts/NEW_VIDEO_TEMPLATE.md`.
