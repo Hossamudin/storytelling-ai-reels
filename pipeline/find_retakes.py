@@ -11,7 +11,9 @@ source instead:
      -> transcript/chunks.json (chunk timing + verbatim text). Chunk edges are pauses, so every
      cut proposed here starts and ends in silence (no clipped syllables).
   3. deterministic rules: repeated phrase starts (keep the LATER take), stutters, filler-only
-     chunks, empty/non-speech chunks
+     chunks, empty/non-speech chunks; same 2-token opener as the next SPEECH chunk (false start /
+     restated clause) and a clause said again inside the next speech, also across a long silent
+     stretch (LESSONS §23). Part seams of a merged video: pipeline/seam_check.py
   4. LLM editor pass (config retakes.llm_model) over the numbered chunk list: paraphrased restarts
      and abandoned sentences; in-chunk restarts are refined by re-splitting that chunk at shorter dips
   5. transcript/transcript_verbatim.json: whisper-1 word TIMINGS from <=10 s pause-bounded windows (long-file
@@ -211,6 +213,108 @@ def rule_proposals(chunks):
     return props
 
 
+# ------------------------------------------------------------------ opener / restatement rules (LESSONS §23)
+CONJ = re.compile(r"^[وف](?=..)")
+LONG_GAP = 4.0  # a silent stretch (typing, later ramped) between a take and its restart
+
+
+def tok_eq(a, b):
+    """Same word, ignoring a leading و/ف and the هم/هما, ده/دا style one-letter tail."""
+    a, b = CONJ.sub("", a), CONJ.sub("", b)
+    if a == b:
+        return True
+    s, l = sorted((a, b), key=len)
+    return len(s) >= 2 and len(l) - len(s) == 1 and l.startswith(s)
+
+
+def tok_like(a, b):
+    """Looser: same word with a different prefix (فقوله / أقوله, بيشتغلوا / اشتغلوا)."""
+    a, b = CONJ.sub("", a), CONJ.sub("", b)
+    return tok_eq(a, b) or (min(len(a), len(b)) >= 3 and difflib.SequenceMatcher(None, a, b).ratio() >= 0.75)
+
+
+def ref_tokens(chunks, full_ref):
+    """Each chunk's tokens as spelled in the full-file verbatim pass (more context: «لو ما» there is «اللي هما»)."""
+    if not full_ref:
+        return [[] for _ in chunks]
+    own = [toks(c["text"]) for c in chunks]
+    flat = [(k, t) for k, T in enumerate(own) for t in T]
+    R = toks(full_ref)
+    out = [[] for _ in chunks]
+    sm = difflib.SequenceMatcher(None, [t for _, t in flat], R, autojunk=False)
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op in ("equal", "replace"):
+            n, m = i2 - i1, j2 - j1
+            for a in range(n):  # spread ref tokens over the chunk tokens they replace
+                out[flat[i1 + a][0]] += R[j1 + a * m // n: j1 + (a + 1) * m // n]
+    return out
+
+
+def opener_proposals(chunks, full_ref=""):
+    """Rules the text-similarity matcher misses (Hossam's "YouTube manager" review, LESSONS §23):
+    1. same opener: a chunk whose first 2 tokens equal the next SPEECH chunk's first 2 tokens but goes on
+       differently («إن هو شغال.» → «إن هو عنده أربع روتينز») = false start (short) or restated clause (review).
+    2. contained restart: the chunk's words come back inside the next speech, often after a long silent
+       stretch («فقوله أسماء المنصات.» … 60 s typing … «فأول حاجة أقوله أسماء المنصات زي…»); the clause just
+       before it that announced the action is cut with it.
+    Next SPEECH = skip filler-only / empty chunks; any silence length (no 6 s limit)."""
+    own = [toks(c["text"]) for c in chunks]
+    ref = ref_tokens(chunks, full_ref)
+    speech = [k for k, T in enumerate(own) if T and not all(t in FILLERS for t in T)]
+    props = []
+    for x, i in enumerate(speech[:-1]):
+        j = speech[x + 1]
+        c, nx = chunks[i], chunks[j]
+        dur, gap = c["e"] - c["s"], nx["s"] - c["e"]
+        A, B = own[i], own[j]
+        # end the cut at the take, not at the next speech, when a silent stretch (screen action) sits between
+        cut = [round(c["s"] - 0.04, 3), round(c["e"] + 0.1, 3)] if gap > LONG_GAP else None
+        same = any(len(P) >= 2 and len(Q) >= 2 and tok_eq(P[0], Q[0]) and tok_eq(P[1], Q[1])
+                   for P in (A, ref[i]) for Q in (B, ref[j]))
+        if same and len(A) < len(B) and not all(tok_eq(p, q) for p, q in zip(A, B)):
+            short = dur < 1.5 and len(A) <= 3
+            p = {"from": i, "to": j - 1, "kind": "false_start" if short else "retake",
+                 "reason": (f"same opener «{' '.join(c['text'].split()[:2])}» restarts in chunk {j}"
+                            + (" — short abandoned start" if short else " — restated clause, check which take to keep")),
+                 "confidence": 0.8 if short else 0.6, "rule": "same_opener"}
+            if cut:
+                p["cut"], p["text"] = cut, c["text"]
+            props.append(p)
+            continue
+        if len(A) < 3:
+            continue
+        for y in speech[x + 1: x + 3]:  # the restart may come one sentence later
+            if y != j and chunks[y]["s"] - chunks[j]["e"] > 1.5:
+                break
+            for P in (A, ref[i]):
+                H, q, hit, first = (own[y] if P is A else ref[y] or own[y])[:len(P) + 4], 0, 0, None
+                for t in P:
+                    for z in range(q, len(H)):
+                        if tok_like(t, H[z]):
+                            q, hit, first = z + 1, hit + 1, z if first is None else first
+                            break
+                # the restart opens the next speech (≤ 2 lead-in words like «فأول حاجة»), not a later clause of it
+                if P and hit / len(P) >= 0.8 and first <= 2 and tok_like(P[-1], H[q - 1]) and len(H) > len(P):
+                    break
+            else:
+                continue
+            a = i
+            gap_y = gap if y == j else 0.0  # silent stretch only when the restart is the very next speech
+            # the announcing clause right before it («فهسأله إيه هي المنصات؟») goes too when it shares a word with the restart
+            if gap_y > LONG_GAP and i - 1 >= 0 and c["s"] - chunks[i - 1]["e"] < 1.0 and own[i - 1] and \
+                    any(len(t) >= 4 and any(tok_like(t, h) for h in own[y]) for t in own[i - 1]):
+                a = i - 1
+            p = {"from": a, "to": i if gap_y > LONG_GAP else y - 1, "kind": "retake",
+                 "reason": f"chunk {i} is said again inside chunk {y}" + (f" after {gap_y:.0f} s of silence" if gap_y > LONG_GAP else "")
+                           + "; keep the later, complete take", "confidence": 0.8 if gap_y > LONG_GAP else 0.7, "rule": "contained"}
+            if gap_y > LONG_GAP:
+                p["cut"] = [round(chunks[a]["s"] - 0.04, 3), round(c["e"] + 0.1, 3)]
+                p["text"] = " | ".join(ch["text"] for ch in chunks[a:i + 1])
+            props.append(p)
+            break
+    return props
+
+
 def locate_inside(src, chunk, drop_text, key, model, lang, tmpdir):
     """Re-split one chunk at shorter dips, transcribe the pieces, return [a, b] covering drop_text."""
     pieces = speech_chunks(src, None, th=-32, d=0.06, lo=chunk["s"], hi=chunk["e"], min_len=0.05)
@@ -349,7 +453,7 @@ def main():
     cache.write_text(json.dumps({"model": rc["model"], "chunks": chunks}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{len(chunks)} speech chunks transcribed verbatim ({rc['model']})")
 
-    props = [{**p, "source": "rules"} for p in rule_proposals(chunks)]
+    props = [{**p, "source": "rules"} for p in rule_proposals(chunks) + opener_proposals(chunks, full_ref)]
     spelling = {}
     if not a.no_llm:
         listing = "\n".join(f"[{c['i']}] {c['s']:.2f}-{c['e']:.2f} | {c['text']}" for c in chunks)
@@ -406,8 +510,14 @@ def main():
     else:
         words, _ = window_word_timings(src, chunks, key, tmp, tag="w")
         wc.write_text(json.dumps({"chunks": len(chunks), "words": words}, ensure_ascii=False, indent=1), encoding="utf-8")
-    tr_n = sum(len(sg["words"]) for sg in json.loads((pp / "transcript/transcript.json").read_text(encoding="utf-8"))["segments"])
-    print(f"word timings: {len(words)} words from pause-bounded windows (long-file whisper had {tr_n})")
+    trp = pp / "transcript/transcript.json"
+    if trp.exists():
+        tr_n = sum(len(sg["words"]) for sg in json.loads(trp.read_text(encoding="utf-8"))["segments"])
+        print(f"word timings: {len(words)} words from pause-bounded windows (long-file whisper had {tr_n})")
+    else:
+        print(f"word timings: {len(words)} words from pause-bounded windows\n"
+              f"  ! {trp.relative_to(pp)} does not exist yet — run `python pipeline/transcribe.py {a.name}` before "
+              "voice_edit.py / screen_edit.py (they need it; this script only reads it for a word count)")
     vw = respell(words, chunks, full_ref)
     if spelling:
         vw = [{**w, "w": spelling.get(w["w"], w["w"])} for w in vw]

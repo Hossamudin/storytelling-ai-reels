@@ -23,6 +23,110 @@
       "port": 8790
     },
     {
+      "name": "fatoom-06-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-06-bayt-al-islam/ep",
+        "--port",
+        "3022",
+        "--no-open"
+      ],
+      "port": 3022
+    },
+    {
+      "name": "fatoom-05-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-05-shajarat-al-iman/ep",
+        "--port",
+        "3021",
+        "--no-open"
+      ],
+      "port": 3021
+    },
+    {
+      "name": "fatoom-04-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-04-allah-yarani/ep",
+        "--port",
+        "3020",
+        "--no-open"
+      ],
+      "port": 3020
+    },
+    {
+      "name": "fatoom-03-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-03-allah-wahid/ep",
+        "--port",
+        "3019",
+        "--no-open"
+      ],
+      "port": 3019
+    },
+    {
+      "name": "fatoom-02-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-02-al-niam/ep",
+        "--port",
+        "3018",
+        "--no-open"
+      ],
+      "port": 3018
+    },
+    {
+      "name": "fatoom-01v2-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-01-v2-makhluqat/ep",
+        "--port",
+        "3017",
+        "--no-open"
+      ],
+      "port": 3017
+    },
+    {
+      "name": "fatoom-review",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8792",
+        "--directory",
+        "projects"
+      ],
+      "port": 8792,
+      "url": "http://localhost:8792"
+    },
+    {
+      "name": "fatoom-01-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "hyperframes",
+        "preview",
+        "projects/fatoom-01-al-khaliq/ep",
+        "--port",
+        "3016",
+        "--no-open"
+      ],
+      "port": 3016
+    },
+    {
       "name": "sfx-ab",
       "runtimeExecutable": "python",
       "runtimeArgs": [

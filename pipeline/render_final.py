@@ -39,7 +39,7 @@ def main():
     stamp = time.strftime("%Y%m%d-%H%M")
     raw = part / "renders" / f"{a.name}-{a.part}-{stamp}.mp4"
     raw.parent.mkdir(parents=True, exist_ok=True)
-    r = C.run(["npx", "hyperframes", "render", "--quality", a.quality, "--strict", "-o", str(raw)], cwd=str(part), timeout=6 * 3600)
+    r = C.run(["npx", "--yes", C.HF_CLI, "render", "--quality", a.quality, "--strict", "-o", str(raw)], cwd=str(part), timeout=6 * 3600)
     log = (r.stdout or "") + (r.stderr or "")
     (part / "renders" / f"render-{stamp}.log").write_text(log, encoding="utf-8")
     if r.returncode or not raw.exists():

@@ -7,7 +7,7 @@ visual pick: `library/_sheets/<type>.jpg` (thumb numbers = order below).
  1. hos-4f046e  hossam-photo  2x3            speaking on stage with a microphone  [event, hossam, mic, photo, speaker, stage]  hossam-photo/hossam_photo_event-mic_speaking-on-stage-with-a-microphone_2x3_v1.jpg
  2. hos-701016  hossam-photo  2x3            speaking at a TEDx-style stage, wide  [hossam, photo, speaker, stage, tedx]  hossam-photo/hossam_photo_tedx-stage-1_speaking-at-a-tedx-style-stage-wide_2x3_v1.jpg
  3. hos-d51f60  hossam-photo  2x3            speaking at a TEDx-style stage, gesture  [hossam, photo, speaker, stage, tedx]  hossam-photo/hossam_photo_tedx-stage-2_speaking-at-a-tedx-style-stage-gestu_2x3_v1.jpg
- 4. hos-b23014  hossam-photo  9x16           confident portrait in a suit  [confident, hossam, photo, portrait, suit] used:2  hossam-photo/hossam_photo_suit-confident_confident-portrait-in-a-suit_9x16_v1.jpg
+ 4. hos-b23014  hossam-photo  9x16           confident portrait in a suit  [confident, hossam, photo, portrait, suit] used:3  hossam-photo/hossam_photo_suit-confident_confident-portrait-in-a-suit_9x16_v1.jpg
  5. hos-6c3f24  hossam-photo  9x16           standing full body  [full-body, hossam, photo, standing]  hossam-photo/hossam_photo_standing-full-body_standing-full-body_9x16_v1.jpg
  6. hos-8ccb64  hossam-photo  16x9           podcast setup with microphone  [hossam, mic, photo, podcast, seated] used:1  hossam-photo/hossam_photo_podcast_podcast-setup-with-microphone_16x9_v1.jpg
 
@@ -20,7 +20,7 @@ visual pick: `library/_sheets/<type>.jpg` (thumb numbers = order below).
  6. hos-6c369f  hossam-cutout 9x16 alpha     hi-res transparent cutout, suit, waist up  [cta, cutout, hi-res, hossam, transparent] used:6  hossam-cutout/hossam_cutout_suit_hi-res-transparent-cutout-suit-waist_9x16_v1.png
  7. hos-a3bd3c  hossam-cutout 9x16 alpha     hi-res transparent cutout, grey top  [cta, cutout, hi-res, hossam, transparent]  hossam-cutout/hossam_cutout_grey_hi-res-transparent-cutout-grey-top_9x16_v1.png
 
-## logo (299)
+## logo (300)
  1. log-bc0076  logo                         Claude spark logo, terracotta D97757, code-drawn 12 rays  [anthropic, brand, claude, logo, spark, svg] used:4  logo/logo_claude-spark_claude-spark-logo-terracotta-d97757_v1.svg
  2. log-955875  logo                         OpenAI logo, mono, svg, transparent background  [ai, logo, mit, mono, openai, stock] used:3  logo/logo_openai-mono_openai-logo-mono-svg-transparent-bac_v1.svg
  3. log-f1f924  logo                         OpenAI logo, wordmark, svg, transparent background  [ai, logo, mit, openai, stock, svg]  logo/logo_openai-wordmark_openai-logo-wordmark-svg-transparent_v1.svg
@@ -262,7 +262,7 @@ visual pick: `library/_sheets/<type>.jpg` (thumb numbers = order below).
 239. log-ca17a2  logo                         React logo, mono black, svg, transparent background  [cc0, dev, logo, mono, react, stock]  logo/logo_react-mono_react-logo-mono-black-svg-transparen_v1.svg
 240. log-614021  logo                         Node.js logo, brand colour #5FA04E, svg, transparent background  [cc0, color, dev, logo, nodejs, stock]  logo/logo_nodejs-color_node-js-logo-brand-colour-5fa04e-svg_v1.svg
 241. log-3fa797  logo                         Node.js logo, mono black, svg, transparent background  [cc0, dev, logo, mono, nodejs, stock]  logo/logo_nodejs-mono_node-js-logo-mono-black-svg-transpar_v1.svg
-242. log-8dc300  logo                         YouTube logo, brand colour #FF0000, svg, transparent background  [cc0, color, logo, social, stock, svg] used:3  logo/logo_youtube-color_youtube-logo-brand-colour-ff0000-svg_v1.svg
+242. log-8dc300  logo                         YouTube logo, brand colour #FF0000, svg, transparent background  [cc0, color, logo, social, stock, svg] used:4  logo/logo_youtube-color_youtube-logo-brand-colour-ff0000-svg_v1.svg
 243. log-8273f8  logo                         YouTube logo, mono black, svg, transparent background  [cc0, logo, mono, social, stock, svg]  logo/logo_youtube-mono_youtube-logo-mono-black-svg-transpar_v1.svg
 244. log-19c715  logo                         X logo, brand colour #000000, svg, transparent background  [cc0, color, logo, social, stock, svg]  logo/logo_x-color_x-logo-brand-colour-000000-svg-trans_v1.svg
 245. log-cfc18c  logo                         X logo, mono black, svg, transparent background  [cc0, logo, mono, social, stock, svg]  logo/logo_x-mono_x-logo-mono-black-svg-transparent-ba_v1.svg
@@ -320,6 +320,7 @@ visual pick: `library/_sheets/<type>.jpg` (thumb numbers = order below).
 297. log-3700c7  logo                         LinkedIn logo, mono black, svg, transparent background  [linkedin, logo, mono, public-domain, social, stock]  logo/logo_linkedin-mono_linkedin-logo-mono-black-svg-transpa_v1.svg
 298. log-cefe0d  logo                         Vercel logo, mono black, svg, transparent background  [cc0, cloud, dev, logo, mono, stock]  logo/logo_vercel-mono_vercel-logo-mono-black-svg-transpare_v1.svg
 299. log-ce1ed1  logo                         Vercel logo, brand colour #000000, svg, transparent background  [cc0, cloud, color, dev, logo, stock]  logo/logo_vercel-color_vercel-logo-brand-colour-000000-svg_v1.svg
+300. log-dcd211  logo                         SureThing AI official logo (inline SVG from surething.io header)  [ai-agents, brand, logo, surething] used:1  logo/logo_surething_surething-ai-official-logo-inline-sv_v1.svg
 
 ## img (51)
  1. img-188b07  img           1x1            glowing spherical engine core... deep teal bg  [agent-harness, higgsfield, image]  img/img_engine-core_glowing-spherical-engine-core-deep-t_1x1_v1.png

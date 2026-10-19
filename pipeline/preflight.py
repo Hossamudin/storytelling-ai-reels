@@ -25,7 +25,7 @@ LOCAL = re.compile(r'''(?:src|href)\s*=\s*["'](assets/[^"'#?]+)["']''', re.I)
 
 
 def run_check(part_dir):
-    r = C.run(["npx", "hyperframes", "check", "--timeout", "30000"], cwd=str(part_dir), timeout=1800)
+    r = C.run(["npx", "--yes", C.HF_CLI, "check", "--no-browser-gpu", "--timeout", "30000"], cwd=str(part_dir), timeout=1800)
     out = (r.stdout or "") + (r.stderr or "")
     errs = sum(int(x) for x in re.findall(r"(\d+) error\(s\)", out))
     warns = sum(int(x) for x in re.findall(r"(\d+) warning\(s\)", out))

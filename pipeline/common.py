@@ -45,6 +45,11 @@ def save_config(cfg):
         json.dump(cfg, f, indent=2, ensure_ascii=False)
 
 
+# Pinned HyperFrames CLI for check/render (0.8.153+ check hits "did not finish within its deadline"; LESSONS §21/§23).
+# Override: set HF_CLI=hyperframes@<version>.
+HF_CLI = os.environ.get("HF_CLI", "hyperframes@0.8.152")
+
+
 def load_keys():
     keys = {}
     if KEYS_PATH.exists():

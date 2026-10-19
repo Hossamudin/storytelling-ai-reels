@@ -56,3 +56,6 @@ projects/**/*.pre-retime.json
 # ---- skill build outputs / eval runs (regenerable, heavy)
 skills/dist/
 skills/eval-workspace/
+
+# ---- Quran/hadith API cache (pipeline/quran_fetch.py)
+/.cache/

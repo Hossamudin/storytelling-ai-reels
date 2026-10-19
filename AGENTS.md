@@ -20,6 +20,7 @@ This repo is a **video production factory** run by you (the agent). The full wor
 - **Two recorded hooks → two videos**: MAIN (hook 1) + a 2nd version (same video, hook 2). Never merge or drop a hook: `prompts/two_hooks.md` (per-part cuts in `edit.json` → `make_versions.py`).
 - Cuts (retakes / false starts / fillers / stutters): `find_retakes.py` + `find_stutters.py` → review `review/cuts.html` → `input/edit.json` →
   `voice_edit.py --verify`. Never look for retakes in the whisper transcript (it hides them).
+- Merged multi-part videos: `seam_check.py <merged.mp4> <chapters.txt>` after every merge (repeated openers/closers, extra CTAs at part seams).
 - Reusable assets: `library/INDEX.md` + `pipeline/lib.py` (find before generating, add/harvest after); rules: `docs/LIBRARY.md`.
 - New-video prompt template for Hossam: `prompts/NEW_VIDEO_TEMPLATE.md`.
 - Read `docs/LESSONS_LEARNED.md` before building; add new issues + fixes to it.
